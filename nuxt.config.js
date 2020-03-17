@@ -1,3 +1,5 @@
+
+
 export default {
   mode: 'universal',
   /*
@@ -24,10 +26,13 @@ export default {
    ** Global CSS
    */
   css: [],
+  purgeCSS: {
+    whitelist: ['']
+  },
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/vue-debounce.js', {src:'@/plugins/datepicker.js', ssr: false}, '@/plugins/global-components.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -35,7 +40,15 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+
+    [
+      '@nuxtjs/date-fns',
+      {
+        /* module options */
+        methods: ['format']
+      }
+    ]
   ],
   /*
    ** Nuxt.js modules
@@ -44,8 +57,10 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/svg'
   ],
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -54,10 +69,31 @@ export default {
   /*
    ** Build configuration
    */
+
   build: {
     /*
      ** You can extend webpack config here
      */
+    // postcss: {
+    //   // Add plugin names as key and arguments as value
+    //   // Install them before as dependencies with npm or yarn
+    //   plugins: {
+    //     // Disable a plugin by passing false as value
+    //     'postcss-url': false,
+    //     'postcss-nested': {},
+    //     'postcss-responsive-type': {},
+    //     'postcss-hexrgba': {}
+    //   },
+    //   preset: {
+    //     // Change the postcss-preset-env settings
+    //     autoprefixer: {
+    //       grid: true
+    //     },
+    //     features: {
+    //       customProperties: false
+    //     }
+    //   }
+    // },
     extend(config, ctx) {}
   }
 }

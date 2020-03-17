@@ -13,23 +13,39 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.0"
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/svg": "^0.1.6",
+    "apollo-boost": "^0.4.7",
+    "graphql": "^14.6.0",
+    "graphql-tag": "^2.10.3",
+    "node-fetch": "^2.6.0",
+    "nuxt": "^2.0.0",
+    "psl": "^1.7.0",
+    "vue-debounce": "^2.5.1",
+    "vuejs-datepicker": "^1.6.2",
+    "xstate": "^4.8.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@nuxtjs/date-fns": "^1.2.0",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.2",
     "jest": "^24.1.0",
+    "node-sass": "^4.13.1",
+    "postcss-hexrgba": "^2.0.0",
+    "postcss-nested": "^4.2.1",
+    "postcss-responsive-type": "^1.0.0",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
     "vue-jest": "^4.0.0-0"
   }
 }

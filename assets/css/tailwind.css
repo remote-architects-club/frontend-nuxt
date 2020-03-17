@@ -1,5 +1,11 @@
 /* purgecss start ignore */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import url('https://fonts.googleapis.com/css?family=Inter:400,600,700|Permanent+Marker|Vibur&display=swap');
+@tailwind base;
+
+.link {
+  @apply underline;
+}
+
+@tailwind components;
 /* purgecss end ignore */
-@import 'tailwindcss/utilities';
+@tailwind utilities;
