@@ -1,15 +1,26 @@
 <template>
   <footer
-    class="flex justify-between pt-4 pb-8 mt-auto text-sm border-t-2 border-black"
+    class="flex flex-col items-center justify-between px-4 pt-4 pb-8 mt-auto text-sm border-t-2 border-black sm:flex-row sm:items-start"
   >
-    <section>
-      <ul class="flex items-center">
+    <section class="mb-4">
+      <ul
+        class="flex items-center nav sm:block sm:items-start sm:justify-start"
+      >
+        <li class="font-semibold">
+          <nuxt-link to="/" class="link">home</nuxt-link>
+        </li>
+        <li class="font-semibold">
+          <nuxt-link to="/tools" class="link">tools</nuxt-link>
+        </li>
+        <li class="font-semibold">
+          <nuxt-link to="/articles" class="link">articles</nuxt-link>
+        </li>
         <li class="font-semibold">
           <nuxt-link to="/about" class="link">about</nuxt-link>
         </li>
       </ul>
     </section>
-    <section>
+    <section class="mb-4 text-center sm:text-left">
       <p class="mb-2">
         This site is in active development.<br />Enter your email to stay in the
         loop:
@@ -19,8 +30,8 @@
         <input
           type="email"
           placeholder="Email"
-          class="w-64 p-1 mr-1 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
-        /><button class="btn btn-regular">
+          class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
+        /><button class="flex-none btn btn-regular">
           Subscribe
         </button>
       </p>
@@ -33,4 +44,17 @@
 export default {}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.nav {
+  li {
+    @apply mx-2;
+  }
+}
+@screen sm {
+  .nav {
+    li {
+      @apply mx-0;
+    }
+  }
+}
+</style>

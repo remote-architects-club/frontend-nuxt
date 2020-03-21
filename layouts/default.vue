@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col h-full max-w-4xl mx-auto">
+  <div class="flex flex-col w-full h-full px-4 mx-auto lg:max-w-4xl lg:px-0">
     <base-navbar />
-    <header class="mb-8">
+    <header class="mb-12">
       <logo></logo>
     </header>
     <main class="flex-1 mb-12">

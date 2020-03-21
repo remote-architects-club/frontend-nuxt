@@ -1,7 +1,7 @@
 <template>
-  <article class="p-8 bg-white border-t-2 border-black shadow-lg">
+  <div>
     <header class="mb-8">
-      <div class="flex items-center justify-between">
+      <div class="sm:flex sm:items-center sm:justify-between sm:flex-wrap">
         <h2 class="inline-block text-lg font-bold">{{ company.name }}</h2>
         <company-location
           :city="company.city"
@@ -11,7 +11,7 @@
       <company-url v-if="company.url" :url="company.url" />
     </header>
     <div>
-      <section class="mb-4">
+      <section class="mb-4 col-2">
         <p class="flex items-center mb-1 font-semibold">
           work-from-home policy
         </p>
@@ -19,7 +19,7 @@
           {{ company.remote_policy || 'n/a' }}
         </p>
       </section>
-      <section class="mb-4">
+      <section class="mb-4 col-2">
         <p class="flex items-center mb-1 font-semibold">
           policy on since
         </p>
@@ -31,7 +31,7 @@
           }}
         </p>
       </section>
-      <section>
+      <section class="col-2">
         <p class="flex items-center mb-1 font-semibold">
           tools
         </p>
@@ -46,7 +46,7 @@
         </ul>
       </section>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -73,4 +73,13 @@ export default {
 }
 </script>
 
-<style type="scss"></style>
+<style type="scss">
+@screen md {
+  .col-2 {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 150px 1fr;
+    align-items: start;
+  }
+}
+</style>

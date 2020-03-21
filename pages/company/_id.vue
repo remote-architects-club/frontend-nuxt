@@ -3,7 +3,10 @@
     <div v-if="state.matches('hasCompany.fetching') && !company">
       <p>Loading...</p>
     </div>
-    <div v-else-if="company">
+    <div
+      v-else-if="company"
+      class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
+    >
       <company-details :company="company" class="mb-8" />
       <p class="my-8 text-center">
         <btn-edit-company :company-id="company.id" />
@@ -25,7 +28,7 @@
         </div>
       </div>
 
-      <p class="my-8">
+      <p class="my-8 text-center md:text-left">
         <btn-add-experience :company-id="company.id" />
       </p>
     </div>

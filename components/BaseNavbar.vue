@@ -1,6 +1,6 @@
 <template>
-  <nav class="flex justify-end pt-4 mb-4">
-    <ul class="flex items-center">
+  <nav class="flex justify-center pt-2 mb-8 sm:justify-end">
+    <ul class="flex items-center justify-end sm:flex-col sm:items-end">
       <li class="font-semibold">
         <nuxt-link to="/" class="link">home</nuxt-link>
       </li>
