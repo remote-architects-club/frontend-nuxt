@@ -8,16 +8,33 @@
 }
 
 .btn {
-  @apply font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow;
+  @apply font-semibold text-black transition duration-150 ease-in-out;
 }
-.btn:hover {
-  @apply bg-yellow-500;
-}
+
 .btn:focus {
   @apply outline-none shadow-focus;
 }
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
 .btn-regular {
-  @apply px-4 py-2 text-sm;
+  @apply px-4 py-2 text-sm bg-white border-2 border-black shadow;
+}
+
+.btn-large {
+  @apply inline-block px-8 py-3 text-base font-bold leading-6 bg-white border-2 border-black shadow;
+  /* md:py-4 md:text-lg md:px-10 */
+}
+.btn-regular:hover,
+.btn-large:hover {
+  @apply bg-yellow-500;
+}
+
+.btn-text {
+  @apply px-4 py-2 text-sm border-b-2 border-transparent;
+}
+.btn-text:hover {
+  @apply border-black;
 }
 
 @tailwind components;

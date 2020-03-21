@@ -5,14 +5,14 @@
       <button
         v-if="formState.activeQuestion !== 0"
         @click="$emit('back')"
-        class="px-4 py-2 mx-4 text-sm font-semibold transition duration-150 ease-in-out border-2 border-transparent hover:border-black focus:outline-none focus:shadow-focus "
+        class="mx-4 btn btn-text"
       >
         previous
       </button>
       <button
         @click="$emit('next')"
         :disabled="isNextDisabled"
-        class="px-4 py-2 mx-4 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
+        class="mx-4 btn btn-regular"
       >
         {{ nextLabel }}
       </button>

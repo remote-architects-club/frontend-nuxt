@@ -30,10 +30,7 @@
       </template>
       <template v-else>
         <p>
-          <button
-            @click="edit"
-            class="px-4 py-2 mr-4 font-bold transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
-          >
+          <button @click="edit" class="btn btn-regular">
             + add tools
           </button>
         </p>

@@ -21,7 +21,7 @@
           <button
             @click="add(companyName)"
             :disabled="matches('noCompany.searching')"
-            class="px-4 py-2 text-sm transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
+            class="btn btn-regular"
           >
             add new entry for <strong>{{ companyName }}</strong>
           </button>
@@ -48,10 +48,7 @@
                 <v-icon icon="location" class="w-4 h-4" />{{ company.city }},
                 {{ company.country_iso }}
               </span>
-              <button
-                @click="select(company.id)"
-                class="px-4 py-2 text-sm transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
-              >
+              <button @click="select(company.id)" class="btn btn-regular">
                 select
               </button>
             </p>
