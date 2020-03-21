@@ -81,7 +81,7 @@
           </p>
         </div>
       </template>
-      <template v-else>
+      <template v-else-if="!matches('hasCompany.editing.editingTools')">
         <p>
           <button @click="edit" class="btn btn-regular">
             + add work-from-home policy

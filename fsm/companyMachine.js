@@ -24,6 +24,7 @@ export const companyMachine = Machine(
         initial: 'idle',
         states: {
           idle: {
+            entry: ['resetAll'],
             on: {
               SEARCH: {
                 target: 'searching'
@@ -59,7 +60,7 @@ export const companyMachine = Machine(
               SEARCH: 'searching',
               SELECT: {
                 target: '#hasCompany',
-                actions: ['resetSearch', 'setCompanyId']
+                actions: ['setCompanyId', 'resetSearch']
               },
 
               RESET: {
@@ -95,10 +96,15 @@ export const companyMachine = Machine(
               id: 'invoke-save-company',
               src: invokeSaveCompany,
               onDone: {
-                target: '#hasCompany',
+                target: 'done',
                 actions: ['setCompany']
               },
               onError: 'editing'
+            }
+          },
+          done: {
+            on: {
+              HAS_COMPANY: '#hasCompany'
             }
           }
         }
@@ -263,6 +269,15 @@ export const companyMachine = Machine(
         searchTerm: null,
         foundCompanies: [],
         error: null
+      }),
+      resetAll: assign({
+        company: null,
+        companyId: null,
+        foundCompanies: [],
+        error: null,
+        searchTerm: '',
+        isFirstSearch: true,
+        editingKey: null
       })
     },
     guards: {

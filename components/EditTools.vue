@@ -72,7 +72,7 @@
       </div>
     </div>
     <p class="flex items-center">
-      <button @click="finish" class="btn btn-regular">
+      <button @click="finish" class="mr-4 btn btn-regular">
         ok
       </button>
       <button @click="finish" class="btn btn-text">

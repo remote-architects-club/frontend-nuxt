@@ -111,8 +111,8 @@ export default {
       }
     },
     state() {
-      if (this.matches('hasCompany')) {
-        this.goToStep2()
+      if (this.matches('addCompany.done')) {
+        this.$emit('select', this.context.companyId)
       }
     }
   },
@@ -133,7 +133,7 @@ export default {
       }
     },
     select(id) {
-      // console.log(this.company)
+      console.log(this.company)
       if (id) {
         this.send({
           type: 'SELECT',
@@ -151,10 +151,10 @@ export default {
           name
         }
       })
-    },
-    goToStep2() {
-      this.$router.push(`/add/${this.context.company.id}`)
     }
+    // goToStep2() {
+    //   this.$router.push(`/add/${this.context.company.id}`)
+    // }
   }
 }
 </script>

@@ -89,6 +89,9 @@ export default {
     }
   },
   mounted() {
+    if (this.companyState.matches('addCompany.done')) {
+      this.companyService.send({ type: 'HAS_COMPANY' })
+    }
     if (!this.company) {
       this.companyService.send({
         type: 'FETCH_COMPANY',
