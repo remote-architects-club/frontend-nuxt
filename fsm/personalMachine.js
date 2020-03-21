@@ -36,6 +36,15 @@ export const createPersonalMachine = (companyId) => {
                   context.formState.current = questions[0]
                   context.formState.activeQuestion = 0
                   return context.formState
+                },
+                formData: (context, event) => {
+                  // add all keys to formData
+                  for (const question of context.questions) {
+                    const formData = { ...context.formData }
+                    context.formData[question.name] =
+                      formData[question.name] || null
+                  }
+                  return context.formData
                 }
               }),
               on: {
