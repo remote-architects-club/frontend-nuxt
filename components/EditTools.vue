@@ -36,14 +36,14 @@
         <p class="text-sm" v-if="!toolName">
           Start typing to search...
         </p>
-        <p v-if="matches('not_found')" class="mt-2 text-right">
+        <!-- <p v-if="matches('not_found')" class="mt-2 text-right">
           <button
             @click="add"
             class="px-4 py-2 text-sm transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
           >
             add new entry for <strong>{{ toolName }}</strong>
           </button>
-        </p>
+        </p> -->
         <p v-if="matches('searching')">
           Searching...
         </p>
@@ -72,25 +72,13 @@
       </div>
     </div>
     <p class="flex items-center">
-      <button
-        @click="finish"
-        class="px-4 py-2 mr-4 font-bold transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
-      >
+      <button @click="finish" class="btn btn-regular">
         ok
       </button>
-      <button
-        @click="finish"
-        class="px-4 py-2 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-black focus:outline-none focus:shadow-focus"
-      >
+      <button @click="finish" class="btn btn-text">
         close
       </button>
     </p>
-    <!-- TODO: delete -->
-    <div
-      class="absolute top-0 right-0 p-2 m-2 font-bold bg-gray-300 rounded shadow font-sm"
-    >
-      {{ state.value }}
-    </div>
   </div>
 </template>
 

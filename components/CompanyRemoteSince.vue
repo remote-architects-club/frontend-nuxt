@@ -11,16 +11,10 @@
       />
 
       <p class="flex items-center mt-2">
-        <button
-          @click="save"
-          class="px-4 py-2 mr-4 font-bold transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
-        >
+        <button @click="save" class="mr-4 btn btn-regular">
           save
         </button>
-        <button
-          @click="cancel"
-          class="px-4 py-2 transition duration-150 ease-in-out border-b-2 border-transparent hover:border-black focus:outline-none focus:shadow-focus"
-        >
+        <button @click="cancel" class="btn btn-text">
           cancel
         </button>
       </p>

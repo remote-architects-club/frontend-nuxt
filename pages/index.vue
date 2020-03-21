@@ -9,10 +9,7 @@
 
       <div class="mt-5">
         <p>
-          <nuxt-link
-            to="/add"
-            class="inline-block px-8 py-3 text-base font-bold leading-6 text-black transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-outline md:py-4 md:text-lg md:px-10"
-          >
+          <nuxt-link to="/add" class="btn btn-large">
             contribute
           </nuxt-link>
         </p>
