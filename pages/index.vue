@@ -8,8 +8,8 @@
       </h1>
       <h2 class="mb-8 text-xl">
         The COVID-19 is forcing architecture offices around the world to
-        implement remote working for the first time. <br />Share your
-        experience.
+        implement remote working for the first time. Share your experience and
+        support our colleagues.
       </h2>
 
       <div class="mt-5">
