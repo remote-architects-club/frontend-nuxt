@@ -45,10 +45,6 @@
         </div>
       </div>
     </template>
-
-    <portal to="state"
-      ><p>{{ state.value }}</p>
-    </portal>
   </div>
 </template>
 

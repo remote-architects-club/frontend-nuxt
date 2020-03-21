@@ -53,8 +53,6 @@
         </button>
       </p>
     </div>
-
-    <portal to="state">{{ state.value }} / {{ companyState.value }}</portal>
   </div>
 </template>
 
