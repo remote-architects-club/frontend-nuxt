@@ -1,99 +1,110 @@
 <template>
   <div class="text-left">
-    <nav class="flex justify-end text-sm">
-      <button v-if="context.offset > 0" @click="prevPage" class="link">
-        prev
-      </button>
-      <button @click="nextPage" class="link">next</button>
-    </nav>
-    <p class="mb-8">Filter</p>
-    <article
-      v-for="company in context.companies"
-      :key="company.id"
-      class="p-8 mb-8 bg-white border-t-2 border-black shadow-lg"
-    >
-      <header class="flex justify-between mb-8">
-        <h1 class="text-xl font-bold">
-          {{ company.name }}
-        </h1>
-        <ul class="flex items-center">
-          <li class="flex items-center mr-4">
-            <img src="~assets/icons/person.svg" class="w-4 h-4" />
-            <span v-if="company.num_people">&nbsp;{{ company.num_people }}</span
-            ><span v-else>n/a</span>
-          </li>
-          <li class="flex items-center mr-4">
-            <img src="~assets/icons/link.svg" class="w-4 h-4" />
-            <span v-if="company.url"
-              >&nbsp;{{ companyDomain(company.url) }}</span
-            ><span v-else>n/a</span>
-          </li>
+    <template v-if="state.matches('found')">
+      <nav class="flex justify-end text-sm">
+        <button v-if="context.offset > 0" @click="prevPage" class="link">
+          prev
+        </button>
+        <button @click="nextPage" class="link">next</button>
+      </nav>
+      <!-- <p class="mb-8">Filter</p> -->
+      <article
+        v-for="company in context.companies"
+        :key="company.id"
+        class="p-8 mb-8 bg-white border-t-2 border-black shadow-lg"
+      >
+        <header class="flex justify-between mb-8">
+          <h1 class="text-xl font-bold">
+            {{ company.name }}
+          </h1>
+          <ul class="flex items-center">
+            <li class="flex items-center mr-4">
+              <img src="~assets/icons/person.svg" class="w-4 h-4" />
+              <span v-if="company.num_people"
+                >&nbsp;{{ company.num_people }}</span
+              ><span v-else>n/a</span>
+            </li>
+            <li class="flex items-center mr-4">
+              <img src="~assets/icons/link.svg" class="w-4 h-4" />
+              <span v-if="company.url"
+                >&nbsp;{{ companyDomain(company.url) }}</span
+              ><span v-else>n/a</span>
+            </li>
 
-          <li class="flex items-center">
-            <img src="~assets/icons/location.svg" class="w-4 h-4" />
-            {{ company.city }},
-            {{ company.country_iso }}
-          </li>
-        </ul>
-      </header>
-      <div class="details-grid">
-        <p class="font-bold">Company Policy</p>
-        <p>{{ company.remote_policy }}</p>
+            <li class="flex items-center">
+              <img src="~assets/icons/location.svg" class="w-4 h-4" />
+              {{ company.city }},
+              {{ company.country_iso }}
+            </li>
+          </ul>
+        </header>
+        <div class="details-grid">
+          <p class="font-bold">Company Policy</p>
+          <p>{{ company.remote_policy }}</p>
 
-        <p class="font-bold">WFH Since</p>
-        <p>{{ $dateFns.format(new Date(company.remote_since), 'MMMM do') }}</p>
+          <p class="font-bold">WFH Since</p>
+          <p>
+            {{ $dateFns.format(new Date(company.remote_since), 'MMMM do') }}
+          </p>
 
-        <p class="font-bold">Tools</p>
-        <ul class="flex">
-          <li
-            v-for="{ tool } in company.office_tools"
-            :key="tool.id"
-            class="px-4 py-1 mr-2 border border-black rounded-full"
-          >
-            {{ tool.name }}
-          </li>
-        </ul>
-        <div class="h-4" />
-        <div class="h-4" />
-        <div />
-        <p class="text-center">
-          <router-link
-            :to="`/add/${company.id}?editing=true`"
-            class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <v-icon icon="edit" class="w-4 h-4"></v-icon> edit company info
-          </router-link>
-        </p>
-        <div class="h-4" />
-        <div class="h-4" />
-        <p class="font-bold">Stories</p>
-        <div>
-          <template
-            v-if="company.experiences && company.experiences.length > 0"
-          >
-            <div
-              v-for="experience in company.experiences"
-              :key="experience.id"
-              class="py-4 mb-4 border-t-2 border-black"
+          <p class="font-bold">Tools</p>
+          <ul class="flex">
+            <li
+              v-for="{ tool } in company.office_tools"
+              :key="tool.id"
+              class="px-4 py-1 mr-2 border border-black rounded-full"
             >
-              <experience :experience="experience" />
-            </div>
-          </template>
-          <p class="py-6 text-center border-t-2 border-black">
+              {{ tool.name }}
+            </li>
+          </ul>
+          <div class="h-4" />
+          <div class="h-4" />
+          <div />
+          <p class="text-center">
             <router-link
-              :to="`/add/${company.id}/personal`"
+              :to="`/add/${company.id}?editing=true`"
               class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              &plus; add your experience
+              <v-icon icon="edit" class="w-4 h-4"></v-icon> edit company info
             </router-link>
           </p>
+          <div class="h-4" />
+          <div class="h-4" />
+          <p class="font-bold">Stories</p>
+          <div>
+            <template
+              v-if="company.experiences && company.experiences.length > 0"
+            >
+              <div
+                v-for="experience in company.experiences"
+                :key="experience.id"
+                class="py-4 mb-4 border-t-2 border-black"
+              >
+                <experience :experience="experience" />
+              </div>
+            </template>
+            <p class="py-6 text-center border-t-2 border-black">
+              <router-link
+                :to="`/add/${company.id}/personal`"
+                class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                &plus; add your experience
+              </router-link>
+            </p>
+          </div>
         </div>
-      </div>
-    </article>
-    <nav>
-      <button v-if="context.offset > 0" @click="prevPage">prev</button>
-      <button @click="nextPage">next</button>
-    </nav>
+      </article>
+      <nav>
+        <button v-if="context.offset > 0" @click="prevPage">prev</button>
+        <button @click="nextPage">next</button>
+      </nav>
+    </template>
+    <template v-else-if="state.matches('notFound')">
+      <p class="p-8 mb-8 text-center bg-white shadow-lg">
+        No companies added yet.<br />Be the first by contributing👆 and help to
+        support our fellow architects!
+      </p>
+    </template>
   </div>
 </template>
 
