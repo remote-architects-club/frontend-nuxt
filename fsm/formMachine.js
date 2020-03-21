@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Machine, assign } from 'xstate'
 import gql from 'graphql-tag'
 import { generateVueMachine } from './generateVueMachine'
@@ -75,6 +76,7 @@ const machine = Machine(
       },
       step_1: {},
       step_2: {
+        // already addded office, need to add experience
         id: 'step_2',
         initial: 'loading',
         states: {
@@ -83,6 +85,36 @@ const machine = Machine(
               LOAD_STEP_2: {
                 target: 'loading',
                 actions: ['setCompanyId']
+              },
+              START_EDIT: {
+                target: 'editing'
+              }
+            }
+          },
+          editing: {
+            on: {
+              CANCEL_EDIT: {
+                target: 'idle'
+              },
+              SAVE_EDIT: {
+                target: 'saving_edit'
+              }
+            }
+          },
+          saving_edit: {
+            id: 'saving_edit',
+            invoke: {
+              id: 'save_edit',
+              src: invokeSaveEdit,
+              onDone: {
+                target: 'idle',
+                actions: ['updateSelectedCompany']
+              },
+              onError: {
+                target: 'failed',
+                actions: assign({
+                  error: (context, event) => event.data
+                })
               }
             }
           },
@@ -120,13 +152,18 @@ const machine = Machine(
       clearFoundCompanies: assign({
         foundCompanies: []
       }),
-      // setSelectedCompany: assign({
-      //   selectedCompany: (context, event) => {
-      //     return context.foundCompanies.find(
-      //       (company) => company.id === event.params.id
-      //     )
-      //   }
-      // }),
+      updateSelectedCompany: assign({
+        selectedCompany: (context, event) => {
+          console.log('action: updateSelectedCompany', event)
+          const {
+            key,
+            update_office: { affected_rows, returning }
+          } = event.data
+          if (affected_rows === 0) return
+          context.selectedCompany[key] = returning[0][key]
+          return context.selectedCompany
+        }
+      }),
       setCompanyId: assign({
         selectedCompanyId: (context, event) => {
           return event.params.id
@@ -142,6 +179,32 @@ const machine = Machine(
   }
 )
 // -------------------------------------------
+function invokeSaveEdit(context, event) {
+  console.log('invokeSaveEdit', context, event)
+  const key = Object.keys(event.params)[0]
+  const value = event.params[key]
+  const setParam = `${key}: "${value}"`
+  return client
+    .mutate({
+      mutation: gql`
+      mutation update_office {
+        update_office(
+          where: { id: { _eq: "${context.selectedCompanyId}" } }
+          _set: {${setParam}}
+        ) {
+          affected_rows
+          returning {
+            ${key}
+          }
+        }
+      }
+    `
+    })
+    .then(({ data: { update_office } }) => ({
+      key,
+      update_office
+    }))
+}
 function invokeSearchCompanies(context) {
   return client
     .query({

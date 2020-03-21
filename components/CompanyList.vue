@@ -10,7 +10,7 @@
     <article
       v-for="company in context.companies"
       :key="company.id"
-      class="pt-2 mb-12 border-t-2 border-black"
+      class="p-8 mb-8 bg-white border-t-2 border-black shadow-lg"
     >
       <header class="flex justify-between mb-8">
         <h1 class="text-xl font-bold">
@@ -53,24 +53,41 @@
             {{ tool.name }}
           </li>
         </ul>
-
+        <div class="h-4" />
+        <div class="h-4" />
+        <div />
+        <p class="text-center">
+          <router-link
+            :to="`/add/${company.id}?editing=true`"
+            class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <v-icon icon="edit" class="w-4 h-4"></v-icon> edit company info
+          </router-link>
+        </p>
+        <div class="h-4" />
+        <div class="h-4" />
         <p class="font-bold">Stories</p>
-        <ul>
-          <li v-for="story in company.experiences" :key="story.id" class="mb-4">
-            <span class="text-gray-700"
-              >Posted on
-              {{ $dateFns.format(new Date(story.created_at), 'MMMM do') }}</span
-            ><br />
-            {{ story.own_experience }}
-          </li>
-          <li>
-            <button
-              class="flex items-center justify-center px-4 py-1 text-sm font-medium leading-6 text-yellow-900 transition duration-150 ease-in-out bg-yellow-500 border border-transparent rounded-md hover:bg-yellow-400 focus:outline-none focus:shadow-outline md:py-2 md:text-lg md:px-5"
+        <div>
+          <template
+            v-if="company.experiences && company.experiences.length > 0"
+          >
+            <div
+              v-for="experience in company.experiences"
+              :key="experience.id"
+              class="py-4 mb-4 border-t-2 border-black"
             >
-              Add
-            </button>
-          </li>
-        </ul>
+              <experience :experience="experience" />
+            </div>
+          </template>
+          <p class="py-6 text-center border-t-2 border-black">
+            <router-link
+              :to="`/add/${company.id}/personal`"
+              class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              &plus; add your experience
+            </router-link>
+          </p>
+        </div>
       </div>
     </article>
     <nav>
@@ -82,6 +99,7 @@
 
 <script>
 import { companiesMachine } from '@/fsm/companiesMachine'
+import Experience from '@/components/Experience'
 const psl = require('psl')
 function extractHostname(url) {
   let hostname
@@ -100,6 +118,9 @@ function extractHostname(url) {
 
 export default {
   name: 'CompanyList',
+  components: {
+    Experience
+  },
   computed: {
     state() {
       return companiesMachine.current

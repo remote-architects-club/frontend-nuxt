@@ -24,20 +24,8 @@
 
         <p class="text-sm">It's easy and anonymous.</p>
       </div>
-      <!-- <div class="mt-5">
-        <p>
-          <nuxt-link
-            to="/add"
-            class="inline-block px-8 py-3 text-base font-medium leading-6 text-yellow-900 transition duration-150 ease-in-out bg-yellow-500 border border-transparent rounded-md shadow hover:bg-yellow-400 focus:outline-none focus:shadow-outline md:py-4 md:text-lg md:px-10"
-          >
-            Contribute
-          </nuxt-link>
-        </p>
-
-        <p class="text-sm text-yellow-900">It's easy and anonymous.</p>
-      </div> -->
     </header>
-    <main class="max-w-4xl p-8 mx-auto bg-white shadow-lg">
+    <main class="max-w-4xl mx-auto">
       <company-list />
     </main>
   </div>
