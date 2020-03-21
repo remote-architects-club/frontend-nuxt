@@ -25,9 +25,9 @@
         <p class="text-sm">It's easy and anonymous.</p>
       </div>
     </header>
-    <main class="max-w-4xl mx-auto">
+    <section class="w-full mx-auto">
       <company-list />
-    </main>
+    </section>
   </div>
 </template>
 
