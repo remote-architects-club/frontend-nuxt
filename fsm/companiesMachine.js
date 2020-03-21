@@ -17,17 +17,17 @@ const machine = Machine(
       idle: {
         on: {
           LOAD: {
-            target: 'loading'
+            target: 'fetching'
           }
         }
       },
-      loading: {
-        id: 'loading',
+      fetching: {
+        id: 'fetching',
         invoke: {
           id: 'fetch-companies',
           src: invokeFetchCompanies,
           onDone: {
-            target: 'loaded',
+            target: 'done',
             actions: assign({
               companies: (context, event) => event.data
             })
@@ -40,22 +40,40 @@ const machine = Machine(
           }
         }
       },
-      loaded: {
+      done: {
+        on: {
+          '': [
+            {
+              target: 'found',
+              cond: (context, event) => context.companies.length > 0
+            },
+            { target: 'notFound' }
+          ]
+        }
+      },
+      found: {
         on: {
           NEXT_PAGE: {
-            target: 'loading',
+            target: 'fetching',
             actions: ['incrementOffset']
           },
           PREV_PAGE: {
-            target: 'loading',
+            target: 'fetching',
             actions: ['decrementOffset']
+          }
+        }
+      },
+      notFound: {
+        on: {
+          RELOAD: {
+            target: 'fetching'
           }
         }
       },
       failed: {
         on: {
           RELOAD: {
-            target: 'loading'
+            target: 'fetching'
           }
         }
       }
