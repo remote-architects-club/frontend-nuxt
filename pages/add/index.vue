@@ -1,30 +1,34 @@
 <template>
   <div>
-    <main class="max-w-4xl mx-auto">
-      <form-step-0 @select="step2" />
-    </main>
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold">Contribute</h1>
+      <p>
+        Tell everyone how's your company responding to the crisis and, most
+        importantly, how <strong>you</strong> are dealing with it.
+      </p>
+    </div>
+    <section class="max-w-4xl mx-auto">
+      <form-step-0 :service="context.companyMachine" @select="goToStep2" />
+    </section>
   </div>
 </template>
 
 <script>
-import { formMachine } from '@/fsm/formMachine'
 import FormStep0 from '@/components/FormStep0'
 export default {
-  layout: 'form',
+  layout: 'pages',
   components: {
     FormStep0
   },
   computed: {
-    state() {
-      return formMachine.current
-    },
     context() {
-      return formMachine.context
+      return this.$contributeMachine.context
     }
   },
+
   methods: {
-    step2() {
-      this.$router.push(`/add/${this.context.selectedCompanyId}`)
+    goToStep2(event) {
+      this.$router.push(`/add/${event}`)
     }
   }
 }

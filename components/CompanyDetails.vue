@@ -10,11 +10,41 @@
       </div>
       <company-url v-if="company.url" :url="company.url" />
     </header>
-
     <div>
-      <company-remote-policy :remote-policy="remotePolicy" class="mb-4" />
-      <company-remote-since :remote-since="remoteSince" class="mb-4" />
-      <company-tools :tools="tools" class="mb-4" />
+      <section class="mb-4">
+        <p class="flex items-center mb-1 font-semibold">
+          work-from-home policy
+        </p>
+        <p>
+          {{ company.remote_policy || 'n/a' }}
+        </p>
+      </section>
+      <section class="mb-4">
+        <p class="flex items-center mb-1 font-semibold">
+          policy on since
+        </p>
+        <p>
+          {{
+            company.remote_since
+              ? $dateFns.format(new Date(company.remote_since), 'MMMM do')
+              : 'n/a'
+          }}
+        </p>
+      </section>
+      <section>
+        <p class="flex items-center mb-1 font-semibold">
+          tools
+        </p>
+        <ul class="flex flex-wrap mt-1">
+          <li
+            v-for="{ tool } in company.office_tools"
+            :key="tool.id"
+            class="px-4 py-1 mb-2 mr-2 border border-black rounded-full"
+          >
+            {{ tool.name }}
+          </li>
+        </ul>
+      </section>
     </div>
   </article>
 </template>
@@ -22,9 +52,9 @@
 <script>
 import CompanyLocation from '@/components/CompanyLocation'
 import CompanyUrl from '@/components/CompanyUrl'
-import CompanyRemotePolicy from '@/components/CompanyRemotePolicy'
-import CompanyRemoteSince from '@/components/CompanyRemoteSince'
-import CompanyTools from '@/components/CompanyTools'
+// import CompanyRemotePolicy from '@/components/CompanyRemotePolicy'
+// import CompanyRemoteSince from '@/components/CompanyRemoteSince'
+// import CompanyTools from '@/components/CompanyTools'
 
 export default {
   props: {
@@ -34,31 +64,11 @@ export default {
     }
   },
   components: {
-    CompanyTools,
-    CompanyRemotePolicy,
-    CompanyRemoteSince,
+    // CompanyTools,
+    // CompanyRemotePolicy,
+    // CompanyRemoteSince,
     CompanyUrl,
     CompanyLocation
-  },
-  data() {
-    return {}
-  },
-  computed: {
-    remoteSince() {
-      if (this.company.remote_since) return this.company.remote_since
-      return ''
-    },
-
-    remotePolicy() {
-      if (this.company.remote_since)
-        return this.company.remote_policy.slice(0, 280)
-      return ''
-    },
-    tools() {
-      if (this.company.office_tools)
-        return this.company.office_tools.map(({ tool }) => tool)
-      return []
-    }
   }
 }
 </script>

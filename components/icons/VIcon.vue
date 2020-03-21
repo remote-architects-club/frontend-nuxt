@@ -7,7 +7,7 @@
     class="fill-current"
   >
     <keep-alive>
-      <component :is="dynamicIcon" :size="dynamicSize"></component>
+      <component :is="dynamicIcon"></component>
     </keep-alive>
   </svg>
 </template>

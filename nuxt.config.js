@@ -1,5 +1,3 @@
-
-
 export default {
   mode: 'universal',
   /*
@@ -25,14 +23,20 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/animate.min.css'],
   purgeCSS: {
     whitelist: ['']
   },
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-debounce.js', {src:'@/plugins/datepicker.js', ssr: false}, '@/plugins/global-components.js'],
+  plugins: [
+    '@/plugins/vue-debounce.js',
+    { src: '@/plugins/datepicker.js', ssr: false },
+    '@/plugins/global-components.js',
+    '@/plugins/fsm-machines.js',
+    '@/plugins/portal-vue.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -74,6 +78,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['vee-validate/dist/rules'],
     // postcss: {
     //   // Add plugin names as key and arguments as value
     //   // Install them before as dependencies with npm or yarn

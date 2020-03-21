@@ -1,0 +1,94 @@
+<template>
+  <div>
+    <template v-if="state.matches('editing')">
+      <h2 class="mb-4 font-bold">
+        Tell us how's it going at
+        {{ company.name }}
+      </h2>
+      <form-template />
+    </template>
+
+    <template v-else-if="state.matches('saving')">
+      <div class="flex items-center justify-center h-64 p-8 bg-white shadow-lg">
+        <p class="font-bold text-center">Saving...</p>
+      </div>
+    </template>
+
+    <template v-else-if="state.matches('done')">
+      <div class="flex flex-col items-center p-8 bg-white shadow-lg">
+        <p class="mb-4 font-bold text-center">Thank you!</p>
+        <p class="mb-4">
+          <nuxt-link :to="`/company/${company.id}`" class="link"
+            >See what other people are saying about
+            {{ company.name }}</nuxt-link
+          >
+          <br /><nuxt-link to="/" class="link">Browse all companies</nuxt-link>
+        </p>
+
+        <div class="mx-auto">
+          <iframe
+            src="https://giphy.com/embed/xT1XGT9ersCCKjhVny"
+            width="240"
+            height="240"
+            frameBorder="0"
+            class="giphy-embed"
+            allowFullScreen
+          ></iframe>
+          <p class="text-xs">
+            <a
+              href="https://giphy.com/gifs/originals-reaction-xT1XGT9ersCCKjhVny"
+              >via GIPHY</a
+            >
+          </p>
+        </div>
+      </div>
+    </template>
+
+    <portal to="state"
+      ><p>{{ state.value }}</p>
+    </portal>
+  </div>
+</template>
+
+<script>
+import FormTemplate from '@/components/FormTemplate'
+
+export default {
+  components: {
+    FormTemplate
+  },
+  props: {
+    company: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
+    return {}
+  },
+  computed: {
+    personalMachine() {
+      return this.$contributeMachine.context.personalMachine
+    },
+    state() {
+      return this.personalMachine.state
+    },
+    context() {
+      return this.personalMachine.state.context
+    },
+
+    formState() {
+      return this.context.formState
+    }
+  },
+
+  methods: {}
+}
+</script>
+
+<style scss>
+/* input[type='radio'] {
+  margin-top: -2px;
+  @apply -mt-1;
+} */
+</style>

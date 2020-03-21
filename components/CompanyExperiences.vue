@@ -1,33 +1,29 @@
 <template>
   <div class="p-8 bg-white shadow-lg">
-    <h2 class="mb-8 text-lg font-bold">
-      What are other people saying about {{ company.name }}?
-    </h2>
-    <div>
-      <div
-        v-for="story in company.experiences"
-        :key="story.id"
-        class="mb-8 info-grid"
-      >
-        <p class="font-semibold">
-          {{ $dateFns.format(new Date(story.created_at), 'MMMM do') }}
-        </p>
-        <p>
-          {{ story.own_experience }}
-        </p>
-      </div>
-    </div>
+    <experience
+      v-for="exp in experiences"
+      :key="exp.id"
+      class="mb-8 info-grid"
+      :experience="exp"
+    >
+    </experience>
   </div>
 </template>
 
 <script>
+// import questions from '../config/formConfig.json'
+import Experience from '@/components/Experience'
 export default {
+  components: {
+    Experience
+  },
   props: {
-    company: {
-      type: Object,
+    experiences: {
+      type: Array,
       required: true
     }
-  }
+  },
+  methods: {}
 }
 </script>
 

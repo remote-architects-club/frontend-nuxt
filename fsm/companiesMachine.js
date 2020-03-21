@@ -102,13 +102,20 @@ function invokeFetchCompanies(context) {
                 }
               }
               experiences(order_by: { created_at: desc }) {
-                company_rating
-                created_at
                 id
-                other_tools
+                wfh
                 own_experience
-                own_rating
-                remote_since
+                own_experience_text
+                hardware
+                colleagues
+                tools
+                tools_text
+                company
+                company_text
+                not_wfh_reason
+                not_wfh_reason_text
+                final_tips
+                created_at
               }
             }
           }
