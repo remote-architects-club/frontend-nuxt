@@ -28,7 +28,7 @@
           </li>
         </ul>
       </template>
-      <template v-else>
+      <template v-else-if="!matches('hasCompany.editing.editingRemotePolicy')">
         <p>
           <button @click="edit" class="btn btn-regular">
             + add tools
