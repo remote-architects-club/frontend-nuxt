@@ -17,14 +17,12 @@
     <template v-else-if="state.matches('done')">
       <div class="flex flex-col items-center p-8 bg-white shadow-lg">
         <p class="mb-4 font-bold text-center">Thank you!</p>
-        <p class="mb-4 text-center">
+        <p class="mb-4">
           <nuxt-link :to="`/company/${company.id}`" class="link"
             >See what other people are saying about
             {{ company.name }}</nuxt-link
           >
-          <br />or<br /><nuxt-link to="/" class="link"
-            >Browse all companies</nuxt-link
-          >
+          <br /><nuxt-link to="/" class="link">Browse all companies</nuxt-link>
         </p>
 
         <div class="mx-auto">
