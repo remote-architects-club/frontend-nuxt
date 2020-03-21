@@ -65,7 +65,6 @@
     <template v-if="matches('addCompany')">
       <company-add-form />
     </template>
-    <portal to="state">{{ state }}</portal>
   </div>
 </template>
 

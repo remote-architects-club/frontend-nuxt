@@ -21,9 +21,6 @@
         </div>
       </div>
     </div>
-
-    <!-- TODO: delete  -->
-    <portal to="state">{{ state.value }} </portal>
   </div>
 </template>
 
