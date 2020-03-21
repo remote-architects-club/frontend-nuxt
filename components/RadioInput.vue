@@ -3,6 +3,7 @@
     <p class="flex mb-2" v-for="(option, index) in options" :key="index">
       <label :class="{ 'font-bold': option.value === value }"
         ><input
+          :name="id"
           type="radio"
           @input="$emit('input', $event.target.value)"
           :checked="option.value === value"
@@ -16,7 +17,7 @@
 
 <script>
 export default {
-  props: ['options', 'value']
+  props: ['options', 'value', 'id']
 }
 </script>
 
