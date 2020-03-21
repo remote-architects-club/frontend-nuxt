@@ -7,7 +7,7 @@
         importantly, how <strong>you</strong> are dealing with it.
       </p>
     </div>
-    <section class="max-w-4xl mx-auto">
+    <section class="w-full mx-auto">
       <form-step-0 :service="context.companyMachine" @select="goToStep2" />
     </section>
   </div>
