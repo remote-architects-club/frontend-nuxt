@@ -1,8 +1,37 @@
 <template>
-  <div class="container py-8 mx-auto">
-    <nuxt />
+  <div class="max-w-4xl mx-auto">
+    <nav class="flex justify-end pt-4 mb-8">
+      <ul class="flex items-center">
+        <li class="font-semibold">
+          <nuxt-link to="/about" class="link">about</nuxt-link>
+        </li>
+      </ul>
+    </nav>
+    <header class="mb-8">
+      <logo></logo>
+    </header>
+    <main>
+      <!-- <h1
+        class="mb-8 text-6xl leading-none tracking-wide uppercase bold font-logo"
+      >
+        Remote<br />Architects<br />Club
+      </h1> -->
+      <nuxt />
+    </main>
+    <footer>
+      footer
+    </footer>
   </div>
 </template>
+
+<script>
+import Logo from '@/components/Logo'
+export default {
+  components: {
+    Logo
+  }
+}
+</script>
 
 <style>
 body,
