@@ -42,12 +42,12 @@ export const createPersonalMachine = (companyId) => {
                 NEXT: [
                   {
                     target: '#editing.isWFH',
-                    cond: (context, event) => event.params.input === 0,
+                    cond: (context, event) => Number(event.params.input) === 0,
                     actions: ['setAnswer']
                   },
                   {
                     target: '#editing.notWFH',
-                    cond: (context, event) => event.params.input === 1,
+                    cond: (context, event) => Number(event.params.input) === 1,
                     actions: ['setAnswer']
                   },
                   {
@@ -244,7 +244,8 @@ export const createPersonalMachine = (companyId) => {
                     NEXT: {
                       target: 'reasonText',
                       actions: ['setAnswer']
-                    }
+                    },
+                    PREVIOUS: '#editing.start'
                   }
                 },
                 reasonText: {
@@ -262,7 +263,8 @@ export const createPersonalMachine = (companyId) => {
                     NEXT: {
                       target: 'colleagues',
                       actions: ['setAnswer']
-                    }
+                    },
+                    PREVIOUS: 'reason'
                   }
                 },
                 colleagues: {
@@ -280,14 +282,16 @@ export const createPersonalMachine = (companyId) => {
                     NEXT: [
                       {
                         target: '#editing.finalTips',
-                        cond: (context, event) => event.params.input === 0,
+                        cond: (context, event) =>
+                          Number(event.params.input) === 0,
                         actions: ['setAnswer']
                       },
                       {
                         target: '#editing.isWFH.tools',
                         actions: ['setAnswer']
                       }
-                    ]
+                    ],
+                    PREVIOUS: 'reasonText'
                   }
                 }
               }
