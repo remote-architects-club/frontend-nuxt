@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex justify-end pt-4 mb-8">
+  <nav class="flex justify-end pt-4 mb-4">
     <ul class="flex items-center">
       <li class="font-semibold">
         <nuxt-link to="/about" class="link">about</nuxt-link>
