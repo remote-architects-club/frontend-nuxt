@@ -1,5 +1,5 @@
 <template>
-  <article class="p-8 bg-white border-t-2 border-b-2 border-black shadow-lg">
+  <article class="p-8 bg-white border-t-2 border-black shadow-lg">
     <header class="mb-8">
       <div class="flex items-center justify-between">
         <h2 class="inline-block text-lg font-bold">{{ company.name }}</h2>
