@@ -1,11 +1,6 @@
 <template>
   <div>
     <header class="mb-12 text-center">
-      <h1
-        class="mb-8 text-6xl leading-none tracking-wide uppercase bold font-logo"
-      >
-        Remote<br />Architects<br />Club
-      </h1>
       <h2 class="mb-8 text-xl">
         The COVID-19 is forcing architecture offices around the world to
         implement remote working for the first time. Share your experience and
