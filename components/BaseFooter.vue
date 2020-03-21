@@ -11,18 +11,16 @@
     </section>
     <section>
       <p class="mb-2">
-        We are actively working on improving this site.<br />Enter your email to
-        stay in the loop for further developments:
+        This site is in active development.<br />Enter your email to stay in the
+        loop:
       </p>
 
-      <p class="flex mb-2">
+      <p class="flex mb-4">
         <input
           type="email"
           placeholder="Email"
           class="w-64 p-1 mr-1 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
-        /><button
-          class="px-4 py-2 text-sm transition duration-150 ease-in-out border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
-        >
+        /><button class="btn btn-regular">
           Subscribe
         </button>
       </p>

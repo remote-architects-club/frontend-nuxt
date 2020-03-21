@@ -61,12 +61,7 @@
           <div class="h-4" />
           <div />
           <p class="text-center">
-            <router-link
-              :to="`/add/${company.id}?editing=true`"
-              class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <v-icon icon="edit" class="w-4 h-4"></v-icon> edit company info
-            </router-link>
+            <btn-edit-company :company-id="company.id" />
           </p>
           <div class="h-4" />
           <div class="h-4" />
@@ -84,12 +79,7 @@
               </div>
             </template>
             <p class="py-6 text-center border-t-2 border-black">
-              <router-link
-                :to="`/add/${company.id}/personal`"
-                class="px-4 py-2 text-sm font-semibold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                &plus; add your experience
-              </router-link>
+              <btn-add-experience :company-id="company.id" />
             </p>
           </div>
         </div>
@@ -111,6 +101,8 @@
 <script>
 import { companiesMachine } from '@/fsm/companiesMachine'
 import Experience from '@/components/Experience'
+import BtnAddExperience from '@/components/BtnAddExperience'
+import BtnEditCompany from '@/components/BtnEditCompany'
 const psl = require('psl')
 function extractHostname(url) {
   let hostname
@@ -130,7 +122,9 @@ function extractHostname(url) {
 export default {
   name: 'CompanyList',
   components: {
-    Experience
+    Experience,
+    BtnEditCompany,
+    BtnAddExperience
   },
   computed: {
     state() {
