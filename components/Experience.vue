@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="mb-4 font-semibold text-gray-600">
+    <p class="mb-4 font-semibold text-right text-gray-600">
       {{ $dateFns.format(new Date(experience.created_at), 'MMMM do') }}
     </p>
     <div v-html="introText" class="p-2 mb-4 border border-black" />

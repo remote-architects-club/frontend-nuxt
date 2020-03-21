@@ -8,7 +8,43 @@
         <button @click="nextPage" class="link">next</button>
       </nav>
       <!-- <p class="mb-8">Filter</p> -->
-      <article
+      <div
+        class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
+        v-for="company in context.companies"
+        :key="company.id"
+      >
+        <company-details :company="company" />
+        <section class="col-2">
+          <div></div>
+          <p class="pt-8 mb-12 text-center md:text-left">
+            <btn-edit-company :company-id="company.id" />
+          </p>
+        </section>
+        <div>
+          <template
+            v-if="company.experiences && company.experiences.length > 0"
+          >
+            <section class="col-2">
+              <p class="mb-4 font-semibold">stories</p>
+              <div>
+                <experience
+                  :experience="experience"
+                  v-for="experience in company.experiences"
+                  :key="experience.id"
+                  class="mb-8 "
+                />
+              </div>
+            </section>
+          </template>
+          <section class="col-2">
+            <div></div>
+            <p class="py-6 text-center md:text-left">
+              <btn-add-experience :company-id="company.id" />
+            </p>
+          </section>
+        </div>
+      </div>
+      <!-- <article
         v-for="company in context.companies"
         :key="company.id"
         class="p-8 mb-8 bg-white border-t-2 border-black shadow-lg"
@@ -83,7 +119,7 @@
             </p>
           </div>
         </div>
-      </article>
+      </article> -->
       <nav>
         <button v-if="context.offset > 0" @click="prevPage">prev</button>
         <button @click="nextPage">next</button>
@@ -103,6 +139,7 @@ import { companiesMachine } from '@/fsm/companiesMachine'
 import Experience from '@/components/Experience'
 import BtnAddExperience from '@/components/BtnAddExperience'
 import BtnEditCompany from '@/components/BtnEditCompany'
+import CompanyDetails from '@/components/CompanyDetails'
 const psl = require('psl')
 function extractHostname(url) {
   let hostname
@@ -123,6 +160,7 @@ export default {
   name: 'CompanyList',
   components: {
     Experience,
+    CompanyDetails,
     BtnEditCompany,
     BtnAddExperience
   },

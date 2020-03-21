@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="p-8 bg-white shadow-lg">
+    <div class="p-4 bg-white shadow-lg sm:p-8">
       <form @submit.prevent="submit">
         <template v-for="(question, key) in questions">
           <field-group

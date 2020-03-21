@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8 bg-white shadow-lg">
+  <div class="p-4 bg-white shadow-lg sm:p-8">
     <h2 class="mb-8 font-bold">
       First, let's get some info about your company
     </h2>
@@ -34,20 +34,25 @@
         <p class="mt-4 mb-6 border-b-2 border-black">
           Found {{ context.foundCompanies.length }} possible
           <span v-if="context.foundCompanies.length === 1">match</span
-          ><span v-else>matches</span>.
+          ><span v-else>matches</span>
         </p>
         <ul v-if="context.foundCompanies.length > 0">
           <li
             v-for="company in context.foundCompanies"
             :key="company.id"
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between mb-6"
           >
-            <p class="font-bold">{{ company.name }}</p>
-            <p class="flex items-center">
-              <span class="flex items-center mr-4">
+            <div class="w-full">
+              <p class="font-bold">
+                {{ company.name }}
+              </p>
+              <p class="flex items-center mr-4">
                 <v-icon icon="location" class="w-4 h-4" />{{ company.city }},
                 {{ company.country_iso }}
-              </span>
+              </p>
+            </div>
+
+            <p>
               <button @click="select(company.id)" class="btn btn-regular">
                 select
               </button>
@@ -56,7 +61,7 @@
         </ul>
       </div>
       <div v-if="matches('noCompany.notFound')">
-        <p class="my-4">No matches found for "{{ companyName }}."</p>
+        <p class="my-4">No matches found for "{{ companyName }}"</p>
       </div>
     </template>
     <template v-if="matches('addCompany')">
