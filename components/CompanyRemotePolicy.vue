@@ -6,6 +6,10 @@
           <p class="flex items-center mb-1 font-semibold">
             {{ labelRemotePolicy }}
           </p>
+          <p>
+            What policy did your company put in place about working-from-home
+            arrangements?
+          </p>
           <validation-provider
             v-slot="{ errors }"
             rules="max:280"
@@ -14,7 +18,7 @@
           >
             <textarea-input
               v-model="editedRemotePolicy"
-              placeholder="Describe your company's policy related to working from home."
+              placeholder="Describe it briefly..."
             />
             <span class="error">{{ errors[0] }}</span>
           </validation-provider>
