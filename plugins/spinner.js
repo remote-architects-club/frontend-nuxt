@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import SquareLoader from 'vue-spinner/src/SquareLoader.vue'
+import SquareLoader from '../components/SquareLoader.vue'
 
 Vue.component('spinner', SquareLoader)
