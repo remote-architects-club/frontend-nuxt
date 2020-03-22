@@ -78,7 +78,7 @@ export const companyMachine = Machine(
         on: {
           ADD: {
             target: '#addCompany',
-            actions: ['setName']
+            actions: ['setName', 'resetSearch']
           }
         }
       },
