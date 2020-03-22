@@ -8,7 +8,7 @@
           @input="$emit('input', $event.target.value)"
           :checked="option.value === value"
           :value="option.value"
-          class="mt-1"
+          class="mt-1 bg-white border border-black"
         />
         <span>{{ option.label }}</span></label
       >
