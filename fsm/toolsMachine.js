@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { Machine, assign } from 'xstate'
 import gql from 'graphql-tag'
-// import { generateVueMachine } from './generateVueMachine'
+import { generateVueMachine } from './generateVueMachine'
 import { client } from '@/plugins/apollo'
 
 export const toolsMachine = Machine(
@@ -268,4 +268,4 @@ function insertOfficeTool(office_id, tool_id) {
     })
     .then(({ data }) => data.insert_office_tool.affected_rows)
 }
-// export const toolsMachine = generateVueMachine(machine)
+export const toolsMachineVue = generateVueMachine(toolsMachine)
