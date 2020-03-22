@@ -26,6 +26,7 @@
             >Browse all companies</nuxt-link
           >
         </p>
+        <mc-api-form sign-up-location="contribute_form" />
 
         <div class="mx-auto">
           <iframe
@@ -50,10 +51,12 @@
 
 <script>
 import FormTemplate from '@/components/FormTemplate'
+import McApiForm from '@/components/McApiForm'
 
 export default {
   components: {
-    FormTemplate
+    FormTemplate,
+    McApiForm
   },
   props: {
     company: {
