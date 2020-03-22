@@ -7,7 +7,7 @@
       <nuxt-link to="/" class="sm:ml-2 sm:mt-4"><logo class="w-48"/></nuxt-link>
     </header>
     <main class="flex-1 mb-12">
-      <nuxt class="max-w-xl mx-auto" />
+      <nuxt />
     </main>
     <base-footer />
   </div>
