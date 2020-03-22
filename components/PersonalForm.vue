@@ -9,8 +9,8 @@
     </template>
 
     <template v-else-if="state.matches('saving')">
-      <div class="flex items-center justify-center h-64 p-8 bg-white shadow-lg">
-        <p class="font-bold text-center">Saving...</p>
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
       </div>
     </template>
 

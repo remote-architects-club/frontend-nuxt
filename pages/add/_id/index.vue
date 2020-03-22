@@ -4,7 +4,9 @@
       <h1 class="text-3xl font-bold">Contribute</h1>
     </div>
     <div v-if="companyState.matches('hasCompany.fetching') && !company">
-      <p>Loading...</p>
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
+      </div>
     </div>
     <div v-else-if="company">
       <p class="mb-8">

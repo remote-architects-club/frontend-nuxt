@@ -28,6 +28,7 @@
     "validate.js": "^0.13.1",
     "vee-validate": "^3.2.5",
     "vue-debounce": "^2.5.1",
+    "vue-spinner": "^1.0.3",
     "vuejs-datepicker": "^1.6.2",
     "xstate": "^4.8.0"
   },

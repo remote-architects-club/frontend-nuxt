@@ -35,7 +35,8 @@ export default {
     { src: '@/plugins/datepicker.js', ssr: false },
     '@/plugins/global-components.js',
     '@/plugins/fsm-machines.js',
-    '@/plugins/portal-vue.js'
+    '@plugins/spinner.js'
+    // '@/plugins/portal-vue.js'
   ],
   /*
    ** Nuxt.js dev-modules
