@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-xl mx-auto">
     <div v-if="state.matches('hasCompany.fetching') && !company">
       <p>Loading...</p>
     </div>
