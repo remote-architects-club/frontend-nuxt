@@ -26,7 +26,7 @@
         loop:
       </p>
 
-      <p class="flex mb-4">
+      <!-- <p class="flex mb-4">
         <input
           type="email"
           placeholder="Email"
@@ -34,14 +34,20 @@
         /><button class="flex-none btn btn-regular">
           Subscribe
         </button>
-      </p>
+      </p> -->
+      <mc-api-form sign-up-location="footer" />
       <p>Done with 💛 in Berlin.</p>
     </section>
   </footer>
 </template>
 
 <script>
-export default {}
+import McApiForm from '@/components/McApiForm'
+export default {
+  components: {
+    McApiForm
+  }
+}
 </script>
 
 <style lang="scss" scoped>
