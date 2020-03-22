@@ -7,7 +7,7 @@
       <p class="mb-2">What's your company's name?</p>
       <input
         type="text"
-        class="w-full p-4 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
+        class="w-full p-4 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
         placeholder="Company name"
         v-model="companyName"
         v-debounce:500.lock="search"
