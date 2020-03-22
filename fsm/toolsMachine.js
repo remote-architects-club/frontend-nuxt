@@ -9,6 +9,7 @@ export const toolsMachine = Machine(
     id: 'toolsMachine',
     initial: 'idle',
     context: {
+      tools: [],
       tool: null,
       itemId: null,
       foundItems: [],
@@ -20,6 +21,7 @@ export const toolsMachine = Machine(
     states: {
       idle: {
         on: {
+          FETCH: 'fetching',
           SEARCH: {
             target: 'searching'
           }
@@ -39,6 +41,22 @@ export const toolsMachine = Machine(
             target: 'idle',
             actions: ['setError']
           }
+        }
+      },
+      fetching: {
+        invoke: {
+          id: 'invoke-fetch',
+          src: invokeFetch,
+          onDone: {
+            target: 'idle',
+            actions: ['setTools']
+          },
+          onError: 'failedFetch'
+        }
+      },
+      failedFetch: {
+        on: {
+          FETCH: 'fetching'
         }
       },
       done: {
@@ -137,6 +155,9 @@ export const toolsMachine = Machine(
       setNewTool: assign({
         tool: (_, event) => event.data
       }),
+      setTools: assign({
+        tools: (_, event) => event.data.tools
+      }),
       updateToolsList: assign({
         tools: (context, event) => {
           if (event.type.includes('add')) {
@@ -169,6 +190,30 @@ export const toolsMachine = Machine(
 
 // ------------------------------------
 // FUNCTIONS
+async function invokeFetch() {
+  const { data } = await client.query({
+    query: gql`
+      query tools {
+        tool(order_by: { name: asc }) {
+          description
+          id
+          name
+          url
+          is_free
+          tool_categories(order_by: { category_name: asc }) {
+            category_name
+          }
+          office_tools {
+            office {
+              id
+            }
+          }
+        }
+      }
+    `
+  })
+  return { tools: data.tool }
+}
 function invokeSearch(context) {
   return client
     .query({
