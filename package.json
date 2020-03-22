@@ -23,6 +23,7 @@
     "gsap": "^3.2.4",
     "node-fetch": "^2.6.0",
     "nuxt": "^2.0.0",
+    "nuxt-rfg-icon": "^0.6.4",
     "portal-vue": "^2.1.7",
     "psl": "^1.7.0",
     "validate.js": "^0.13.1",
