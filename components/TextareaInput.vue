@@ -5,7 +5,7 @@
       maxlength="280"
       v-bind="$attrs"
       autofocus
-      class="w-full p-4 mt-2 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
+      class="w-full p-4 mt-2 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
       @input="input"
       rows="4"
     />

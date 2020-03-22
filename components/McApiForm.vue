@@ -23,7 +23,7 @@
           type="email"
           placeholder="Email"
           id="email"
-          class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
+          class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
           v-model="email"
         /><button
           type="submit"

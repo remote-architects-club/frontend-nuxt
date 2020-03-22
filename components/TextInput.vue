@@ -2,7 +2,7 @@
   <input
     type="text"
     autofocus
-    class="w-full p-4 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
+    class="w-full p-4 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
     v-bind="$attrs"
     @input="input"
     :value="value"
