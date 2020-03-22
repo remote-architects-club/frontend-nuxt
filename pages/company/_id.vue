@@ -1,8 +1,10 @@
 <template>
   <div class="max-w-xl mx-auto">
-    <div v-if="state.matches('hasCompany.fetching') && !company">
-      <p>Loading...</p>
-    </div>
+    <template v-if="state.matches('hasCompany.fetching') && !company">
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
+      </div>
+    </template>
     <div
       v-else-if="company"
       class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"

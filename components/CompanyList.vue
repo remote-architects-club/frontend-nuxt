@@ -1,5 +1,10 @@
 <template>
   <div class="text-left">
+    <template v-if="state.matches('fetching')">
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
+      </div>
+    </template>
     <template v-if="state.matches('found')">
       <nav class="flex justify-end text-sm">
         <button v-if="context.offset > 0" @click="prevPage" class="link">

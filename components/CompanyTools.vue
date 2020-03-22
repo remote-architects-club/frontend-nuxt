@@ -7,6 +7,11 @@
       <p>What tools is your company using to communicate and collaborate?</p>
       <edit-tools />
     </template>
+    <template v-else-if="matches('hasCompany.saving')">
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
+      </div>
+    </template>
     <template v-else>
       <template v-if="tools && tools.length > 0">
         <p class="flex items-center mb-1 font-semibold">

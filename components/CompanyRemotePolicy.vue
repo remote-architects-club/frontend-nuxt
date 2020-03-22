@@ -50,6 +50,11 @@
         </p>
       </validation-observer>
     </template>
+    <template v-else-if="matches('hasCompany.saving')">
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
+      </div>
+    </template>
     <template v-else>
       <template v-if="remotePolicy">
         <div class="mb-4">

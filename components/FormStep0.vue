@@ -26,9 +26,14 @@
             add new entry for <strong>{{ companyName }}</strong>
           </button>
         </p>
-        <p v-if="matches('noCompany.searching')">
+        <template v-if="matches('noCompany.searching')">
+          <div class="flex items-center justify-center p-12">
+            <spinner color="#000" />
+          </div>
+        </template>
+        <!-- <p v-if="matches('noCompany.searching')">
           Searching...
-        </p>
+        </p> -->
       </div>
       <div v-if="matches('noCompany.found')">
         <p class="mt-4 mb-6 border-b-2 border-black">
@@ -64,8 +69,13 @@
         <p class="my-4">No matches found for "{{ companyName }}"</p>
       </div>
     </template>
-    <template v-if="matches('addCompany')">
+    <template v-else-if="matches('addCompany')">
       <company-add-form />
+    </template>
+    <template v-else>
+      <div class="flex items-center justify-center p-12">
+        <spinner color="#000" />
+      </div>
     </template>
   </div>
 </template>
