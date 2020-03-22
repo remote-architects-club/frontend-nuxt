@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/animate.min.css'],
+  // css: ['@/assets/css/animate.min.css'],
   purgeCSS: {
     whitelist: ['']
   },
