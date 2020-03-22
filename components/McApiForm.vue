@@ -1,16 +1,12 @@
 <template>
   <div>
     <template v-if="isLoading">
-      <div class="flex items-center justify-center p-12">
-        <spinner color="#000" />
+      <div class="py-2">
+        <spinner color="#000" size="25" />
       </div>
     </template>
     <template v-else-if="status === 'success'">
-      <p class="font-bold">Perfect 👏!</p>
-      <p>
-        You should get an email confirmation shortly. Otherwise, make sure to
-        check your spam folder.
-      </p>
+      <p class="font-bold">Done 👏!</p>
     </template>
     <template v-else-if="status === 'failure'">
       <p class="font-bold">Oops 🙀!</p>
@@ -67,7 +63,7 @@ export default {
     async sendToMailchimp(email, signUpLocation) {
       const url = `${NETLIFY_MC_FUNCTION}?email=${encodeURIComponent(
         this.email
-      )}&signup=${this.signUpLocation}&tag=${this.signUpLocation}`
+      )}&tag=${this.signUpLocation}`
       console.log(url)
       try {
         const res = await fetch(url)

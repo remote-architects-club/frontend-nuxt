@@ -12,7 +12,6 @@ exports.handler = async (event, context) => {
         body: "email query paramter required"
       };
     }
-    const signup = event.queryStringParameters.signup;
     const tag = event.queryStringParameters.tag;
 
     // https://gist.github.com/kitek/1579117
@@ -26,7 +25,6 @@ exports.handler = async (event, context) => {
       url: apiRoot + emailhash,
       data: {
         email_address: email,
-        merge_fields: {SIGNUP: signup},
         tags: [tag],
         status: "subscribed"
       },
