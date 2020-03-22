@@ -25,14 +25,6 @@
           >cancel</nuxt-link
         >
       </p>
-      <!-- <p class="mb-4 text-center" v-else>
-        <button
-          @click="openPersonal"
-          class="px-4 py-2 text-sm font-bold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
-        >
-          All good, continue &rarr;
-        </button>
-      </p> -->
       <company-details-editing :company="company" class="mb-8" />
       <p class="mb-4 text-center" v-if="isEditing">
         <nuxt-link
@@ -60,11 +52,9 @@
 
 <script>
 import CompanyDetailsEditing from '@/components/CompanyDetailsEditing'
-// import CompanyExperiences from '@/components/CompanyExperiences'
 export default {
   layout: 'pages',
   components: {
-    // CompanyExperiences,
     CompanyDetailsEditing
   },
   computed: {

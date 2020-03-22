@@ -409,8 +409,8 @@ async function invokeSaveCompany(event) {
   return data.insert_office.returning[0]
 }
 async function invokeSaveEdit(context, event) {
-  debugger
-  console.log('invokeSaveEdit', context, event)
+  // debugger
+  // console.log('invokeSaveEdit', context, event)
   const { companyId: id } = context
   const { remote_policy, remote_since } = event.params
   const { data } = await client.mutate({
