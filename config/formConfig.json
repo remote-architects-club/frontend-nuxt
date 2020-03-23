@@ -1,5 +1,16 @@
 [
   {
+    "name": "name",
+    "type": "text",
+    "label": "What should we call you?",
+    "options": {
+      "attrs": {
+        "placeholder": "Tell us your name (or pseudonym)"
+      }
+    },
+    "validation": ["required"]
+  },
+  {
     "name": "wfh",
     "type": "radio",
     "label": "Are you working from home?",

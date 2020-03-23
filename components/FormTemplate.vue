@@ -48,6 +48,7 @@ import FieldLabel from '@/components/FieldLabel'
 // import FieldError from '@/components/FieldError'
 import RadioInput from '@/components/RadioInput'
 import TextareaInput from '@/components/TextareaInput'
+import TextInput from '@/components/TextInput'
 import FormNav from '@/components/FormNav'
 
 export default {
@@ -55,6 +56,7 @@ export default {
     FieldGroup,
     FieldLabel,
     // FieldError,
+    TextInput,
     TextareaInput,
     RadioInput,
     FormNav
