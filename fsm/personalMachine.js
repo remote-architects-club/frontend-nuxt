@@ -27,10 +27,10 @@ export const createPersonalMachine = (companyId) => {
       states: {
         editing: {
           id: 'editing',
-          initial: 'start',
+          initial: 'name',
           states: {
-            start: {
-              id: 'start',
+            name: {
+              id: 'name',
               entry: assign({
                 formState: (context, event) => {
                   context.formState.current = questions[0]
@@ -45,6 +45,22 @@ export const createPersonalMachine = (companyId) => {
                       formData[question.name] || null
                   }
                   return context.formData
+                }
+              }),
+              on: {
+                NEXT: { target: 'wfh', actions: ['setAnswer'] }
+              }
+            },
+            wfh: {
+              id: 'wfh',
+              entry: assign({
+                formState: (context, event) => {
+                  const index = context.questions.findIndex(
+                    (question) => question.name === 'wfh'
+                  )
+                  context.formState.activeQuestion = index
+                  context.formState.current = questions[index]
+                  return context.formState
                 }
               }),
               on: {
@@ -63,7 +79,8 @@ export const createPersonalMachine = (companyId) => {
                     target: '#editing.vacation',
                     actions: ['setAnswer']
                   }
-                ]
+                ],
+                PREVIOUS: '#editing.name'
               }
             },
             isWFH: {
@@ -86,7 +103,7 @@ export const createPersonalMachine = (companyId) => {
                       target: 'ownExperienceText',
                       actions: ['setAnswer']
                     },
-                    PREVIOUS: '#editing.start'
+                    PREVIOUS: '#editing.wfh'
                   }
                 },
                 ownExperienceText: {
@@ -254,7 +271,7 @@ export const createPersonalMachine = (companyId) => {
                       target: 'reasonText',
                       actions: ['setAnswer']
                     },
-                    PREVIOUS: '#editing.start'
+                    PREVIOUS: '#editing.wfh'
                   }
                 },
                 reasonText: {
@@ -321,7 +338,7 @@ export const createPersonalMachine = (companyId) => {
                   target: '#saving',
                   actions: ['setAnswer']
                 },
-                PREVIOUS: '#editing.start'
+                PREVIOUS: '#editing.wfh'
               }
             },
             finalTips: {
@@ -405,13 +422,15 @@ async function invokeSave(context) {
     not_wfh_reason,
     not_wfh_reason_text,
     not_wfh_colleagues,
-    final_tips
+    final_tips,
+    name
   } = context.formData
   const colleagues = is_wfh_colleagues || not_wfh_colleagues
 
   const { data } = await client.mutate({
     mutation: gql`
       mutation insert_experience(
+        $name: String
         $colleagues: Int
         $company: Int
         $company_text: String
@@ -428,6 +447,7 @@ async function invokeSave(context) {
       ) {
         insert_experience(
           objects: {
+            name: $name
             colleagues: $colleagues
             company: $company
             company_text: $company_text
@@ -446,6 +466,7 @@ async function invokeSave(context) {
           affected_rows
           returning {
             id
+            name
             colleagues
             company
             company_text
@@ -465,6 +486,7 @@ async function invokeSave(context) {
       }
     `,
     variables: {
+      name,
       colleagues,
       company,
       company_text,

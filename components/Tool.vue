@@ -1,9 +1,9 @@
 <template>
-  <div class="flex p-4 mb-8 bg-white shadow-lg ">
-    <div class="flex-none mr-4 ">
+  <article class="flex p-4 mb-8 bg-white shadow-lg ">
+    <figure class="flex-none mr-4 ">
       <tool-logo :url="tool.url" :name="tool.name" />
-    </div>
-    <div>
+    </figure>
+    <div class="w-full ">
       <div class="sm:flex sm:justify-between">
         <div class="mb-1 sm:mb-2">
           <p class="font-semibold">
@@ -13,7 +13,7 @@
           <p v-if="tool.url"><company-url :url="tool.url" /></p>
         </div>
         <div>
-          <div class="text-xs sm:flex">
+          <div class="text-xs sm:flex sm:justify-end">
             <p class="inline-block px-2 mb-1 mr-1 text-xs border rounded-full ">
               <span v-if="tool.is_free">free</span><span v-else>paid</span>
             </p>
@@ -31,14 +31,17 @@
               </li>
             </ul>
           </div>
-          <p v-if="tool.office_tools" class="text-xs sm:text-right">
+          <p
+            v-if="tool.office_tools && tool.office_tools.length > 0"
+            class="text-xs sm:text-right"
+          >
             used by {{ tool.office_tools.length }} companies
           </p>
         </div>
       </div>
       <p>{{ tool.description }}</p>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

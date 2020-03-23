@@ -4,21 +4,13 @@
       {{ $dateFns.format(new Date(experience.created_at), 'MMMM do') }}
     </p>
     <div v-html="introText" class="p-2 mb-4 border border-black" />
-    <!-- <div>
-      <div
-        v-for="(item, index) in cleanMultipleChoiceLabels"
-        :key="index"
-        class="m-choice-grid"
-      >
-        <span class="mr-2 font-semibold">{{ item.label }}</span>
-        <span>{{ findAnswer(exp[item.question], item.question) }}</span>
-      </div>
-    </div> -->
     <div v-if="hasThoughts">
       <p class="mb-4 font-semibold">here is what else they said</p>
       <div v-for="(item, index) in cleanTextLabels" :key="index" class="mb-1">
-        <span class="font-semibold">{{ item.label }} </span>
-        <span>{{ exp[item.question] }}</span>
+        <template v-if="item.label !== 'name'">
+          <span class="font-semibold">{{ item.label }} </span>
+          <span>{{ exp[item.question] }}</span>
+        </template>
       </div>
     </div>
   </div>
@@ -55,34 +47,12 @@ export default {
         }
       ],
       textLabels: [
+        { question: 'name', label: 'name' },
         { question: 'own_experience_text', label: 'experience' },
         { question: 'not_wfh_reason_text', label: 'reason' },
         { question: 'tools_text', label: 'tools' },
         { question: 'company_text', label: 'company' },
         { question: 'final_tips', label: 'tips/advice' }
-      ],
-      answerLabels: [
-        { question: 'wfh', label: 'working from home?' },
-        { question: 'own_experience', label: "how's it been like?" },
-        { question: 'own_experience_text', label: '' },
-        {
-          question: 'hardware',
-          label: 'office provided hardware (laptop/desktop/tablet)?'
-        },
-        { question: 'colleagues', label: 'how about your colleagues?' },
-        {
-          question: 'tools',
-          label: "how's it going with the tools you are using?"
-        },
-        { question: 'tools_text', label: '' },
-        {
-          question: 'company',
-          label: "what do you think of your company's response to COVID-19?"
-        },
-        { question: 'company_text', label: '' },
-        { question: 'not_wfh_reason', label: 'why not?' },
-        { question: 'not_wfh_reason_text', label: '' },
-        { question: 'final_tips', label: 'any tips/advice?' }
       ]
     }
   },
@@ -109,6 +79,7 @@ export default {
     },
     hasThoughts() {
       for (const label of this.cleanTextLabels) {
+        if (label === name) continue
         if (this.exp[label.question]) {
           return true
         }
@@ -117,8 +88,13 @@ export default {
     },
     introText() {
       let intro = ''
+      // name
+      if (!this.exp.name || this.exp.name === 'Anonymous')
+        intro += 'This person '
+      else intro += `${this.exp.name} `
+
       if (this.isWFH) {
-        intro += 'This person <strong>🏠 is working from home</strong>, '
+        intro += '<strong>🏠 is working from home</strong>, '
         intro += [
           'but <strong>😭 hates it</strong>! ',
           'and <strong>🙄 kinda likes it</strong>. ',

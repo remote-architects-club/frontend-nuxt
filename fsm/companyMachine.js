@@ -334,6 +334,7 @@ function invokeFetchCompany(context) {
             }
             experiences(order_by: {created_at: desc}) {
               id
+              name
               wfh
               own_experience
               own_experience_text
