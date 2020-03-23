@@ -6,7 +6,11 @@
 .link {
   @apply underline;
 }
+.link:focus {
+  @apply outline-none;
+}
 
+/* BUTTONS  */
 .btn {
   @apply font-semibold text-black transition duration-150 ease-in-out;
 }
