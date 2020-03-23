@@ -10,6 +10,7 @@ export const toolsMachine = Machine(
     initial: 'idle',
     context: {
       tools: [],
+      categories: [],
       tool: null,
       itemId: null,
       foundItems: [],
@@ -24,6 +25,9 @@ export const toolsMachine = Machine(
           FETCH: 'fetching',
           SEARCH: {
             target: 'searching'
+          },
+          SAVE_CATEGORIES: {
+            target: 'savingCategories'
           }
         }
       },
@@ -49,7 +53,7 @@ export const toolsMachine = Machine(
           src: invokeFetch,
           onDone: {
             target: 'idle',
-            actions: ['setTools']
+            actions: ['setTools', 'setCategories']
           },
           onError: 'failedFetch'
         }
@@ -126,6 +130,17 @@ export const toolsMachine = Machine(
           }
         }
       },
+      savingCategories: {
+        invoke: {
+          id: 'invoke-save-categories',
+          src: invokeSaveCategories,
+          onDone: {
+            target: 'idle',
+            actions: ['setToolCategories']
+          },
+          onError: 'idle'
+        }
+      },
       end: {
         type: 'final',
         data: {
@@ -157,6 +172,20 @@ export const toolsMachine = Machine(
       }),
       setTools: assign({
         tools: (_, event) => event.data.tools
+      }),
+      setCategories: assign({
+        categories: (_, event) => event.data.categories
+      }),
+      setToolCategories: assign({
+        tools: (context, event) => {
+          const { tool_id, newCategories } = event.data
+          context.tools.find(
+            (tool) => tool.id === tool_id
+          ).tool_categories = newCategories.map((category_name) => {
+            return { category_name }
+          })
+          return context.tools
+        }
       }),
       updateToolsList: assign({
         tools: (context, event) => {
@@ -193,7 +222,7 @@ export const toolsMachine = Machine(
 async function invokeFetch() {
   const { data } = await client.query({
     query: gql`
-      query tools {
+      query tools_and_categories {
         tool(order_by: { name: asc }) {
           description
           id
@@ -209,10 +238,13 @@ async function invokeFetch() {
             }
           }
         }
+        category_tool(order_by: { name: asc }) {
+          name
+        }
       }
     `
   })
-  return { tools: data.tool }
+  return { tools: data.tool, categories: data.category_tool }
 }
 function invokeSearch(context) {
   return client
@@ -313,4 +345,77 @@ function insertOfficeTool(office_id, tool_id) {
     })
     .then(({ data }) => data.insert_office_tool.affected_rows)
 }
+
+async function invokeSaveCategories(context, event) {
+  const { tool_id, categories } = event.params
+  const currentTool = context.tools.find((tool) => tool.id === tool_id)
+  const existingCategories = currentTool.tool_categories.map(
+    (cat) => cat.category_name
+  )
+  const categoriesToAdd = getCategoriesToAdd(existingCategories, categories)
+  const categoriesToDelete = getCategoriesToDelete(
+    existingCategories,
+    categories
+  )
+  console.log('categoriesToAdd', categoriesToAdd)
+  console.log('categoriesToDelete', categoriesToDelete)
+
+  if (!categoriesToAdd && !categoriesToDelete) return existingCategories
+  let mutation = ''
+  if (categoriesToAdd.length) {
+    for (const category of categoriesToAdd) {
+      mutation += `insert_${
+        category.split(' ')[0]
+      }: insert_tool_category(objects: {category_name: "${category}", tool_id: "${tool_id}"}) {
+            affected_rows
+          }
+        `
+    }
+    // console.log(mutation)
+
+    const { data } = await client.mutate({
+      mutation: gql`
+        mutation add_tool_categories {
+          ${mutation}
+        }
+      `
+    })
+    console.log(data)
+  }
+  if (categoriesToDelete.length) {
+    mutation = ''
+    for (const category of categoriesToDelete) {
+      mutation += `remove_${
+        category.split(' ')[0]
+      }: delete_tool_category(where: {tool_id: {_eq: "${tool_id}"}, category_name: {_eq: "${category}"}}) {
+          affected_rows
+        }
+      `
+    }
+    const { data } = await client.mutate({
+      mutation: gql`
+        mutation remove_tool_categories {
+          ${mutation}
+        }
+      `
+    })
+    console.log(data)
+  }
+
+  return { newCategories: categories, tool_id }
+}
+
+function getCategoriesToAdd(existingCategories, newCategories) {
+  if (existingCategories.length) {
+    return newCategories.filter((cat) => !existingCategories.includes(cat))
+  }
+  return newCategories
+}
+function getCategoriesToDelete(existingCategories, newCategories) {
+  if (existingCategories.length) {
+    return existingCategories.filter((cat) => !newCategories.includes(cat))
+  }
+  return []
+}
+
 export const toolsMachineVue = generateVueMachine(toolsMachine)
