@@ -31,7 +31,10 @@
               </li>
             </ul>
           </div>
-          <p v-if="tool.office_tools" class="text-xs sm:text-right">
+          <p
+            v-if="tool.office_tools && tool.office_tools.length > 0"
+            class="text-xs sm:text-right"
+          >
             used by {{ tool.office_tools.length }} companies
           </p>
         </div>
