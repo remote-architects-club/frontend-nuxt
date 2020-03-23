@@ -6,16 +6,15 @@
         <spinner color="#000" />
       </div>
     </template>
-    <template v-else-if="state.matches('idle') && tools.length > 0">
-      <nav class="flex justify-end mb-4 text-sm">
+    <template v-else-if="state.matches('idle')">
+      <nav class="flex justify-end mb-4 text-sm" v-if="tools.length > 0">
         <p class="inline-block mr-4">
-          sort:
           <button
             class="link"
             @click="sortBy = 'name'"
             :class="{ 'font-semibold': sortBy === 'name' }"
           >
-            name
+            &darr;name
           </button>
           <span> | </span>
           <button
@@ -23,12 +22,11 @@
             @click="sortBy = 'popularity'"
             :class="{ 'font-semibold': sortBy === 'popularity' }"
           >
-            popularity
+            &darr;popularity
           </button>
         </p>
-        <p class="inline-block">
-          filter:
-          <label class="mr-2"
+        <p class="inline-block mr-4">
+          <label class="mr-1"
             ><input
               type="checkbox"
               v-model="showFree"
@@ -45,22 +43,36 @@
             /><span>paid</span></label
           >
         </p>
-        <p>
-          <select v-model="filterCategory">
-            <option value="">None</option>
+        <p class="inline-block">
+          <select
+            v-model="filterCategory"
+            placeholder="category..."
+            class="pl-1 pr-8 select-css"
+          >
+            <option value="" selected>-- all categories --</option>
             <option v-for="{ name } in categories" :key="name">{{
               name
             }}</option>
           </select>
         </p>
       </nav>
-      <template v-for="tool in toolsSorted">
-        <tool :tool="tool" v-if="tool.url" :key="tool.id" />
+      <template v-if="toolsSorted.length > 0">
+        <template v-for="tool in toolsSorted">
+          <tool :tool="tool" v-if="tool.url" :key="tool.id" />
+        </template>
+      </template>
+      <template v-else>
+        <p class="flex p-4 mb-8 bg-white shadow-lg sm:p-8">
+          No tools were found.
+          <button class="link" @click="clearFilters">
+            Try clearing the filters.
+          </button>
+        </p>
       </template>
     </template>
     <template v-else-if="state.matches('idle') && tools.length === 0">
-      <p>
-        No tools were found.
+      <p class="flex p-4 mb-8 bg-white shadow-lg sm:p-8">
+        Oops, no tools were found... we'll add some soon...
       </p>
     </template>
     <template v-else-if="state.matches('failedFetch')">
@@ -107,11 +119,14 @@ export default {
       return this.context.categories
     },
     toolsFiltered() {
-      if (this.showFree && this.showPaid) return this.tools
+      let tools = [...this.tools]
+      if (this.filterCategory)
+        tools = this.filterByCategory(tools, this.filterCategory)
+      if (this.showFree && this.showPaid) return tools
       if (!this.showFree) {
-        return this.tools.filter((tool) => !tool.is_free)
+        return tools.filter((tool) => !tool.is_free)
       } else {
-        return this.tools.filter((tool) => tool.is_free)
+        return tools.filter((tool) => tool.is_free)
       }
     },
     toolsSorted() {
@@ -127,6 +142,18 @@ export default {
         return [...this.toolsFiltered].sort((a, b) => a.name[0] - b.name[0])
       }
       return []
+    }
+  },
+  methods: {
+    filterByCategory(tools, category) {
+      return tools.filter((tool) =>
+        tool.tool_categories.map((tc) => tc.category_name).includes(category)
+      )
+    },
+    clearFilters() {
+      this.showFree = true
+      this.showPaid = true
+      this.filterCategory = null
     }
   }
 }
