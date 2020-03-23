@@ -103,10 +103,10 @@
 
 <script>
 /* eslint-disable camelcase */
-
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
 import { required_if, max } from 'vee-validate/dist/rules'
 import TextareaInput from '@/components/TextareaInput'
+
 extend('required_if', {
   ...required_if,
   message: 'You need to add a {_field_}...'
@@ -124,7 +124,8 @@ export default {
       editedRemoteSince: '',
       editedRemotePolicy: '',
       labelRemotePolicy: 'work-from-home policy',
-      labelRemoteSince: 'policy started on'
+      labelRemoteSince: 'policy started on',
+      user_id: ''
     }
   },
   computed: {
@@ -146,8 +147,13 @@ export default {
   mounted() {
     this.editedRemotePolicy = this.remotePolicy || ''
     this.editedRemoteSince = this.remoteSince || ''
+    this.getUserIp()
   },
   methods: {
+    async getUserIp() {
+      const data = await this.$axios.$get('https://api.ipify.org?format=json')
+      this.user_id = data.ip
+    },
     edit() {
       this.send({ type: 'EDIT', params: { key: 'remote_policy' } })
       // if (!this.edited) this.edited = this.remotePolicy
@@ -161,7 +167,8 @@ export default {
         type: 'SAVE',
         params: {
           remote_policy: this.editedRemotePolicy,
-          remote_since: this.editedRemoteSince
+          remote_since: this.editedRemoteSince,
+          user_id: this.user_id
         }
       })
     },
