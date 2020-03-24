@@ -6,7 +6,8 @@
     "options": {
       "attrs": {
         "placeholder": "Tell us your name (or pseudonym)"
-      }
+      },
+      "explanation": "This name will be displayed publicly in the list of stories of each company."
     },
     "validation": ["required"]
   },

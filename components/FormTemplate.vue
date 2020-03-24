@@ -25,6 +25,12 @@
                   !!question.options.choices ? question.options.choices : false
                 "
               />
+              <p
+                class="mt-1 text-sm"
+                v-if="question.options && question.options.explanation"
+              >
+                {{ question.options.explanation }}
+              </p>
             </div>
             <!-- <field-error :is-valid="isValid">{{ error }}</field-error> -->
           </field-group>
