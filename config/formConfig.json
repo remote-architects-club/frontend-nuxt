@@ -21,7 +21,7 @@
           "value": 0
         },
         {
-          "label": "🏢No, still coming to the office",
+          "label": "🏢No, I'm coming to the office",
           "value": 1
         },
         {
@@ -39,11 +39,11 @@
     "options": {
       "choices": [
         {
-          "label": "😔My position does not allow me to",
+          "label": "😠I am not allowed to",
           "value": 0
         },
         {
-          "label": "😠My company/boss does not allow me to",
+          "label": "😔Situation in the city improved and we are coming back to normal",
           "value": 1
         },
         {

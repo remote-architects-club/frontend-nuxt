@@ -124,8 +124,8 @@ export default {
       } else {
         intro += '<strong>🏢 is not working from home</strong>, '
         intro += [
-          'because their <strong>position</strong> does not allow them to 😔. ',
-          'because their <strong>boss or company</strong> does not allow them to 😠. ',
+          'because they are <strong>not allowed</strong> to 😠. ',
+          'because situation over there improved and things are <strong>back to normal</strong>. ',
           'because they <strong>prefer</strong> to come the office everyday 😶. '
         ][this.exp.not_wfh_reason]
         intro += [
