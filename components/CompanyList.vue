@@ -10,7 +10,13 @@
         <button v-if="context.offset > 0" @click="prevPage" class="link">
           prev
         </button>
-        <button @click="nextPage" class="link">next</button>
+        <button
+          v-if="context.totalCompanies > context.resultsPerPage"
+          @click="nextPage"
+          class="link"
+        >
+          next
+        </button>
       </nav>
       <!-- <p class="mb-8">Filter</p> -->
       <div
@@ -54,7 +60,12 @@
       </div>
       <nav>
         <button v-if="context.offset > 0" @click="prevPage">prev</button>
-        <button @click="nextPage">next</button>
+        <button
+          v-if="context.totalCompanies > context.resultsPerPage"
+          @click="nextPage"
+        >
+          next
+        </button>
       </nav>
     </template>
     <template v-else-if="state.matches('notFound')">

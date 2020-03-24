@@ -11,6 +11,7 @@ const machine = Machine(
       companies: null,
       error: null,
       offset: 0,
+      totalCompanies: 0,
       resultsPerPage: 10
     },
     states: {
@@ -29,7 +30,8 @@ const machine = Machine(
           onDone: {
             target: 'done',
             actions: assign({
-              companies: (context, event) => event.data
+              companies: (_, event) => event.data.companies,
+              totalCompanies: (_, event) => event.data.totalCompanies
             })
           },
           onError: {
@@ -95,6 +97,11 @@ async function invokeFetchCompanies() {
   const { data } = await client.query({
     query: gql`
       query offices {
+        office_aggregate(where: { remote_policy: { _is_null: false } }) {
+          aggregate {
+            count
+          }
+        }
         office(
           where: { remote_policy: { _is_null: false } }
           order_by: { latest_experience: asc }
@@ -137,7 +144,10 @@ async function invokeFetchCompanies() {
     `
   })
 
-  return data.office
+  return {
+    companies: data.office,
+    totalCompanies: data.office_aggregate.aggregate.count
+  }
 }
 
 // function invokeFetchCompanies(context) {
