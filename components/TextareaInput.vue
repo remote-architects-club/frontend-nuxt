@@ -9,7 +9,9 @@
       @input="input"
       rows="4"
     />
-    <p class="font-mono text-xs text-right">{{ value.length }}/280</p>
+    <p v-if="showCount" class="font-mono text-xs text-right">
+      {{ value.length }}/280
+    </p>
   </div>
 </template>
 
@@ -20,6 +22,10 @@ export default {
     value: {
       default: '',
       type: String
+    },
+    showCount: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
