@@ -26,21 +26,24 @@
           </p>
         </section>
         <div>
-          <template
-            v-if="company.experiences && company.experiences.length > 0"
-          >
-            <section class="col-2">
-              <p class="mb-4 font-semibold">stories</p>
-              <div>
+          <section class="col-2">
+            <p class="mb-4 font-semibold">stories</p>
+
+            <div>
+              <template v-if="company.experiences.length > 0">
                 <experience
                   :experience="experience"
                   v-for="experience in company.experiences"
                   :key="experience.id"
                   class="mb-8 "
                 />
-              </div>
-            </section>
-          </template>
+              </template>
+              <template v-else>
+                <p>No stories added yet.<br />👇Be the first and contribute!</p>
+              </template>
+            </div>
+          </section>
+
           <section class="col-2">
             <div></div>
             <p class="py-6 text-center md:text-left">
