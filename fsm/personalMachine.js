@@ -413,7 +413,6 @@ async function invokeSave(context) {
     wfh,
     own_experience,
     own_experience_text,
-    hardware,
     is_wfh_colleagues,
     tools,
     tools_text,
@@ -426,6 +425,8 @@ async function invokeSave(context) {
     name
   } = context.formData
   const colleagues = is_wfh_colleagues || not_wfh_colleagues
+  let { hardware } = context.formData
+  if (!hardware) hardware = false
 
   const { data } = await client.mutate({
     mutation: gql`
