@@ -89,9 +89,11 @@ export default {
     introText() {
       let intro = ''
       // name
-      if (!this.exp.name || this.exp.name === 'Anonymous')
+      if (!this.exp.name) {
         intro += 'This person '
-      else intro += `${this.exp.name} `
+      } else {
+        intro += `${this.exp.name} `
+      }
 
       if (this.isWFH) {
         intro += '<strong>🏠 is working from home</strong>, '
@@ -120,7 +122,7 @@ export default {
           'their tools are <strong>🤓working perfectly</strong>. '
         ][this.exp.tools]
       } else {
-        intro += 'This person <strong>🏢 is not working from home</strong>, '
+        intro += '<strong>🏢 is not working from home</strong>, '
         intro += [
           'because their <strong>position</strong> does not allow them to 😔. ',
           'because their <strong>boss or company</strong> does not allow them to 😠. ',
