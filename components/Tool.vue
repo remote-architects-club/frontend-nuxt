@@ -1,5 +1,5 @@
 <template>
-  <article class="flex p-4 mb-8 bg-white shadow-lg ">
+  <article class="flex p-4 mb-8 border border-black ">
     <figure class="flex-none mr-4 ">
       <tool-logo :url="tool.url" :name="tool.name" />
     </figure>

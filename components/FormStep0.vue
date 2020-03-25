@@ -15,7 +15,7 @@
         v-debounce:500.lock="search"
       />
       <div class="mb-8">
-        <p class="text-sm" v-if="!companyName">
+        <p class="text-sm" v-if="!companyName" data-cy="explanation">
           As soon as you enter a name, we'll search on our database if this
           office's already been added.
         </p>
@@ -24,12 +24,13 @@
             @click="add(companyName)"
             :disabled="matches('noCompany.searching')"
             class="btn btn-regular"
+            data-cy="btn-add-new"
           >
             add new entry for <strong>{{ companyName }}</strong>
           </button>
         </p>
         <template v-if="matches('noCompany.searching')">
-          <div class="flex items-center justify-center p-12">
+          <div class="flex items-center justify-center p-12" data-cy="spinner">
             <spinner color="#000" />
           </div>
         </template>
@@ -37,7 +38,7 @@
           Searching...
         </p> -->
       </div>
-      <div v-if="matches('noCompany.found')" id="results">
+      <div v-if="matches('noCompany.found')" data-cy="results">
         <p class="mt-4 mb-6 border-b-2 border-black">
           Found {{ context.foundCompanies.length }} possible
           <span v-if="context.foundCompanies.length === 1">match</span
@@ -67,7 +68,7 @@
           </li>
         </ul>
       </div>
-      <div v-if="matches('noCompany.notFound')">
+      <div v-if="matches('noCompany.notFound')" data-cy="not-found">
         <p class="my-4">No matches found for "{{ companyName }}"</p>
       </div>
     </template>

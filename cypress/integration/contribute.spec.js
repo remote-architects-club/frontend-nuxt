@@ -2,12 +2,81 @@
 // import schema from '../fixtures/schema.graphql'
 
 describe('Contribute', function() {
-  const companyId = '00e89587-e92e-44cb-b64a-a470100ffeb4'
+  const companyId = 'f937a2fe-84d7-44b1-8dc8-2e22b5b2da0d'
 
-  it('Goes to forst step of contributing process when clicking on contribute', function() {
+  it('Goes to first step of contributing process when clicking on contribute', function() {
     cy.visit('/')
     cy.contains('contribute').click()
     cy.url().should('include', '/add')
+    cy.get('[data-cy=office-name]')
+  })
+  it('Adds new company', function() {
+    const name = 'My New Company'
+    const city = 'Berlin'
+    const website = 'http://example.com'
+
+    // search page
+    cy.visit('/add')
+    cy.url().should('include', '/add')
+    cy.get('[data-cy=office-name]')
+      .type(name)
+      .should('have.value', name)
+    cy.get('[data-cy=results]').should('not.exist')
+    cy.get('[data-cy=not-found]')
+    cy.get('[data-cy=btn-add-new')
+      .contains(name)
+      .click()
+    // add form
+    cy.get('[data-cy="add-form"]').as('add-form')
+    cy.get('[data-cy=input-name]')
+      .as('name')
+      .should('have.value', name)
+    cy.get('[data-cy=input-city]').as('city')
+    cy.get('[data-cy=select-country]').as('country')
+    cy.get('[data-cy=input-website]').as('website')
+    cy.get('[data-cy=radio-size]').as('size')
+    cy.get('[data-cy=btn-save]')
+      .as('save')
+      .should('be.disabled')
+    cy.get('[data-cy=btn-cancel]').as('cancel')
+    // type values
+    cy.get('@city').type(city)
+    cy.get('@city').should('have.value', city)
+    cy.get('@save')
+      .as('save')
+      .should('be.disabled')
+    cy.get('@country').select('Andorra') // first country
+    cy.get('@country').select('Zimbabwe') // last country
+    cy.get('@save').should('be.enabled')
+    cy.get('@website').type(website)
+    cy.get('@website').should('have.value', website)
+    // check error website
+    cy.get('@website')
+      .clear()
+      .type('wrong format')
+    cy.get('[data-cy=error-website]').should('be.visible')
+    cy.get('@website')
+      .clear()
+      .type(website)
+    cy.get('[data-cy=error-website]').should('not.be.visible')
+    //check error city
+    cy.get('@city').clear()
+    cy.get('[data-cy=error-city]').should('be.visible')
+    cy.get('@city')
+      .clear()
+      .type(city)
+    cy.get('[data-cy=error-city]').should('not.be.visible')
+    //check error name
+    cy.get('@name').clear()
+    cy.get('[data-cy=error-name]').should('be.visible')
+    cy.get('@name')
+      .clear()
+      .type(name)
+    cy.get('[data-cy=error-name]').should('not.be.visible')
+
+    // cancel
+    cy.get('@cancel').click()
+    cy.get('@add-form').should('not.exist')
     cy.get('[data-cy=office-name]')
   })
   it('Searches and finds and uses an existing company', function() {
@@ -17,8 +86,8 @@ describe('Contribute', function() {
       .type('henn')
       .should('have.value', 'henn')
 
-    cy.get('#results').contains('HENN')
-    cy.get('#results')
+    cy.get('[data-cy=results]').contains('HENN')
+    cy.get('[data-cy=results]')
       .contains('select')
       .first()
       .click()
@@ -60,9 +129,15 @@ describe('Contribute', function() {
     cy.get('@next').click()
     // own_experience_text
     cy.get('@previous')
-    cy.get('@next').contains('skip').should('be.enabled')
-    cy.get('[data-cy=own_experience_text]').get('.input').type('trying to type')
-    cy.get('@next').contains('next').click()
+    cy.get('@next')
+      .contains('skip')
+      .should('be.enabled')
+    cy.get('[data-cy=own_experience_text]')
+      .get('.input')
+      .type('trying to type')
+    cy.get('@next')
+      .contains('next')
+      .click()
     //hardware
     cy.get('@previous')
     cy.get('@next').should('be.disabled')
@@ -70,5 +145,59 @@ describe('Contribute', function() {
     cy.get('[data-cy=false]')
     cy.get('[data-cy=true]').check()
     cy.get('@next').click()
+    //colleagues
+    cy.get('@previous')
+    cy.get('@next').should('be.disabled')
+    cy.get('[data-cy=is_wfh_colleagues]')
+    cy.get('[data-cy=1]')
+    cy.get('[data-cy=2]')
+    cy.get('[data-cy=0]').check()
+    cy.get('@next').click()
+    //tools
+    cy.get('@previous')
+    cy.get('@next').should('be.disabled')
+    cy.get('[data-cy=tools]')
+    cy.get('[data-cy=1]')
+    cy.get('[data-cy=2]')
+    cy.get('[data-cy=0]').check()
+    cy.get('@next').click()
+    // tools_text
+    cy.get('@previous')
+    cy.get('@next')
+      .contains('skip')
+      .should('be.enabled')
+    cy.get('[data-cy=tools_text]')
+      .get('.input')
+      .type('trying to type')
+    cy.get('@next')
+      .contains('next')
+      .click()
+    //company
+    cy.get('@previous')
+    cy.get('@next').should('be.disabled')
+    cy.get('[data-cy=company]')
+    cy.get('[data-cy=1]')
+    cy.get('[data-cy=2]')
+    cy.get('[data-cy=0]').check()
+    cy.get('@next').click()
+    // company_text
+    cy.get('@previous')
+    cy.get('@next')
+      .contains('skip')
+      .should('be.enabled')
+    cy.get('[data-cy=company_text]')
+      .get('.input')
+      .type('trying to type')
+    cy.get('@next')
+      .contains('next')
+      .click()
+    // final tips
+    cy.get('@previous')
+    cy.get('@next')
+      .contains('finish')
+      .should('be.enabled')
+    cy.get('[data-cy=final_tips]')
+      .get('.input')
+      .type('trying to type')
   })
 })
