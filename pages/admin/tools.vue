@@ -25,6 +25,7 @@ import { toolsMachineVue } from '@/fsm/toolsMachine'
 import ToolAdmin from '@/components/admin/ToolAdmin'
 export default {
   layout: 'admin',
+  middleware: 'auth',
   components: {
     ToolAdmin
   },

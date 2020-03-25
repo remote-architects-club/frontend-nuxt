@@ -65,11 +65,27 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/svg',
     'nuxt-rfg-icon',
-    '@nuxtjs/sentry'
+    '@nuxtjs/sentry',
+    '@nuxtjs/auth'
   ],
   sentry: {
     dsn: 'https://ef5a8da5a37d48d0a0ad8b746bb26990@sentry.io/5174207', // Enter your project's DSN here
     config: {} // Additional config
+  },
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'remotearchitectsclub.eu.auth0.com',
+        client_id: 'd0g9ZVJB0iSJc38EKqyngz1gMH6ed37q',
+        // audience: 'remotearchitects.club'
+      }
+    },
+    redirect: {
+      login: '/admin/login',
+      logout: '/',
+      callback: '/admin/login',
+      home: '/admin'
+    }
   },
   /*
    ** Axios module configuration
