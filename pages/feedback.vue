@@ -107,7 +107,7 @@ export default {
       }
       this.$axios
         .$post(
-          'https://remotearchitectsclub.netlify.com/',
+          'https://remotearchitects.club/',
           this.encode({
             'form-name': 'feedback',
             ...this.form
