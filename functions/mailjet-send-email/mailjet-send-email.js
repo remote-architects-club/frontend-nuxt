@@ -27,20 +27,21 @@ exports.handler = async (event, context) => {
   } catch (e) {
     return { statusCode: 400, body: 'cannot parse hasura event' }
   }
-
-  const variables = {
-    id: request.event.data.new.id,
-    // title: filter.clean(request.event.data.new.title),
-    // content: filter.clean(request.event.data.new.content)
-  }
+  const { id } = request.event.data.new
+  const { name } = request.event.table
+  // const variables = {
+  //   id: request.event.data.new.id,
+  //   // title: filter.clean(request.event.data.new.title),
+  //   // content: filter.clean(request.event.data.new.content)
+  // }
   try {
     // await axios.post(hgeEndpoint + '/v1alpha1/graphql', { query, variables })
     await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
         {
           From: {
-            Email: 'danrocha@gmail.com',
-            Name: 'Daniel'
+            Email: 'admin@remotearchitects.club',
+            Name: 'Admin at RAC'
           },
           To: [
             {
@@ -48,11 +49,10 @@ exports.handler = async (event, context) => {
               Name: 'Daniel'
             }
           ],
-          Subject: 'Greetings from Mailjet.',
-          TextPart: 'My first Mailjet email',
-          HTMLPart:
-            "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-          CustomID: 'AppGettingStartedTest'
+          Subject: `New [${name.toUpperCase()}] added to Remote Architects Club`,
+          TextPart: `Someone added a new [${name.toUpperCase()}] entry. id[${id}]`,
+          HTMLPart: `<p>Someone added a new [${name.toUpperCase()}] entry:</p>
+          <p>id[${id}]</p>`
         }
       ]
     })
