@@ -19,7 +19,7 @@
           {{ company.remote_policy || 'n/a' }}
         </p>
       </section>
-      <section class="mb-4 col-2">
+      <section class="mb-4 col-2" v-if="company.remote_policy">
         <p class="flex items-center mb-1 font-semibold">
           policy on since
         </p>
