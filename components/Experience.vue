@@ -115,9 +115,9 @@ export default {
     },
     reasonNotWfh() {
       return [
-        ' (they are not allowed to 😠)',
+        ' (not allowed to 😠)',
         ' (situation over there improved and things are back to normal)',
-        ' (they prefer/need to come to the office everyday 😶) '
+        ' (prefers/needs to come to the office everyday 😶) '
       ][this.exp.not_wfh_reason]
     },
     tools() {
