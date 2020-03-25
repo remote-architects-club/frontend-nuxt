@@ -1,0 +1,5076 @@
+schema {
+  query: query_root
+  mutation: mutation_root
+  subscription: subscription_root
+}
+
+# Record of type About (about)
+type AboutRecord {
+  _createdAt: DateTime!
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  # SEO meta tags
+  _seoMetaTags(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _updatedAt: DateTime!
+  content(
+    # Process content as markdown
+    markdown: Boolean
+  ): String
+  createdAt: DateTime!
+  id: ItemId!
+  updatedAt: DateTime!
+}
+
+# Record of type Articles Intro (articles_intro)
+type ArticlesIntroRecord {
+  _createdAt: DateTime!
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  # SEO meta tags
+  _seoMetaTags(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _updatedAt: DateTime!
+  content(
+    # Process content as markdown
+    markdown: Boolean
+  ): String
+  createdAt: DateTime!
+  id: ItemId!
+  updatedAt: DateTime!
+}
+
+scalar bigint
+
+# expression to compare columns of type Boolean. All fields are combined with logical 'AND'.
+input Boolean_comparison_exp {
+  _eq: Boolean
+  _gt: Boolean
+  _gte: Boolean
+  _in: [Boolean!]
+  _is_null: Boolean
+  _lt: Boolean
+  _lte: Boolean
+  _neq: Boolean
+  _nin: [Boolean!]
+}
+
+# Represents `true` or `false` values.
+scalar BooleanType
+
+# Holds possible categories for tools
+#
+#
+# columns and relationships of "category_tool"
+#
+type category_tool {
+  comment: String
+  name: String!
+
+  # An array relationship
+  tool_categories(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): [tool_category!]!
+
+  # An aggregated array relationship
+  tool_categories_aggregate(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): tool_category_aggregate!
+}
+
+# aggregated selection of "category_tool"
+type category_tool_aggregate {
+  aggregate: category_tool_aggregate_fields
+  nodes: [category_tool!]!
+}
+
+# aggregate fields of "category_tool"
+type category_tool_aggregate_fields {
+  count(columns: [category_tool_select_column!], distinct: Boolean): Int
+  max: category_tool_max_fields
+  min: category_tool_min_fields
+}
+
+# order by aggregate values of table "category_tool"
+input category_tool_aggregate_order_by {
+  count: order_by
+  max: category_tool_max_order_by
+  min: category_tool_min_order_by
+}
+
+# input type for inserting array relation for remote table "category_tool"
+input category_tool_arr_rel_insert_input {
+  data: [category_tool_insert_input!]!
+  on_conflict: category_tool_on_conflict
+}
+
+# Boolean expression to filter rows from the table "category_tool". All fields are combined with a logical 'AND'.
+input category_tool_bool_exp {
+  _and: [category_tool_bool_exp]
+  _not: category_tool_bool_exp
+  _or: [category_tool_bool_exp]
+  comment: String_comparison_exp
+  name: String_comparison_exp
+  tool_categories: tool_category_bool_exp
+}
+
+# unique or primary key constraints on table "category_tool"
+enum category_tool_constraint {
+  # unique or primary key constraint
+  category_tool_pkey
+}
+
+# input type for inserting data into table "category_tool"
+input category_tool_insert_input {
+  comment: String
+  name: String
+  tool_categories: tool_category_arr_rel_insert_input
+}
+
+# aggregate max on columns
+type category_tool_max_fields {
+  comment: String
+  name: String
+}
+
+# order by max() on columns of table "category_tool"
+input category_tool_max_order_by {
+  comment: order_by
+  name: order_by
+}
+
+# aggregate min on columns
+type category_tool_min_fields {
+  comment: String
+  name: String
+}
+
+# order by min() on columns of table "category_tool"
+input category_tool_min_order_by {
+  comment: order_by
+  name: order_by
+}
+
+# response of any mutation on the table "category_tool"
+type category_tool_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [category_tool!]!
+}
+
+# input type for inserting object relation for remote table "category_tool"
+input category_tool_obj_rel_insert_input {
+  data: category_tool_insert_input!
+  on_conflict: category_tool_on_conflict
+}
+
+# on conflict condition type for table "category_tool"
+input category_tool_on_conflict {
+  constraint: category_tool_constraint!
+  update_columns: [category_tool_update_column!]!
+  where: category_tool_bool_exp
+}
+
+# ordering options when selecting data from "category_tool"
+input category_tool_order_by {
+  comment: order_by
+  name: order_by
+  tool_categories_aggregate: tool_category_aggregate_order_by
+}
+
+# select columns of table "category_tool"
+enum category_tool_select_column {
+  # column name
+  comment
+
+  # column name
+  name
+}
+
+# input type for updating data in table "category_tool"
+input category_tool_set_input {
+  comment: String
+  name: String
+}
+
+# update columns of table "category_tool"
+enum category_tool_update_column {
+  # column name
+  comment
+
+  # column name
+  name
+}
+
+type CollectionMetadata {
+  count: IntType!
+}
+
+enum ColorBucketType {
+  black
+  blue
+  brown
+  cyan
+  green
+  grey
+  orange
+  pink
+  purple
+  red
+  white
+  yellow
+}
+
+type ColorField {
+  alpha: IntType
+  blue: IntType
+  green: IntType
+  hex: String
+  red: IntType
+}
+
+# columns and relationships of "country"
+type country {
+  iso: String!
+  name: String!
+
+  # An array relationship
+  offices(
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): [office!]!
+
+  # An aggregated array relationship
+  offices_aggregate(
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): office_aggregate!
+}
+
+# aggregated selection of "country"
+type country_aggregate {
+  aggregate: country_aggregate_fields
+  nodes: [country!]!
+}
+
+# aggregate fields of "country"
+type country_aggregate_fields {
+  count(columns: [country_select_column!], distinct: Boolean): Int
+  max: country_max_fields
+  min: country_min_fields
+}
+
+# order by aggregate values of table "country"
+input country_aggregate_order_by {
+  count: order_by
+  max: country_max_order_by
+  min: country_min_order_by
+}
+
+# input type for inserting array relation for remote table "country"
+input country_arr_rel_insert_input {
+  data: [country_insert_input!]!
+  on_conflict: country_on_conflict
+}
+
+# Boolean expression to filter rows from the table "country". All fields are combined with a logical 'AND'.
+input country_bool_exp {
+  _and: [country_bool_exp]
+  _not: country_bool_exp
+  _or: [country_bool_exp]
+  iso: String_comparison_exp
+  name: String_comparison_exp
+  offices: office_bool_exp
+}
+
+# unique or primary key constraints on table "country"
+enum country_constraint {
+  # unique or primary key constraint
+  country_pkey
+}
+
+# input type for inserting data into table "country"
+input country_insert_input {
+  iso: String
+  name: String
+  offices: office_arr_rel_insert_input
+}
+
+# aggregate max on columns
+type country_max_fields {
+  iso: String
+  name: String
+}
+
+# order by max() on columns of table "country"
+input country_max_order_by {
+  iso: order_by
+  name: order_by
+}
+
+# aggregate min on columns
+type country_min_fields {
+  iso: String
+  name: String
+}
+
+# order by min() on columns of table "country"
+input country_min_order_by {
+  iso: order_by
+  name: order_by
+}
+
+# response of any mutation on the table "country"
+type country_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [country!]!
+}
+
+# input type for inserting object relation for remote table "country"
+input country_obj_rel_insert_input {
+  data: country_insert_input!
+  on_conflict: country_on_conflict
+}
+
+# on conflict condition type for table "country"
+input country_on_conflict {
+  constraint: country_constraint!
+  update_columns: [country_update_column!]!
+  where: country_bool_exp
+}
+
+# ordering options when selecting data from "country"
+input country_order_by {
+  iso: order_by
+  name: order_by
+  offices_aggregate: office_aggregate_order_by
+}
+
+# select columns of table "country"
+enum country_select_column {
+  # column name
+  iso
+
+  # column name
+  name
+}
+
+# input type for updating data in table "country"
+input country_set_input {
+  iso: String
+  name: String
+}
+
+# update columns of table "country"
+enum country_update_column {
+  # column name
+  iso
+
+  # column name
+  name
+}
+
+scalar CustomData
+
+scalar date
+
+# expression to compare columns of type date. All fields are combined with logical 'AND'.
+input date_comparison_exp {
+  _eq: date
+  _gt: date
+  _gte: date
+  _in: [date!]
+  _is_null: Boolean
+  _lt: date
+  _lte: date
+  _neq: date
+  _nin: [date!]
+}
+
+scalar DateTime
+
+# columns and relationships of "experience"
+type experience {
+  # Colleagues situation? 0: no wfh, 1: half-half, 2: all wfh
+  colleagues: Int!
+
+  # Company rating (0-bad, 1-medium, 2-good)
+  company: Int!
+
+  # Company policy, extra thoughts
+  company_text: String
+  created_at: timestamptz!
+  final_tips: String
+
+  # Office provided hardware?
+  hardware: Boolean!
+  id: uuid!
+  name: String
+
+  # 0-job doesnt allow; 1-boss doesnt allow; 2-doesnt want
+  not_wfh_reason: Int
+  not_wfh_reason_text: String
+
+  # An object relationship
+  office: office!
+  office_id: uuid!
+
+  # Own experience rating (0-bad, 1-medium, 2-good)
+  own_experience: Int
+
+  # Extra comment about own experience
+  own_experience_text: String
+
+  # Tools rating (0-bad, 1-medium, 2-good)
+  tools: Int!
+
+  # Tools: extra thoughts
+  tools_text: String
+  updated_at: timestamptz!
+
+  # WFH? 0-yes, 1-no, 2-vacation
+  wfh: Int!
+}
+
+# aggregated selection of "experience"
+type experience_aggregate {
+  aggregate: experience_aggregate_fields
+  nodes: [experience!]!
+}
+
+# aggregate fields of "experience"
+type experience_aggregate_fields {
+  avg: experience_avg_fields
+  count(columns: [experience_select_column!], distinct: Boolean): Int
+  max: experience_max_fields
+  min: experience_min_fields
+  stddev: experience_stddev_fields
+  stddev_pop: experience_stddev_pop_fields
+  stddev_samp: experience_stddev_samp_fields
+  sum: experience_sum_fields
+  var_pop: experience_var_pop_fields
+  var_samp: experience_var_samp_fields
+  variance: experience_variance_fields
+}
+
+# order by aggregate values of table "experience"
+input experience_aggregate_order_by {
+  avg: experience_avg_order_by
+  count: order_by
+  max: experience_max_order_by
+  min: experience_min_order_by
+  stddev: experience_stddev_order_by
+  stddev_pop: experience_stddev_pop_order_by
+  stddev_samp: experience_stddev_samp_order_by
+  sum: experience_sum_order_by
+  var_pop: experience_var_pop_order_by
+  var_samp: experience_var_samp_order_by
+  variance: experience_variance_order_by
+}
+
+# input type for inserting array relation for remote table "experience"
+input experience_arr_rel_insert_input {
+  data: [experience_insert_input!]!
+  on_conflict: experience_on_conflict
+}
+
+# aggregate avg on columns
+type experience_avg_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by avg() on columns of table "experience"
+input experience_avg_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# Boolean expression to filter rows from the table "experience". All fields are combined with a logical 'AND'.
+input experience_bool_exp {
+  _and: [experience_bool_exp]
+  _not: experience_bool_exp
+  _or: [experience_bool_exp]
+  colleagues: Int_comparison_exp
+  company: Int_comparison_exp
+  company_text: String_comparison_exp
+  created_at: timestamptz_comparison_exp
+  final_tips: String_comparison_exp
+  hardware: Boolean_comparison_exp
+  id: uuid_comparison_exp
+  name: String_comparison_exp
+  not_wfh_reason: Int_comparison_exp
+  not_wfh_reason_text: String_comparison_exp
+  office: office_bool_exp
+  office_id: uuid_comparison_exp
+  own_experience: Int_comparison_exp
+  own_experience_text: String_comparison_exp
+  tools: Int_comparison_exp
+  tools_text: String_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  wfh: Int_comparison_exp
+}
+
+# unique or primary key constraints on table "experience"
+enum experience_constraint {
+  # unique or primary key constraint
+  experience_pkey
+}
+
+# input type for incrementing integer columne in table "experience"
+input experience_inc_input {
+  colleagues: Int
+  company: Int
+  not_wfh_reason: Int
+  own_experience: Int
+  tools: Int
+  wfh: Int
+}
+
+# input type for inserting data into table "experience"
+input experience_insert_input {
+  colleagues: Int
+  company: Int
+  company_text: String
+  created_at: timestamptz
+  final_tips: String
+  hardware: Boolean
+  id: uuid
+  name: String
+  not_wfh_reason: Int
+  not_wfh_reason_text: String
+  office: office_obj_rel_insert_input
+  office_id: uuid
+  own_experience: Int
+  own_experience_text: String
+  tools: Int
+  tools_text: String
+  updated_at: timestamptz
+  wfh: Int
+}
+
+# aggregate max on columns
+type experience_max_fields {
+  colleagues: Int
+  company: Int
+  company_text: String
+  created_at: timestamptz
+  final_tips: String
+  name: String
+  not_wfh_reason: Int
+  not_wfh_reason_text: String
+  own_experience: Int
+  own_experience_text: String
+  tools: Int
+  tools_text: String
+  updated_at: timestamptz
+  wfh: Int
+}
+
+# order by max() on columns of table "experience"
+input experience_max_order_by {
+  colleagues: order_by
+  company: order_by
+  company_text: order_by
+  created_at: order_by
+  final_tips: order_by
+  name: order_by
+  not_wfh_reason: order_by
+  not_wfh_reason_text: order_by
+  own_experience: order_by
+  own_experience_text: order_by
+  tools: order_by
+  tools_text: order_by
+  updated_at: order_by
+  wfh: order_by
+}
+
+# aggregate min on columns
+type experience_min_fields {
+  colleagues: Int
+  company: Int
+  company_text: String
+  created_at: timestamptz
+  final_tips: String
+  name: String
+  not_wfh_reason: Int
+  not_wfh_reason_text: String
+  own_experience: Int
+  own_experience_text: String
+  tools: Int
+  tools_text: String
+  updated_at: timestamptz
+  wfh: Int
+}
+
+# order by min() on columns of table "experience"
+input experience_min_order_by {
+  colleagues: order_by
+  company: order_by
+  company_text: order_by
+  created_at: order_by
+  final_tips: order_by
+  name: order_by
+  not_wfh_reason: order_by
+  not_wfh_reason_text: order_by
+  own_experience: order_by
+  own_experience_text: order_by
+  tools: order_by
+  tools_text: order_by
+  updated_at: order_by
+  wfh: order_by
+}
+
+# response of any mutation on the table "experience"
+type experience_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [experience!]!
+}
+
+# input type for inserting object relation for remote table "experience"
+input experience_obj_rel_insert_input {
+  data: experience_insert_input!
+  on_conflict: experience_on_conflict
+}
+
+# on conflict condition type for table "experience"
+input experience_on_conflict {
+  constraint: experience_constraint!
+  update_columns: [experience_update_column!]!
+  where: experience_bool_exp
+}
+
+# ordering options when selecting data from "experience"
+input experience_order_by {
+  colleagues: order_by
+  company: order_by
+  company_text: order_by
+  created_at: order_by
+  final_tips: order_by
+  hardware: order_by
+  id: order_by
+  name: order_by
+  not_wfh_reason: order_by
+  not_wfh_reason_text: order_by
+  office: office_order_by
+  office_id: order_by
+  own_experience: order_by
+  own_experience_text: order_by
+  tools: order_by
+  tools_text: order_by
+  updated_at: order_by
+  wfh: order_by
+}
+
+# select columns of table "experience"
+enum experience_select_column {
+  # column name
+  colleagues
+
+  # column name
+  company
+
+  # column name
+  company_text
+
+  # column name
+  created_at
+
+  # column name
+  final_tips
+
+  # column name
+  hardware
+
+  # column name
+  id
+
+  # column name
+  name
+
+  # column name
+  not_wfh_reason
+
+  # column name
+  not_wfh_reason_text
+
+  # column name
+  office_id
+
+  # column name
+  own_experience
+
+  # column name
+  own_experience_text
+
+  # column name
+  tools
+
+  # column name
+  tools_text
+
+  # column name
+  updated_at
+
+  # column name
+  wfh
+}
+
+# input type for updating data in table "experience"
+input experience_set_input {
+  colleagues: Int
+  company: Int
+  company_text: String
+  created_at: timestamptz
+  final_tips: String
+  hardware: Boolean
+  id: uuid
+  name: String
+  not_wfh_reason: Int
+  not_wfh_reason_text: String
+  office_id: uuid
+  own_experience: Int
+  own_experience_text: String
+  tools: Int
+  tools_text: String
+  updated_at: timestamptz
+  wfh: Int
+}
+
+# aggregate stddev on columns
+type experience_stddev_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by stddev() on columns of table "experience"
+input experience_stddev_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# aggregate stddev_pop on columns
+type experience_stddev_pop_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by stddev_pop() on columns of table "experience"
+input experience_stddev_pop_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# aggregate stddev_samp on columns
+type experience_stddev_samp_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by stddev_samp() on columns of table "experience"
+input experience_stddev_samp_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# aggregate sum on columns
+type experience_sum_fields {
+  colleagues: Int
+  company: Int
+  not_wfh_reason: Int
+  own_experience: Int
+  tools: Int
+  wfh: Int
+}
+
+# order by sum() on columns of table "experience"
+input experience_sum_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# update columns of table "experience"
+enum experience_update_column {
+  # column name
+  colleagues
+
+  # column name
+  company
+
+  # column name
+  company_text
+
+  # column name
+  created_at
+
+  # column name
+  final_tips
+
+  # column name
+  hardware
+
+  # column name
+  id
+
+  # column name
+  name
+
+  # column name
+  not_wfh_reason
+
+  # column name
+  not_wfh_reason_text
+
+  # column name
+  office_id
+
+  # column name
+  own_experience
+
+  # column name
+  own_experience_text
+
+  # column name
+  tools
+
+  # column name
+  tools_text
+
+  # column name
+  updated_at
+
+  # column name
+  wfh
+}
+
+# aggregate var_pop on columns
+type experience_var_pop_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by var_pop() on columns of table "experience"
+input experience_var_pop_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# aggregate var_samp on columns
+type experience_var_samp_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by var_samp() on columns of table "experience"
+input experience_var_samp_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+# aggregate variance on columns
+type experience_variance_fields {
+  colleagues: Float
+  company: Float
+  not_wfh_reason: Float
+  own_experience: Float
+  tools: Float
+  wfh: Float
+}
+
+# order by variance() on columns of table "experience"
+input experience_variance_order_by {
+  colleagues: order_by
+  company: order_by
+  not_wfh_reason: order_by
+  own_experience: order_by
+  tools: order_by
+  wfh: order_by
+}
+
+enum FaviconType {
+  appleTouchIcon
+  icon
+  msApplication
+}
+
+type FileField {
+  _createdAt: DateTime!
+  _updatedAt: DateTime!
+  alt(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): String
+  author: String
+  basename: String!
+  blurUpThumb(
+    # Imgix transformations to apply to the image
+    imgixParams: ImgixParams
+
+    # Controls the "punch" value (~contrast) of the blurhash decoding algorithm (defaults to 1.0)
+    punch: Float = 1
+
+    # JPEG quality (defaults to 70%)
+    quality: Int = 70
+
+    # Maximum image dimension (defaults to 24px)
+    size: Int = 24
+  ): String
+  blurhash: String
+  colors: [ColorField]!
+  copyright: String
+  customData(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): CustomData
+  exifInfo: CustomData
+  filename: String!
+  format: String!
+  height: IntType
+  id: UploadId!
+  mimeType: String!
+  notes: String
+  responsiveImage(
+    # Imgix transformations to apply to the image
+    imgixParams: ImgixParams
+
+    # Specify a custom `sizes` attribute for the image
+    sizes: String
+  ): ResponsiveImage
+  size: IntType!
+  smartTags: [String]!
+  tags: [String]!
+  title(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): String
+  url(
+    # Imgix transformations to apply to the image
+    imgixParams: ImgixParams
+  ): String!
+  video: UploadVideoField
+  width: IntType
+}
+
+# Represents signed double-precision fractional values as specified by [IEEE
+# 754](http://en.wikipedia.org/wiki/IEEE_floating_point).
+scalar FloatType
+
+type GlobalSeoField {
+  facebookPageUrl: String
+  fallbackSeo: SeoField
+  siteName: String
+  titleSuffix: String
+  twitterAccount: String
+}
+
+input ImgixParams {
+  # Aspect Ratio
+  #
+  # Specifies an aspect ratio to maintain when resizing and cropping the image
+  #
+  # Depends on: `fit=crop`
+  ar: String
+
+  # Automatic
+  #
+  # Applies automatic enhancements to images.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/auto)
+  auto: [ImgixParamsAuto!]
+
+  # Background Color
+  #
+  # Colors the background of padded and partially-transparent images.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/bg)
+  bg: String
+
+  # Blend
+  #
+  # Specifies the location of the blend image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend)
+  blend: String
+
+  # Blend Align
+  #
+  # Changes the blend alignment relative to the parent image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-align)
+  blendAlign: [ImgixParamsBlendAlign!]
+
+  # Blend Alpha
+  #
+  # Changes the alpha of the blend image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-alpha)
+  blendAlpha: IntType
+
+  # Blend Crop
+  #
+  # Specifies the type of crop for blend images.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-crop)
+  blendCrop: [ImgixParamsBlendCrop!]
+
+  # Blend Fit
+  #
+  # Specifies the fit mode for blend images.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-fit)
+  blendFit: ImgixParamsBlendFit
+
+  # Blend Height
+  #
+  # Adjusts the height of the blend image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-h)
+  blendH: FloatType
+
+  # Blend Mode
+  #
+  # Sets the blend mode for a blend image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-mode)
+  blendMode: ImgixParamsBlendMode
+
+  # Blend Padding
+  #
+  # Applies padding to the blend image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-pad)
+  blendPad: IntType
+
+  # Blend Size
+  #
+  # Adjusts the size of the blend image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-size)
+  blendSize: ImgixParamsBlendSize
+
+  # Blend Width
+  #
+  # Adjusts the width of the blend image.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-w)
+  blendW: FloatType
+
+  # Blend X Position
+  #
+  # Adjusts the x-offset of the blend image relative to its parent.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-x)
+  blendX: IntType
+
+  # Blend Y Position
+  #
+  # Adjusts the y-offset of the blend image relative to its parent.
+  #
+  # Depends on: `blend`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/blending/blend-y)
+  blendY: IntType
+
+  # Gaussian Blur
+  #
+  # Applies a gaussian blur to an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/blur)
+  blur: IntType
+
+  # Border Size & Color
+  #
+  # Applies a border to an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border)
+  border: String
+
+  # Outer Border Radius
+  #
+  # Sets the outer radius of the image's border in pixels.
+  #
+  # Depends on: `border`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-radius)
+  borderRadius: String
+
+  # Inner Border Radius
+  #
+  # Sets the inner radius of the image's border in pixels.
+  #
+  # Depends on: `border`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/border-radius-inner)
+  borderRadiusInner: String
+
+  # Brightness
+  #
+  # Adjusts the brightness of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/bri)
+  bri: IntType
+
+  # Client Hints
+  #
+  # Sets one or more Client-Hints headers
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/ch)
+  ch: [ImgixParamsCh!]
+
+  # Chroma Subsampling
+  #
+  # Specifies the output chroma subsampling rate.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/chromasub)
+  chromasub: IntType
+
+  # Color Quantization
+  #
+  # Limits the number of unique colors in an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/colorquant)
+  colorquant: IntType
+
+  # Palette Color Count
+  #
+  # Specifies how many colors to include in a palette-extraction response.
+  #
+  # Depends on: `palette`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/color-palette/colors)
+  colors: IntType
+
+  # Contrast
+  #
+  # Adjusts the contrast of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/con)
+  con: IntType
+
+  # Mask Corner Radius
+  #
+  # Specifies the radius value for a rounded corner mask.
+  #
+  # Depends on: `mask=corners`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/mask/corner-radius)
+  cornerRadius: String
+
+  # Crop Mode
+  #
+  # Specifies how to crop an image.
+  #
+  # Depends on: `fit=crop`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/crop)
+  crop: [ImgixParamsCrop!]
+
+  # Color Space
+  #
+  # Specifies the color space of the output image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/cs)
+  cs: ImgixParamsCs
+
+  # Download
+  #
+  # Forces a URL to use send-file in its response.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/dl)
+  dl: String
+
+  # Dots Per Inch
+  #
+  # Sets the DPI value in the EXIF header.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/dpi)
+  dpi: IntType
+
+  # Device Pixel Ratio
+  #
+  # Adjusts the device-pixel ratio of the output image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/dpr)
+  dpr: FloatType
+
+  # Duotone
+  #
+  # Applies a duotone effect to the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/duotone)
+  duotone: String
+
+  # Duotone Alpha
+  #
+  # Changes the alpha of the duotone effect atop the source image.
+  #
+  # Depends on: `duotone`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/duotone-alpha)
+  duotoneAlpha: IntType
+
+  # Exposure
+  #
+  # Adjusts the exposure of the output image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/exp)
+  exp: IntType
+
+  # Url Expiration Timestamp
+  #
+  # A Unix timestamp specifying a UTC time. Requests made to this URL after that time will output a 404 status code.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/expires)
+  expires: IntType
+
+  # Face Index
+  #
+  # Selects a face to crop to.
+  #
+  # Depends on: `fit=facearea`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/face-detection/faceindex)
+  faceindex: IntType
+
+  # Face Padding
+  #
+  # Adjusts padding around a selected face.
+  #
+  # Depends on: `fit=facearea`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/face-detection/facepad)
+  facepad: FloatType
+
+  # Json Face Data
+  #
+  # Specifies that face data should be included in output when combined with `fm=json`.
+  #
+  # Depends on: `fm=json`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/face-detection/faces)
+  faces: IntType
+
+  # Fill Mode
+  #
+  # Determines how to fill in additional space created by the fit setting
+  #
+  # Depends on: `fit`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill)
+  fill: ImgixParamsFill
+
+  # Fill Color
+  #
+  # Sets the fill color for images with additional space created by the fit setting
+  #
+  # Depends on: `fill=solid`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/fill/fill-color)
+  fillColor: String
+
+  # Resize Fit Mode
+  #
+  # Specifies how to map the source image to the output image dimensions.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/fit)
+  fit: ImgixParamsFit
+
+  # Flip Axis
+  #
+  # Flips an image on a specified axis.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/rotation/flip)
+  flip: ImgixParamsFlip
+
+  # Output Format
+  #
+  # Changes the format of the output image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/fm)
+  fm: ImgixParamsFm
+
+  # Focal Point Debug
+  #
+  # Displays crosshairs identifying the location of the set focal point
+  #
+  # Depends on: `fit=crop`, `crop=focalpoint`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-debug)
+  fpDebug: BooleanType
+
+  # Focal Point X Position
+  #
+  # Sets the relative horizontal value for the focal point of an image
+  #
+  # Depends on: `fit=crop`, `crop=focalpoint`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-x)
+  fpX: FloatType
+
+  # Focal Point Y Position
+  #
+  # Sets the relative vertical value for the focal point of an image
+  #
+  # Depends on: `fit=crop`, `crop=focalpoint`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-y)
+  fpY: FloatType
+
+  # Focal Point Zoom
+  #
+  # Sets the relative zoom value for the focal point of an image
+  #
+  # Depends on: `fit=crop`, `crop=focalpoint`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/focalpoint-crop/fp-z)
+  fpZ: IntType
+
+  # Gamma
+  #
+  # Adjusts the gamma of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/gam)
+  gam: IntType
+
+  # Image Height
+  #
+  # Adjusts the height of the output image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/h)
+  h: FloatType
+
+  # Highlight
+  #
+  # Adjusts the highlights of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/high)
+  high: IntType
+
+  # Halftone
+  #
+  # Applies a half-tone effect to the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/htn)
+  htn: IntType
+
+  # Hue Shift
+  #
+  # Adjusts the hue of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/hue)
+  hue: IntType
+
+  # Invert
+  #
+  # Inverts the colors on the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/invert)
+  invert: BooleanType
+
+  # Lossless Compression
+  #
+  # Specifies that the output image should be a lossless variant.
+  #
+  # Depends on: `fm=webp`, `fm=jxr`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/lossless)
+  lossless: BooleanType
+
+  # Watermark Image Url
+  #
+  # Specifies the location of the watermark image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark)
+  mark: String
+
+  # Watermark Alignment Mode
+  #
+  # Changes the watermark alignment relative to the parent image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-align)
+  markAlign: [ImgixParamsMarkAlign!]
+
+  # Watermark Alpha
+  #
+  # Changes the alpha of the watermark image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-alpha)
+  markAlpha: IntType
+
+  # Watermark Base Url
+  #
+  # Changes base URL of the watermark image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-base)
+  markBase: String
+
+  # Watermark Fit Mode
+  #
+  # Specifies the fit mode for watermark images.
+  #
+  # Depends on: `mark`, `markw`, `markh`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-fit)
+  markFit: ImgixParamsMarkFit
+
+  # Watermark Height
+  #
+  # Adjusts the height of the watermark image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-h)
+  markH: FloatType
+
+  # Watermark Padding
+  #
+  # Applies padding to the watermark image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-pad)
+  markPad: IntType
+
+  # Watermark Scale
+  #
+  # Adjusts the scale of the watermark image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-scale)
+  markScale: IntType
+
+  # Watermark Width
+  #
+  # Adjusts the width of the watermark image.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-w)
+  markW: FloatType
+
+  # Watermark X Position
+  #
+  # Adjusts the x-offset of the watermark image relative to its parent.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-x)
+  markX: IntType
+
+  # Watermark Y Position
+  #
+  # Adjusts the y-offset of the watermark image relative to its parent.
+  #
+  # Depends on: `mark`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/watermark/mark-y)
+  markY: IntType
+
+  # Mask Type
+  #
+  # Defines the type of mask and specifies the URL if that type is selected.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/mask)
+  mask: String
+
+  # Mask Background Color
+  #
+  # Colors the background of the transparent mask area of images
+  #
+  # Depends on: `mask`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/mask/mask-bg)
+  maskbg: String
+
+  # Maximum Height
+  #
+  # Specifies the maximum height of the output image in pixels.
+  #
+  # Depends on: `fit=crop`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/max-height)
+  maxH: IntType
+
+  # Maximum Width
+  #
+  # Specifies the maximum width of the output image in pixels.
+  #
+  # Depends on: `fit=crop`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/max-width)
+  maxW: IntType
+
+  # Minimum Height
+  #
+  # Specifies the minimum height of the output image in pixels.
+  #
+  # Depends on: `fit=crop`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/min-height)
+  minH: IntType
+
+  # Minimum Width
+  #
+  # Specifies the minimum width of the output image in pixels.
+  #
+  # Depends on: `fit=crop`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/min-width)
+  minW: IntType
+
+  # Monochrome
+  #
+  # Applies a monochrome effect to the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/monochrome)
+  monochrome: String
+
+  # Noise Reduction Bound
+  #
+  # Reduces the noise in an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/noise-reduction/nr)
+  nr: IntType
+
+  # Noise Reduction Sharpen
+  #
+  # Provides a threshold by which to sharpen an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/noise-reduction/nrs)
+  nrs: IntType
+
+  # Orientation
+  #
+  # Changes the image orientation.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/rotation/orient)
+  orient: IntType
+
+  # Padding
+  #
+  # Pads an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/border-and-padding/pad)
+  pad: IntType
+
+  # Pdf Page Number
+  #
+  # Selects a page from a PDF for display.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/pdf-page-number)
+  page: IntType
+
+  # Color Palette Extraction
+  #
+  # Specifies an output format for palette-extraction.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/color-palette/palette)
+  palette: ImgixParamsPalette
+
+  # Css Prefix
+  #
+  # Specifies a CSS prefix for all classes in palette-extraction.
+  #
+  # Depends on: `palette=css`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/color-palette/prefix)
+  prefix: String
+
+  # Pixellate
+  #
+  # Applies a pixelation effect to an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/px)
+  px: IntType
+
+  # Output Quality
+  #
+  # Adjusts the quality of an output image.
+  #
+  # Depends on: `fm=jpg`, `fm=pjpg`, `fm=webp`, `fm=jxr`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/format/q)
+  q: IntType
+
+  # Source Rectangle Region
+  #
+  # Crops an image to a specified rectangle.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/rect)
+  rect: String
+
+  # Rotation
+  #
+  # Rotates an image by a specified number of degrees.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/rotation/rot)
+  rot: FloatType
+
+  # Saturation
+  #
+  # Adjusts the saturation of an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/sat)
+  sat: IntType
+
+  # Sepia Tone
+  #
+  # Applies a sepia effect to an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/stylize/sepia)
+  sepia: IntType
+
+  # Shadow
+  #
+  # Adjusts the highlights of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/shad)
+  shad: FloatType
+
+  # Sharpen
+  #
+  # Adjusts the sharpness of the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/sharp)
+  sharp: FloatType
+
+  # Trim Image
+  #
+  # Trims the source image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim)
+  trim: ImgixParamsTrim
+
+  # Trim Color
+  #
+  # Specifies a trim color on a trim operation.
+  #
+  # Depends on: `trim=color`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-color)
+  trimColor: String
+
+  # Trim Mean Difference
+  #
+  # Specifies the mean difference on a trim operation.
+  #
+  # Depends on: `trim=auto`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-md)
+  trimMd: FloatType
+
+  # Trim Padding
+  #
+  # Pads the area of the source image before trimming.
+  #
+  # Depends on: `trim`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-pad)
+  trimPad: IntType
+
+  # Trim Standard Deviation
+  #
+  # Specifies the standard deviation on a trim operation.
+  #
+  # Depends on: `trim=auto`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-sd)
+  trimSd: FloatType
+
+  # Trim Tolerance
+  #
+  # Specifies the tolerance on a trim operation.
+  #
+  # Depends on: `trim=color`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/trim/trim-tol)
+  trimTol: FloatType
+
+  # Text String
+  #
+  # Sets the text string to render.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt)
+  txt: String
+
+  # Text Align
+  #
+  # Sets the vertical and horizontal alignment of rendered text relative to the base image.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-align)
+  txtAlign: [ImgixParamsTxtAlign!]
+
+  # Text Clipping Mode
+  #
+  # Sets the clipping properties of rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-clip)
+  txtClip: [ImgixParamsTxtClip!]
+
+  # Text Color
+  #
+  # Specifies the color of rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-color)
+  txtColor: String
+
+  # Text Fit Mode
+  #
+  # Specifies the fit approach for rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-fit)
+  txtFit: ImgixParamsTxtFit
+
+  # Text Font
+  #
+  # Selects a font for rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-font)
+  txtFont: String
+
+  # Text Leading
+  #
+  # Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/typesetting/txt-lead)
+  txtLead: IntType
+
+  # Text Ligatures
+  #
+  # Controls the level of ligature substitution
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-lig)
+  txtLig: IntType
+
+  # Text Outline
+  #
+  # Outlines the rendered text with a specified color.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-line)
+  txtLine: IntType
+
+  # Text Outline Color
+  #
+  # Specifies a text outline color.
+  #
+  # Depends on: `txt`, `txtline`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-line-color)
+  txtLineColor: String
+
+  # Text Padding
+  #
+  # Specifies the padding (in device-independent pixels) between a textbox and the edges of the base image.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-pad)
+  txtPad: IntType
+
+  # Text Shadow
+  #
+  # Applies a shadow to rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-shad)
+  txtShad: FloatType
+
+  # Text Font Size
+  #
+  # Sets the font size of rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-size)
+  txtSize: IntType
+
+  # Text Tracking
+  #
+  # Sets the tracking (letter spacing) for rendered text. Only works on the multi-line text endpoint.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/typesetting/txt-track)
+  txtTrack: IntType
+
+  # Text Width
+  #
+  # Sets the width of rendered text.
+  #
+  # Depends on: `txt`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/text/txt-width)
+  txtWidth: IntType
+
+  # Unsharp Mask
+  #
+  # Sharpens the source image using an unsharp mask.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/usm)
+  usm: IntType
+
+  # Unsharp Mask Radius
+  #
+  # Specifies the radius for an unsharp mask operation.
+  #
+  # Depends on: `usm`
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/usmrad)
+  usmrad: FloatType
+
+  # Vibrance
+  #
+  # Adjusts the vibrance of an image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/adjustment/vib)
+  vib: IntType
+
+  # Image Width
+  #
+  # Adjusts the width of the output image.
+  #
+  # [Open Imgix reference »](https://docs.imgix.com/apis/url/size/w)
+  w: FloatType
+}
+
+enum ImgixParamsAuto {
+  compress
+  enhance
+  format
+  redeye
+}
+
+enum ImgixParamsBlendAlign {
+  bottom
+  center
+  left
+  middle
+  right
+  top
+}
+
+enum ImgixParamsBlendCrop {
+  bottom
+  faces
+  left
+  right
+  top
+}
+
+enum ImgixParamsBlendFit {
+  clamp
+  clip
+  crop
+  max
+  scale
+}
+
+enum ImgixParamsBlendMode {
+  burn
+  color
+  darken
+  difference
+  dodge
+  exclusion
+  hardlight
+  hue
+  lighten
+  luminosity
+  multiply
+  normal
+  overlay
+  saturation
+  screen
+  softlight
+}
+
+enum ImgixParamsBlendSize {
+  inherit
+}
+
+enum ImgixParamsCh {
+  dpr
+  saveData
+  width
+}
+
+enum ImgixParamsCrop {
+  bottom
+  edges
+  entropy
+  faces
+  focalpoint
+  left
+  right
+  top
+}
+
+enum ImgixParamsCs {
+  adobergb1998
+  srgb
+  strip
+  tinysrgb
+}
+
+enum ImgixParamsFill {
+  blur
+  solid
+}
+
+enum ImgixParamsFit {
+  clamp
+  clip
+  crop
+  facearea
+  fill
+  fillmax
+  max
+  min
+  scale
+}
+
+enum ImgixParamsFlip {
+  h
+  hv
+  v
+}
+
+enum ImgixParamsFm {
+  gif
+  jp2
+  jpg
+  json
+  jxr
+  mp4
+  pjpg
+  png
+  png32
+  png8
+  webm
+  webp
+}
+
+enum ImgixParamsMarkAlign {
+  bottom
+  center
+  left
+  middle
+  right
+  top
+}
+
+enum ImgixParamsMarkFit {
+  clip
+  crop
+  fill
+  max
+  scale
+}
+
+enum ImgixParamsPalette {
+  css
+  json
+}
+
+enum ImgixParamsTrim {
+  auto
+  color
+}
+
+enum ImgixParamsTxtAlign {
+  bottom
+  center
+  left
+  middle
+  right
+  top
+}
+
+enum ImgixParamsTxtClip {
+  ellipsis
+  end
+  middle
+  start
+}
+
+enum ImgixParamsTxtFit {
+  max
+}
+
+# expression to compare columns of type Int. All fields are combined with logical 'AND'.
+input Int_comparison_exp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+# Represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+scalar IntType
+
+# Specifies how to filter by usage
+input InUseFilter {
+  # Search uploads that are currently used by some record or not
+  eq: BooleanType
+}
+
+scalar ItemId
+
+enum ItemStatus {
+  draft
+  published
+  updated
+}
+
+scalar MetaTagAttributes
+
+# mutation root
+type mutation_root {
+  # delete data from the table: "category_tool"
+  delete_category_tool(
+    # filter the rows which have to be deleted
+    where: category_tool_bool_exp!
+  ): category_tool_mutation_response
+
+  # delete data from the table: "country"
+  delete_country(
+    # filter the rows which have to be deleted
+    where: country_bool_exp!
+  ): country_mutation_response
+
+  # delete data from the table: "experience"
+  delete_experience(
+    # filter the rows which have to be deleted
+    where: experience_bool_exp!
+  ): experience_mutation_response
+
+  # delete data from the table: "office"
+  delete_office(
+    # filter the rows which have to be deleted
+    where: office_bool_exp!
+  ): office_mutation_response
+
+  # delete data from the table: "office_revision"
+  delete_office_revision(
+    # filter the rows which have to be deleted
+    where: office_revision_bool_exp!
+  ): office_revision_mutation_response
+
+  # delete data from the table: "office_tool"
+  delete_office_tool(
+    # filter the rows which have to be deleted
+    where: office_tool_bool_exp!
+  ): office_tool_mutation_response
+
+  # delete data from the table: "tool"
+  delete_tool(
+    # filter the rows which have to be deleted
+    where: tool_bool_exp!
+  ): tool_mutation_response
+
+  # delete data from the table: "tool_category"
+  delete_tool_category(
+    # filter the rows which have to be deleted
+    where: tool_category_bool_exp!
+  ): tool_category_mutation_response
+
+  # insert data into the table: "category_tool"
+  insert_category_tool(
+    # the rows to be inserted
+    objects: [category_tool_insert_input!]!
+
+    # on conflict condition
+    on_conflict: category_tool_on_conflict
+  ): category_tool_mutation_response
+
+  # insert data into the table: "country"
+  insert_country(
+    # the rows to be inserted
+    objects: [country_insert_input!]!
+
+    # on conflict condition
+    on_conflict: country_on_conflict
+  ): country_mutation_response
+
+  # insert data into the table: "experience"
+  insert_experience(
+    # the rows to be inserted
+    objects: [experience_insert_input!]!
+
+    # on conflict condition
+    on_conflict: experience_on_conflict
+  ): experience_mutation_response
+
+  # insert data into the table: "office"
+  insert_office(
+    # the rows to be inserted
+    objects: [office_insert_input!]!
+
+    # on conflict condition
+    on_conflict: office_on_conflict
+  ): office_mutation_response
+
+  # insert data into the table: "office_revision"
+  insert_office_revision(
+    # the rows to be inserted
+    objects: [office_revision_insert_input!]!
+
+    # on conflict condition
+    on_conflict: office_revision_on_conflict
+  ): office_revision_mutation_response
+
+  # insert data into the table: "office_tool"
+  insert_office_tool(
+    # the rows to be inserted
+    objects: [office_tool_insert_input!]!
+
+    # on conflict condition
+    on_conflict: office_tool_on_conflict
+  ): office_tool_mutation_response
+
+  # insert data into the table: "tool"
+  insert_tool(
+    # the rows to be inserted
+    objects: [tool_insert_input!]!
+
+    # on conflict condition
+    on_conflict: tool_on_conflict
+  ): tool_mutation_response
+
+  # insert data into the table: "tool_category"
+  insert_tool_category(
+    # the rows to be inserted
+    objects: [tool_category_insert_input!]!
+
+    # on conflict condition
+    on_conflict: tool_category_on_conflict
+  ): tool_category_mutation_response
+
+  # update data of the table: "category_tool"
+  update_category_tool(
+    # sets the columns of the filtered rows to the given values
+    _set: category_tool_set_input
+
+    # filter the rows which have to be updated
+    where: category_tool_bool_exp!
+  ): category_tool_mutation_response
+
+  # update data of the table: "country"
+  update_country(
+    # sets the columns of the filtered rows to the given values
+    _set: country_set_input
+
+    # filter the rows which have to be updated
+    where: country_bool_exp!
+  ): country_mutation_response
+
+  # update data of the table: "experience"
+  update_experience(
+    # increments the integer columns with given value of the filtered values
+    _inc: experience_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: experience_set_input
+
+    # filter the rows which have to be updated
+    where: experience_bool_exp!
+  ): experience_mutation_response
+
+  # update data of the table: "office"
+  update_office(
+    # increments the integer columns with given value of the filtered values
+    _inc: office_inc_input
+
+    # sets the columns of the filtered rows to the given values
+    _set: office_set_input
+
+    # filter the rows which have to be updated
+    where: office_bool_exp!
+  ): office_mutation_response
+
+  # update data of the table: "office_revision"
+  update_office_revision(
+    # sets the columns of the filtered rows to the given values
+    _set: office_revision_set_input
+
+    # filter the rows which have to be updated
+    where: office_revision_bool_exp!
+  ): office_revision_mutation_response
+
+  # update data of the table: "office_tool"
+  update_office_tool(
+    # sets the columns of the filtered rows to the given values
+    _set: office_tool_set_input
+
+    # filter the rows which have to be updated
+    where: office_tool_bool_exp!
+  ): office_tool_mutation_response
+
+  # update data of the table: "tool"
+  update_tool(
+    # sets the columns of the filtered rows to the given values
+    _set: tool_set_input
+
+    # filter the rows which have to be updated
+    where: tool_bool_exp!
+  ): tool_mutation_response
+
+  # update data of the table: "tool_category"
+  update_tool_category(
+    # sets the columns of the filtered rows to the given values
+    _set: tool_category_set_input
+
+    # filter the rows which have to be updated
+    where: tool_category_bool_exp!
+  ): tool_category_mutation_response
+}
+
+enum MuxThumbnailFormatType {
+  gif
+  jpg
+  png
+}
+
+# columns and relationships of "office"
+type office {
+  city: String!
+
+  # An object relationship
+  country: country!
+  country_iso: String!
+  created_at: timestamptz!
+
+  # An array relationship
+  experiences(
+    # distinct select on columns
+    distinct_on: [experience_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [experience_order_by!]
+
+    # filter the rows returned
+    where: experience_bool_exp
+  ): [experience!]!
+
+  # An aggregated array relationship
+  experiences_aggregate(
+    # distinct select on columns
+    distinct_on: [experience_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [experience_order_by!]
+
+    # filter the rows returned
+    where: experience_bool_exp
+  ): experience_aggregate!
+  id: uuid!
+  latest_experience: date
+  name: String!
+
+  # A computed field, executes function "office_num_experiences"
+  num_experiences: bigint
+  num_people: Int
+
+  # An array relationship
+  office_tools(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): [office_tool!]!
+
+  # An aggregated array relationship
+  office_tools_aggregate(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): office_tool_aggregate!
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz!
+  url: String
+  user_id: String
+}
+
+# aggregated selection of "office"
+type office_aggregate {
+  aggregate: office_aggregate_fields
+  nodes: [office!]!
+}
+
+# aggregate fields of "office"
+type office_aggregate_fields {
+  avg: office_avg_fields
+  count(columns: [office_select_column!], distinct: Boolean): Int
+  max: office_max_fields
+  min: office_min_fields
+  stddev: office_stddev_fields
+  stddev_pop: office_stddev_pop_fields
+  stddev_samp: office_stddev_samp_fields
+  sum: office_sum_fields
+  var_pop: office_var_pop_fields
+  var_samp: office_var_samp_fields
+  variance: office_variance_fields
+}
+
+# order by aggregate values of table "office"
+input office_aggregate_order_by {
+  avg: office_avg_order_by
+  count: order_by
+  max: office_max_order_by
+  min: office_min_order_by
+  stddev: office_stddev_order_by
+  stddev_pop: office_stddev_pop_order_by
+  stddev_samp: office_stddev_samp_order_by
+  sum: office_sum_order_by
+  var_pop: office_var_pop_order_by
+  var_samp: office_var_samp_order_by
+  variance: office_variance_order_by
+}
+
+# input type for inserting array relation for remote table "office"
+input office_arr_rel_insert_input {
+  data: [office_insert_input!]!
+  on_conflict: office_on_conflict
+}
+
+# aggregate avg on columns
+type office_avg_fields {
+  num_people: Float
+}
+
+# order by avg() on columns of table "office"
+input office_avg_order_by {
+  num_people: order_by
+}
+
+# Boolean expression to filter rows from the table "office". All fields are combined with a logical 'AND'.
+input office_bool_exp {
+  _and: [office_bool_exp]
+  _not: office_bool_exp
+  _or: [office_bool_exp]
+  city: String_comparison_exp
+  country: country_bool_exp
+  country_iso: String_comparison_exp
+  created_at: timestamptz_comparison_exp
+  experiences: experience_bool_exp
+  id: uuid_comparison_exp
+  latest_experience: date_comparison_exp
+  name: String_comparison_exp
+  num_people: Int_comparison_exp
+  office_tools: office_tool_bool_exp
+  remote_policy: String_comparison_exp
+  remote_since: date_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  url: String_comparison_exp
+  user_id: String_comparison_exp
+}
+
+# unique or primary key constraints on table "office"
+enum office_constraint {
+  # unique or primary key constraint
+  office_pkey
+}
+
+# input type for incrementing integer columne in table "office"
+input office_inc_input {
+  num_people: Int
+}
+
+# input type for inserting data into table "office"
+input office_insert_input {
+  city: String
+  country: country_obj_rel_insert_input
+  country_iso: String
+  created_at: timestamptz
+  experiences: experience_arr_rel_insert_input
+  id: uuid
+  latest_experience: date
+  name: String
+  num_people: Int
+  office_tools: office_tool_arr_rel_insert_input
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  url: String
+  user_id: String
+}
+
+# aggregate max on columns
+type office_max_fields {
+  city: String
+  country_iso: String
+  created_at: timestamptz
+  latest_experience: date
+  name: String
+  num_people: Int
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  url: String
+  user_id: String
+}
+
+# order by max() on columns of table "office"
+input office_max_order_by {
+  city: order_by
+  country_iso: order_by
+  created_at: order_by
+  latest_experience: order_by
+  name: order_by
+  num_people: order_by
+  remote_policy: order_by
+  remote_since: order_by
+  updated_at: order_by
+  url: order_by
+  user_id: order_by
+}
+
+# aggregate min on columns
+type office_min_fields {
+  city: String
+  country_iso: String
+  created_at: timestamptz
+  latest_experience: date
+  name: String
+  num_people: Int
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  url: String
+  user_id: String
+}
+
+# order by min() on columns of table "office"
+input office_min_order_by {
+  city: order_by
+  country_iso: order_by
+  created_at: order_by
+  latest_experience: order_by
+  name: order_by
+  num_people: order_by
+  remote_policy: order_by
+  remote_since: order_by
+  updated_at: order_by
+  url: order_by
+  user_id: order_by
+}
+
+# response of any mutation on the table "office"
+type office_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [office!]!
+}
+
+# input type for inserting object relation for remote table "office"
+input office_obj_rel_insert_input {
+  data: office_insert_input!
+  on_conflict: office_on_conflict
+}
+
+# on conflict condition type for table "office"
+input office_on_conflict {
+  constraint: office_constraint!
+  update_columns: [office_update_column!]!
+  where: office_bool_exp
+}
+
+# ordering options when selecting data from "office"
+input office_order_by {
+  city: order_by
+  country: country_order_by
+  country_iso: order_by
+  created_at: order_by
+  experiences_aggregate: experience_aggregate_order_by
+  id: order_by
+  latest_experience: order_by
+  name: order_by
+  num_people: order_by
+  office_tools_aggregate: office_tool_aggregate_order_by
+  remote_policy: order_by
+  remote_since: order_by
+  updated_at: order_by
+  url: order_by
+  user_id: order_by
+}
+
+# Holds revision history for each office save.
+#
+#
+# columns and relationships of "office_revision"
+#
+type office_revision {
+  created_at: timestamptz!
+  id: uuid!
+  office_id: uuid!
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz!
+  user_id: String
+}
+
+# aggregated selection of "office_revision"
+type office_revision_aggregate {
+  aggregate: office_revision_aggregate_fields
+  nodes: [office_revision!]!
+}
+
+# aggregate fields of "office_revision"
+type office_revision_aggregate_fields {
+  count(columns: [office_revision_select_column!], distinct: Boolean): Int
+  max: office_revision_max_fields
+  min: office_revision_min_fields
+}
+
+# order by aggregate values of table "office_revision"
+input office_revision_aggregate_order_by {
+  count: order_by
+  max: office_revision_max_order_by
+  min: office_revision_min_order_by
+}
+
+# input type for inserting array relation for remote table "office_revision"
+input office_revision_arr_rel_insert_input {
+  data: [office_revision_insert_input!]!
+  on_conflict: office_revision_on_conflict
+}
+
+# Boolean expression to filter rows from the table "office_revision". All fields are combined with a logical 'AND'.
+input office_revision_bool_exp {
+  _and: [office_revision_bool_exp]
+  _not: office_revision_bool_exp
+  _or: [office_revision_bool_exp]
+  created_at: timestamptz_comparison_exp
+  id: uuid_comparison_exp
+  office_id: uuid_comparison_exp
+  remote_policy: String_comparison_exp
+  remote_since: date_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  user_id: String_comparison_exp
+}
+
+# unique or primary key constraints on table "office_revision"
+enum office_revision_constraint {
+  # unique or primary key constraint
+  office_revision_pkey
+}
+
+# input type for inserting data into table "office_revision"
+input office_revision_insert_input {
+  created_at: timestamptz
+  id: uuid
+  office_id: uuid
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  user_id: String
+}
+
+# aggregate max on columns
+type office_revision_max_fields {
+  created_at: timestamptz
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  user_id: String
+}
+
+# order by max() on columns of table "office_revision"
+input office_revision_max_order_by {
+  created_at: order_by
+  remote_policy: order_by
+  remote_since: order_by
+  updated_at: order_by
+  user_id: order_by
+}
+
+# aggregate min on columns
+type office_revision_min_fields {
+  created_at: timestamptz
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  user_id: String
+}
+
+# order by min() on columns of table "office_revision"
+input office_revision_min_order_by {
+  created_at: order_by
+  remote_policy: order_by
+  remote_since: order_by
+  updated_at: order_by
+  user_id: order_by
+}
+
+# response of any mutation on the table "office_revision"
+type office_revision_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [office_revision!]!
+}
+
+# input type for inserting object relation for remote table "office_revision"
+input office_revision_obj_rel_insert_input {
+  data: office_revision_insert_input!
+  on_conflict: office_revision_on_conflict
+}
+
+# on conflict condition type for table "office_revision"
+input office_revision_on_conflict {
+  constraint: office_revision_constraint!
+  update_columns: [office_revision_update_column!]!
+  where: office_revision_bool_exp
+}
+
+# ordering options when selecting data from "office_revision"
+input office_revision_order_by {
+  created_at: order_by
+  id: order_by
+  office_id: order_by
+  remote_policy: order_by
+  remote_since: order_by
+  updated_at: order_by
+  user_id: order_by
+}
+
+# select columns of table "office_revision"
+enum office_revision_select_column {
+  # column name
+  created_at
+
+  # column name
+  id
+
+  # column name
+  office_id
+
+  # column name
+  remote_policy
+
+  # column name
+  remote_since
+
+  # column name
+  updated_at
+
+  # column name
+  user_id
+}
+
+# input type for updating data in table "office_revision"
+input office_revision_set_input {
+  created_at: timestamptz
+  id: uuid
+  office_id: uuid
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  user_id: String
+}
+
+# update columns of table "office_revision"
+enum office_revision_update_column {
+  # column name
+  created_at
+
+  # column name
+  id
+
+  # column name
+  office_id
+
+  # column name
+  remote_policy
+
+  # column name
+  remote_since
+
+  # column name
+  updated_at
+
+  # column name
+  user_id
+}
+
+# select columns of table "office"
+enum office_select_column {
+  # column name
+  city
+
+  # column name
+  country_iso
+
+  # column name
+  created_at
+
+  # column name
+  id
+
+  # column name
+  latest_experience
+
+  # column name
+  name
+
+  # column name
+  num_people
+
+  # column name
+  remote_policy
+
+  # column name
+  remote_since
+
+  # column name
+  updated_at
+
+  # column name
+  url
+
+  # column name
+  user_id
+}
+
+# input type for updating data in table "office"
+input office_set_input {
+  city: String
+  country_iso: String
+  created_at: timestamptz
+  id: uuid
+  latest_experience: date
+  name: String
+  num_people: Int
+  remote_policy: String
+  remote_since: date
+  updated_at: timestamptz
+  url: String
+  user_id: String
+}
+
+# aggregate stddev on columns
+type office_stddev_fields {
+  num_people: Float
+}
+
+# order by stddev() on columns of table "office"
+input office_stddev_order_by {
+  num_people: order_by
+}
+
+# aggregate stddev_pop on columns
+type office_stddev_pop_fields {
+  num_people: Float
+}
+
+# order by stddev_pop() on columns of table "office"
+input office_stddev_pop_order_by {
+  num_people: order_by
+}
+
+# aggregate stddev_samp on columns
+type office_stddev_samp_fields {
+  num_people: Float
+}
+
+# order by stddev_samp() on columns of table "office"
+input office_stddev_samp_order_by {
+  num_people: order_by
+}
+
+# aggregate sum on columns
+type office_sum_fields {
+  num_people: Int
+}
+
+# order by sum() on columns of table "office"
+input office_sum_order_by {
+  num_people: order_by
+}
+
+# columns and relationships of "office_tool"
+type office_tool {
+  # An object relationship
+  office: office!
+  office_id: uuid!
+
+  # An object relationship
+  tool: tool!
+  tool_id: uuid!
+}
+
+# aggregated selection of "office_tool"
+type office_tool_aggregate {
+  aggregate: office_tool_aggregate_fields
+  nodes: [office_tool!]!
+}
+
+# aggregate fields of "office_tool"
+type office_tool_aggregate_fields {
+  count(columns: [office_tool_select_column!], distinct: Boolean): Int
+}
+
+# order by aggregate values of table "office_tool"
+input office_tool_aggregate_order_by {
+  count: order_by
+}
+
+# input type for inserting array relation for remote table "office_tool"
+input office_tool_arr_rel_insert_input {
+  data: [office_tool_insert_input!]!
+  on_conflict: office_tool_on_conflict
+}
+
+# Boolean expression to filter rows from the table "office_tool". All fields are combined with a logical 'AND'.
+input office_tool_bool_exp {
+  _and: [office_tool_bool_exp]
+  _not: office_tool_bool_exp
+  _or: [office_tool_bool_exp]
+  office: office_bool_exp
+  office_id: uuid_comparison_exp
+  tool: tool_bool_exp
+  tool_id: uuid_comparison_exp
+}
+
+# unique or primary key constraints on table "office_tool"
+enum office_tool_constraint {
+  # unique or primary key constraint
+  office_tool_office_id_tool_id_key
+}
+
+# input type for inserting data into table "office_tool"
+input office_tool_insert_input {
+  office: office_obj_rel_insert_input
+  office_id: uuid
+  tool: tool_obj_rel_insert_input
+  tool_id: uuid
+}
+
+# response of any mutation on the table "office_tool"
+type office_tool_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [office_tool!]!
+}
+
+# input type for inserting object relation for remote table "office_tool"
+input office_tool_obj_rel_insert_input {
+  data: office_tool_insert_input!
+  on_conflict: office_tool_on_conflict
+}
+
+# on conflict condition type for table "office_tool"
+input office_tool_on_conflict {
+  constraint: office_tool_constraint!
+  update_columns: [office_tool_update_column!]!
+  where: office_tool_bool_exp
+}
+
+# ordering options when selecting data from "office_tool"
+input office_tool_order_by {
+  office: office_order_by
+  office_id: order_by
+  tool: tool_order_by
+  tool_id: order_by
+}
+
+# select columns of table "office_tool"
+enum office_tool_select_column {
+  # column name
+  office_id
+
+  # column name
+  tool_id
+}
+
+# input type for updating data in table "office_tool"
+input office_tool_set_input {
+  office_id: uuid
+  tool_id: uuid
+}
+
+# update columns of table "office_tool"
+enum office_tool_update_column {
+  # column name
+  office_id
+
+  # column name
+  tool_id
+}
+
+# update columns of table "office"
+enum office_update_column {
+  # column name
+  city
+
+  # column name
+  country_iso
+
+  # column name
+  created_at
+
+  # column name
+  id
+
+  # column name
+  latest_experience
+
+  # column name
+  name
+
+  # column name
+  num_people
+
+  # column name
+  remote_policy
+
+  # column name
+  remote_since
+
+  # column name
+  updated_at
+
+  # column name
+  url
+
+  # column name
+  user_id
+}
+
+# aggregate var_pop on columns
+type office_var_pop_fields {
+  num_people: Float
+}
+
+# order by var_pop() on columns of table "office"
+input office_var_pop_order_by {
+  num_people: order_by
+}
+
+# aggregate var_samp on columns
+type office_var_samp_fields {
+  num_people: Float
+}
+
+# order by var_samp() on columns of table "office"
+input office_var_samp_order_by {
+  num_people: order_by
+}
+
+# aggregate variance on columns
+type office_variance_fields {
+  num_people: Float
+}
+
+# order by variance() on columns of table "office"
+input office_variance_order_by {
+  num_people: order_by
+}
+
+# column ordering options
+enum order_by {
+  # in the ascending order, nulls last
+  asc
+
+  # in the ascending order, nulls first
+  asc_nulls_first
+
+  # in the ascending order, nulls last
+  asc_nulls_last
+
+  # in the descending order, nulls first
+  desc
+
+  # in the descending order, nulls first
+  desc_nulls_first
+
+  # in the descending order, nulls last
+  desc_nulls_last
+}
+
+# Specifies how to filter by image orientation
+input OrientationFilter {
+  # Search uploads with the specified orientation
+  eq: UploadOrientation
+
+  # Exclude uploads with the specified orientation
+  neq: UploadOrientation
+}
+
+# The query root for this schema
+type Query {
+  # Returns meta information regarding an assets collection
+  _allUploadsMeta(
+    filter: UploadFilter
+
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): CollectionMetadata
+
+  # Returns the single instance record
+  _site(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): Site!
+
+  # Returns the single instance record
+  about(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): AboutRecord
+
+  # Returns a collection of assets
+  allUploads(
+    filter: UploadFilter
+
+    # Limit the number of results
+    first: IntType = false
+
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+    orderBy: [UploadOrderBy]
+
+    # Skip the first results
+    skip: IntType
+  ): [FileField!]!
+
+  # Returns the single instance record
+  articlesIntro(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): ArticlesIntroRecord
+
+  # Returns the single instance record
+  toolsIntro(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): ToolsIntroRecord
+
+  # Returns a specific asset
+  upload(
+    filter: UploadFilter
+
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+    orderBy: [UploadOrderBy]
+  ): FileField
+}
+
+# query root
+type query_root {
+  # Returns meta information regarding an assets collection
+  _allUploadsMeta(
+    filter: UploadFilter
+
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): CollectionMetadata
+
+  # Returns the single instance record
+  _site(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): Site!
+
+  # Returns the single instance record
+  about(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): AboutRecord
+
+  # Returns a collection of assets
+  allUploads(
+    filter: UploadFilter
+
+    # Limit the number of results
+    first: IntType = false
+
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+    orderBy: [UploadOrderBy]
+
+    # Skip the first results
+    skip: IntType
+  ): [FileField!]!
+
+  # Returns the single instance record
+  articlesIntro(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): ArticlesIntroRecord
+
+  # fetch data from the table: "category_tool"
+  category_tool(
+    # distinct select on columns
+    distinct_on: [category_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [category_tool_order_by!]
+
+    # filter the rows returned
+    where: category_tool_bool_exp
+  ): [category_tool!]!
+
+  # fetch aggregated fields from the table: "category_tool"
+  category_tool_aggregate(
+    # distinct select on columns
+    distinct_on: [category_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [category_tool_order_by!]
+
+    # filter the rows returned
+    where: category_tool_bool_exp
+  ): category_tool_aggregate!
+
+  # fetch data from the table: "category_tool" using primary key columns
+  category_tool_by_pk(name: String!): category_tool
+
+  # fetch data from the table: "country"
+  country(
+    # distinct select on columns
+    distinct_on: [country_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [country_order_by!]
+
+    # filter the rows returned
+    where: country_bool_exp
+  ): [country!]!
+
+  # fetch aggregated fields from the table: "country"
+  country_aggregate(
+    # distinct select on columns
+    distinct_on: [country_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [country_order_by!]
+
+    # filter the rows returned
+    where: country_bool_exp
+  ): country_aggregate!
+
+  # fetch data from the table: "country" using primary key columns
+  country_by_pk(iso: String!): country
+
+  # fetch data from the table: "experience"
+  experience(
+    # distinct select on columns
+    distinct_on: [experience_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [experience_order_by!]
+
+    # filter the rows returned
+    where: experience_bool_exp
+  ): [experience!]!
+
+  # fetch aggregated fields from the table: "experience"
+  experience_aggregate(
+    # distinct select on columns
+    distinct_on: [experience_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [experience_order_by!]
+
+    # filter the rows returned
+    where: experience_bool_exp
+  ): experience_aggregate!
+
+  # fetch data from the table: "experience" using primary key columns
+  experience_by_pk(id: uuid!): experience
+
+  # fetch data from the table: "office"
+  office(
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): [office!]!
+
+  # fetch aggregated fields from the table: "office"
+  office_aggregate(
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): office_aggregate!
+
+  # fetch data from the table: "office" using primary key columns
+  office_by_pk(id: uuid!): office
+
+  # fetch data from the table: "office_revision"
+  office_revision(
+    # distinct select on columns
+    distinct_on: [office_revision_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_revision_order_by!]
+
+    # filter the rows returned
+    where: office_revision_bool_exp
+  ): [office_revision!]!
+
+  # fetch aggregated fields from the table: "office_revision"
+  office_revision_aggregate(
+    # distinct select on columns
+    distinct_on: [office_revision_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_revision_order_by!]
+
+    # filter the rows returned
+    where: office_revision_bool_exp
+  ): office_revision_aggregate!
+
+  # fetch data from the table: "office_revision" using primary key columns
+  office_revision_by_pk(id: uuid!): office_revision
+
+  # fetch data from the table: "office_tool"
+  office_tool(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): [office_tool!]!
+
+  # fetch aggregated fields from the table: "office_tool"
+  office_tool_aggregate(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): office_tool_aggregate!
+
+  # execute function "search_offices" which returns "office"
+  search_offices(
+    # input parameters for function "search_offices"
+    args: search_offices_args!
+
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): [office!]!
+
+  # execute function "search_offices" and query aggregates on result of table type "office"
+  search_offices_aggregate(
+    # input parameters for function "search_offices"
+    args: search_offices_args!
+
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): office_aggregate!
+
+  # execute function "search_tools" which returns "tool"
+  search_tools(
+    # input parameters for function "search_tools"
+    args: search_tools_args!
+
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): [tool!]!
+
+  # execute function "search_tools" and query aggregates on result of table type "tool"
+  search_tools_aggregate(
+    # input parameters for function "search_tools"
+    args: search_tools_args!
+
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): tool_aggregate!
+
+  # fetch data from the table: "tool"
+  tool(
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): [tool!]!
+
+  # fetch aggregated fields from the table: "tool"
+  tool_aggregate(
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): tool_aggregate!
+
+  # fetch data from the table: "tool" using primary key columns
+  tool_by_pk(id: uuid!): tool
+
+  # fetch data from the table: "tool_category"
+  tool_category(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): [tool_category!]!
+
+  # fetch aggregated fields from the table: "tool_category"
+  tool_category_aggregate(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): tool_category_aggregate!
+
+  # fetch data from the table: "tool_category" using primary key columns
+  tool_category_by_pk(category_name: String!, tool_id: uuid!): tool_category
+
+  # Returns the single instance record
+  toolsIntro(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): ToolsIntroRecord
+
+  # Returns a specific asset
+  upload(
+    filter: UploadFilter
+
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+    orderBy: [UploadOrderBy]
+  ): FileField
+}
+
+# Specifies how to filter by upload type
+input ResolutionFilter {
+  # Search uploads with the specified type
+  eq: ResolutionType
+
+  # Search uploads with the specified types
+  in: [ResolutionType]
+
+  # Exclude uploads with the specified type
+  neq: ResolutionType
+
+  # Search uploads without the specified types
+  notIn: [ResolutionType]
+}
+
+enum ResolutionType {
+  icon
+  large
+  medium
+  small
+}
+
+type ResponsiveImage {
+  alt: String
+  aspectRatio: FloatType!
+  base64: String
+  bgColor: String
+  height: IntType!
+  sizes: String!
+  src: String!
+  srcSet: String!
+  title: String
+  webpSrcSet: String!
+  width: IntType!
+}
+
+input search_offices_args {
+  search: String
+}
+
+input search_tools_args {
+  search: String
+}
+
+type SeoField {
+  description: String
+  image: FileField
+  title: String
+  twitterCard: String
+}
+
+type Site {
+  favicon: FileField
+  faviconMetaTags(
+    # The variants to build
+    variants: [FaviconType]
+  ): [Tag!]!
+  globalSeo(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): GlobalSeoField
+}
+
+enum SiteLocale {
+  en
+}
+
+# expression to compare columns of type String. All fields are combined with logical 'AND'.
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+  _ilike: String
+  _in: [String!]
+  _is_null: Boolean
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+  _nilike: String
+  _nin: [String!]
+  _nlike: String
+  _nsimilar: String
+  _similar: String
+}
+
+input StringMatchesFilter {
+  caseSensitive: BooleanType = false
+  pattern: String!
+  regexp: BooleanType = false
+}
+
+# subscription root
+type subscription_root {
+  # fetch data from the table: "category_tool"
+  category_tool(
+    # distinct select on columns
+    distinct_on: [category_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [category_tool_order_by!]
+
+    # filter the rows returned
+    where: category_tool_bool_exp
+  ): [category_tool!]!
+
+  # fetch aggregated fields from the table: "category_tool"
+  category_tool_aggregate(
+    # distinct select on columns
+    distinct_on: [category_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [category_tool_order_by!]
+
+    # filter the rows returned
+    where: category_tool_bool_exp
+  ): category_tool_aggregate!
+
+  # fetch data from the table: "category_tool" using primary key columns
+  category_tool_by_pk(name: String!): category_tool
+
+  # fetch data from the table: "country"
+  country(
+    # distinct select on columns
+    distinct_on: [country_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [country_order_by!]
+
+    # filter the rows returned
+    where: country_bool_exp
+  ): [country!]!
+
+  # fetch aggregated fields from the table: "country"
+  country_aggregate(
+    # distinct select on columns
+    distinct_on: [country_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [country_order_by!]
+
+    # filter the rows returned
+    where: country_bool_exp
+  ): country_aggregate!
+
+  # fetch data from the table: "country" using primary key columns
+  country_by_pk(iso: String!): country
+
+  # fetch data from the table: "experience"
+  experience(
+    # distinct select on columns
+    distinct_on: [experience_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [experience_order_by!]
+
+    # filter the rows returned
+    where: experience_bool_exp
+  ): [experience!]!
+
+  # fetch aggregated fields from the table: "experience"
+  experience_aggregate(
+    # distinct select on columns
+    distinct_on: [experience_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [experience_order_by!]
+
+    # filter the rows returned
+    where: experience_bool_exp
+  ): experience_aggregate!
+
+  # fetch data from the table: "experience" using primary key columns
+  experience_by_pk(id: uuid!): experience
+
+  # fetch data from the table: "office"
+  office(
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): [office!]!
+
+  # fetch aggregated fields from the table: "office"
+  office_aggregate(
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): office_aggregate!
+
+  # fetch data from the table: "office" using primary key columns
+  office_by_pk(id: uuid!): office
+
+  # fetch data from the table: "office_revision"
+  office_revision(
+    # distinct select on columns
+    distinct_on: [office_revision_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_revision_order_by!]
+
+    # filter the rows returned
+    where: office_revision_bool_exp
+  ): [office_revision!]!
+
+  # fetch aggregated fields from the table: "office_revision"
+  office_revision_aggregate(
+    # distinct select on columns
+    distinct_on: [office_revision_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_revision_order_by!]
+
+    # filter the rows returned
+    where: office_revision_bool_exp
+  ): office_revision_aggregate!
+
+  # fetch data from the table: "office_revision" using primary key columns
+  office_revision_by_pk(id: uuid!): office_revision
+
+  # fetch data from the table: "office_tool"
+  office_tool(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): [office_tool!]!
+
+  # fetch aggregated fields from the table: "office_tool"
+  office_tool_aggregate(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): office_tool_aggregate!
+
+  # execute function "search_offices" which returns "office"
+  search_offices(
+    # input parameters for function "search_offices"
+    args: search_offices_args!
+
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): [office!]!
+
+  # execute function "search_offices" and query aggregates on result of table type "office"
+  search_offices_aggregate(
+    # input parameters for function "search_offices"
+    args: search_offices_args!
+
+    # distinct select on columns
+    distinct_on: [office_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_order_by!]
+
+    # filter the rows returned
+    where: office_bool_exp
+  ): office_aggregate!
+
+  # execute function "search_tools" which returns "tool"
+  search_tools(
+    # input parameters for function "search_tools"
+    args: search_tools_args!
+
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): [tool!]!
+
+  # execute function "search_tools" and query aggregates on result of table type "tool"
+  search_tools_aggregate(
+    # input parameters for function "search_tools"
+    args: search_tools_args!
+
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): tool_aggregate!
+
+  # fetch data from the table: "tool"
+  tool(
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): [tool!]!
+
+  # fetch aggregated fields from the table: "tool"
+  tool_aggregate(
+    # distinct select on columns
+    distinct_on: [tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_order_by!]
+
+    # filter the rows returned
+    where: tool_bool_exp
+  ): tool_aggregate!
+
+  # fetch data from the table: "tool" using primary key columns
+  tool_by_pk(id: uuid!): tool
+
+  # fetch data from the table: "tool_category"
+  tool_category(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): [tool_category!]!
+
+  # fetch aggregated fields from the table: "tool_category"
+  tool_category_aggregate(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): tool_category_aggregate!
+
+  # fetch data from the table: "tool_category" using primary key columns
+  tool_category_by_pk(category_name: String!, tool_id: uuid!): tool_category
+}
+
+type Tag {
+  attributes: MetaTagAttributes
+  content: String
+  tag: String!
+}
+
+scalar timestamptz
+
+# expression to compare columns of type timestamptz. All fields are combined with logical 'AND'.
+input timestamptz_comparison_exp {
+  _eq: timestamptz
+  _gt: timestamptz
+  _gte: timestamptz
+  _in: [timestamptz!]
+  _is_null: Boolean
+  _lt: timestamptz
+  _lte: timestamptz
+  _neq: timestamptz
+  _nin: [timestamptz!]
+}
+
+# columns and relationships of "tool"
+type tool {
+  created_at: timestamptz!
+  description: String
+  id: uuid!
+  is_free: Boolean!
+  name: String!
+
+  # An array relationship
+  office_tools(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): [office_tool!]!
+
+  # An aggregated array relationship
+  office_tools_aggregate(
+    # distinct select on columns
+    distinct_on: [office_tool_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [office_tool_order_by!]
+
+    # filter the rows returned
+    where: office_tool_bool_exp
+  ): office_tool_aggregate!
+
+  # An array relationship
+  tool_categories(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): [tool_category!]!
+
+  # An aggregated array relationship
+  tool_categories_aggregate(
+    # distinct select on columns
+    distinct_on: [tool_category_select_column!]
+
+    # limit the number of rows returned
+    limit: Int
+
+    # skip the first n rows. Use only with order_by
+    offset: Int
+
+    # sort the rows by one or more columns
+    order_by: [tool_category_order_by!]
+
+    # filter the rows returned
+    where: tool_category_bool_exp
+  ): tool_category_aggregate!
+  updated_at: timestamptz!
+  url: String
+}
+
+# aggregated selection of "tool"
+type tool_aggregate {
+  aggregate: tool_aggregate_fields
+  nodes: [tool!]!
+}
+
+# aggregate fields of "tool"
+type tool_aggregate_fields {
+  count(columns: [tool_select_column!], distinct: Boolean): Int
+  max: tool_max_fields
+  min: tool_min_fields
+}
+
+# order by aggregate values of table "tool"
+input tool_aggregate_order_by {
+  count: order_by
+  max: tool_max_order_by
+  min: tool_min_order_by
+}
+
+# input type for inserting array relation for remote table "tool"
+input tool_arr_rel_insert_input {
+  data: [tool_insert_input!]!
+  on_conflict: tool_on_conflict
+}
+
+# Boolean expression to filter rows from the table "tool". All fields are combined with a logical 'AND'.
+input tool_bool_exp {
+  _and: [tool_bool_exp]
+  _not: tool_bool_exp
+  _or: [tool_bool_exp]
+  created_at: timestamptz_comparison_exp
+  description: String_comparison_exp
+  id: uuid_comparison_exp
+  is_free: Boolean_comparison_exp
+  name: String_comparison_exp
+  office_tools: office_tool_bool_exp
+  tool_categories: tool_category_bool_exp
+  updated_at: timestamptz_comparison_exp
+  url: String_comparison_exp
+}
+
+# Relationshiop tools <> categories
+#
+#
+# columns and relationships of "tool_category"
+#
+type tool_category {
+  category_name: String!
+
+  # An object relationship
+  tool: tool!
+  tool_id: uuid!
+}
+
+# aggregated selection of "tool_category"
+type tool_category_aggregate {
+  aggregate: tool_category_aggregate_fields
+  nodes: [tool_category!]!
+}
+
+# aggregate fields of "tool_category"
+type tool_category_aggregate_fields {
+  count(columns: [tool_category_select_column!], distinct: Boolean): Int
+  max: tool_category_max_fields
+  min: tool_category_min_fields
+}
+
+# order by aggregate values of table "tool_category"
+input tool_category_aggregate_order_by {
+  count: order_by
+  max: tool_category_max_order_by
+  min: tool_category_min_order_by
+}
+
+# input type for inserting array relation for remote table "tool_category"
+input tool_category_arr_rel_insert_input {
+  data: [tool_category_insert_input!]!
+  on_conflict: tool_category_on_conflict
+}
+
+# Boolean expression to filter rows from the table "tool_category". All fields are combined with a logical 'AND'.
+input tool_category_bool_exp {
+  _and: [tool_category_bool_exp]
+  _not: tool_category_bool_exp
+  _or: [tool_category_bool_exp]
+  category_name: String_comparison_exp
+  tool: tool_bool_exp
+  tool_id: uuid_comparison_exp
+}
+
+# unique or primary key constraints on table "tool_category"
+enum tool_category_constraint {
+  # unique or primary key constraint
+  tool_category_pkey
+}
+
+# input type for inserting data into table "tool_category"
+input tool_category_insert_input {
+  category_name: String
+  tool: tool_obj_rel_insert_input
+  tool_id: uuid
+}
+
+# aggregate max on columns
+type tool_category_max_fields {
+  category_name: String
+}
+
+# order by max() on columns of table "tool_category"
+input tool_category_max_order_by {
+  category_name: order_by
+}
+
+# aggregate min on columns
+type tool_category_min_fields {
+  category_name: String
+}
+
+# order by min() on columns of table "tool_category"
+input tool_category_min_order_by {
+  category_name: order_by
+}
+
+# response of any mutation on the table "tool_category"
+type tool_category_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [tool_category!]!
+}
+
+# input type for inserting object relation for remote table "tool_category"
+input tool_category_obj_rel_insert_input {
+  data: tool_category_insert_input!
+  on_conflict: tool_category_on_conflict
+}
+
+# on conflict condition type for table "tool_category"
+input tool_category_on_conflict {
+  constraint: tool_category_constraint!
+  update_columns: [tool_category_update_column!]!
+  where: tool_category_bool_exp
+}
+
+# ordering options when selecting data from "tool_category"
+input tool_category_order_by {
+  category_name: order_by
+  tool: tool_order_by
+  tool_id: order_by
+}
+
+# select columns of table "tool_category"
+enum tool_category_select_column {
+  # column name
+  category_name
+
+  # column name
+  tool_id
+}
+
+# input type for updating data in table "tool_category"
+input tool_category_set_input {
+  category_name: String
+  tool_id: uuid
+}
+
+# update columns of table "tool_category"
+enum tool_category_update_column {
+  # column name
+  category_name
+
+  # column name
+  tool_id
+}
+
+# unique or primary key constraints on table "tool"
+enum tool_constraint {
+  # unique or primary key constraint
+  tool_pkey
+
+  # unique or primary key constraint
+  tool_url_key
+}
+
+# input type for inserting data into table "tool"
+input tool_insert_input {
+  created_at: timestamptz
+  description: String
+  id: uuid
+  is_free: Boolean
+  name: String
+  office_tools: office_tool_arr_rel_insert_input
+  tool_categories: tool_category_arr_rel_insert_input
+  updated_at: timestamptz
+  url: String
+}
+
+# aggregate max on columns
+type tool_max_fields {
+  created_at: timestamptz
+  description: String
+  name: String
+  updated_at: timestamptz
+  url: String
+}
+
+# order by max() on columns of table "tool"
+input tool_max_order_by {
+  created_at: order_by
+  description: order_by
+  name: order_by
+  updated_at: order_by
+  url: order_by
+}
+
+# aggregate min on columns
+type tool_min_fields {
+  created_at: timestamptz
+  description: String
+  name: String
+  updated_at: timestamptz
+  url: String
+}
+
+# order by min() on columns of table "tool"
+input tool_min_order_by {
+  created_at: order_by
+  description: order_by
+  name: order_by
+  updated_at: order_by
+  url: order_by
+}
+
+# response of any mutation on the table "tool"
+type tool_mutation_response {
+  # number of affected rows by the mutation
+  affected_rows: Int!
+
+  # data of the affected rows by the mutation
+  returning: [tool!]!
+}
+
+# input type for inserting object relation for remote table "tool"
+input tool_obj_rel_insert_input {
+  data: tool_insert_input!
+  on_conflict: tool_on_conflict
+}
+
+# on conflict condition type for table "tool"
+input tool_on_conflict {
+  constraint: tool_constraint!
+  update_columns: [tool_update_column!]!
+  where: tool_bool_exp
+}
+
+# ordering options when selecting data from "tool"
+input tool_order_by {
+  created_at: order_by
+  description: order_by
+  id: order_by
+  is_free: order_by
+  name: order_by
+  office_tools_aggregate: office_tool_aggregate_order_by
+  tool_categories_aggregate: tool_category_aggregate_order_by
+  updated_at: order_by
+  url: order_by
+}
+
+# select columns of table "tool"
+enum tool_select_column {
+  # column name
+  created_at
+
+  # column name
+  description
+
+  # column name
+  id
+
+  # column name
+  is_free
+
+  # column name
+  name
+
+  # column name
+  updated_at
+
+  # column name
+  url
+}
+
+# input type for updating data in table "tool"
+input tool_set_input {
+  created_at: timestamptz
+  description: String
+  id: uuid
+  is_free: Boolean
+  name: String
+  updated_at: timestamptz
+  url: String
+}
+
+# update columns of table "tool"
+enum tool_update_column {
+  # column name
+  created_at
+
+  # column name
+  description
+
+  # column name
+  id
+
+  # column name
+  is_free
+
+  # column name
+  name
+
+  # column name
+  updated_at
+
+  # column name
+  url
+}
+
+# Record of type Tools Intro (tools_intro)
+type ToolsIntroRecord {
+  _createdAt: DateTime!
+  _firstPublishedAt: DateTime
+  _isValid: BooleanType!
+  _modelApiKey: String!
+  _publicationScheduledAt: DateTime
+  _publishedAt: DateTime
+
+  # SEO meta tags
+  _seoMetaTags(
+    # The locale to use to fetch the field's content
+    locale: SiteLocale
+  ): [Tag!]!
+  _status: ItemStatus!
+  _updatedAt: DateTime!
+  content(
+    # Process content as markdown
+    markdown: Boolean
+  ): String
+  createdAt: DateTime!
+  id: ItemId!
+  updatedAt: DateTime!
+}
+
+# Specifies how to filter by upload type
+input TypeFilter {
+  # Search uploads with the specified type
+  eq: UploadType
+
+  # Search uploads with the specified types
+  in: [UploadType]
+
+  # Exclude uploads with the specified type
+  neq: UploadType
+
+  # Search uploads without the specified types
+  notIn: [UploadType]
+}
+
+# Specifies how to filter by default alt
+input UploadAltFilter {
+  # Search the asset with the specified alt
+  eq: String
+
+  # Search assets with the specified values as default alt
+  in: [String]
+
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude the asset with the specified alt
+  neq: String
+
+  # Search assets that do not have the specified values as default alt
+  notIn: [String]
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+# Specifies how to filter by auhtor
+input UploadAuthorFilter {
+  # Filter records with the specified field defined (i.e. with any value) or not
+  exists: BooleanType
+
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+# Specifies how to filter by basename
+input UploadBasenameFilter {
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+# Specifies how to filter by colors
+input UploadColorsFilter {
+  # Filter uploads that have all of the specified colors
+  allIn: [ColorBucketType]
+
+  # Filter uploads that have at least one of the specified colors
+  anyIn: [ColorBucketType]
+
+  # Filter uploads that have the specified colors
+  contains: ColorBucketType
+
+  # Search for uploads with an exact match
+  eq: [ColorBucketType]
+
+  # Filter uploads that do not have any of the specified colors
+  notIn: [ColorBucketType]
+}
+
+# Specifies how to filter by copyright
+input UploadCopyrightFilter {
+  # Filter records with the specified field defined (i.e. with any value) or not
+  exists: BooleanType
+
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+# Specifies how to filter for date of creation
+input UploadCreatedAtFilter {
+  # Search for uploads with an exact match
+  eq: DateTime
+
+  # Filter uploads with a value that's strictly greater than the one specified
+  gt: DateTime
+
+  # Filter uploads with a value that's greater than or equal to the one specified
+  gte: DateTime
+
+  # Filter uploads with a value that's less than the one specified
+  lt: DateTime
+
+  # Filter uploads with a value that's less or equal than the one specified
+  lte: DateTime
+
+  # Exclude uploads with an exact match
+  neq: DateTime
+}
+
+# Specifies how to filter by filename
+input UploadFilenameFilter {
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+input UploadFilter {
+  OR: [UploadFilter]
+  _createdAt: UploadCreatedAtFilter
+  _updatedAt: UploadUpdatedAtFilter
+  alt: UploadAltFilter
+  author: UploadAuthorFilter
+  basename: UploadBasenameFilter
+  colors: UploadColorsFilter
+  copyright: UploadCopyrightFilter
+  filename: UploadFilenameFilter
+  format: UploadFormatFilter
+  height: UploadHeightFilter
+  id: UploadIdFilter
+  inUse: InUseFilter
+  mimeType: UploadMimeTypeFilter
+  notes: UploadNotesFilter
+  orientation: OrientationFilter
+  resolution: ResolutionFilter
+  size: UploadSizeFilter
+  smartTags: UploadTagsFilter
+  tags: UploadTagsFilter
+  title: UploadTitleFilter
+  type: TypeFilter
+  width: UploadWidthFilter
+}
+
+# Specifies how to filter by format
+input UploadFormatFilter {
+  # Search the asset with the specified format
+  eq: String
+
+  # Search assets with the specified formats
+  in: [String]
+
+  # Exclude the asset with the specified format
+  neq: String
+
+  # Search assets that do not have the specified formats
+  notIn: [String]
+}
+
+# Specifies how to filter by height
+input UploadHeightFilter {
+  # Search assets with the specified height
+  eq: IntType
+
+  # Search all assets larger than the specified height
+  gt: IntType
+
+  # Search all assets larger or equal to the specified height
+  gte: [IntType]
+
+  # Search all assets smaller than the specified height
+  lt: IntType
+
+  # Search all assets larger or equal to the specified height
+  lte: [IntType]
+
+  # Search assets that do not have the specified height
+  neq: IntType
+}
+
+scalar UploadId
+
+# Specifies how to filter by ID
+input UploadIdFilter {
+  # Search the asset with the specified ID
+  eq: UploadId
+
+  # Search assets with the specified IDs
+  in: [UploadId]
+
+  # Exclude the asset with the specified ID
+  neq: UploadId
+
+  # Search assets that do not have the specified IDs
+  notIn: [UploadId]
+}
+
+# Specifies how to filter by mime type
+input UploadMimeTypeFilter {
+  # Search the asset with the specified mime type
+  eq: String
+
+  # Search assets with the specified mime types
+  in: [String]
+
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude the asset with the specified mime type
+  neq: String
+
+  # Search assets that do not have the specified mime types
+  notIn: [String]
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+# Specifies how to filter by notes
+input UploadNotesFilter {
+  # Filter records with the specified field defined (i.e. with any value) or not
+  exists: BooleanType
+
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+enum UploadOrderBy {
+  _createdAt_ASC
+  _createdAt_DESC
+  _updatedAt_ASC
+  _updatedAt_DESC
+  basename_ASC
+  basename_DESC
+  filename_ASC
+  filename_DESC
+  format_ASC
+  format_DESC
+  id_ASC
+  id_DESC
+  mimeType_ASC
+  mimeType_DESC
+  resolution_ASC
+  resolution_DESC
+  size_ASC
+  size_DESC
+}
+
+enum UploadOrientation {
+  landscape
+  portrait
+  square
+}
+
+# Specifies how to filter by size
+input UploadSizeFilter {
+  # Search assets with the specified size
+  eq: IntType
+
+  # Search all assets larger than the specified size
+  gt: IntType
+
+  # Search all assets larger or equal to the specified size
+  gte: [IntType]
+
+  # Search all assets smaller than the specified size
+  lt: IntType
+
+  # Search all assets larger or equal to the specified size
+  lte: [IntType]
+
+  # Search assets that do not have the specified size
+  neq: IntType
+}
+
+# Specifies how to filter by tags
+input UploadTagsFilter {
+  # Filter uploads linked to all of the specified tags
+  allIn: [String]
+
+  # Filter uploads linked to at least one of the specified tags
+  anyIn: [String]
+
+  # Filter uploads linked to the specified tag
+  contains: String
+
+  # Search for uploads with an exact match
+  eq: [String]
+
+  # Filter uploads not linked to any of the specified tags
+  notIn: [String]
+}
+
+# Specifies how to filter by default title
+input UploadTitleFilter {
+  # Search the asset with the specified title
+  eq: String
+
+  # Search assets with the specified as default title
+  in: [String]
+
+  # Filter uploads based on a regular expression
+  matches: StringMatchesFilter
+
+  # Exclude the asset with the specified title
+  neq: String
+
+  # Search assets that do not have the specified as default title
+  notIn: [String]
+
+  # Exclude uploads based on a regular expression
+  notMatches: StringMatchesFilter
+}
+
+enum UploadType {
+  archive
+  audio
+  image
+  pdfdocument
+  presentation
+  richtext
+  spreadsheet
+  video
+}
+
+# Specifies how to filter for date of creation
+input UploadUpdatedAtFilter {
+  # Search for uploads with an exact match
+  eq: DateTime
+
+  # Filter uploads with a value that's strictly greater than the one specified
+  gt: DateTime
+
+  # Filter uploads with a value that's greater than or equal to the one specified
+  gte: DateTime
+
+  # Filter uploads with a value that's less than the one specified
+  lt: DateTime
+
+  # Filter uploads with a value that's less or equal than the one specified
+  lte: DateTime
+
+  # Exclude uploads with an exact match
+  neq: DateTime
+}
+
+type UploadVideoField {
+  duration: Int!
+  framerate: Int!
+  mp4Url(
+    # Pick the exact resolution quality specified in the argument
+    exactRes: VideoMp4Res
+
+    # Pick highest resolution available up to the specified argument
+    res: VideoMp4Res
+  ): String
+  muxAssetId: String!
+  muxPlaybackId: String!
+  streamingUrl: String!
+  thumbnailUrl(
+    # The file extension of the requested image format. Either png, jpg or gif
+    format: MuxThumbnailFormatType = jpg
+  ): String!
+}
+
+# Specifies how to filter by width
+input UploadWidthFilter {
+  # Search assets with the specified width
+  eq: IntType
+
+  # Search all assets larger than the specified width
+  gt: IntType
+
+  # Search all assets larger or equal to the specified width
+  gte: [IntType]
+
+  # Search all assets smaller than the specified width
+  lt: IntType
+
+  # Search all assets larger or equal to the specified width
+  lte: [IntType]
+
+  # Search assets that do not have the specified width
+  neq: IntType
+}
+
+scalar uuid
+
+# expression to compare columns of type uuid. All fields are combined with logical 'AND'.
+input uuid_comparison_exp {
+  _eq: uuid
+  _gt: uuid
+  _gte: uuid
+  _in: [uuid!]
+  _is_null: Boolean
+  _lt: uuid
+  _lte: uuid
+  _neq: uuid
+  _nin: [uuid!]
+}
+
+enum VideoMp4Res {
+  high
+  low
+  medium
+}
