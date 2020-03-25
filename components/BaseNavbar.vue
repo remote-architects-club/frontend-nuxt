@@ -13,6 +13,9 @@
       <li class="font-semibold">
         <nuxt-link to="/about" class="link">about</nuxt-link>
       </li>
+      <li class="font-semibold">
+        <nuxt-link to="/feedback" class="link">what else?</nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
