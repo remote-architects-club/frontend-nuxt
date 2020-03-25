@@ -28,14 +28,9 @@ exports.handler = async (event, context) => {
     return { statusCode: 400, body: 'cannot parse hasura event' }
   }
   const { id } = request.event.data.new
-  const { name } = request.table
-  // const variables = {
-  //   id: request.event.data.new.id,
-  //   // title: filter.clean(request.event.data.new.title),
-  //   // content: filter.clean(request.event.data.new.content)
-  // }
+  // const { name } = request.table
+  const name = "TABLE"
   try {
-    // await axios.post(hgeEndpoint + '/v1alpha1/graphql', { query, variables })
     await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
         {
@@ -52,7 +47,9 @@ exports.handler = async (event, context) => {
           Subject: `New [${name.toUpperCase()}] added to Remote Architects Club`,
           TextPart: `Someone added a new [${name.toUpperCase()}] entry. id[${id}]`,
           HTMLPart: `<p>Someone added a new [${name.toUpperCase()}] entry:</p>
-          <p>id[${id}]</p>`
+          <p>id[${id}]</p>
+          ${request}
+          `
         }
       ]
     })
