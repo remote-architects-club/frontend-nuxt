@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-cy="add-form">
     <template v-if="matches('addCompany.editing')">
       <validation-observer v-slot="{ invalid }">
         <div class="mb-4">
@@ -8,22 +8,30 @@
             <text-input
               placeholder="Company name"
               v-model="company.name"
+              data-cy="input-name"
             ></text-input>
-            <span class="error">{{ errors[0] }}</span>
+            <span class="error" data-cy="error-name">{{ errors[0] }}</span>
           </validation-provider>
         </div>
 
         <div class="w-1/2 mb-4">
           <p class="mb-1">City*</p>
           <validation-provider v-slot="{ errors }" rules="required" name="city">
-            <text-input placeholder="City" v-model="company.city"></text-input>
-            <span class="error">{{ errors[0] }}</span>
+            <text-input
+              placeholder="City"
+              v-model="company.city"
+              data-cy="input-city"
+            ></text-input>
+            <span class="error" data-cy="error-city">{{ errors[0] }}</span>
           </validation-provider>
         </div>
         <div class="w-1/2 mb-4">
           <p class="mb-1">Country*</p>
           <validation-provider v-slot="{ errors }" rules="required">
-            <country-select v-model="company.country_iso" />
+            <country-select
+              v-model="company.country_iso"
+              data-cy="select-country"
+            />
             <span class="error">{{ errors[0] }}</span>
           </validation-provider>
         </div>
@@ -35,13 +43,18 @@
               type="url"
               placeholder="https://..."
               v-model="company.url"
+              data-cy="input-website"
             ></text-input>
-            <span class="error">{{ errors[0] }}</span>
+            <span class="error" data-cy="error-website">{{ errors[0] }}</span>
           </validation-provider>
         </div>
         <div class="mb-8">
           <p class="mb-1">Size</p>
-          <radio-input v-model="company.num_people" :options="sizeOptions" />
+          <radio-input
+            v-model="company.num_people"
+            :options="sizeOptions"
+            data-cy="radio-size"
+          />
         </div>
         <div class="mb-4">
           <p class="flex items-center">
@@ -49,10 +62,11 @@
               @click="save"
               :disabled="invalid"
               class="mr-4 btn btn-regular"
+              data-cy="btn-save"
             >
               save
             </button>
-            <button @click="cancel" class="btn btn-text">
+            <button @click="cancel" class="btn btn-text" data-cy="btn-cancel">
               cancel
             </button>
           </p>
