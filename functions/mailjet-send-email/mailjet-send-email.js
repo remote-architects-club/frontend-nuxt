@@ -28,8 +28,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 400, body: 'cannot parse hasura event' }
   }
   const { id } = request.event.data.new
-  // const { name } = request.table
-  const name = "TABLE"
+  const { name } = request.table
   try {
     await mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
@@ -44,7 +43,7 @@ exports.handler = async (event, context) => {
               Name: 'Daniel'
             }
           ],
-          Subject: `New [${name.toUpperCase()}] added to Remote Architects Club`,
+          Subject: `New "${name}" added to Remote Architects Club`,
           TextPart: `Someone added a new [${name.toUpperCase()}] entry. id[${id}]`,
           HTMLPart: `<p>Someone added a new [${name.toUpperCase()}] entry:</p>
           <p>id[${id}]</p>
