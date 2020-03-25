@@ -1,6 +1,17 @@
 <template>
-  <img class="logo" src="~assets/logo01.svg" />
+  <img class="logo" src="~assets/logo-admin.svg" v-if="admin" />
+  <img class="logo" src="~assets/logo-main.svg" v-else />
 </template>
+<script>
+export default {
+  props: {
+    admin: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
 <style>
 .logo {
   animation: 1s appear;

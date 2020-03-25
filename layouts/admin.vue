@@ -4,7 +4,9 @@
       class="flex flex-col justify-center flex-none mb-12 sm:flex-row-reverse sm:justify-between sm:pt-4 sm:px-2 lg:pt-8"
     >
       <admin-navbar />
-      <nuxt-link to="/" class="sm:ml-2 sm:mt-4"><logo class="w-48"/></nuxt-link>
+      <nuxt-link to="/" class="sm:ml-2 sm:mt-4"
+        ><logo :admin="true" class="w-48"
+      /></nuxt-link>
     </header>
     <main class="flex-1 mb-12">
       <nuxt />
