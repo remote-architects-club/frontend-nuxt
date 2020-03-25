@@ -126,7 +126,7 @@ export default {
         intro += [
           'because they are <strong>not allowed</strong> to 😠. ',
           'because situation over there improved and things are <strong>back to normal</strong>. ',
-          'because they <strong>prefer</strong> to come the office everyday 😶. '
+          'because they <strong>prefer/need</strong> to come to the office everyday 😶. '
         ][this.exp.not_wfh_reason]
         intro += [
           'Also, most of their colleagues are <strong>not</strong> working from home. ',
