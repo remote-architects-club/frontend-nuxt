@@ -28,7 +28,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 400, body: 'cannot parse hasura event' }
   }
   const { id } = request.event.data.new
-  const { name } = request.event.table
+  const { name } = request.table
   // const variables = {
   //   id: request.event.data.new.id,
   //   // title: filter.clean(request.event.data.new.title),
