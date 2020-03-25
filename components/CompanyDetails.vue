@@ -35,7 +35,7 @@
         <p class="flex items-center mb-1 font-semibold">
           tools
         </p>
-        <ul class="flex flex-wrap mt-1">
+        <ul class="flex flex-wrap mt-1" v-if="company.office_tools.length">
           <li
             v-for="{ tool } in company.office_tools"
             :key="tool.id"
@@ -44,6 +44,7 @@
             {{ tool.name }}
           </li>
         </ul>
+        <p v-else>n/a</p>
       </section>
     </div>
   </div>
