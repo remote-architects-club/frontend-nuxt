@@ -97,13 +97,25 @@ async function invokeFetchCompanies() {
   const { data } = await client.query({
     query: gql`
       query offices {
-        office_aggregate(where: { remote_policy: { _is_null: false } }) {
+        office_aggregate(
+          where: {
+            _or: [
+              { remote_policy: { _is_null: false } }
+              { latest_experience: { _is_null: false } }
+            ]
+          }
+        ) {
           aggregate {
             count
           }
         }
         office(
-          where: { remote_policy: { _is_null: false } }
+          where: {
+            _or: [
+              { remote_policy: { _is_null: false } }
+              { latest_experience: { _is_null: false } }
+            ]
+          }
           order_by: { latest_experience: asc }
         ) {
           city
