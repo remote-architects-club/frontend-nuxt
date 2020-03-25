@@ -117,7 +117,10 @@ export default {
         .then(() => {
           this.thankYou = true
         })
-        .catch(() => {
+        .catch((e) => {
+          this.$sentry.captureException(
+            new Error('Could not send feedback form:', e)
+          )
           this.error = true
         })
     }
