@@ -23,10 +23,10 @@
           </div>
         </div>
       </div>
-      <div v-if="exp.tools" class="mb-4">
+      <div v-if="showTools && exp.tools" class="mb-4">
         <p class="mb-2 font-semibold">tools</p>
         <div class="pl-4">
-          <p>{{ hardware }}</p>
+          <p v-if="exp.wfh === 0">{{ hardware }}</p>
           <p>{{ tools }}</p>
           <p v-if="exp.tools_text">💬&ldquo;{{ exp.tools_text }}&rdquo;</p>
         </div>
@@ -138,6 +138,14 @@ export default {
         "😐company's reaction to COVID-19 was ok, but could've been better ",
         "🙂company's reaction to COVID-19 was perfect. "
       ][this.exp.company]
+    },
+    showTools() {
+      if (
+        this.exp.wfh === 0 ||
+        (this.exp.wfh === 1 && this.exp.colleagues !== 0)
+      )
+        return true
+      return false
     },
     exp() {
       return this.removeEmpty({ ...this.experience })
