@@ -13,7 +13,7 @@ export default {
         name: 'description',
         content: 'Stories, tools, and links for architects working remotely.'
       }
-    ],
+    ]
     // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
@@ -60,13 +60,17 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    // '@nuxtjs/axios',
+    '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/svg',
-    'nuxt-rfg-icon'
+    'nuxt-rfg-icon',
+    '@nuxtjs/sentry'
   ],
-
+  sentry: {
+    dsn: 'https://ef5a8da5a37d48d0a0ad8b746bb26990@sentry.io/5174207', // Enter your project's DSN here
+    config: {} // Additional config
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

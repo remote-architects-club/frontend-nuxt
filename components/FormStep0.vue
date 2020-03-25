@@ -6,6 +6,8 @@
     <template v-if="matches('noCompany')">
       <p class="mb-2">What's your company's name?</p>
       <input
+        id="office-name"
+        data-cy="office-name"
         type="text"
         class="w-full p-4 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
         placeholder="Company name"
@@ -35,7 +37,7 @@
           Searching...
         </p> -->
       </div>
-      <div v-if="matches('noCompany.found')">
+      <div v-if="matches('noCompany.found')" id="results">
         <p class="mt-4 mb-6 border-b-2 border-black">
           Found {{ context.foundCompanies.length }} possible
           <span v-if="context.foundCompanies.length === 1">match</span

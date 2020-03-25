@@ -24,7 +24,14 @@
                 :options="
                   !!question.options.choices ? question.options.choices : false
                 "
+                :data-cy="question.name"
               />
+              <p
+                class="mt-1 text-sm"
+                v-if="question.options && question.options.explanation"
+              >
+                {{ question.options.explanation }}
+              </p>
             </div>
             <!-- <field-error :is-valid="isValid">{{ error }}</field-error> -->
           </field-group>
@@ -48,6 +55,7 @@ import FieldLabel from '@/components/FieldLabel'
 // import FieldError from '@/components/FieldError'
 import RadioInput from '@/components/RadioInput'
 import TextareaInput from '@/components/TextareaInput'
+import TextInput from '@/components/TextInput'
 import FormNav from '@/components/FormNav'
 
 export default {
@@ -55,6 +63,7 @@ export default {
     FieldGroup,
     FieldLabel,
     // FieldError,
+    TextInput,
     TextareaInput,
     RadioInput,
     FormNav

@@ -5,11 +5,13 @@
       maxlength="280"
       v-bind="$attrs"
       autofocus
-      class="w-full p-4 mt-2 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
+      class="input"
       @input="input"
       rows="4"
     />
-    <p class="font-mono text-xs text-right">{{ value.length }}/280</p>
+    <p v-if="showCount" class="font-mono text-xs text-right">
+      {{ value.length }}/280
+    </p>
   </div>
 </template>
 
@@ -20,6 +22,10 @@ export default {
     value: {
       default: '',
       type: String
+    },
+    showCount: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

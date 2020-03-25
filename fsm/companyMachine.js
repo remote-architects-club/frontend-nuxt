@@ -334,6 +334,7 @@ function invokeFetchCompany(context) {
             }
             experiences(order_by: {created_at: desc}) {
               id
+              name
               wfh
               own_experience
               own_experience_text
@@ -412,17 +413,22 @@ async function invokeSaveEdit(context, event) {
   // debugger
   // console.log('invokeSaveEdit', context, event)
   const { companyId: id } = context
-  const { remote_policy, remote_since } = event.params
+  const { remote_policy, remote_since, user_id } = event.params
   const { data } = await client.mutate({
     mutation: gql`
       mutation update_office(
         $id: uuid
         $remote_policy: String
         $remote_since: date
+        $user_id: String
       ) {
         update_office(
           where: { id: { _eq: $id } }
-          _set: { remote_policy: $remote_policy, remote_since: $remote_since }
+          _set: {
+            remote_policy: $remote_policy
+            remote_since: $remote_since
+            user_id: $user_id
+          }
         ) {
           affected_rows
           returning {
@@ -435,7 +441,8 @@ async function invokeSaveEdit(context, event) {
     variables: {
       id,
       remote_since,
-      remote_policy
+      remote_policy,
+      user_id
     }
   })
   return data.update_office

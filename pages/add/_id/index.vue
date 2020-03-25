@@ -13,7 +13,10 @@
         This is the information we have on your company. You can edit or
         complement, if you want.
       </p>
-      <p class="mb-4 text-center" v-if="isEditing">
+      <p
+        class="mb-4 text-center"
+        v-if="isEditing && companyState.matches('hasCompany.idle')"
+      >
         <nuxt-link
           :to="`/company/${company.id}`"
           class="px-4 py-2 mx-4 text-sm font-bold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
@@ -26,7 +29,10 @@
         >
       </p>
       <company-details-editing :company="company" class="mb-8" />
-      <p class="mb-4 text-center" v-if="isEditing">
+      <p
+        class="mb-4 text-center"
+        v-if="isEditing && companyState.matches('hasCompany.idle')"
+      >
         <nuxt-link
           :to="`/company/${company.id}`"
           class="px-4 py-2 mx-4 text-sm font-bold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
@@ -38,7 +44,10 @@
           >cancel</nuxt-link
         >
       </p>
-      <p class="text-center" v-else>
+      <p
+        class="text-center"
+        v-else-if="!isEditing && companyState.matches('hasCompany.idle')"
+      >
         <button
           @click="openPersonal"
           class="px-4 py-2 text-sm font-bold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"

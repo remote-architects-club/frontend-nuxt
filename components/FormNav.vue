@@ -6,6 +6,7 @@
         v-if="formState.activeQuestion !== 0"
         @click="$emit('back')"
         class="mx-4 btn btn-text"
+        data-cy="back"
       >
         previous
       </button>
@@ -13,6 +14,7 @@
         @click="$emit('next')"
         :disabled="isNextDisabled"
         class="mx-4 btn btn-regular"
+        data-cy="next"
       >
         {{ nextLabel }}
       </button>

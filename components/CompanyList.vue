@@ -10,7 +10,13 @@
         <button v-if="context.offset > 0" @click="prevPage" class="link">
           prev
         </button>
-        <button @click="nextPage" class="link">next</button>
+        <button
+          v-if="context.totalCompanies > context.resultsPerPage"
+          @click="nextPage"
+          class="link"
+        >
+          next
+        </button>
       </nav>
       <!-- <p class="mb-8">Filter</p> -->
       <div
@@ -26,21 +32,24 @@
           </p>
         </section>
         <div>
-          <template
-            v-if="company.experiences && company.experiences.length > 0"
-          >
-            <section class="col-2">
-              <p class="mb-4 font-semibold">stories</p>
-              <div>
+          <section class="col-2">
+            <p class="mb-4 font-semibold">stories</p>
+
+            <div>
+              <template v-if="company.experiences.length > 0">
                 <experience
                   :experience="experience"
                   v-for="experience in company.experiences"
                   :key="experience.id"
                   class="mb-8 "
                 />
-              </div>
-            </section>
-          </template>
+              </template>
+              <template v-else>
+                <p>No stories added yet.<br />👇Be the first and contribute!</p>
+              </template>
+            </div>
+          </section>
+
           <section class="col-2">
             <div></div>
             <p class="py-6 text-center md:text-left">
@@ -51,7 +60,12 @@
       </div>
       <nav>
         <button v-if="context.offset > 0" @click="prevPage">prev</button>
-        <button @click="nextPage">next</button>
+        <button
+          v-if="context.totalCompanies > context.resultsPerPage"
+          @click="nextPage"
+        >
+          next
+        </button>
       </nav>
     </template>
     <template v-else-if="state.matches('notFound')">

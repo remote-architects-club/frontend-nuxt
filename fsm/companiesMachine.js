@@ -11,6 +11,7 @@ const machine = Machine(
       companies: null,
       error: null,
       offset: 0,
+      totalCompanies: 0,
       resultsPerPage: 10
     },
     states: {
@@ -29,7 +30,8 @@ const machine = Machine(
           onDone: {
             target: 'done',
             actions: assign({
-              companies: (context, event) => event.data
+              companies: (_, event) => event.data.companies,
+              totalCompanies: (_, event) => event.data.totalCompanies
             })
           },
           onError: {
@@ -91,56 +93,113 @@ const machine = Machine(
   }
 )
 
-function invokeFetchCompanies(context) {
-  return client
-    .query({
-      query: gql`
-        query companies {
-          experience(
-            distinct_on: office_id
-            order_by: { office_id: desc, created_at: desc }
-            limit: ${context.resultsPerPage}
-            offset: ${context.offset}
-          ) {
-            office {
-              name
-              city
-              country_iso
-              id
-              num_people
-              url
-              remote_policy
-              remote_since
-              office_tools(order_by: { tool: { name: asc } }) {
-                tool {
-                  id
-                  name
-                  url
-                  description
-                }
-              }
-              experiences(order_by: { created_at: desc }) {
-                id
-                wfh
-                own_experience
-                own_experience_text
-                hardware
-                colleagues
-                tools
-                tools_text
-                company
-                company_text
-                not_wfh_reason
-                not_wfh_reason_text
-                final_tips
-                created_at
-              }
-            }
+async function invokeFetchCompanies() {
+  const { data } = await client.query({
+    query: gql`
+      query offices {
+        office_aggregate(where: { remote_policy: { _is_null: false } }) {
+          aggregate {
+            count
           }
         }
-      `
-    })
-    .then(({ data }) => data.experience.map(({ office }) => office))
+        office(
+          where: { remote_policy: { _is_null: false } }
+          order_by: { latest_experience: asc }
+        ) {
+          city
+          country_iso
+          id
+          name
+          num_people
+          remote_policy
+          remote_since
+          url
+          num_experiences
+          latest_experience
+          office_tools(order_by: { tool: { name: asc } }) {
+            tool {
+              id
+              name
+            }
+          }
+          experiences(order_by: { created_at: desc }) {
+            colleagues
+            company
+            company_text
+            created_at
+            final_tips
+            hardware
+            id
+            name
+            not_wfh_reason
+            not_wfh_reason_text
+            own_experience
+            own_experience_text
+            tools
+            tools_text
+            wfh
+          }
+        }
+      }
+    `
+  })
+
+  return {
+    companies: data.office,
+    totalCompanies: data.office_aggregate.aggregate.count
+  }
 }
+
+// function invokeFetchCompanies(context) {
+//   return client
+//     .query({
+//       query: gql`
+//         query companies {
+//           experience(
+//             distinct_on: office_id
+//             order_by: { office_id: desc, created_at: desc }
+//             limit: ${context.resultsPerPage}
+//             offset: ${context.offset}
+//           ) {
+//             office {
+//               name
+//               city
+//               country_iso
+//               id
+//               num_people
+//               url
+//               remote_policy
+//               remote_since
+//               office_tools(order_by: { tool: { name: asc } }) {
+//                 tool {
+//                   id
+//                   name
+//                   url
+//                   description
+//                 }
+//               }
+//               experiences(order_by: { created_at: desc }) {
+//                 id
+//                 wfh
+//                 own_experience
+//                 own_experience_text
+//                 hardware
+//                 colleagues
+//                 tools
+//                 tools_text
+//                 company
+//                 company_text
+//                 not_wfh_reason
+//                 not_wfh_reason_text
+//                 final_tips
+//                 created_at
+//               }
+//             }
+//           }
+//         }
+//       `
+//     })
+//     .then(({ data }) => data.experience.map(({ office }) => office))
+// }
 
 export const companiesMachine = generateVueMachine(machine)
