@@ -9,6 +9,7 @@
           :checked="option.value === value"
           :value="option.value"
           class="mt-1 bg-white border border-black"
+          :data-cy="`${option.value}`"
         />
         <span>{{ option.label }}</span></label
       >

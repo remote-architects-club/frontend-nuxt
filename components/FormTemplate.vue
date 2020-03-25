@@ -24,6 +24,7 @@
                 :options="
                   !!question.options.choices ? question.options.choices : false
                 "
+                :data-cy="question.name"
               />
               <p
                 class="mt-1 text-sm"
