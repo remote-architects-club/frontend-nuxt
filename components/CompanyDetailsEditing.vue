@@ -1,8 +1,10 @@
 <template>
   <article class="p-4 bg-white border-t-2 border-black shadow-lg sm:p-8">
     <header class="mb-8">
-      <div class="flex items-center justify-between">
-        <h2 class="inline-block text-lg font-bold">{{ company.name }}</h2>
+      <div class="flex flex-wrap items-center justify-between">
+        <h2 class="inline-block text-lg font-bold leading-tight">
+          {{ company.name }}
+        </h2>
         <company-location
           :city="company.city"
           :country-iso="company.country_iso"
