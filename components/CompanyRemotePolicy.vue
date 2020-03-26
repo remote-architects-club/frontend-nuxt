@@ -93,8 +93,11 @@
       <template v-else-if="!matches('hasCompany.editing.editingTools')">
         <p>
           <button @click="edit" class="btn btn-regular">
-            + add work-from-home policy
+            + describe your company's work-from-home policies
           </button>
+        </p>
+        <p class="text-sm">
+          Let us know what steps is your company taking to keep everyone safe.
         </p>
       </template>
     </template>
