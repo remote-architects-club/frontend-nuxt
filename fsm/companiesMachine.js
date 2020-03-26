@@ -116,7 +116,7 @@ async function invokeFetchCompanies() {
               { latest_experience: { _is_null: false } }
             ]
           }
-          order_by: { latest_experience: asc }
+          order_by: { updated_at: desc }
         ) {
           city
           country_iso
