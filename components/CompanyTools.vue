@@ -36,8 +36,12 @@
       <template v-else-if="!matches('hasCompany.editing.editingRemotePolicy')">
         <p>
           <button @click="edit" class="btn btn-regular">
-            + add tools
+            + add tools you are using
           </button>
+        </p>
+        <p class="text-sm">
+          Let us know what tools you company is using to communicate and
+          collaborate.
         </p>
       </template>
     </template>

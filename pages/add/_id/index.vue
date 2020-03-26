@@ -13,7 +13,7 @@
         This is the information we have on your company. You can edit or
         complement, if you want.
       </p>
-      <p
+      <!-- <p
         class="mb-4 text-center"
         v-if="isEditing && companyState.matches('hasCompany.idle')"
       >
@@ -27,7 +27,7 @@
           class="px-4 py-2 mx-4 text-sm font-bold transition duration-150 ease-in-out border-b-2 border-transparent hover:border-black focus:outline-none focus:shadow-focus"
           >cancel</nuxt-link
         >
-      </p>
+      </p> -->
       <company-details-editing :company="company" class="mb-8" />
       <p
         class="mb-4 text-center"
