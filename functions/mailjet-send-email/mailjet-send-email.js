@@ -34,8 +34,8 @@ exports.handler = async (event, context) => {
       Messages: [
         {
           From: {
-            Email: 'admin@remotearchitects.club',
-            Name: 'Admin at RAC'
+            Email: 'daniel@remotearchitects.club',
+            Name: 'Remote Architects Club'
           },
           To: [
             {
