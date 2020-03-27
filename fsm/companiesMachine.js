@@ -93,7 +93,7 @@ const machine = Machine(
   }
 )
 
-async function invokeFetchCompanies() {
+async function invokeFetchCompanies(context) {
   const { data } = await client.query({
     query: gql`
       query offices {
@@ -117,6 +117,8 @@ async function invokeFetchCompanies() {
             ]
           }
           order_by: { updated_at: desc }
+          offset: ${context.offset}
+          limit: ${context.resultsPerPage}
         ) {
           city
           country_iso

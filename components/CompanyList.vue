@@ -6,18 +6,11 @@
       </div>
     </template>
     <template v-if="state.matches('found')">
-      <nav class="flex justify-end text-sm">
-        <button v-if="context.offset > 0" @click="prevPage" class="link">
-          prev
-        </button>
-        <button
-          v-if="context.totalCompanies > context.resultsPerPage"
-          @click="nextPage"
-          class="link"
-        >
-          next
-        </button>
-      </nav>
+      <company-list-controls
+        :context="context"
+        @prev-page="prevPage"
+        @next-page="nextPage"
+      />
       <!-- <p class="mb-8">Filter</p> -->
       <div
         class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
@@ -58,15 +51,7 @@
           </section>
         </div>
       </div>
-      <nav>
-        <button v-if="context.offset > 0" @click="prevPage">prev</button>
-        <button
-          v-if="context.totalCompanies > context.resultsPerPage"
-          @click="nextPage"
-        >
-          next
-        </button>
-      </nav>
+      <!-- <company-list-controls :context="context" /> -->
     </template>
     <template v-else-if="state.matches('notFound')">
       <p class="p-8 mb-8 text-center bg-white shadow-lg">
@@ -83,6 +68,8 @@ import Experience from '@/components/Experience'
 import BtnAddExperience from '@/components/BtnAddExperience'
 import BtnEditCompany from '@/components/BtnEditCompany'
 import CompanyDetails from '@/components/CompanyDetails'
+import CompanyListControls from '@/components/CompanyListControls'
+
 const psl = require('psl')
 function extractHostname(url) {
   let hostname
@@ -103,6 +90,7 @@ export default {
   name: 'CompanyList',
   components: {
     Experience,
+    CompanyListControls,
     CompanyDetails,
     BtnEditCompany,
     BtnAddExperience
