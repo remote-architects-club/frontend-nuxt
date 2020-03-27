@@ -128,9 +128,10 @@ export default {
       ][this.exp.tools]
     },
     hardware() {
-      return ['🙁no company hardware', '🙂has company hardware'][
-        this.exp.hardware ? 0 : 1
-      ]
+      return [
+        '🙂company provided hardware',
+        "🙁company doesn't provide hardware"
+      ][this.exp.hardware ? 0 : 1]
     },
     company() {
       return [

@@ -35,7 +35,7 @@ exports.handler = async (event, context) => {
         {
           From: {
             Email: 'daniel@remotearchitects.club',
-            Name: 'Remote Architects Club'
+            Name: 'Daniel from Remote Architects Club'
           },
           To: [
             {
@@ -43,10 +43,9 @@ exports.handler = async (event, context) => {
               Name: 'Daniel'
             }
           ],
-          Subject: `New "${name}" added to Remote Architects Club`,
-          TextPart: `Someone added a new [${name.toUpperCase()}] entry. id[${id}]`,
-          HTMLPart: `<p>Someone added a new [${name.toUpperCase()}] entry:</p>
-          <p>id[${id}]</p>
+          Subject: `New ${name} added`,
+          TextPart: `Someone added a new [${name.toUpperCase()}] entry to Remote Architects Club. Here is the info: id[${id}]`,
+          HTMLPart: `<p>Someone added a new <strong>[${name.toUpperCase()}]</strong> entry. Here is the info:</p>
           ${request}
           `
         }
