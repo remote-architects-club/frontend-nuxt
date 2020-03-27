@@ -122,14 +122,14 @@ export default {
     },
     tools() {
       return [
-        '🙁their tools are not helping as they should',
-        '😐their tools are ok, have room for improvement',
-        '🙂their tools are perfect!'
+        '🙁the tools we use are not helping as they should',
+        '😐the tools we use are ok, have room for improvement',
+        '🙂the tools we use are working great!'
       ][this.exp.tools]
     },
     hardware() {
       return [
-        '🙂company provided hardware',
+        '🙂company provides hardware',
         "🙁company doesn't provide hardware"
       ][this.exp.hardware ? 0 : 1]
     },
