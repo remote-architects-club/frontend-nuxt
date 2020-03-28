@@ -161,7 +161,8 @@ export default {
       this.service.send({ type: 'CANCEL' })
     },
     goToStep2() {
-      this.$router.push(`/add/${this.context.company.id}`)
+      // this.$router.push(`/add/${this.context.company.id}`)
+      this.$router.push(`/add/company?id=${this.context.company.id}`)
     }
   }
 }
