@@ -4,7 +4,7 @@
   >
     <section class="mb-4">
       <ul
-        class="flex items-center nav sm:block sm:items-start sm:justify-start"
+        class="flex flex-wrap items-center justify-center nav sm:block sm:items-start sm:justify-start"
       >
         <li class="font-semibold">
           <nuxt-link to="/" class="link">home</nuxt-link>
