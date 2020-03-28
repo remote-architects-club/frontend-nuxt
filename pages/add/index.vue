@@ -15,6 +15,7 @@
 
 <script>
 import FormStep0 from '@/components/FormStep0'
+
 export default {
   layout: 'pages',
   components: {
@@ -28,7 +29,9 @@ export default {
 
   methods: {
     goToStep2(event) {
-      this.$router.push(`/add/${event}`)
+      return this.$router.push(`/add/company?id=${event}`)
+
+      // return this.$router.push(`/add/${event}`)
     }
   }
 }

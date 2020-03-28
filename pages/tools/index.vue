@@ -92,6 +92,7 @@ import { toolsMachineVue } from '@/fsm/toolsMachine'
 import Tool from '@/components/Tool'
 
 export default {
+  name: 'PageTools',
   layout: 'pages',
   components: {
     Tool
