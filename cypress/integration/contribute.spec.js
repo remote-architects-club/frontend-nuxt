@@ -2,7 +2,7 @@
 // import schema from '../fixtures/schema.graphql'
 
 describe('Contribute', function() {
-  const companyId = 'f937a2fe-84d7-44b1-8dc8-2e22b5b2da0d'
+  const companyId = '00050dae-92ff-4210-a4e3-91d2550eaf2f' //on staging
 
   it('Goes to first step of contributing process when clicking on contribute', function() {
     cy.visit('/')
@@ -96,8 +96,8 @@ describe('Contribute', function() {
     cy.contains('HENN')
     cy.contains('All good, continue').click()
   })
-  it.only('Goes through personal flow wfh01', function() {
-    cy.visit(`/add/${companyId}/personal`)
+  it('Goes through personal flow wfh01', function() {
+    cy.visit(`/add/personal?id=${companyId}`)
     // personal form
     cy.url().should('include', '/personal')
     // name

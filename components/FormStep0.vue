@@ -19,16 +19,7 @@
           As soon as you enter a name, we'll search on our database if this
           office's already been added.
         </p>
-        <p v-if="searched && companyName" class="mt-2 text-right">
-          <button
-            @click="add(companyName)"
-            :disabled="matches('noCompany.searching')"
-            class="btn btn-regular"
-            data-cy="btn-add-new"
-          >
-            add new entry for <strong>{{ companyName }}</strong>
-          </button>
-        </p>
+
         <template v-if="matches('noCompany.searching')">
           <div class="flex items-center justify-center p-12" data-cy="spinner">
             <spinner color="#000" />
@@ -39,16 +30,16 @@
         </p> -->
       </div>
       <div v-if="matches('noCompany.found')" data-cy="results">
-        <p class="mt-4 mb-6 border-b-2 border-black">
+        <p class="mb-6 border-b-2 border-black">
           Found {{ context.foundCompanies.length }} possible
           <span v-if="context.foundCompanies.length === 1">match</span
           ><span v-else>matches</span>
         </p>
-        <ul v-if="context.foundCompanies.length > 0">
+        <ul v-if="context.foundCompanies.length > 0" class="mb-8">
           <li
             v-for="company in context.foundCompanies"
             :key="company.id"
-            class="flex justify-between mb-6"
+            class="flex justify-between mb-4"
           >
             <div class="w-full">
               <p class="font-bold">
@@ -71,6 +62,20 @@
       <div v-if="matches('noCompany.notFound')" data-cy="not-found">
         <p class="my-4">No matches found for "{{ companyName }}"</p>
       </div>
+      <p v-if="searched && companyName" class="mt-4 text-center">
+        <span v-if="matches('noCompany.found')" class="text-sm"
+          >None of the above?</span
+        >
+        <br />
+        <button
+          @click="add(companyName)"
+          :disabled="matches('noCompany.searching')"
+          class="btn btn-regular"
+          data-cy="btn-add-new"
+        >
+          &plus; add new entry for <strong>{{ companyName }}</strong>
+        </button>
+      </p>
     </template>
     <template v-else-if="matches('addCompany')">
       <company-add-form />
