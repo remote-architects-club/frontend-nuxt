@@ -102,7 +102,8 @@ async function invokeFetchCompanies(context) {
             _or: [
               { remote_policy: { _is_null: false } }
               { latest_experience: { _is_null: false } }
-            ]
+            ],
+            publish: {_eq: true}
           }
         ) {
           aggregate {
@@ -114,7 +115,8 @@ async function invokeFetchCompanies(context) {
             _or: [
               { remote_policy: { _is_null: false } }
               { latest_experience: { _is_null: false } }
-            ]
+            ],
+            publish: {_eq: true}
           }
           order_by: { updated_at: desc }
           offset: ${context.offset}
