@@ -4,9 +4,10 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install:
-          build: npm run build
+      # - cypress/install:
+      #     build: npm run build
       - cypress/run:
+          start: npm run build
           record: true
 # version: 2
 # jobs:
