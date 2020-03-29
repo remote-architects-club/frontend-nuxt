@@ -20,7 +20,8 @@ const mailjet = require('node-mailjet').connect(
   process.env.MJ_APIKEY_PRIVATE
 )
 
-exports.handler = async (event, context) => {
+// exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   let request
   try {
     request = JSON.parse(event.body)

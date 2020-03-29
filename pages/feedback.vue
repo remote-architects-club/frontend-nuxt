@@ -50,8 +50,8 @@
           <input type="hidden" name="form-name" value="feedback" />
           <p>
             <textarea-input
-              placeholder="Share your thoughts..."
               v-model="form.feedback"
+              placeholder="Share your thoughts..."
               name="feedback"
               :show-count="false"
             />
@@ -60,10 +60,10 @@
             <label
               >If you'd like to hear back from me, let me know your email<br />
               <text-input
+                v-model="form.email"
                 type="email"
                 name="email"
                 placeholder="Enter you email"
-                v-model="form.email"
             /></label>
           </p>
           <p>

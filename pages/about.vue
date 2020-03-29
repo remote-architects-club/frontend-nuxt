@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mb-4 text-3xl font-bold">About</h1>
-    <div v-html="content" class="p-4 bg-white shadow-lg sm:p-8 content"></div>
+    <div class="p-4 bg-white shadow-lg sm:p-8 content" v-html="content"></div>
   </div>
 </template>
 

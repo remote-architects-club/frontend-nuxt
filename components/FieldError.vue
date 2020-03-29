@@ -11,10 +11,15 @@
 import TypeBasedTransition from '@/components/Transitions/TypeBasedTransition.vue'
 
 export default {
-  name: 'field-error',
-  props: ['isValid'],
+  name: 'FieldError',
   components: {
     TypeBasedTransition
+  },
+  props: {
+    isValid: {
+      type: Boolean,
+      default: true
+    }
   }
 }
 </script>

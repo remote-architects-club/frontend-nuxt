@@ -47,7 +47,7 @@ const machine = Machine(
           '': [
             {
               target: 'found',
-              cond: (context, event) => context.companies.length > 0
+              cond: (context) => context.companies.length > 0
             },
             { target: 'notFound' }
           ]

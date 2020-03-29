@@ -4,8 +4,8 @@
       <form @submit.prevent="submit">
         <template v-for="(question, key) in questions">
           <field-group
-            :field-id="key"
             :key="`${_uid}-${question.name}`"
+            :field-id="key"
             :active="formState.current.name === question.name"
             :is-next="formState.isNext"
           >
@@ -15,10 +15,10 @@
               </field-label>
               <div class="h-4" />
               <Component
-                v-model="formData[question.name]"
                 :is="`${question.type}-input`"
-                v-bind="{ ...question.options.attrs }"
                 :id="`${_uid}-${question.name}`"
+                v-model="formData[question.name]"
+                v-bind="{ ...question.options.attrs }"
                 :name="`${question.name}`"
                 :type="question.type"
                 :options="
@@ -27,8 +27,8 @@
                 :data-cy="question.name"
               />
               <p
-                class="mt-1 text-sm"
                 v-if="question.options && question.options.explanation"
+                class="mt-1 text-sm"
               >
                 {{ question.options.explanation }}
               </p>
@@ -41,10 +41,10 @@
     <!-- Next and Back Nav -->
     <form-nav
       class="relative"
-      @back="back"
-      @next="next"
       :form-state="formState"
       :form-data="formData"
+      @back="back"
+      @next="next"
     />
   </div>
 </template>

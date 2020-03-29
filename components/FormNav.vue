@@ -4,17 +4,17 @@
     <nav class="flex justify-center mt-4">
       <button
         v-if="formState.activeQuestion !== 0"
-        @click="$emit('back')"
         class="mx-4 btn btn-text"
         data-cy="back"
+        @click="$emit('back')"
       >
         previous
       </button>
       <button
-        @click="$emit('next')"
         :disabled="isNextDisabled"
         class="mx-4 btn btn-regular"
         data-cy="next"
+        @click="$emit('next')"
       >
         {{ nextLabel }}
       </button>
@@ -24,11 +24,20 @@
 <script>
 // import FormProgress from '@/components/FormProgress.vue'
 export default {
-  name: 'form-nav',
+  name: 'FormNav',
   components: {
     // 'form-progress': FormProgress
   },
-  props: ['formState', 'formData'],
+  props: {
+    formState: {
+      type: Object,
+      required: true
+    },
+    formData: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     isNextDisabled() {
       if (

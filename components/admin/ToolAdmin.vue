@@ -1,8 +1,8 @@
 <template>
   <div>
     <button
-      @click="toggleEdit"
       class="w-full hover:border-2 hover:border-black hover:cursor-pointer focus:outline-none"
+      @click="toggleEdit"
     >
       <tool :tool="tool" />
     </button>
@@ -16,9 +16,9 @@
         >
           <label
             ><input
+              v-model="checkedCategories"
               type="checkbox"
               class="mr-1"
-              v-model="checkedCategories"
               :value="category.name"
             /><span :class="{ 'font-semibold': isChecked(category.name) }">{{
               category.name

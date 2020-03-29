@@ -27,17 +27,17 @@ import CompanyRemotePolicy from '@/components/CompanyRemotePolicy'
 import CompanyTools from '@/components/CompanyTools'
 
 export default {
-  props: {
-    company: {
-      type: Object,
-      required: true
-    }
-  },
   components: {
     CompanyTools,
     CompanyRemotePolicy,
     CompanyUrl,
     CompanyLocation
+  },
+  props: {
+    company: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

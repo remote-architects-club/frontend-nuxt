@@ -6,8 +6,8 @@
       v-bind="$attrs"
       autofocus
       class="input"
-      @input="input"
       rows="4"
+      @input="input"
     />
     <p v-if="showCount" class="font-mono text-xs text-right">
       {{ value.length }}/280

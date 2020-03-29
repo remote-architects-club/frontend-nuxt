@@ -1,6 +1,6 @@
 <template>
   <!-- <data-driven-transition :isNext="isNext"> -->
-  <div class="field-group" v-if="active" :key="fieldId">
+  <div v-if="active" :key="fieldId" class="field-group">
     <slot />
   </div>
   <!-- </data-driven-transition> -->
@@ -9,11 +9,24 @@
 // import DataDrivenTransition from '@/components/Transitions/DataDrivenTransition.vue'
 
 export default {
-  name: 'field-group',
-  props: ['fieldId', 'active', 'isNext'],
+  name: 'FieldGroup',
   // inject: ['formState'],
   components: {
     // DataDrivenTransition
+  },
+  props: {
+    fieldId: {
+      type: String,
+      required: true
+    },
+    active: {
+      type: Boolean,
+      default: true
+    },
+    isNext: {
+      type: Boolean,
+      default: true
+    }
   }
   // computed: {
   //   active() {

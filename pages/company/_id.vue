@@ -14,17 +14,17 @@
         <btn-edit-company :company-id="company.id" />
       </p>
       <div
-        class="mb-8"
         v-if="company.experiences && company.experiences.length > 0"
+        class="mb-8"
       >
         <h2 class="mb-8 text-xl font-bold">
           What are people saying about {{ company.name }}?
         </h2>
 
         <div
-          class="p-8 mb-8 bg-white shadow-lg"
           v-for="experience in company.experiences"
           :key="experience.id"
+          class="p-8 mb-8 bg-white shadow-lg"
         >
           <experience :experience="experience" />
         </div>

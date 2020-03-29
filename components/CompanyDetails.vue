@@ -19,7 +19,7 @@
           {{ company.remote_policy || 'n/a' }}
         </p>
       </section>
-      <section class="mb-4 col-2" v-if="company.remote_policy">
+      <section v-if="company.remote_policy" class="mb-4 col-2">
         <p class="flex items-center mb-1 font-semibold">
           policy on since
         </p>
@@ -35,7 +35,7 @@
         <p class="flex items-center mb-1 font-semibold">
           tools
         </p>
-        <ul class="flex flex-wrap mt-1" v-if="company.office_tools.length">
+        <ul v-if="company.office_tools.length" class="flex flex-wrap mt-1">
           <li
             v-for="{ tool } in company.office_tools"
             :key="tool.id"
@@ -58,18 +58,18 @@ import CompanyUrl from '@/components/CompanyUrl'
 // import CompanyTools from '@/components/CompanyTools'
 
 export default {
-  props: {
-    company: {
-      type: Object,
-      required: true
-    }
-  },
   components: {
     // CompanyTools,
     // CompanyRemotePolicy,
     // CompanyRemoteSince,
     CompanyUrl,
     CompanyLocation
+  },
+  props: {
+    company: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
