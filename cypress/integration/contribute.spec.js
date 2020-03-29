@@ -2,8 +2,6 @@
 // import schema from '../fixtures/schema.graphql'
 
 describe('Contribute', function() {
-  const companyId = '00050dae-92ff-4210-a4e3-91d2550eaf2f' //on staging
-
   it('Goes to first step of contributing process when clicking on contribute', function() {
     cy.visit('/')
     cy.contains('contribute').click()
@@ -14,7 +12,6 @@ describe('Contribute', function() {
     const name = 'My New Company'
     const city = 'Berlin'
     const website = 'http://example.com'
-
     // search page
     cy.visit('/add')
     cy.url().should('include', '/add')
@@ -73,7 +70,7 @@ describe('Contribute', function() {
       .clear()
       .type(name)
     cy.get('[data-cy=error-name]').should('not.be.visible')
-
+    // cy.get('@save').click()
     // cancel
     cy.get('@cancel').click()
     cy.get('@add-form').should('not.exist')
@@ -97,7 +94,21 @@ describe('Contribute', function() {
     cy.contains('All good, continue').click()
   })
   it('Goes through personal flow wfh01', function() {
-    cy.visit(`/add/personal?id=${companyId}`)
+    cy.visit('/add')
+    cy.url().should('include', '/add')
+    cy.get('[data-cy=office-name]')
+      .type('henn')
+      .should('have.value', 'henn')
+
+    cy.get('[data-cy=results]').contains('HENN')
+    cy.get('[data-cy=results]')
+      .contains('select')
+      .first()
+      .click()
+
+    cy.url().should('include', '/add/')
+    cy.contains('HENN')
+    cy.contains('All good, continue').click()
     // personal form
     cy.url().should('include', '/personal')
     // name
