@@ -7,6 +7,7 @@ workflows:
       - cypress/install:
           build: npm run build
       - cypress/run:
+          start: npm run start
           record: true
 # version: 2
 # jobs:
