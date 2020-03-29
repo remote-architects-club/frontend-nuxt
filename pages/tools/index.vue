@@ -8,20 +8,20 @@
         </div>
       </template>
       <template v-else-if="state.matches('idle')">
-        <nav class="flex justify-end mb-4 text-sm" v-if="tools.length > 0">
+        <nav v-if="tools.length > 0" class="flex justify-end mb-4 text-sm">
           <p class="inline-block mr-4">
             <button
               class="link"
-              @click="sortBy = 'name'"
               :class="{ 'font-semibold': sortBy === 'name' }"
+              @click="sortBy = 'name'"
             >
               &darr;name
             </button>
             <span> | </span>
             <button
               class="link"
-              @click="sortBy = 'popularity'"
               :class="{ 'font-semibold': sortBy === 'popularity' }"
+              @click="sortBy = 'popularity'"
             >
               &darr;popularity
             </button>
@@ -29,16 +29,16 @@
           <p class="inline-block mr-4">
             <label class="mr-1"
               ><input
-                type="checkbox"
                 v-model="showFree"
+                type="checkbox"
                 class="mr-1"
                 :disabled="!showPaid"
               /><span>free</span></label
             >
             <label
               ><input
-                type="checkbox"
                 v-model="showPaid"
+                type="checkbox"
                 class="mr-1"
                 :disabled="!showFree"
               /><span>paid</span></label
@@ -59,7 +59,7 @@
         </nav>
         <template v-if="toolsSorted.length > 0">
           <template v-for="tool in toolsSorted">
-            <tool :tool="tool" v-if="tool.url" :key="tool.id" />
+            <tool v-if="tool.url" :key="tool.id" :tool="tool" />
           </template>
         </template>
         <template v-else>
@@ -105,9 +105,6 @@ export default {
       filterCategory: null
     }
   },
-  mounted() {
-    toolsMachineVue.send({ type: 'FETCH' })
-  },
   computed: {
     state() {
       return toolsMachineVue.current
@@ -146,6 +143,9 @@ export default {
       }
       return []
     }
+  },
+  mounted() {
+    toolsMachineVue.send({ type: 'FETCH' })
   },
   methods: {
     filterByCategory(tools, category) {
