@@ -11,7 +11,9 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:verify": "cypress verify",
+    "cy:run:record": "cypress run --record --key db4d8f45-2fd4-4e78-9c39-2f54f5aaec8b"
   },
   "dependencies": {
     "@nuxtjs/auth": "^4.9.0",
