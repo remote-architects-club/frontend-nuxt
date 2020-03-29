@@ -96,8 +96,22 @@ describe('Contribute', function() {
     cy.contains('HENN')
     cy.contains('All good, continue').click()
   })
-  it('Goes through personal flow wfh01', function() {
-    cy.visit(`/add/personal?id=${companyId}`)
+  it.only('Goes through personal flow wfh01', function() {
+    cy.visit('/add')
+    cy.url().should('include', '/add')
+    cy.get('[data-cy=office-name]')
+      .type('henn')
+      .should('have.value', 'henn')
+
+    cy.get('[data-cy=results]').contains('HENN')
+    cy.get('[data-cy=results]')
+      .contains('select')
+      .first()
+      .click()
+
+    cy.url().should('include', '/add/')
+    cy.contains('HENN')
+    cy.contains('All good, continue').click()
     // personal form
     cy.url().should('include', '/personal')
     // name
