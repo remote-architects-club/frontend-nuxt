@@ -7,6 +7,7 @@ workflows:
       - cypress/install
       - cypress/run:
           start: npm run build
+          wait-on: 'http://localhost:3000'
           record: true
 # version: 2
 # jobs:
