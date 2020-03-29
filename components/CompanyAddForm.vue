@@ -6,8 +6,8 @@
           <p class="mb-1">Name*</p>
           <validation-provider v-slot="{ errors }" rules="required" name="name">
             <text-input
-              placeholder="Company name"
               v-model="company.name"
+              placeholder="Company name"
               data-cy="input-name"
             ></text-input>
             <span class="error" data-cy="error-name">{{ errors[0] }}</span>
@@ -18,8 +18,8 @@
           <p class="mb-1">City*</p>
           <validation-provider v-slot="{ errors }" rules="required" name="city">
             <text-input
-              placeholder="City"
               v-model="company.city"
+              placeholder="City"
               data-cy="input-city"
             ></text-input>
             <span class="error" data-cy="error-city">{{ errors[0] }}</span>
@@ -40,9 +40,9 @@
           <p class="mb-1">Website</p>
           <validation-provider v-slot="{ errors }" rules="url">
             <text-input
+              v-model="company.url"
               type="url"
               placeholder="https://..."
-              v-model="company.url"
               data-cy="input-website"
             ></text-input>
             <span class="error" data-cy="error-website">{{ errors[0] }}</span>
@@ -59,14 +59,14 @@
         <div class="mb-4">
           <p class="flex items-center">
             <button
-              @click="save"
               :disabled="invalid"
               class="mr-4 btn btn-regular"
               data-cy="btn-save"
+              @click="save"
             >
               save
             </button>
-            <button @click="cancel" class="btn btn-text" data-cy="btn-cancel">
+            <button class="btn btn-text" data-cy="btn-cancel" @click="cancel">
               cancel
             </button>
           </p>
@@ -140,15 +140,15 @@ export default {
       return this.service.state.value
     }
   },
-  mounted() {
-    this.company = this.context.company
-  },
   watch: {
     stateValue() {
       if (this.matches('hasCompany')) {
         setTimeout(() => this.goToStep2(), 3000)
       }
     }
+  },
+  mounted() {
+    this.company = this.context.company
   },
   methods: {
     matches(value) {

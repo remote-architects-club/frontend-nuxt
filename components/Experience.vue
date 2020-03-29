@@ -31,7 +31,7 @@
           <p v-if="exp.tools_text">💬&ldquo;{{ exp.tools_text }}&rdquo;</p>
         </div>
       </div>
-      <div class="mb-4" v-if="exp.company >= 0">
+      <div v-if="exp.company >= 0" class="mb-4">
         <p class="mb-2 font-semibold">company</p>
         <div class="pl-4">
           <p>{{ company }}</p>

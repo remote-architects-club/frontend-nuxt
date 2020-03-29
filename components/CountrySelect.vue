@@ -1,8 +1,8 @@
 <template>
   <select
     v-bind="$attrs"
-    @input="$emit('input', $event.target.value)"
     class="p-4 select-css"
+    @input="$emit('input', $event.target.value)"
   >
     <template v-if="matches('fetching')">
       <option value="">--Loading countries...--</option>
@@ -10,8 +10,8 @@
     <template v-else>
       <option
         v-for="country in countries"
-        :value="country.iso"
         :key="country.iso"
+        :value="country.iso"
         >{{ country.name }}</option
       >
     </template>

@@ -8,8 +8,8 @@
       >
         {{ tool.name
         }}<button
-          @click="remove(tool)"
           class="pl-2 text-lg font-bold transition duration-150 ease-in-out hover:text-yellow-500 focus:outline-none focus:shadow-focus"
+          @click="remove(tool)"
         >
           &times;
         </button>
@@ -20,12 +20,12 @@
 
       <div class="flex items-center">
         <input
+          v-model.trim="toolName"
+          v-debounce:500.lock="search"
           type="text"
           placeholder="Tool name..."
           maxlength="25"
           class="w-full p-2 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
-          v-model.trim="toolName"
-          v-debounce:500.lock="search"
         />
         <p class="-ml-10 font-mono text-xs text-left text-gray-600">
           {{ toolName.length }}/25
@@ -33,7 +33,7 @@
       </div>
 
       <div class="mb-2">
-        <p class="text-sm" v-if="!toolName">
+        <p v-if="!toolName" class="text-sm">
           Start typing to search...
         </p>
         <!-- <p v-if="matches('not_found')" class="mt-2 text-right">
@@ -52,9 +52,9 @@
         <ul v-if="context.foundItems.length > 0" class="flex">
           <li v-for="tool in context.foundItems" :key="tool.id" class="">
             <button
-              @click="select(tool)"
               :disabled="isAdded(tool.id)"
               class="px-4 py-1 mr-2 transition duration-150 ease-in-out border border-black rounded-full hover:bg-yellow-500 focus:outline-none focus:shadow-focus disabled:opacity-50 disabled:cursor-not-allowed"
+              @click="select(tool)"
             >
               {{ tool.name }}<span class="pl-2 text-lg font-bold">&plus;</span>
             </button>
@@ -63,8 +63,8 @@
       </div>
       <div v-else-if="matches('notFound') && toolName" class="mt-4">
         <button
-          @click="addNew(toolName)"
           class="px-4 py-1 mr-2 transition duration-150 ease-in-out border border-black rounded-full hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
+          @click="addNew(toolName)"
         >
           add <strong>{{ toolName }}</strong
           ><span class="pl-2 text-lg font-bold">&plus;</span>
@@ -72,10 +72,10 @@
       </div>
     </div>
     <p class="flex items-center">
-      <button @click="finish" class="mr-4 btn btn-regular">
+      <button class="mr-4 btn btn-regular" @click="finish">
         ok
       </button>
-      <button @click="finish" class="btn btn-text">
+      <button class="btn btn-text" @click="finish">
         close
       </button>
     </p>

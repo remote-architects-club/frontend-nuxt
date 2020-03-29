@@ -7,15 +7,15 @@
       <p class="mb-2">What's your company's name?</p>
       <input
         id="office-name"
+        v-model="companyName"
+        v-debounce:500.lock="search"
         data-cy="office-name"
         type="text"
         class="w-full p-4 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
         placeholder="Company name"
-        v-model="companyName"
-        v-debounce:500.lock="search"
       />
       <div class="mb-8">
-        <p class="text-sm" v-if="!companyName" data-cy="explanation">
+        <p v-if="!companyName" class="text-sm" data-cy="explanation">
           As soon as you enter a name, we'll search on our database if this
           office's already been added.
         </p>
@@ -37,22 +37,24 @@
         </p>
         <ul v-if="context.foundCompanies.length > 0" class="mb-8">
           <li
-            v-for="company in context.foundCompanies"
-            :key="company.id"
+            v-for="foundCompany in context.foundCompanies"
+            :key="foundCompany.id"
             class="flex justify-between mb-4"
           >
             <div class="w-full">
               <p class="font-bold">
-                {{ company.name }}
+                {{ foundCompany.name }}
               </p>
               <p class="flex items-center mr-4">
-                <v-icon icon="location" class="w-4 h-4" />{{ company.city }},
-                {{ company.country_iso }}
+                <v-icon icon="location" class="w-4 h-4" />{{
+                  foundCompany.city
+                }},
+                {{ foundCompany.country_iso }}
               </p>
             </div>
 
             <p>
-              <button @click="select(company.id)" class="btn btn-regular">
+              <button class="btn btn-regular" @click="select(foundCompany.id)">
                 select
               </button>
             </p>
@@ -68,10 +70,10 @@
         >
         <br />
         <button
-          @click="add(companyName)"
           :disabled="matches('noCompany.searching')"
           class="btn btn-regular"
           data-cy="btn-add-new"
+          @click="add(companyName)"
         >
           &plus; add new entry for <strong>{{ companyName }}</strong>
         </button>
@@ -117,11 +119,6 @@ export default {
       return this.companyName && !this.context.isFirstSearch
     }
   },
-  mounted() {
-    if (!this.matches('noCompany.idle')) {
-      this.send({ type: 'RESTART' })
-    }
-  },
   watch: {
     companyName(val) {
       if (!val) {
@@ -132,6 +129,11 @@ export default {
       if (this.matches('addCompany.done')) {
         this.$emit('select', this.context.companyId)
       }
+    }
+  },
+  mounted() {
+    if (!this.matches('noCompany.idle')) {
+      this.send({ type: 'RESTART' })
     }
   },
 
@@ -151,7 +153,7 @@ export default {
       }
     },
     select(id) {
-      console.log(this.company)
+      // console.log(this.company)
       if (id) {
         this.send({
           type: 'SELECT',

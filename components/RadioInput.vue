@@ -1,15 +1,15 @@
 <template>
   <div>
-    <p class="flex mb-2" v-for="(option, index) in options" :key="index">
+    <p v-for="(option, index) in options" :key="index" class="flex mb-2">
       <label :class="{ 'font-bold': option.value === value }"
         ><input
           :name="id"
           type="radio"
-          @input="$emit('input', $event.target.value)"
           :checked="option.value === value"
           :value="option.value"
           class="mt-1 bg-white border border-black"
           :data-cy="`${option.value}`"
+          @input="$emit('input', $event.target.value)"
         />
         <span>{{ option.label }}</span></label
       >
@@ -19,7 +19,20 @@
 
 <script>
 export default {
-  props: ['options', 'value', 'id']
+  props: {
+    options: {
+      type: Array,
+      required: true
+    },
+    value: {
+      type: [String, Number],
+      default: ''
+    },
+    id: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 

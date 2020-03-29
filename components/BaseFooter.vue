@@ -28,16 +28,6 @@
         This site is in active development.<br />Enter your email to stay in the
         loop:
       </p>
-
-      <!-- <p class="flex mb-4">
-        <input
-          type="email"
-          placeholder="Email"
-          class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black shadow-inner focus:outline-none focus:shadow-focus"
-        /><button class="flex-none btn btn-regular">
-          Subscribe
-        </button>
-      </p> -->
       <mc-api-form sign-up-location="footer" />
       <p>Done with 💛 in Berlin.</p>
     </section>

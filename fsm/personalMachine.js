@@ -32,12 +32,12 @@ export const createPersonalMachine = (companyId) => {
             name: {
               id: 'name',
               entry: assign({
-                formState: (context, event) => {
+                formState: (context) => {
                   context.formState.current = questions[0]
                   context.formState.activeQuestion = 0
                   return context.formState
                 },
-                formData: (context, event) => {
+                formData: (context) => {
                   // add all keys to formData
                   for (const question of context.questions) {
                     const formData = { ...context.formData }
@@ -54,7 +54,7 @@ export const createPersonalMachine = (companyId) => {
             wfh: {
               id: 'wfh',
               entry: assign({
-                formState: (context, event) => {
+                formState: (context) => {
                   const index = context.questions.findIndex(
                     (question) => question.name === 'wfh'
                   )
@@ -89,7 +89,7 @@ export const createPersonalMachine = (companyId) => {
               states: {
                 ownExperience: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'own_experience'
                       )
@@ -108,7 +108,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 ownExperienceText: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'own_experience_text'
                       )
@@ -127,7 +127,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 hardware: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'hardware'
                       )
@@ -146,7 +146,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 colleagues: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'is_wfh_colleagues'
                       )
@@ -166,7 +166,7 @@ export const createPersonalMachine = (companyId) => {
 
                 tools: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'tools'
                       )
@@ -183,18 +183,18 @@ export const createPersonalMachine = (companyId) => {
                     PREVIOUS: [
                       {
                         target: 'colleagues',
-                        cond: (context, event) => context.formData.wfh === 0
+                        cond: (context) => context.formData.wfh === 0
                       },
                       {
                         target: '#editing.notWFH.colleagues',
-                        cond: (context, event) => context.formData.wfh === 1
+                        cond: (context) => context.formData.wfh === 1
                       }
                     ]
                   }
                 },
                 toolsText: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'tools_text'
                       )
@@ -213,7 +213,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 company: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'company'
                       )
@@ -232,7 +232,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 companyText: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'company_text'
                       )
@@ -257,7 +257,7 @@ export const createPersonalMachine = (companyId) => {
               states: {
                 reason: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'not_wfh_reason'
                       )
@@ -276,7 +276,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 reasonText: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'not_wfh_reason_text'
                       )
@@ -295,7 +295,7 @@ export const createPersonalMachine = (companyId) => {
                 },
                 colleagues: {
                   entry: assign({
-                    formState: (context, event) => {
+                    formState: (context) => {
                       const index = context.questions.findIndex(
                         (question) => question.name === 'not_wfh_colleagues'
                       )
@@ -324,7 +324,7 @@ export const createPersonalMachine = (companyId) => {
             },
             vacation: {
               entry: assign({
-                formState: (context, event) => {
+                formState: (context) => {
                   const index = context.questions.findIndex(
                     (question) => question.name === 'vacation'
                   )
@@ -344,7 +344,7 @@ export const createPersonalMachine = (companyId) => {
             finalTips: {
               id: 'finalTips',
               entry: assign({
-                formState: (context, event) => {
+                formState: (context) => {
                   const index = context.questions.findIndex(
                     (question) => question.name === 'final_tips'
                   )

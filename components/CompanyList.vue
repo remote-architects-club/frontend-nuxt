@@ -13,9 +13,9 @@
       />
       <!-- <p class="mb-8">Filter</p> -->
       <div
-        class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
         v-for="company in context.companies"
         :key="company.id"
+        class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
       >
         <company-details :company="company" />
         <section class="col-2">
@@ -31,9 +31,9 @@
             <div>
               <template v-if="company.experiences.length > 0">
                 <experience
-                  :experience="experience"
                   v-for="experience in company.experiences"
                   :key="experience.id"
+                  :experience="experience"
                   class="mb-8 "
                 />
               </template>

@@ -21,6 +21,14 @@ export default {
       companyId: this.$route.query.id
     }
   },
+  computed: {
+    companyMachine() {
+      return this.$contributeMachine.context.companyMachine
+    },
+    company() {
+      return this.companyMachine.state.context.company
+    }
+  },
   mounted() {
     if (!this.company) {
       this.companyMachine.send({
@@ -29,14 +37,6 @@ export default {
       })
     }
     this.$contributeMachine.send({ type: 'PERSONAL' })
-  },
-  computed: {
-    companyMachine() {
-      return this.$contributeMachine.context.companyMachine
-    },
-    company() {
-      return this.companyMachine.state.context.company
-    }
   }
 }
 </script>

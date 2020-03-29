@@ -7,13 +7,13 @@
       }}
       (of {{ total }})
     </p>
-    <button v-if="context.offset > 0" @click="prevPage" class="mr-2 link">
+    <button v-if="context.offset > 0" class="mr-2 link" @click="prevPage">
       &larr; prev
     </button>
     <button
       v-if="context.totalCompanies > context.resultsPerPage"
-      @click="nextPage"
       class="link"
+      @click="nextPage"
     >
       next &rarr;
     </button>

@@ -19,8 +19,8 @@
             </p>
 
             <ul
-              class="flex flex-wrap sm:justify-end"
               v-if="tool.tool_categories && tool.tool_categories.length > 0"
+              class="flex flex-wrap sm:justify-end"
             >
               <li
                 v-for="{ category_name: cat } in tool.tool_categories"
@@ -48,15 +48,15 @@
 import CompanyUrl from '@/components/CompanyUrl'
 import ToolLogo from '@/components/ToolLogo'
 export default {
+  components: {
+    ToolLogo,
+    CompanyUrl
+  },
   props: {
     tool: {
       type: Object,
       required: true
     }
-  },
-  components: {
-    ToolLogo,
-    CompanyUrl
   }
 }
 </script>

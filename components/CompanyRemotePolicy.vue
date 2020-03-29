@@ -42,13 +42,13 @@
         </div>
         <p class="flex items-center">
           <button
-            @click="save"
             :disabled="invalid || !(editedRemotePolicy && editedRemoteSince)"
             class="mr-4 btn btn-regular"
+            @click="save"
           >
             save
           </button>
-          <button @click="cancel" class="btn btn-text">
+          <button class="btn btn-text" @click="cancel">
             cancel
           </button>
         </p>
@@ -65,8 +65,8 @@
           <p class="flex items-center mb-1 font-semibold">
             {{ labelRemotePolicy }}
             <button
-              @click="edit"
               class="ml-2 transition duration-150 ease-in-out hover:text-yellow-500 focus:outline-none focus:shadow-focus"
+              @click="edit"
             >
               <v-icon icon="edit" class="w-4 h-4" />
             </button>
@@ -79,8 +79,8 @@
           <p class="flex items-center mb-1 font-semibold">
             {{ labelRemoteSince }}
             <button
-              @click="edit"
               class="ml-2 transition duration-150 ease-in-out hover:text-yellow-500 focus:outline-none focus:shadow-focus"
+              @click="edit"
             >
               <v-icon icon="edit" class="w-4 h-4" />
             </button>
@@ -92,7 +92,7 @@
       </template>
       <template v-else-if="!matches('hasCompany.editing.editingTools')">
         <p>
-          <button @click="edit" class="btn btn-regular">
+          <button class="btn btn-regular" @click="edit">
             + describe your company's work-from-home policies
           </button>
         </p>

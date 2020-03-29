@@ -18,13 +18,13 @@
       </p>
     </template>
     <template v-else>
-      <form @submit.prevent="submit" class="flex mb-4">
+      <form class="flex mb-4" @submit.prevent="submit">
         <input
+          id="email"
+          v-model="email"
           type="email"
           placeholder="Email"
-          id="email"
           class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
-          v-model="email"
         /><button
           type="submit"
           class="flex-none btn btn-regular"
@@ -60,7 +60,7 @@ export default {
       await this.sendToMailchimp()
       this.isLoading = false
     },
-    async sendToMailchimp(email, signUpLocation) {
+    async sendToMailchimp() {
       const url = `${NETLIFY_MC_FUNCTION}?email=${encodeURIComponent(
         this.email
       )}&tag=${this.signUpLocation}`

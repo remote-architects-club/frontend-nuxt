@@ -23,6 +23,7 @@ export const toolsMachine = Machine(
       idle: {
         on: {
           FETCH: 'fetching',
+          FETCH_TOOL: 'fetchingTool',
           SEARCH: {
             target: 'searching'
           },
@@ -56,6 +57,17 @@ export const toolsMachine = Machine(
             actions: ['setTools', 'setCategories']
           },
           onError: 'failedFetch'
+        }
+      },
+      fetchingTool: {
+        invoke: {
+          id: 'invoke-fetch-tool',
+          src: invokeFetchTool,
+          onDone: {
+            target: 'idle',
+            actions: ['setFetchedTool']
+          },
+          onError: 'idle'
         }
       },
       failedFetch: {
@@ -144,7 +156,7 @@ export const toolsMachine = Machine(
       end: {
         type: 'final',
         data: {
-          tools: (context, event) => context.tools
+          tools: (context) => context.tools
         }
       }
     },
@@ -166,6 +178,9 @@ export const toolsMachine = Machine(
       }),
       setTool: assign({
         tool: (_, event) => event.params.tool
+      }),
+      setFetchedTool: assign({
+        tool: (_, event) => event.data
       }),
       setNewTool: assign({
         tool: (_, event) => event.data
@@ -245,6 +260,36 @@ async function invokeFetch() {
     `
   })
   return { tools: data.tool, categories: data.category_tool }
+}
+async function invokeFetchTool(context, event) {
+  console.log(context, event)
+  const { id } = event.params
+  const { data } = await client.query({
+    query: gql`
+      query tool($id: uuid!) {
+        tool_by_pk(id: $id) {
+          id
+          description
+          is_free
+          name
+          url
+          tool_categories(order_by: { category_name: asc }) {
+            category_name
+          }
+          office_tools(order_by: { office: { name: asc } }) {
+            office {
+              id
+              name
+            }
+          }
+        }
+      }
+    `,
+    variables: {
+      id
+    }
+  })
+  return data.tool_by_pk
 }
 function invokeSearch(context) {
   return client

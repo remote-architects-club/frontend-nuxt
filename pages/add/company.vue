@@ -16,8 +16,8 @@
         </p>
         <company-details-editing :company="company" class="mb-8" />
         <p
-          class="mb-4 text-center"
           v-if="isEditing && companyState.matches('hasCompany.idle')"
+          class="mb-4 text-center"
         >
           <nuxt-link
             :to="`/company/${company.id}`"
@@ -31,8 +31,8 @@
           >
         </p>
         <p
-          class="text-center"
           v-else-if="!isEditing && companyState.matches('hasCompany.idle')"
+          class="text-center"
         >
           <nuxt-link
             to="/add"
@@ -40,8 +40,8 @@
             >back</nuxt-link
           >
           <button
-            @click="openPersonal"
             class="px-4 py-2 text-sm font-bold transition duration-150 ease-in-out bg-white border-2 border-black shadow hover:bg-yellow-500 focus:outline-none focus:shadow-focus"
+            @click="openPersonal"
           >
             All good, continue &rarr;
           </button>
@@ -67,17 +67,6 @@ export default {
       isEditing: this.$route.query.editing || false
     }
   },
-  mounted() {
-    if (this.companyState.matches('addCompany.done')) {
-      return this.companyService.send({ type: 'HAS_COMPANY' })
-    }
-    if (!this.company) {
-      return this.companyService.send({
-        type: 'FETCH_COMPANY',
-        params: { id: this.companyId }
-      })
-    }
-  },
   computed: {
     companyService() {
       return this.$contributeMachine.context.companyMachine
@@ -90,6 +79,17 @@ export default {
     },
     company() {
       return this.companyContext.company
+    }
+  },
+  mounted() {
+    if (this.companyState.matches('addCompany.done')) {
+      return this.companyService.send({ type: 'HAS_COMPANY' })
+    }
+    if (!this.company) {
+      return this.companyService.send({
+        type: 'FETCH_COMPANY',
+        params: { id: this.companyId }
+      })
     }
   },
   methods: {

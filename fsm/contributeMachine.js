@@ -15,8 +15,7 @@ export const machine = Machine({
   states: {
     company: {
       entry: assign({
-        companyMachine: (context, event) =>
-          spawn(companyMachine, { sync: true })
+        companyMachine: () => spawn(companyMachine, { sync: true })
       }),
       on: {
         PERSONAL: 'personal'
@@ -24,7 +23,7 @@ export const machine = Machine({
     },
     personal: {
       entry: assign({
-        personalMachine: (context, event) =>
+        personalMachine: (context) =>
           spawn(
             createPersonalMachine(
               context.companyMachine.state.context.companyId
@@ -35,10 +34,8 @@ export const machine = Machine({
       on: {
         FINISH: 'done',
         action: assign({
-          company: (context, event) =>
-            context.companyMachine.state.context.company,
-          personal: (context, event) =>
-            context.personalMachine.state.context.formData
+          company: (context) => context.companyMachine.state.context.company,
+          personal: (context) => context.personalMachine.state.context.formData
         })
       }
     },
