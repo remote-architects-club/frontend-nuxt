@@ -6,31 +6,36 @@
       </div>
     </template>
     <template v-else-if="status === 'success'">
-      <p class="font-bold">Done 👏!</p>
-    </template>
-    <template v-else-if="status === 'failure'">
-      <p class="font-bold">Oops 🙀!</p>
-      <p>
-        I'm so sorry, something went wrong on my side!
-        <button class="link" @click="status = 'idle'">
-          Wanna try again?
-        </button>
+      <p class="mb-4 font-bold" data-cy="subscribe-success">
+        👏 Great, we'll get in touch shortly!
       </p>
     </template>
+    <template v-else-if="status === 'failure'">
+      <div data-cy="subscribe-failure">
+        <p class="font-bold">Oops 🙀!</p>
+        <p class="mb-4">
+          I'm so sorry, something went wrong on my side!
+          <button class="link" @click="status = 'idle'">
+            Wanna try again?
+          </button>
+        </p>
+      </div>
+    </template>
     <template v-else>
-      <form class="flex mb-4" @submit.prevent="submit">
+      <form class="flex mb-4" data-cy="subscribe" @submit.prevent="submit">
         <input
           id="email"
           v-model="email"
           type="email"
           placeholder="Email"
+          data-cy="email-input"
           class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
         /><button
           type="submit"
           class="flex-none btn btn-regular"
           :disabled="isLoading"
         >
-          Subscribe
+          subscribe
         </button>
       </form>
     </template>
