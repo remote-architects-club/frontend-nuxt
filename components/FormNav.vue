@@ -3,7 +3,7 @@
     <!-- <form-progress :form-state/> -->
     <nav class="flex justify-center mt-4">
       <button
-        v-if="formState.activeQuestion !== 0"
+        v-if="formState.activeQuestionGroup !== 0"
         class="mx-4 btn btn-text"
         data-cy="back"
         @click="$emit('back')"

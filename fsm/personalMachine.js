@@ -112,7 +112,7 @@ export const createPersonalMachine = (companyId) => {
                       target: 'hardware',
                       actions: ['setAnswer']
                     },
-                    PREVIOUS: 'ownExperience'
+                    PREVIOUS: '#wfh'
                   }
                 },
                 hardware: {
