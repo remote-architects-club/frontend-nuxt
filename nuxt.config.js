@@ -1,27 +1,10 @@
-
-import gql from 'graphql-tag'
-import { client } from './plugins/apollo'
-
-let dynamicRoutes = async () => {
-  const {data} = await client.query({
-    query: gql`query offices {
-      office {
-        id
-      }
-    }`
-  })
-  const addPages = data.office.map(office => `/add/${office.id}`)
-  const companyPages = data.office.map(office => `/company/${office.id}`)
-  return [...addPages, ...companyPages]
-}
-
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    title: 'Remote Architects CLub',
+    title: 'Remote Architects Club',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -112,9 +95,6 @@ export default {
   /*
    ** Build configuration
    */
-  generate: {
-    routes: dynamicRoutes
-  },
   build: {
     /*
      ** You can extend webpack config here
