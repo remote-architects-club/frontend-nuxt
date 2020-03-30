@@ -186,9 +186,9 @@ describe('Contribute', function() {
     cy.get('[data-cy=final_tips]')
       .get('.input')
       .type('trying to type')
-    cy.get('@next').click()
+    // cy.get('@next').click()
   })
-  it.only('Goes through personal flow wfh02', function() {
+  it('Goes through personal flow wfh02', function() {
     cy.visit('/add')
     cy.url().should('include', '/add')
     cy.get('[data-cy=office-name]')
@@ -273,6 +273,6 @@ describe('Contribute', function() {
       .contains('finish')
       .should('be.enabled')
     cy.get('[data-cy=final_tips]')
-    cy.get('@next').click()
+    // cy.get('@next').click()
   })
 })
