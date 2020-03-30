@@ -78,12 +78,8 @@ export default {
   },
   data() {
     return {
-      error: 'error'
-    }
-  },
-  provide() {
-    return {
-      formState: this.formState
+      error: 'error',
+      userIp: null
     }
   },
   computed: {
@@ -106,12 +102,27 @@ export default {
       return this.context.formData
     }
   },
+  async mounted() {
+    this.userIp = await this.getUserIp()
+  },
+  provide() {
+    return {
+      formState: this.formState
+    }
+  },
   methods: {
+    async getUserIp() {
+      const data = await this.$axios.$get('https://api.ipify.org?format=json')
+      return data.ip
+    },
     submit() {},
     next() {
       this.send({
         type: 'NEXT',
-        params: { input: this.formData[this.formState.activeQuestionGroup] }
+        params: {
+          userIp: this.userIp,
+          input: this.formData[this.formState.activeQuestionGroup]
+        }
       })
     },
     back() {

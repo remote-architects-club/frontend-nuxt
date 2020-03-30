@@ -14,6 +14,7 @@ export const createPersonalMachine = (companyId) => {
         questionGroupsKeys: questionGroups.map((qg) => qg.map((q) => q.name)),
         formData: [],
         companyId,
+        userIp: null,
         formState: {
           currentGroup: questionGroups[0],
           activeQuestionGroup: 0,
@@ -331,6 +332,9 @@ export const createPersonalMachine = (companyId) => {
             const { input } = event.params
             context.formData[activeQuestionGroup] = input
             return context.formData
+          },
+          userIp: (context, event) => {
+            return event.params.userIp
           }
         }),
         setSavedData: assign({
@@ -364,7 +368,7 @@ async function invokeSave(context) {
   }
   console.log(inputObject)
   // debugger
-  const { companyId: office_id } = context
+  const { companyId: office_id, userIp: user_ip } = context
   const {
     wfh,
     own_experience,
@@ -402,6 +406,7 @@ async function invokeSave(context) {
         $tools: Int
         $tools_text: String
         $wfh: Int
+        $user_ip: String
       ) {
         insert_experience(
           objects: {
@@ -419,6 +424,7 @@ async function invokeSave(context) {
             tools: $tools
             tools_text: $tools_text
             wfh: $wfh
+            user_ip: $user_ip
           }
         ) {
           affected_rows
@@ -439,6 +445,7 @@ async function invokeSave(context) {
             tools
             tools_text
             wfh
+            user_ip
           }
         }
       }
@@ -457,7 +464,8 @@ async function invokeSave(context) {
       own_experience_text,
       tools,
       tools_text,
-      wfh
+      wfh,
+      user_ip
     }
   })
   return data.insert_experience.returning[0].experience
