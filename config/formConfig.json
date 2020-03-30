@@ -1,255 +1,278 @@
 [
-  {
-    "name": "name",
-    "type": "text",
-    "label": "What should we call you?",
-    "options": {
-      "attrs": {
-        "placeholder": "Tell us your name (or pseudonym)"
+  [
+    {
+      "name": "name",
+      "type": "text",
+      "label": "What should we call you?",
+      "options": {
+        "attrs": {
+          "placeholder": "Tell us your name (or pseudonym)"
+        },
+        "explanation": "This name will be displayed publicly in the list of stories of each company."
       },
-      "explanation": "This name will be displayed publicly in the list of stories of each company."
+      "validation": ["required"]
+    }
+  ],
+  [
+    {
+      "name": "wfh",
+      "type": "radio",
+      "label": "Are you working from home?",
+      "options": {
+        "choices": [
+          {
+            "label": "🏠Yes",
+            "value": 0
+          },
+          {
+            "label": "🏢No, I'm coming to the office",
+            "value": 1
+          },
+          {
+            "label": "🏖No, I took days off",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
+    }
+  ],
+  [
+    {
+      "name": "not_wfh_reason",
+      "type": "radio",
+      "label": "Why not?",
+      "options": {
+        "choices": [
+          {
+            "label": "😠I am not allowed to",
+            "value": 0
+          },
+          {
+            "label": "😔Situation in the city improved and we are coming back to normal",
+            "value": 1
+          },
+          {
+            "label": "😶I just prefer/need to come to the office",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
     },
-    "validation": ["required"]
-  },
-  {
-    "name": "wfh",
-    "type": "radio",
-    "label": "Are you working from home?",
-    "options": {
-      "choices": [
-        {
-          "label": "🏠Yes",
-          "value": 0
-        },
-        {
-          "label": "🏢No, I'm coming to the office",
-          "value": 1
-        },
-        {
-          "label": "🏖No, I took days off",
-          "value": 2
+    {
+      "name": "not_wfh_reason_text",
+      "type": "textarea",
+      "label": "Care to elaborate?",
+      "options": {
+        "attrs": {
+          "placeholder": "What about your position/job that does not let you work from home? Or why do you prefer going to the office?"
         }
-      ]
-    },
-    "validation": ["required"]
-  },
-  {
-    "name": "not_wfh_reason",
-    "type": "radio",
-    "label": "Why not?",
-    "options": {
-      "choices": [
-        {
-          "label": "😠I am not allowed to",
-          "value": 0
-        },
-        {
-          "label": "😔Situation in the city improved and we are coming back to normal",
-          "value": 1
-        },
-        {
-          "label": "😶I just prefer/need to come to the office",
-          "value": 2
-        }
-      ]
-    },
-    "validation": ["required"]
-  },
-  {
-    "name": "not_wfh_reason_text",
-    "type": "textarea",
-    "label": "Care to elaborate?",
-    "options": {
-      "attrs": {
-        "placeholder": "What about your position/job that does not let you work from home? Or why do you prefer going to the office?"
-      }
-    },
-    "validation": []
-  },
-  {
-    "name": "not_wfh_colleagues",
-    "type": "radio",
-    "label": "What about your colleagues?",
-    "options": {
-      "choices": [
-        {
-          "label": "🖐They are all here",
-          "value": 0
-        },
-        {
-          "label": "✌️Some are gone, some are here",
-          "value": 1
-        },
-        {
-          "label": "✊I am mostly on my own",
-          "value": 2
-        }
-      ]
-    },
-    "validation": ["required"]
-  },
-  {
-    "name": "is_wfh_colleagues",
-    "type": "radio",
-    "label": "How about your colleagues?",
-    "options": {
-      "choices": [
-        {
-          "label": "✊Most are in the office, I am one of the few out",
-          "value": 0
-        },
-        {
-          "label": "✌️About half are still coming in, the rest is working from home",
-          "value": 1
-        },
-        {
-          "label": "🖐Everyone else is working from home",
-          "value": 2
-        }
-      ]
-    },
-    "validation": ["required"]
-  },
+      },
+      "validation": []
+    }
+  ],
+  [
+    {
+      "name": "not_wfh_colleagues",
+      "type": "radio",
+      "label": "What about your colleagues?",
+      "options": {
+        "choices": [
+          {
+            "label": "🖐They are all here",
+            "value": 0
+          },
+          {
+            "label": "✌️Some are gone, some are here",
+            "value": 1
+          },
+          {
+            "label": "✊I am mostly on my own",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
+    }
+  ],
+  [
+    {
+      "name": "is_wfh_colleagues",
+      "type": "radio",
+      "label": "How about your colleagues?",
+      "options": {
+        "choices": [
+          {
+            "label": "✊Most are in the office, I am one of the few out",
+            "value": 0
+          },
+          {
+            "label": "✌️About half are still coming in, the rest is working from home",
+            "value": 1
+          },
+          {
+            "label": "🖐Everyone else is working from home",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
+    }
+  ],
 
-  {
-    "name": "own_experience",
-    "type": "radio",
-    "label": "How would you rate your overall experience working from home, so far?",
-    "options": {
-      "choices": [
-        {
-          "label": "😭I hate it, wanna go back to the office",
-          "value": 0
-        },
-        {
-          "label": "🙄Meh, it's alright...",
-          "value": 1
-        },
-        {
-          "label": "🥳I'm loving it!",
-          "value": 2
+  [
+    {
+      "name": "own_experience",
+      "type": "radio",
+      "label": "How would you rate your overall experience working from home, so far?",
+      "options": {
+        "choices": [
+          {
+            "label": "😭I hate it, wanna go back to the office",
+            "value": 0
+          },
+          {
+            "label": "🙄Meh, it's alright...",
+            "value": 1
+          },
+          {
+            "label": "🥳I'm loving it!",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
+    },
+    {
+      "name": "own_experience_text",
+      "type": "textarea",
+      "label": "Care to elaborate?",
+      "options": {
+        "attrs": {
+          "placeholder": "Is everything working as expected? Are you having any difficulties? Anything you particular like/hate?"
         }
-      ]
+      },
+      "validation": []
+    }
+  ],
+  [
+    {
+      "name": "tools",
+      "type": "radio",
+      "label": "What about the tools you are using to communicate and work with each other?",
+      "options": {
+        "choices": [
+          {
+            "label": "😤It's just not working, it's hard to get work done",
+            "value": 0
+          },
+          {
+            "label": "😐They're ok, but there is room for improvement",
+            "value": 1
+          },
+          {
+            "label": "🤓They're great, we found the right tools and everything is running smoothly",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
     },
-    "validation": ["required"]
-  },
-  {
-    "name": "own_experience_text",
-    "type": "textarea",
-    "label": "Care to elaborate?",
-    "options": {
-      "attrs": {
-        "placeholder": "Is everything working as expected? Are you having any difficulties? Anything you particular like/hate?"
-      }
-    },
-    "validation": []
-  },
-  {
-    "name": "tools",
-    "type": "radio",
-    "label": "What about the tools you are using to communicate and work with each other?",
-    "options": {
-      "choices": [
-        {
-          "label": "😤It's just not working, it's hard to get work done",
-          "value": 0
-        },
-        {
-          "label": "😐They're ok, but there is room for improvement",
-          "value": 1
-        },
-        {
-          "label": "🤓They're great, we found the right tools and everything is running smoothly",
-          "value": 2
+    {
+      "name": "tools_text",
+      "type": "textarea",
+      "label": "Any other thoughts about the tools?",
+      "options": {
+        "attrs": {
+          "placeholder": "Any tool in particular is a pain or a joy to use? Any other tools you wish your company would use?"
         }
-      ]
+      },
+      "validation": []
+    }
+  ],
+  [
+    {
+      "name": "company",
+      "type": "radio",
+      "label": "What do you think about your company's response to COVID-19?",
+      "options": {
+        "choices": [
+          {
+            "label": "🖕Too slow/not comprehensive enough",
+            "value": 0
+          },
+          {
+            "label": "👍It's ok, but there is room for improvement",
+            "value": 1
+          },
+          {
+            "label": "👏It was perfect, timely and efficient",
+            "value": 2
+          }
+        ]
+      },
+      "validation": ["required"]
     },
-    "validation": ["required"]
-  },
-  {
-    "name": "tools_text",
-    "type": "textarea",
-    "label": "Any other thoughts about the tools?",
-    "options": {
-      "attrs": {
-        "placeholder": "Any tool in particular is a pain or a joy to use? Any other tools you wish your company would use?"
-      }
-    },
-    "validation": []
-  },
-  {
-    "name": "company",
-    "type": "radio",
-    "label": "What do you think about your company's response to COVID-19?",
-    "options": {
-      "choices": [
-        {
-          "label": "🖕Too slow/not comprehensive enough",
-          "value": 0
-        },
-        {
-          "label": "👍It's ok, but there is room for improvement",
-          "value": 1
-        },
-        {
-          "label": "👏It was perfect, timely and efficient",
-          "value": 2
+
+    {
+      "name": "company_text",
+      "type": "textarea",
+      "label": "Any other thoughts about you company's response?",
+      "options": {
+        "attrs": {
+          "placeholder": "Any deserved praise? Or would you have done things differently?"
         }
-      ]
-    },
-    "validation": ["required"]
-  },
-  {
-    "name": "hardware",
-    "type": "radio",
-    "label": "Did your company provide you with hardware (laptop, desktop, tablet, etc.) to work from home?",
-    "options": {
-      "choices": [
-        {
-          "label": "🤗Yes",
-          "value": true
-        },
-        {
-          "label": "🥺No",
-          "value": false
+      },
+      "validation": []
+    }
+  ],
+  [
+    {
+      "name": "vacation",
+      "type": "textarea",
+      "label": "Good for you! 👍 To you have any thoughts for those who are working?",
+      "options": {
+        "attrs": {
+          "placeholder": "Be nice..."
         }
-      ]
-    },
-    "validation": ["required"]
-  },
-  {
-    "name": "company_text",
-    "type": "textarea",
-    "label": "Any other thoughts about you company's response?",
-    "options": {
-      "attrs": {
-        "placeholder": "Any deserved praise? Or would you have done things differently?"
-      }
-    },
-    "validation": []
-  },
-  {
-    "name": "vacation",
-    "type": "textarea",
-    "label": "Good for you! 👍 To you have any thoughts for those who are working?",
-    "options": {
-      "attrs": {
-        "placeholder": "Be nice..."
-      }
-    },
-    "validation": [],
-    "isFinal": true
-  },
-  {
-    "name": "final_tips",
-    "type": "textarea",
-    "label": "Alright, that's it! 🙌 Any final tips or advice you'd like to share?",
-    "options": {
-      "attrs": {
-        "placeholder": "Anything else comes to mind?"
-      }
-    },
-    "validation": [],
-    "isFinal": true
-  }
+      },
+      "validation": [],
+      "isFinal": true
+    }
+  ],
+  [
+    {
+      "name": "hardware",
+      "type": "radio",
+      "label": "Did your company provide you with hardware (laptop, desktop, tablet, etc.) to work from home?",
+      "options": {
+        "choices": [
+          {
+            "label": "🤗Yes",
+            "value": true
+          },
+          {
+            "label": "🥺No",
+            "value": false
+          }
+        ]
+      },
+      "validation": ["required"]
+    }
+  ],
+  [
+    {
+      "name": "final_tips",
+      "type": "textarea",
+      "label": "Alright, that's it! 🙌 Any final tips or advice you'd like to share?",
+      "options": {
+        "attrs": {
+          "placeholder": "Anything else comes to mind?"
+        }
+      },
+      "validation": [],
+      "isFinal": true
+    }
+  ]
 ]

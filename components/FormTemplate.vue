@@ -2,39 +2,51 @@
   <div>
     <div class="p-4 bg-white shadow-lg sm:p-8">
       <form @submit.prevent="submit">
-        <template v-for="(question, key) in questions">
-          <field-group
-            :key="`${_uid}-${question.name}`"
-            :field-id="key"
-            :active="formState.current.name === question.name"
-            :is-next="formState.isNext"
-          >
-            <div class="field-area">
-              <field-label :for="`${_uid}-${question.name}`">
-                {{ question.label }}
-              </field-label>
-              <div class="h-4" />
-              <Component
-                :is="`${question.type}-input`"
-                :id="`${_uid}-${question.name}`"
-                v-model="formData[question.name]"
-                v-bind="{ ...question.options.attrs }"
-                :name="`${question.name}`"
-                :type="question.type"
-                :options="
-                  !!question.options.choices ? question.options.choices : false
-                "
-                :data-cy="question.name"
-              />
-              <p
-                v-if="question.options && question.options.explanation"
-                class="mt-1 text-sm"
-              >
-                {{ question.options.explanation }}
-              </p>
-            </div>
-            <!-- <field-error :is-valid="isValid">{{ error }}</field-error> -->
-          </field-group>
+        <template v-for="(questionGroup, iGroup) in questionGroups">
+          <template v-for="(question, key) in questionGroup">
+            <field-group
+              :key="`${_uid}-${question.name}`"
+              :field-id="key"
+              :active="formState.activeQuestionGroup === iGroup"
+              :is-next="formState.isNext"
+            >
+              <div>
+                <label
+                  :for="`${_uid}-${question.name}`"
+                  class="flex flex-wrap items-center justify-between "
+                >
+                  {{ question.label }}
+                  <span
+                    v-if="!question.validation.includes('required')"
+                    class="text-sm italic text-gray-600"
+                    >optional</span
+                  >
+                </label>
+                <div class="h-2" />
+                <Component
+                  :is="`${question.type}-input`"
+                  :id="`${_uid}-${question.name}`"
+                  v-model="formData[iGroup][key].answer"
+                  v-bind="{ ...question.options.attrs }"
+                  :name="`${question.name}`"
+                  :type="question.type"
+                  :options="
+                    !!question.options.choices
+                      ? question.options.choices
+                      : false
+                  "
+                  :data-cy="question.name"
+                />
+                <p
+                  v-if="question.options && question.options.explanation"
+                  class="mt-1 text-sm"
+                >
+                  {{ question.options.explanation }}
+                </p>
+                <div v-if="key < questionGroup.length - 1" class="h-8" />
+              </div>
+            </field-group>
+          </template>
         </template>
       </form>
     </div>
@@ -51,8 +63,6 @@
 
 <script>
 import FieldGroup from '@/components/FieldGroup'
-import FieldLabel from '@/components/FieldLabel'
-// import FieldError from '@/components/FieldError'
 import RadioInput from '@/components/RadioInput'
 import TextareaInput from '@/components/TextareaInput'
 import TextInput from '@/components/TextInput'
@@ -61,8 +71,6 @@ import FormNav from '@/components/FormNav'
 export default {
   components: {
     FieldGroup,
-    FieldLabel,
-    // FieldError,
     TextInput,
     TextareaInput,
     RadioInput,
@@ -70,8 +78,6 @@ export default {
   },
   data() {
     return {
-      formData: {},
-      // isValid: true,
       error: 'error'
     }
   },
@@ -90,29 +96,23 @@ export default {
     context() {
       return this.personalMachine.state.context
     },
-    questions() {
-      return this.context.questions
+    questionGroups() {
+      return this.context.questionGroups
     },
     formState() {
       return this.context.formState
     },
-    isAnswerValid() {
-      const isRequired = this.formState.current.validation.includes('required')
-      const input = this.formData[this.formState.current.name]
-      return !isRequired || (isRequired && input)
+    formData() {
+      return this.context.formData
     }
   },
   methods: {
     submit() {},
     next() {
-      if (this.isAnswerValid) {
-        this.send({
-          type: 'NEXT',
-          params: { input: this.formData[this.formState.current.name] }
-        })
-        // return (this.isValid = true)
-      }
-      // return (this.isValid = false)
+      this.send({
+        type: 'NEXT',
+        params: { input: this.formData[this.formState.activeQuestionGroup] }
+      })
     },
     back() {
       return this.send({ type: 'PREVIOUS' })

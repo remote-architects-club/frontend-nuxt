@@ -3,7 +3,7 @@
     <div class="mb-8">
       <h1 class="text-3xl font-bold">Contribute</h1>
     </div>
-    <personal-form v-if="company" :company="company"></personal-form>
+    <personal-form v-if="companyId" :company-id="companyId"></personal-form>
   </div>
 </template>
 
@@ -24,18 +24,9 @@ export default {
   computed: {
     companyMachine() {
       return this.$contributeMachine.context.companyMachine
-    },
-    company() {
-      return this.companyMachine.state.context.company
     }
   },
   mounted() {
-    if (!this.company) {
-      this.companyMachine.send({
-        type: 'FETCH_COMPANY',
-        params: { id: this.companyId }
-      })
-    }
     this.$contributeMachine.send({ type: 'PERSONAL' })
   }
 }

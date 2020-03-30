@@ -16,7 +16,7 @@ export default {
   },
   props: {
     fieldId: {
-      type: String,
+      type: Number,
       required: true
     },
     active: {

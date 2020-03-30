@@ -13,5 +13,10 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue'
+  ],
+  testPathIgnorePatterns: [
+    '<rootDir>/.nuxt/',
+    '<rootDir>/node_modules/',
+    '<rootDir>/cypress/'
   ]
 }

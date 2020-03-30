@@ -6,6 +6,6 @@
   publish = "dist"
 
   # Default build command.
-  command = "npm run generate"
+  command = "npm run test && npm run generate"
 
   functions = "./functions/"
