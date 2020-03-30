@@ -2,8 +2,7 @@
   <div>
     <template v-if="state.matches('editing')">
       <h2 class="mb-4 font-bold">
-        Tell us how's it going at
-        {{ company.name }}
+        Tell us how's it going at your company
       </h2>
       <form-template />
     </template>
@@ -18,9 +17,8 @@
       <div class="flex flex-col items-center p-8 bg-white shadow-lg">
         <p class="mb-4 font-bold text-center">Thank you!</p>
         <p class="mb-4 text-center">
-          <nuxt-link :to="`/company/${company.id}`" class="link"
-            >See what other people are saying about
-            {{ company.name }}</nuxt-link
+          <nuxt-link :to="`/company/${companyId}`" class="link"
+            >See what other people are saying about your company</nuxt-link
           >
           <br />or<br /><nuxt-link to="/" class="link"
             >Browse all companies</nuxt-link
@@ -59,8 +57,8 @@ export default {
     McApiForm
   },
   props: {
-    company: {
-      type: Object,
+    companyId: {
+      type: String,
       required: true
     }
   },

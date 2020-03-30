@@ -2,7 +2,7 @@
 
 import { Machine, assign, sendParent } from 'xstate'
 import gql from 'graphql-tag'
-import questions from '../config/formConfig.json'
+import questionGroups from '../config/formConfig.json'
 import { client } from '@/plugins/apollo'
 
 export const createPersonalMachine = (companyId) => {
@@ -10,15 +10,15 @@ export const createPersonalMachine = (companyId) => {
     {
       id: 'personalMachine',
       context: {
-        questions,
-        formData: {
-          companyId
-        },
+        questionGroups,
+        questionGroupsKeys: questionGroups.map((qg) => qg.map((q) => q.name)),
+        formData: [],
+        companyId,
         formState: {
-          current: questions[0],
-          activeQuestion: 0,
+          currentGroup: questionGroups[0],
+          activeQuestionGroup: 0,
           isNext: true,
-          formLength: questions.length,
+          formLength: questionGroups.length,
           isComplete: false,
           isValid: false
         }
@@ -33,16 +33,22 @@ export const createPersonalMachine = (companyId) => {
               id: 'name',
               entry: assign({
                 formState: (context) => {
-                  context.formState.current = questions[0]
-                  context.formState.activeQuestion = 0
+                  context.formState.currentGroup = questionGroups[0]
+                  context.formState.activeQuestionGroup = 0
                   return context.formState
                 },
                 formData: (context) => {
-                  // add all keys to formData
-                  for (const question of context.questions) {
-                    const formData = { ...context.formData }
-                    context.formData[question.name] =
-                      formData[question.name] || null
+                  // add all keys to formData, if formData not filled
+                  // console.log(context)
+                  if (context.formData.length === 0) {
+                    context.formData = questionGroups.map((group) =>
+                      group.map(({ name }) => {
+                        return {
+                          name,
+                          answer: ''
+                        }
+                      })
+                    )
                   }
                   return context.formData
                 }
@@ -55,11 +61,11 @@ export const createPersonalMachine = (companyId) => {
               id: 'wfh',
               entry: assign({
                 formState: (context) => {
-                  const index = context.questions.findIndex(
-                    (question) => question.name === 'wfh'
+                  const index = context.questionGroupsKeys.findIndex((qgk) =>
+                    qgk.includes('wfh')
                   )
-                  context.formState.activeQuestion = index
-                  context.formState.current = questions[index]
+                  context.formState.activeQuestionGroup = index
+                  context.formState.currentGroup = questionGroups[index]
                   return context.formState
                 }
               }),
@@ -67,12 +73,14 @@ export const createPersonalMachine = (companyId) => {
                 NEXT: [
                   {
                     target: '#editing.isWFH',
-                    cond: (context, event) => Number(event.params.input) === 0,
+                    cond: (context, event) =>
+                      Number(event.params.input[0].answer) === 0,
                     actions: ['setAnswer']
                   },
                   {
                     target: '#editing.notWFH',
-                    cond: (context, event) => Number(event.params.input) === 1,
+                    cond: (context, event) =>
+                      Number(event.params.input[0].answer) === 1,
                     actions: ['setAnswer']
                   },
                   {
@@ -90,33 +98,15 @@ export const createPersonalMachine = (companyId) => {
                 ownExperience: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'own_experience'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('own_experience')
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
-                  on: {
-                    NEXT: {
-                      target: 'ownExperienceText',
-                      actions: ['setAnswer']
-                    },
-                    PREVIOUS: '#editing.wfh'
-                  }
-                },
-                ownExperienceText: {
-                  entry: assign({
-                    formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'own_experience_text'
-                      )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
-                      return context.formState
-                    }
-                  }),
+
                   on: {
                     NEXT: {
                       target: 'hardware',
@@ -128,11 +118,11 @@ export const createPersonalMachine = (companyId) => {
                 hardware: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'hardware'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('hardware')
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
@@ -141,17 +131,17 @@ export const createPersonalMachine = (companyId) => {
                       target: 'colleagues',
                       actions: ['setAnswer']
                     },
-                    PREVIOUS: 'ownExperienceText'
+                    PREVIOUS: 'ownExperience'
                   }
                 },
                 colleagues: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'is_wfh_colleagues'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('is_wfh_colleagues')
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
@@ -163,21 +153,20 @@ export const createPersonalMachine = (companyId) => {
                     PREVIOUS: 'hardware'
                   }
                 },
-
                 tools: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'tools'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('tools')
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
                   on: {
                     NEXT: {
-                      target: 'toolsText',
+                      target: 'company',
                       actions: ['setAnswer']
                     },
                     PREVIOUS: [
@@ -192,52 +181,14 @@ export const createPersonalMachine = (companyId) => {
                     ]
                   }
                 },
-                toolsText: {
-                  entry: assign({
-                    formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'tools_text'
-                      )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
-                      return context.formState
-                    }
-                  }),
-                  on: {
-                    NEXT: {
-                      target: 'company',
-                      actions: ['setAnswer']
-                    },
-                    PREVIOUS: 'tools'
-                  }
-                },
                 company: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'company'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('company')
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
-                      return context.formState
-                    }
-                  }),
-                  on: {
-                    NEXT: {
-                      target: 'companyText',
-                      actions: ['setAnswer']
-                    },
-                    PREVIOUS: 'toolsText'
-                  }
-                },
-                companyText: {
-                  entry: assign({
-                    formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'company_text'
-                      )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
@@ -246,7 +197,7 @@ export const createPersonalMachine = (companyId) => {
                       target: '#editing.finalTips',
                       actions: ['setAnswer']
                     },
-                    PREVIOUS: 'company'
+                    PREVIOUS: 'tools'
                   }
                 }
               }
@@ -258,30 +209,11 @@ export const createPersonalMachine = (companyId) => {
                 reason: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
+                      const index = context.questionGroups.findIndex(
                         (question) => question.name === 'not_wfh_reason'
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
-                      return context.formState
-                    }
-                  }),
-                  on: {
-                    NEXT: {
-                      target: 'reasonText',
-                      actions: ['setAnswer']
-                    },
-                    PREVIOUS: '#editing.wfh'
-                  }
-                },
-                reasonText: {
-                  entry: assign({
-                    formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'not_wfh_reason_text'
-                      )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
@@ -290,17 +222,18 @@ export const createPersonalMachine = (companyId) => {
                       target: 'colleagues',
                       actions: ['setAnswer']
                     },
-                    PREVIOUS: 'reason'
+                    PREVIOUS: '#editing.wfh'
                   }
                 },
+
                 colleagues: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questions.findIndex(
-                        (question) => question.name === 'not_wfh_colleagues'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('not_wfh_colleagues')
                       )
-                      context.formState.activeQuestion = index
-                      context.formState.current = questions[index]
+                      context.formState.activeQuestionGroup = index
+                      context.formState.currentGroup = questionGroups[index]
                       return context.formState
                     }
                   }),
@@ -309,7 +242,7 @@ export const createPersonalMachine = (companyId) => {
                       {
                         target: '#editing.finalTips',
                         cond: (context, event) =>
-                          Number(event.params.input) === 0,
+                          Number(event.params.input[0].answer) === 0,
                         actions: ['setAnswer']
                       },
                       {
@@ -317,7 +250,7 @@ export const createPersonalMachine = (companyId) => {
                         actions: ['setAnswer']
                       }
                     ],
-                    PREVIOUS: 'reasonText'
+                    PREVIOUS: 'reason'
                   }
                 }
               }
@@ -325,11 +258,11 @@ export const createPersonalMachine = (companyId) => {
             vacation: {
               entry: assign({
                 formState: (context) => {
-                  const index = context.questions.findIndex(
-                    (question) => question.name === 'vacation'
+                  const index = context.questionGroupsKeys.findIndex((qgk) =>
+                    qgk.includes('vacation')
                   )
-                  context.formState.activeQuestion = index
-                  context.formState.current = questions[index]
+                  context.formState.activeQuestionGroup = index
+                  context.formState.currentGroup = questionGroups[index]
                   return context.formState
                 }
               }),
@@ -345,11 +278,11 @@ export const createPersonalMachine = (companyId) => {
               id: 'finalTips',
               entry: assign({
                 formState: (context) => {
-                  const index = context.questions.findIndex(
-                    (question) => question.name === 'final_tips'
+                  const index = context.questionGroupsKeys.findIndex((qgk) =>
+                    qgk.includes('final_tips')
                   )
-                  context.formState.activeQuestion = index
-                  context.formState.current = questions[index]
+                  context.formState.activeQuestionGroup = index
+                  context.formState.currentGroup = questionGroups[index]
                   return context.formState
                 }
               }),
@@ -358,7 +291,7 @@ export const createPersonalMachine = (companyId) => {
                   target: '#saving',
                   actions: ['setAnswer']
                 },
-                PREVIOUS: '#editing.isWFH.companyText'
+                PREVIOUS: '#editing.isWFH.company'
               }
             }
           }
@@ -393,9 +326,10 @@ export const createPersonalMachine = (companyId) => {
       actions: {
         setAnswer: assign({
           formData: (context, event) => {
-            const { name: key } = context.formState.current
-            const { input: answer } = event.params
-            context.formData[key] = answer
+            // console.log('action:setAnswer')
+            const { activeQuestionGroup } = context.formState
+            const { input } = event.params
+            context.formData[activeQuestionGroup] = input
             return context.formData
           }
         }),
@@ -408,8 +342,30 @@ export const createPersonalMachine = (companyId) => {
 }
 
 async function invokeSave(context) {
+  const inputArray = context.questionGroups
+    .map((qg, i) => {
+      const group = qg.map((q, j) => {
+        const answer =
+          context.formData[i][j].answer === ''
+            ? null
+            : context.formData[i][j].answer
+        return {
+          [q.name]: answer
+        }
+      })
+      return group
+    })
+    .flat()
+
+  // console.log(inputArray)
+  let inputObject = {}
+  for (const obj of inputArray) {
+    inputObject = { ...inputObject, ...obj }
+  }
+  console.log(inputObject)
+  // debugger
+  const { companyId: office_id } = context
   const {
-    companyId: office_id,
     wfh,
     own_experience,
     own_experience_text,
@@ -423,9 +379,10 @@ async function invokeSave(context) {
     not_wfh_colleagues,
     final_tips,
     name
-  } = context.formData
+  } = inputObject
+
   const colleagues = is_wfh_colleagues || not_wfh_colleagues
-  let { hardware } = context.formData
+  let { hardware } = inputObject
   if (!hardware) hardware = false
 
   const { data } = await client.mutate({

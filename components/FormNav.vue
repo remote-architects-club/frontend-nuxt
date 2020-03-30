@@ -34,27 +34,41 @@ export default {
       required: true
     },
     formData: {
-      type: Object,
+      type: Array,
       required: true
     }
   },
   computed: {
     isNextDisabled() {
-      if (
-        this.formState.current.validation.includes('required') &&
-        !this.formData[this.formState.current.name]
-      )
-        return true
-      return false
+      const isNextDisabled = this.formState.currentGroup.map((question, i) => {
+        return (
+          this.isRequired(question) &&
+          this.formData[this.formState.activeQuestionGroup][i].answer === ''
+        )
+      })
+      return isNextDisabled.includes(true)
     },
     nextLabel() {
-      if (this.formState.current.isFinal) return 'finish'
       if (
-        !this.formState.current.validation.includes('required') &&
-        !this.formData[this.formState.current.name]
+        this.formState.currentGroup[this.formState.currentGroup.length - 1]
+          .isFinal
       )
-        return 'skip'
-      return 'next'
+        return 'finish'
+      const skippable = this.formState.currentGroup.map((question, i) => {
+        return (
+          !this.isRequired(question) &&
+          this.formData[this.formState.activeQuestionGroup][i].answer === ''
+        )
+      })
+      if (skippable.includes(false)) {
+        return 'next'
+      }
+      return 'skip'
+    }
+  },
+  methods: {
+    isRequired(question) {
+      return question.validation.includes('required')
     }
   }
 }
