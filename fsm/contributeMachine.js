@@ -16,10 +16,7 @@ export const machine = Machine({
     company: {
       entry: assign({
         companyMachine: () => spawn(companyMachine, { sync: true })
-      }),
-      on: {
-        PERSONAL: 'personal'
-      }
+      })
     },
     personal: {
       entry: assign({
@@ -45,6 +42,9 @@ export const machine = Machine({
     cancelled: {
       type: 'final'
     }
+  },
+  on: {
+    PERSONAL: 'personal'
   }
 })
 
