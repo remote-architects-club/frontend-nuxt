@@ -1,0 +1,20 @@
+{
+  "data": {
+    "search_offices": [
+      {
+        "id": "00e89587-e92e-44cb-b64a-a470100ffeb4",
+        "name": "HENN",
+        "city": "Berlin",
+        "country_iso": "DE",
+        "__typename": "office"
+      },
+      {
+        "id": "7f21265e-0f44-4c7d-9426-e02822f3b07d",
+        "name": "Henning Larsen Architects",
+        "city": "Copenhagen",
+        "country_iso": "DK",
+        "__typename": "office"
+      }
+    ]
+  }
+}
