@@ -210,8 +210,8 @@ export const createPersonalMachine = (companyId) => {
                 reason: {
                   entry: assign({
                     formState: (context) => {
-                      const index = context.questionGroups.findIndex(
-                        (question) => question.name === 'not_wfh_reason'
+                      const index = context.questionGroupsKeys.findIndex(
+                        (qgk) => qgk.includes('not_wfh_reason')
                       )
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
