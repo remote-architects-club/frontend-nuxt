@@ -1,0 +1,22 @@
+{
+  "data": {
+    "insert_office": {
+      "affected_rows": 1,
+      "returning": [
+        {
+          "id": "a141dfc9-497c-46ca-9137-2b91bd67e48e",
+          "name": "thrthrthert",
+          "num_people": null,
+          "country_iso": "AF",
+          "city": "Berlin",
+          "remote_policy": null,
+          "remote_since": null,
+          "url": null,
+          "office_tools": [],
+          "__typename": "office"
+        }
+      ],
+      "__typename": "office_mutation_response"
+    }
+  }
+}

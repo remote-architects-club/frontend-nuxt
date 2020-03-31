@@ -1,0 +1,29 @@
+{
+  "data": {
+    "insert_experience": {
+      "affected_rows": 1,
+      "returning": [
+        {
+          "id": "11e59af5-f877-4caa-84b1-623f8bd41eeb",
+          "name": "dfgsdg",
+          "colleagues": 1,
+          "company": 1,
+          "company_text": null,
+          "created_at": "2020-03-31T06:51:38.807776+00:00",
+          "final_tips": "hgrtht",
+          "hardware": false,
+          "not_wfh_reason": 0,
+          "not_wfh_reason_text": null,
+          "office_id": "00e89587-e92e-44cb-b64a-a470100ffeb4",
+          "own_experience": null,
+          "own_experience_text": null,
+          "tools": 0,
+          "tools_text": null,
+          "wfh": 1,
+          "__typename": "experience"
+        }
+      ],
+      "__typename": "experience_mutation_response"
+    }
+  }
+}
