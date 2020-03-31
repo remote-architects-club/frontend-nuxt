@@ -445,7 +445,6 @@ async function invokeSave(context) {
             tools
             tools_text
             wfh
-            user_ip
           }
         }
       }
