@@ -128,7 +128,6 @@ describe('Contribute', function() {
     cy.contains(name)
     cy.contains(city)
     cy.contains(country)
-    cy.contains(website)
     // cancel
     // cy.get('@cancel').click()
     // cy.get('@add-form').should('not.exist')
@@ -182,8 +181,13 @@ describe('Contribute', function() {
       )
     })
   })
-  it.only('Goes through personal flow wfh01', function() {
+  it('Goes through personal flow wfh01', function() {
     cy.fixture('office_by_pk').then((results) => {
+      cy.route({
+        url,
+        status: 200,
+        response: results
+      })
       cy.visit(`/add/personal?id=${results.data.office_by_pk.id}`)
     })
     // name
@@ -263,7 +267,7 @@ describe('Contribute', function() {
       .type('trying to type')
     // cy.get('@next').click()
   })
-  it('Goes through personal flow wfh02', function() {
+  it.only('Goes through personal flow wfh02', function() {
     cy.visit('/add')
     cy.url().should('include', '/add')
     cy.fixture('search_offices').then((results) => {
@@ -282,9 +286,15 @@ describe('Contribute', function() {
       .contains('select')
       .first()
       .click()
+    cy.fixture('office_by_pk').then((results) => {
+      cy.route({
+        url,
+        status: 200,
+        response: results
+      })
+    })
 
     cy.url().should('include', '/add/')
-    cy.contains('HENN')
     cy.contains('All good, continue').click()
     // personal form
     cy.url().should('include', '/personal')
