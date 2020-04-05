@@ -136,6 +136,7 @@ async function invokeFetchCompanies(context) {
             tool {
               id
               name
+              url
             }
           }
           experiences(order_by: { created_at: desc }) {
