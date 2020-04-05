@@ -20,7 +20,12 @@ const machine = Machine({
           }),
           target: 'done'
         },
-        onError: 'fetching'
+        onError: 'failed'
+      }
+    },
+    failed: {
+      on: {
+        FETCH: 'fetching'
       }
     },
     done: {
