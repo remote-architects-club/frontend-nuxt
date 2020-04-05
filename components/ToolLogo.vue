@@ -27,7 +27,8 @@ export default {
   },
   computed: {
     domain() {
-      return extractDomain(this.url)
+      if (this.url) return extractDomain(this.url)
+      return ''
     },
     logo() {
       return this.imgError

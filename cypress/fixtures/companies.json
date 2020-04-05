@@ -1,0 +1,532 @@
+{
+  "data": {
+    "office_aggregate": {
+      "aggregate": { "count": 21, "__typename": "office_aggregate_fields" },
+      "__typename": "office_aggregate"
+    },
+    "office": [
+      {
+        "city": "Sexten",
+        "country_iso": "IT",
+        "id": "58323baa-bb53-4c44-a23a-108d197842e9",
+        "name": "Plasma Studio",
+        "num_people": 1,
+        "remote_policy": "We are spread in multiple locations, so we were always 'working smart' using Skype, Zoom, Dropbox, WhatsApp, Wechat and Teams. Now, we are just intensifying this strategy: every team member sits at home, not in the different studio locations, but we just connect as usual.",
+        "remote_since": "2020-03-08",
+        "url": "https://www.plasmastudio.com/",
+        "num_experiences": 0,
+        "latest_experience": null,
+        "office_tools": [
+          {
+            "tool": {
+              "id": "5d219f81-8439-4a8f-9f07-0b1fd554b005",
+              "name": "Dropbox",
+              "url": "https://dropbox.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+              "name": "Microsoft Teams",
+              "url": "https://teams.microsoft.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "0b2ec1e6-b8ab-4f95-832f-0fb76e93834f",
+              "name": "Skype",
+              "url": "https://skype.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "0ad5c789-8e8b-4a77-99c3-18763fc83144",
+              "name": "WeChat",
+              "url": "https://www.wechat.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "2cd5eac8-4215-45bf-a60f-548d5c00437b",
+              "name": "WhatsApp",
+              "url": "https://www.whatsapp.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "1b70bada-2138-4877-aa09-fc3e83d505bd",
+              "name": "Zoom",
+              "url": "https://zoom.us/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "Los Angeles",
+        "country_iso": "US",
+        "id": "44a93615-173d-45db-b333-5df29fde569a",
+        "name": "CO Architects",
+        "num_people": 2,
+        "remote_policy": "Voluntary work-from-home, and the majority of people are doing it. You can come to the office if you want, but should keep distance from each other. There is 100% transparency about what's happening to keep everyone at ease.",
+        "remote_since": "2020-03-22",
+        "url": "https://coarchitects.com/",
+        "num_experiences": 0,
+        "latest_experience": null,
+        "office_tools": [
+          {
+            "tool": {
+              "id": "d193a070-f6dc-451e-8a0f-78bc9910b17d",
+              "name": "GoToMeeting",
+              "url": "https://www.gotomeeting.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "3a684ca6-59f6-48f8-833e-f44d4a36a37a",
+              "name": "Revit",
+              "url": "https://www.autodesk.com/products/revit/overview",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "b9dd97ce-df57-41f9-acb0-dd134f08d6f8",
+              "name": "Slack",
+              "url": "https://slack.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "Hong Kong",
+        "country_iso": "HK",
+        "id": "7bed5323-cac3-4cad-93c3-f55c54627dd9",
+        "name": "10 Design",
+        "num_people": 2,
+        "remote_policy": "No work from home policy, we keep coming to the office everyday. The only policy in force is that people returning from Mainland China first now from everywhere into the World are required to quarantine themselves for 14 days before coming to  the office",
+        "remote_since": "2020-02-03",
+        "url": "https://www.10design.co",
+        "num_experiences": 0,
+        "latest_experience": null,
+        "office_tools": [],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "New York",
+        "country_iso": "US",
+        "id": "2482036a-c06d-4aa2-8d4f-74808eeea8ff",
+        "name": "Handel Architects",
+        "num_people": 2,
+        "remote_policy": "1. Software leaning training\n2. Work as much comfortable as possible taking elements from the office such as furniture and devices if is necessary.\n3. Check-in Meetings twice per day",
+        "remote_since": "2020-03-17",
+        "url": "https://handelarchitects.com/",
+        "num_experiences": 1,
+        "latest_experience": "2020-04-01",
+        "office_tools": [
+          {
+            "tool": {
+              "id": "d193a070-f6dc-451e-8a0f-78bc9910b17d",
+              "name": "GoToMeeting",
+              "url": "https://www.gotomeeting.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+              "name": "Microsoft Teams",
+              "url": "https://teams.microsoft.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "0b2ec1e6-b8ab-4f95-832f-0fb76e93834f",
+              "name": "Skype",
+              "url": "https://skype.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "50db5036-a2f5-4074-9a95-ea5a4b60aaa5",
+              "name": "Snapshot",
+              "url": null,
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [
+          {
+            "colleagues": 2,
+            "company": 2,
+            "company_text": null,
+            "created_at": "2020-04-01T02:19:17.960946+00:00",
+            "final_tips": null,
+            "hardware": true,
+            "id": "220b663e-514c-4603-86e9-a29b6db8756d",
+            "name": "Valentina",
+            "not_wfh_reason": null,
+            "not_wfh_reason_text": null,
+            "own_experience": 0,
+            "own_experience_text": "It have being hard to work from home, specially because my house was not prepared to be an office (furniture, light, devices).\nWe are using a viewer software to connect to our office's computers which I think is a great idea but it is not the same as your office computer!",
+            "tools": 2,
+            "tools_text": null,
+            "wfh": 0,
+            "__typename": "experience"
+          }
+        ],
+        "__typename": "office"
+      },
+      {
+        "city": "Los Angeles",
+        "country_iso": "US",
+        "id": "b7c42797-117b-48ff-90b2-a3fcf50ac5df",
+        "name": "MEIS Architects",
+        "num_people": 1,
+        "remote_policy": "Everything goes on very well. Office set up VPN before WFH. We are allowed to download softwares on our own machine and use our own username to log in. Everything is just like work in the office.",
+        "remote_since": "2020-03-16",
+        "url": "https://meisstudio.com/",
+        "num_experiences": 0,
+        "latest_experience": null,
+        "office_tools": [
+          {
+            "tool": {
+              "id": "d193a070-f6dc-451e-8a0f-78bc9910b17d",
+              "name": "GoToMeeting",
+              "url": "https://www.gotomeeting.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "a08583a6-93e5-42f8-a2bc-fb29af2a0770",
+              "name": "Microsoft Outlook",
+              "url": "https://products.office.com/en-us/outlook/email-and-calendar-software-microsoft-outlook",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+              "name": "Microsoft Teams",
+              "url": "https://teams.microsoft.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "Hamburg",
+        "country_iso": "DE",
+        "id": "defdada5-c10c-4aea-823a-354d3e62cd7c",
+        "name": "Gerber Architekten",
+        "num_people": 2,
+        "remote_policy": "50/50. Some people work from home, some (mostly competition department) keep coming to the office",
+        "remote_since": "2020-03-13",
+        "url": "http://www.gerberarchitekten.de",
+        "num_experiences": 0,
+        "latest_experience": null,
+        "office_tools": [
+          {
+            "tool": {
+              "id": "e35658e0-298d-445b-89a2-1e9914c3bd60",
+              "name": "Windows Remote Desktop",
+              "url": "https://support.microsoft.com/en-us/help/4028379/windows-10-how-to-use-remote-desktop",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "Atlanta",
+        "country_iso": "US",
+        "id": "f12bd777-a1fd-4e92-a375-b6a6365dc976",
+        "name": "b+c Studio",
+        "num_people": 1,
+        "remote_policy": "Not having strong enough VPN for our team (12 ppl), we opted for GoToMyPC, virtual log in to our desktop computers in the studio.  We do not need powerful computers to remote log in, just good wifi.  Studio computers connected to the server must be left powered on to access.",
+        "remote_since": "2020-03-24",
+        "url": "http://www.bcstudio.com/",
+        "num_experiences": 0,
+        "latest_experience": null,
+        "office_tools": [
+          {
+            "tool": {
+              "id": "5763dd38-f155-4ee0-a1cc-648b6df38247",
+              "name": "GoToMyPC",
+              "url": "https://get.gotomypc.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+              "name": "Microsoft Teams",
+              "url": "https://teams.microsoft.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "Kuala Lumpur",
+        "country_iso": "MY",
+        "id": "c2e73ca2-7a5d-4cc6-b2b7-5cfd733d2868",
+        "name": "Hijjas Architects +Planner",
+        "num_people": 1,
+        "remote_policy": "We are under Movement Restriction Order and all the staffs are working from home using remote desktop. ",
+        "remote_since": "2020-03-18",
+        "url": null,
+        "num_experiences": 1,
+        "latest_experience": "2020-03-30",
+        "office_tools": [
+          {
+            "tool": {
+              "id": "3c7528af-fc04-4594-8f09-f3073f2911a9",
+              "name": "AnyDesk",
+              "url": "https://anydesk.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "8bfceffe-98d5-43dc-8291-8b36a3ccb32b",
+              "name": "Cisco Webex Meetings",
+              "url": "https://www.webex.com/video-conferencing",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "d6f6959a-9f4e-4299-955f-71ad0f1fe880",
+              "name": "Email",
+              "url": null,
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "0b2ec1e6-b8ab-4f95-832f-0fb76e93834f",
+              "name": "Skype",
+              "url": "https://skype.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "2cd5eac8-4215-45bf-a60f-548d5c00437b",
+              "name": "WhatsApp",
+              "url": "https://www.whatsapp.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "1b70bada-2138-4877-aa09-fc3e83d505bd",
+              "name": "Zoom",
+              "url": "https://zoom.us/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [
+          {
+            "colleagues": 2,
+            "company": 2,
+            "company_text": null,
+            "created_at": "2020-03-30T14:01:45.890917+00:00",
+            "final_tips": null,
+            "hardware": false,
+            "id": "96cf5376-40c5-48d5-9b9d-ac9a17da7b43",
+            "name": "intan",
+            "not_wfh_reason": null,
+            "not_wfh_reason_text": null,
+            "own_experience": 0,
+            "own_experience_text": "I usually spend long hour at the office & home is my rest time. Had to create my own office space at home but it is not the same working with a laptop. I need my large monitor and all my reference in reach. Miss my workspace.",
+            "tools": 1,
+            "tools_text": null,
+            "wfh": 0,
+            "__typename": "experience"
+          }
+        ],
+        "__typename": "office"
+      },
+      {
+        "city": "Beijing",
+        "country_iso": "CN",
+        "id": "c9ff495f-33f2-403b-9ce9-c60d4a44cd80",
+        "name": "HENN",
+        "num_people": 2,
+        "remote_policy": "We’re allowed to work from home, if desired. All work is coordinated using Microsoft Teams.",
+        "remote_since": "2020-03-16",
+        "url": "https://henn.com",
+        "num_experiences": 0,
+        "latest_experience": "2020-03-30",
+        "office_tools": [
+          {
+            "tool": {
+              "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+              "name": "Microsoft Teams",
+              "url": "https://teams.microsoft.com",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "c33cb2a3-7698-4598-8ff2-182ab2289d6c",
+              "name": "VPN",
+              "url": "https://en.wikipedia.org/wiki/Virtual_private_network",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [],
+        "__typename": "office"
+      },
+      {
+        "city": "zurich",
+        "country_iso": "CH",
+        "id": "eaf778e5-1068-4844-975a-25b275a879ca",
+        "name": "HILDEBRAND",
+        "num_people": 1,
+        "remote_policy": "All the project managers are now working from home. We brought home our iMacs, and meeting every other morning on through Zoom to discuss. Access to the office is limited to employes who need the model room or need to print.",
+        "remote_since": "2020-03-15",
+        "url": "http://hildebrand.ch/en/",
+        "num_experiences": 1,
+        "latest_experience": "2020-03-30",
+        "office_tools": [
+          {
+            "tool": {
+              "id": "8f746c01-95e5-4499-9380-9e14adb4cf21",
+              "name": "Evernote",
+              "url": "https://evernote.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "4d3e6e05-a9fc-426e-803c-cfa2d6f9bf71",
+              "name": "Google Drive",
+              "url": "https://www.google.com/drive/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "b9dd97ce-df57-41f9-acb0-dd134f08d6f8",
+              "name": "Slack",
+              "url": "https://slack.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "051beb15-8598-4a9f-a646-c67d48b0637e",
+              "name": "Trello",
+              "url": "https://trello.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "c33cb2a3-7698-4598-8ff2-182ab2289d6c",
+              "name": "VPN",
+              "url": "https://en.wikipedia.org/wiki/Virtual_private_network",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "34513446-c81b-4118-9493-d01523731e8f",
+              "name": "WireGuard",
+              "url": "https://www.wireguard.com/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "tool": {
+              "id": "1b70bada-2138-4877-aa09-fc3e83d505bd",
+              "name": "Zoom",
+              "url": "https://zoom.us/",
+              "__typename": "tool"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "experiences": [
+          {
+            "colleagues": 2,
+            "company": 2,
+            "company_text": null,
+            "created_at": "2020-03-30T13:34:43.550795+00:00",
+            "final_tips": null,
+            "hardware": true,
+            "id": "02739afa-e36d-4bd1-ab8c-0b18996dabbb",
+            "name": "Andrea",
+            "not_wfh_reason": null,
+            "not_wfh_reason_text": null,
+            "own_experience": 1,
+            "own_experience_text": "It's great because I am much more productive that in the office, feeling a little lonely sometimes though...",
+            "tools": 2,
+            "tools_text": "Loving the integrations of Slack",
+            "wfh": 0,
+            "__typename": "experience"
+          }
+        ],
+        "__typename": "office"
+      }
+    ]
+  }
+}

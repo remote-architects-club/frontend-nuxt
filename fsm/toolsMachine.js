@@ -29,7 +29,8 @@ export const toolsMachine = Machine(
           },
           SAVE_CATEGORIES: {
             target: 'savingCategories'
-          }
+          },
+          ADD_COMMENT: 'addingComment'
         }
       },
       searching: {
@@ -153,6 +154,24 @@ export const toolsMachine = Machine(
           onError: 'idle'
         }
       },
+      addingComment: {
+        on: {
+          CANCEL: 'idle',
+          SAVE: 'savingComment'
+        }
+      },
+      savingComment: {
+        invoke: {
+          id: 'invoke-save-comment',
+          src: invokeSaveComment,
+          onDone: {
+            actions: ['updateToolComments'],
+            target: 'idle'
+          },
+          // TODO: add error handling logic
+          onError: 'addingComment'
+        }
+      },
       end: {
         type: 'final',
         data: {
@@ -224,6 +243,12 @@ export const toolsMachine = Machine(
         searchTerm: null,
         foundItems: [],
         error: null
+      }),
+      updateToolComments: assign({
+        tool: (context, event) => {
+          context.tool.tool_comments.unshift(event.data)
+          return context.tool
+        }
       })
     },
     guards: {
@@ -280,7 +305,15 @@ async function invokeFetchTool(context, event) {
             office {
               id
               name
+              city
+              country_iso
             }
+          }
+          tool_comments(order_by: { created_at: desc }) {
+            id
+            name
+            comment
+            created_at
           }
         }
       }
@@ -461,6 +494,38 @@ function getCategoriesToDelete(existingCategories, newCategories) {
     return existingCategories.filter((cat) => !newCategories.includes(cat))
   }
   return []
+}
+
+async function invokeSaveComment(context, event) {
+  console.log('invokeSaveComment', context, event)
+  const {
+    tool: { id: tool_id }
+  } = context
+  const { name, comment } = event.params
+
+  const { data } = await client.mutate({
+    mutation: gql`
+      mutation insert_comment($tool_id: uuid, $name: String, $comment: String) {
+        insert_tool_comment(
+          objects: { tool_id: $tool_id, name: $name, comment: $comment }
+        ) {
+          returning {
+            id
+            tool_id
+            name
+            comment
+            created_at
+          }
+        }
+      }
+    `,
+    variables: {
+      tool_id,
+      name,
+      comment
+    }
+  })
+  return data.insert_tool_comment.returning[0]
 }
 
 export const toolsMachineVue = generateVueMachine(toolsMachine)

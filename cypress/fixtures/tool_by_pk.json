@@ -1,0 +1,114 @@
+{
+  "data": {
+    "tool_by_pk": {
+      "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+      "description": "Microsoft Teams is the hub for team collaboration in Office 365.",
+      "is_free": true,
+      "name": "Microsoft Teams",
+      "url": "https://teams.microsoft.com",
+      "tool_categories": [
+        { "category_name": "chat", "__typename": "tool_category" },
+        { "category_name": "file sharing", "__typename": "tool_category" },
+        {
+          "category_name": "project management",
+          "__typename": "tool_category"
+        },
+        { "category_name": "screen sharing", "__typename": "tool_category" }
+      ],
+      "office_tools": [
+        {
+          "office": {
+            "id": "f12bd777-a1fd-4e92-a375-b6a6365dc976",
+            "name": "b+c Studio",
+            "city": "Atlanta",
+            "country_iso": "US",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "7ef5a338-8c2b-4f6f-a1d0-991e43fb462f",
+            "name": "blocherpartners",
+            "city": "Berlin",
+            "country_iso": "DE",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "b049ba1a-cefe-46b1-9a41-a97f4d6d58c2",
+            "name": "Foster + Partners",
+            "city": "Beijing",
+            "country_iso": "CN",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "1f29ea1e-0804-4669-b786-2b8636b59aa2",
+            "name": "Gerber Architekten ",
+            "city": "Berlin",
+            "country_iso": "DE",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "2482036a-c06d-4aa2-8d4f-74808eeea8ff",
+            "name": "Handel Architects",
+            "city": "New York",
+            "country_iso": "US",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "f937a2fe-84d7-44b1-8dc8-2e22b5b2da0d",
+            "name": "HENN",
+            "city": "Berlin",
+            "country_iso": "DE",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "c9ff495f-33f2-403b-9ce9-c60d4a44cd80",
+            "name": "HENN",
+            "city": "Beijing",
+            "country_iso": "CN",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "b7c42797-117b-48ff-90b2-a3fcf50ac5df",
+            "name": "MEIS Architects",
+            "city": "Los Angeles",
+            "country_iso": "US",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        },
+        {
+          "office": {
+            "id": "58323baa-bb53-4c44-a23a-108d197842e9",
+            "name": "Plasma Studio",
+            "city": "Sexten",
+            "country_iso": "IT",
+            "__typename": "office"
+          },
+          "__typename": "office_tool"
+        }
+      ],
+      "tool_comments": [],
+      "__typename": "tool"
+    }
+  }
+}

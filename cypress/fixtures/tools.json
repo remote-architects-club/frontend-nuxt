@@ -1,0 +1,5783 @@
+{
+  "data": {
+    "tool": [
+      {
+        "description": "Asana is one of the world's largest task management and project management software platforms for teams. Much like other systems, it allows teams to plan, share and organize their work. Teams can use Asana for a simple to-do list to organize their work.",
+        "id": "e281c283-2458-4bc9-bc0d-ec1bfb2b808f",
+        "name": "Asana",
+        "url": "https://asana.com",
+        "is_free": false,
+        "tool_categories": [
+          {
+            "category_name": "project management",
+            "__typename": "tool_category"
+          }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "b4540ac4-ad73-41b7-8733-22652309b4b5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "81b4c596-65c4-433c-95a2-f0853d04b47f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0da606dc-4e96-4bdc-905b-c08e66927a24",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b4f87838-1e19-4b45-ab00-d3704a6d1c7f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fb89b1aa-bb2b-40a8-bdc0-add6fdcbdd1c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8e76049b-f8d5-4d85-b942-1af72f255aa4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f088b405-501b-4ac5-9a01-813ad4e7cd5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "41bf29c9-3c27-408c-8318-253e435777a4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1cc40f4f-36bf-4c9e-a87f-0bad2d221a10",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce85e661-e847-4913-a539-0729e0c37035",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f89262e0-9e57-4b2b-9142-409970a51053",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "427ea4ba-8d20-4c5f-97fc-9c4294c4229f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "efe560bb-dcc4-42db-ae2e-06d16b36952c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d1eb9183-b623-42c1-87d0-17073626e568",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce965621-7410-4715-bcc3-a3786e22c5f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b02d5ad5-9af3-4777-867d-fd8843b23ac4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "38bf73e5-8634-4164-a72d-1168cb6e39fa",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "13e412fe-3407-48fa-9f15-a31ddf29ea06",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "686b615d-6c43-4607-9bfb-f2fc50bbffd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8f052868-6351-4e6a-aec4-0daa86e77066",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6983c088-ea45-4dc1-91dc-345921c04e65",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "981fc11e-860d-4104-b464-608e4d3e812e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b15ced36-9323-43c5-a151-ee13dd80fcad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a8f2fe63-7a7b-4bb0-9980-755d09dd6f4e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5125a425-bd5f-4cb0-8bd3-324511275603",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bb377e1c-dd51-4694-a697-28342e461a90",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "522a935e-c8b6-4eb6-a200-4e9ed7d733fd",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "538b94b6-4a01-4ebb-8e3b-12c2d03456d4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fc7194ad-4a46-412d-8898-9751df46e216",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4e96831e-5ee0-4c5e-973d-bad68c4df0ee",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3c20664-40f1-4246-8ca8-147d0bd30a88",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4790d11a-af35-460f-966b-6ce261099187",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29499d9b-9a84-4b8e-aeb3-831564454373",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7821be6e-17a3-401e-8de7-103bba216e97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4894d72e-a80d-43d4-a7cc-47c9e3b48381",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "61248b57-22a8-4247-b53c-c38561c27420",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3304add-c3df-4cf5-b3eb-167f6d227e0e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "18ae720b-3e3c-4e22-9c91-520d3e3eb546",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "da6a911d-2d12-40f2-8d78-e0ca18dab0e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e2097592-39cb-4573-ae4e-8e34f0464e3e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "74978c0b-a292-4fd5-bf9b-75999f9edfbd",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5159d42-ca9f-4807-aa6a-2062dc6bd6fc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5e68db42-22e4-4a89-9038-a073864cfb6e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4578ec11-4bb9-4911-9d4d-94df90db97a7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "35f9c741-9357-4875-9c03-b59ec6195077",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "31222a99-5a8c-415f-b1f2-7509e1f18c18",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "68fea6fe-2068-4b3b-a525-477cc9394ed6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "668e698f-511b-483a-8f3b-3d140489725e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bf2dbfc0-731f-4f9a-ae54-332d004b0a0c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4b7e5928-bf59-41e1-9832-2d62827ac265",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1e0b16be-285e-4454-a5b5-f03afdb3bbd6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "117fef64-0d56-403e-b244-2fc68dfd0de2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2954e33e-2fb2-43fb-89b7-ce9db68421ab",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6920dea4-c59e-4d41-8b04-ae7ef512b348",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "389168b8-9b9e-45ef-a668-51759ad3be87",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c7655c29-369b-48b2-b82e-9202363a080f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29514616-6e3a-43ce-9684-c74497dedf0d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7bba3c1c-0372-44c5-9e90-7d6552f419af",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "554f98e0-8528-4e58-9aa4-3cf452847cdf",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "81bb0079-b214-43a6-95c1-29332a119b13",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b55abc21-fd74-4c35-8727-49f999de6381",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a2a7b91d-30f1-4d1b-ac88-915c72bcb37e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "924b86e6-455c-4f39-8a9c-e6e8d37f2e76",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5355b8d7-6a49-4415-ba77-33e764dbb101",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "58f3250e-18f9-415b-a39a-07d6bf596f77",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2b51f22f-c341-4622-a2aa-f5a661b3d7de",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e664f089-3b16-41b2-b69a-2c02fbce8319",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "31182994-01f7-4d43-9cbf-1f0cb64c47b1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f17d78fb-8cd3-43e4-990f-a93eadd08d09",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "15d77092-a46b-4f11-a621-7aa000d72ba7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3883ab0d-93f6-43af-a107-bc0105a14f84",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b49a4b57-d12f-4ac9-9121-70fd146ce248",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c2e5d8af-ed38-4763-942d-4759ca554e59",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "22ed5566-9885-40e6-a5ee-6037c8e17ad8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c357a53e-3302-4f5a-9f53-800d1328fd9e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5f9d871b-3f56-457c-9245-8f00f3070785",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5fad163-cea2-46f8-a3d2-85a7f82c044f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f33351c3-8d2f-463e-bfae-f797d138d435",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9883c9e8-78fe-48d3-bda2-accbb43c126a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3639f48-89df-4136-894f-8c7419bee663",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c579b8c0-0285-4d73-b836-b173541d0c77",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5e6b5a38-594f-4f6f-a704-cff03a2b4b4f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4a98c819-d802-4901-ab8a-fd7384c848e7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d40a5382-2142-4498-8fa2-01420e2bbb5f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5cd0879c-7080-4f57-a003-e21502689a1d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d337f7a3-e817-44cb-b2c5-9fa4fbffc893",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64382235-78a2-4d17-a5fc-b81834498bc0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6eb20c38-537d-4c47-b89a-f386e1bc9f28",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "42b9169b-4849-4628-897c-436dc1abb096",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7128fd42-f8d8-47b0-9546-a26cdc098363",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b269113e-5401-4814-84bd-5dc7ff0e67bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64dfd220-4dbd-413a-babb-fd5885ddf933",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6868cd7f-21cd-4e1a-ba71-9e7c524fef21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f5d8b2d5-5c35-408e-963b-8d01d4ec737d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b18c2cae-fc87-47be-a059-59d0e598c03d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f4ece6f4-d6b2-4d97-9cf3-eb552138e0c2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7ffb11f8-2200-4fce-bb77-2aea0887e40d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dec7feb9-c0cf-46a8-86ca-6aeb43e7ff3f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ec3361f8-eea1-429e-89d0-7d3bdace2573",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aea8e669-7b4d-4b5c-93e3-c212246474f3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fe971445-4989-4244-9b7f-34b5f468a70d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dd39577e-08d9-496e-96f0-63722fbec955",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5334ca86-1917-4aa2-9ee3-5688eb0091bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "544dacd5-24fd-4af3-8845-4ed4e4d6dd91",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "684bb552-1925-4125-a814-e370bdd2bd47",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "33c00c19-e6ac-4ba1-8a55-637f04f7a8df",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f3bfc7c2-1999-4e19-98c5-feb0a822d746",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "964f6b2f-1836-43e0-b12b-1b141abab427",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Basecamp is a project management app that you can access in your browser and on your phone. It gives you the tools you need to set up to-dos, a schedule, create and upload documents and files, message and chat with your colleagues, and check in regularly with your group—all in one place.",
+        "id": "db36f5af-6b0d-44b7-bcc4-ee9e72d3dede",
+        "name": "Basecamp",
+        "url": "https://basecamp.com",
+        "is_free": false,
+        "tool_categories": [
+          {
+            "category_name": "project management",
+            "__typename": "tool_category"
+          },
+          { "category_name": "team management", "__typename": "tool_category" }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "61248b57-22a8-4247-b53c-c38561c27420",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "684bb552-1925-4125-a814-e370bdd2bd47",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c57c62-10fe-46e0-ab0b-3543fff407e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0068d007-c757-47cd-b2d0-be5d4acf982a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bc6ed755-075e-479c-84af-29e2eaad2471",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b95418c5-ee71-451f-8bcd-fb5146f17ffb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3f4d818e-9bf3-46ae-82da-983df3084fc8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6f050d1c-17c4-4b81-ae4d-901606e38fa8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "022148e8-8919-489f-8c2d-681d28b34a45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a1e3c8ca-744d-4860-be3a-8e55b5a15bef",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f8ca31b-6ab1-4e19-a96a-08eb261592df",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0cc67100-555c-4860-94af-f0a2b69626f1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3c625e6d-fdeb-45fc-9fdf-5a04c78beaab",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64382235-78a2-4d17-a5fc-b81834498bc0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8e76049b-f8d5-4d85-b942-1af72f255aa4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a74e47cf-b666-46f1-98e2-f2a3b4f2c985",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5cfe44f9-267c-405e-945a-811875ff02e4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7e8e1cb3-8826-4ce5-8489-a397118305bb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c91d93e6-251e-4c24-a9ab-a18bb5613672",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "820b080d-a854-4d41-8767-188e468cf8cc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3a2e7795-8803-4f7d-8799-09cb9ece7180",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a7c0311f-87a2-4711-9e3c-21e4e9bf15f9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6920dea4-c59e-4d41-8b04-ae7ef512b348",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4fb45270-c040-4746-ad4d-8fc741328ff4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "003ccb09-c66b-4ea7-9622-f3b82a1f5b8b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dec7feb9-c0cf-46a8-86ca-6aeb43e7ff3f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c2e5d8af-ed38-4763-942d-4759ca554e59",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2b51f22f-c341-4622-a2aa-f5a661b3d7de",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "845910a1-18bc-4366-8c1f-54d50665ee36",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0c49faef-5a8d-4d89-8753-6b0b873f9532",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "25bd778b-b92e-4981-ab5d-6f4cac246f42",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5e68db42-22e4-4a89-9038-a073864cfb6e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3e6611d8-6ebe-4a1a-8684-5de6cbbbe89b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f38717e8-7f31-48f1-9464-ac54af1d43e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64df700d-0c35-4639-b5b3-30e02ea21c32",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8f87bdcf-0b97-4fda-b184-84b927928520",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aea8e669-7b4d-4b5c-93e3-c212246474f3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "148f77d6-42f9-4858-ae13-d5e9ce0e9d44",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5dbd292b-dbd6-4f0c-8888-ce21f3a0c435",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dc2a6543-b5a2-479d-a299-74b12fdcae05",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8c9bb838-4515-43fc-a0d4-243605dcf9c1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f6387410-2737-47b8-add4-bb7fc62e0763",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "96ac13f2-9cef-42a3-9e0a-d1d96881b300",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b18c2cae-fc87-47be-a059-59d0e598c03d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "88907f1c-0f8e-4b20-bd13-0cc006108ca4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "964f6b2f-1836-43e0-b12b-1b141abab427",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cb02eebf-221e-4610-a999-be3f001f0d24",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d9badea9-f5e9-4e4e-85ad-7a97e5daf115",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "def3db92-ecea-4b63-be11-1e175deff334",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bfeb8c0c-6bcb-454f-9e88-9a798f4b9848",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "42b9169b-4849-4628-897c-436dc1abb096",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bf2dbfc0-731f-4f9a-ae54-332d004b0a0c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "503e7c47-38ac-4d86-b3bd-c3b1f4f6abd5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d335276a-4098-4450-974f-c574d9298971",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "50a7371b-76a6-4e87-9a46-4b0be2fb59a1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "126ef3fa-a35a-43b4-9914-c02045f7205c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "572a5378-acda-407e-afae-4b3869f7a486",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "31182994-01f7-4d43-9cbf-1f0cb64c47b1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1742655d-034d-4143-9806-e89a68ac0a5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "33342f6a-a5c4-47e6-890c-7c1164ebb491",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0c21d71a-c7cd-443e-9a81-e4783c6edb38",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "538b94b6-4a01-4ebb-8e3b-12c2d03456d4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ef81e753-a5f7-440e-bfa9-91ca9d9878af",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f6d791ce-92ce-418d-bb54-5e47cb6d5be7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fc229b14-e2c1-4a51-bffc-b0a07fed0cd2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f7fda47-6b37-435f-ab24-62f954c30971",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9e770b2d-ad23-419b-b6ac-2644281e2d6f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fc7194ad-4a46-412d-8898-9751df46e216",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce965621-7410-4715-bcc3-a3786e22c5f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f5794eff-c238-4b5a-b7b7-fd9116bd47c6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "437e4b76-df6c-42e0-b5fc-83f9a061f926",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "eee1f1c3-bb42-44a3-8fe3-2772a716c5a4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "68fea6fe-2068-4b3b-a525-477cc9394ed6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7cabc924-70d3-4ae6-9c13-be118eb9f8b6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0378d24d-c83c-4904-98ba-4c72e5ce9a6a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6b0178f5-ffd1-4403-84f2-36d73a503271",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9a9622a0-b5ad-4278-ae5d-3f9606aaacbc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a525bc0f-dfbb-4643-a609-b45ccad5a94b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cd657979-729f-4bb4-9323-e9a19358f94b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "41bf29c9-3c27-408c-8318-253e435777a4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0f8f25ce-0bff-4b44-8fce-ce5e1d511b18",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b49a4b57-d12f-4ac9-9121-70fd146ce248",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d57f8777-a788-45aa-8c68-bb17d4234f4d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3639f48-89df-4136-894f-8c7419bee663",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e6e27121-1f8c-4a44-8830-ef30f70d064a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f2bd59b0-8410-4781-a95b-f3e468feabed",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "04284027-ed6b-4ec6-9414-b39ce07558f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e18235fa-b770-465c-b733-38eb39cb7246",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9cef38b3-7a2d-4a69-ae97-dd012b2a473b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d0224220-ba6c-4a28-8dd3-c37abeb1ae67",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e0946e21-322c-458b-ae33-e4e80f93ccc3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Online meeting and web conferencing tool that enables businesses to collaborate with customers, clients or colleagues via the Internet in real time.",
+        "id": "4778361a-45b3-4ea4-bf2a-404fc7fc052c",
+        "name": "GoToMeeting",
+        "url": "https://www.gotomeeting.com/",
+        "is_free": false,
+        "tool_categories": [
+          { "category_name": "meetings", "__typename": "tool_category" }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "fe11bad9-6fc5-4c4a-b7a5-bea10176179b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4c55f97b-7671-4a4e-b087-a16c91bd7187",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b15ced36-9323-43c5-a151-ee13dd80fcad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8a2e4e88-1360-4fa7-8d25-67b6deb91aeb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1742655d-034d-4143-9806-e89a68ac0a5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "efe560bb-dcc4-42db-ae2e-06d16b36952c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce85e661-e847-4913-a539-0729e0c37035",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "151eae1a-929a-4bc8-904f-5b8f38b17777",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c91d93e6-251e-4c24-a9ab-a18bb5613672",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0c49faef-5a8d-4d89-8753-6b0b873f9532",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f3af8e01-e1e9-4340-8e12-eb7575126be2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "117fef64-0d56-403e-b244-2fc68dfd0de2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3ba34ce6-b472-45e6-a665-5375951a6f20",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1e0b16be-285e-4454-a5b5-f03afdb3bbd6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4a98c819-d802-4901-ab8a-fd7384c848e7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e886efbf-3a3a-4216-ab8a-df4a4da2fa6f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f6387410-2737-47b8-add4-bb7fc62e0763",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "88907f1c-0f8e-4b20-bd13-0cc006108ca4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "407d61b7-b493-4c02-8866-c196f24581b6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8c6bf01b-abb4-45a8-83c2-d800f5e5f7d7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a2a7b91d-30f1-4d1b-ac88-915c72bcb37e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dd39577e-08d9-496e-96f0-63722fbec955",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7c90c0bd-c975-4af4-88af-b22f00b85882",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2bc1e0d6-5559-45b8-a52e-ee3022334003",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8f87bdcf-0b97-4fda-b184-84b927928520",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "686b615d-6c43-4607-9bfb-f2fc50bbffd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c357a53e-3302-4f5a-9f53-800d1328fd9e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "63ee0c2e-4a01-4731-8655-8957b29dbe3d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5d082958-b001-4b73-a7d6-00798b71f064",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b2ea8d2e-f306-478a-abd3-8fca1081d0cc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f234f3cb-e13b-4d6c-957e-16f5c8c4fda0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "126ef3fa-a35a-43b4-9914-c02045f7205c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3c20664-40f1-4246-8ca8-147d0bd30a88",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "95a5843a-3e39-4096-ae90-8727558870e4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6ab393bd-d43c-40ca-91fc-22d70951a57c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5c6ee4f-d8f8-416a-a568-31ffc91e4bad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3d95742-d214-4228-a27d-9bbc5088ce2d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "14de4a08-d0c7-454c-83f6-c4d2b026d9f2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "123548dc-1f48-4db4-a392-72b374b6767d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "677a10b5-bf61-4ae0-86d7-d2f71f103969",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7701ac99-79f8-4eec-8c0d-e93d9fa8b286",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c57c62-10fe-46e0-ab0b-3543fff407e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "81598c5b-a72b-482b-83f7-cd7e8aacd19c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "61e1b8be-22f7-4be2-acdd-173ed7bf10b7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f04739b2-71e9-42ac-aa8a-9ed251013535",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "72d93c02-0d02-44cf-8a2c-625cc893776d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "964ba007-542a-443f-ba64-fab7ceec61da",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "be04b028-2435-4bd9-82ff-fcafeea6d01d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bb377e1c-dd51-4694-a697-28342e461a90",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6241c4f7-7a56-4b7c-868b-a7d3b4433983",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "baf8df64-1949-454a-809d-77a4924d3812",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7bd7b157-6dac-4ef8-b646-51f89f393e9c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3c625e6d-fdeb-45fc-9fdf-5a04c78beaab",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6a55c514-49d7-4eed-bf77-3c443069f9ad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7c906663-000b-4ac9-adf9-54a3d0a34d5e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f33351c3-8d2f-463e-bfae-f797d138d435",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e18235fa-b770-465c-b733-38eb39cb7246",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5b264b84-5133-4c88-a343-2bfcead46f2c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d86b3cfb-815c-48e4-ae8a-d86a807fedb1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d40a5382-2142-4498-8fa2-01420e2bbb5f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "192eff6b-f73a-407a-8563-7d25e6e80783",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5fad163-cea2-46f8-a3d2-85a7f82c044f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "40cf6c3e-47fb-4734-8876-a151c0bad3cb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9a9622a0-b5ad-4278-ae5d-3f9606aaacbc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0f9c314e-3118-4eac-b403-4fc698e48b6b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aea8e669-7b4d-4b5c-93e3-c212246474f3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "83dc359c-0a10-4e62-a439-a452d02af769",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "38bf73e5-8634-4164-a72d-1168cb6e39fa",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "120d66b3-f10b-4efb-9a9f-d97e3aa923a8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "39a7ce06-97ae-47b6-90e6-0df996b1dad2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "74978c0b-a292-4fd5-bf9b-75999f9edfbd",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5159d42-ca9f-4807-aa6a-2062dc6bd6fc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b0ffd3ca-d70a-4853-9c39-bb5232582157",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e0946e21-322c-458b-ae33-e4e80f93ccc3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3304add-c3df-4cf5-b3eb-167f6d227e0e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "caf9ecae-e20d-44fc-8c04-e45d87f70593",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ef66d504-b9e1-44f3-a17d-13c36692a8eb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b77f1001-2115-476d-81f5-6038cd377d55",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fff2a2b0-38a5-473a-900d-a6616b77ea45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "42ce16c7-dc9e-477f-b8ef-657ba628fb6a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. ",
+        "id": "f9a79553-f6ce-4288-8658-81f6455fcddb",
+        "name": "Jira",
+        "url": "https://www.atlassian.com/software/jira",
+        "is_free": false,
+        "tool_categories": [
+          {
+            "category_name": "project management",
+            "__typename": "tool_category"
+          }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "120d66b3-f10b-4efb-9a9f-d97e3aa923a8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f7fda47-6b37-435f-ab24-62f954c30971",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3639f48-89df-4136-894f-8c7419bee663",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b77f1001-2115-476d-81f5-6038cd377d55",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e886efbf-3a3a-4216-ab8a-df4a4da2fa6f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e664f089-3b16-41b2-b69a-2c02fbce8319",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "964f6b2f-1836-43e0-b12b-1b141abab427",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3c625e6d-fdeb-45fc-9fdf-5a04c78beaab",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "721d01c8-dbdb-40e7-8d84-207e5bc2fb12",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1318a5d8-b8d4-4a62-82c9-a107ccf258d1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0c21d71a-c7cd-443e-9a81-e4783c6edb38",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "14de4a08-d0c7-454c-83f6-c4d2b026d9f2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fff2a2b0-38a5-473a-900d-a6616b77ea45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bc425cd4-6b5c-4249-b226-85cf0ae6568c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b65da500-d7c2-4378-b114-c69236569e7e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b4f87838-1e19-4b45-ab00-d3704a6d1c7f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3ba34ce6-b472-45e6-a665-5375951a6f20",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "389168b8-9b9e-45ef-a668-51759ad3be87",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "adc29005-6b24-4e86-b356-4f9d9a86a65b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4e96831e-5ee0-4c5e-973d-bad68c4df0ee",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29ed7b65-5c4b-41f3-9f1d-473a1fde5511",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0d1e5105-3166-4b2a-8157-606f6dc9eb8e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6f050d1c-17c4-4b81-ae4d-901606e38fa8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c3b2ccb7-1c55-409c-96d4-b19f972ae720",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2bc1e0d6-5559-45b8-a52e-ee3022334003",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b18c2cae-fc87-47be-a059-59d0e598c03d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29514616-6e3a-43ce-9684-c74497dedf0d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8fd68b90-0a93-434f-a34f-8ec78ff7955b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e207838b-a0b9-43ba-8393-50b48ff57f5a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "174cb30e-a6db-492a-b0f6-8732abe67265",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "98312158-c5f6-4f55-94d7-1445775442b6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "148f77d6-42f9-4858-ae13-d5e9ce0e9d44",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00f7cbdc-404e-4f23-b2f8-b4fe12df4c74",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "74fda830-b795-4f82-8ce7-ee39122e221d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4578ec11-4bb9-4911-9d4d-94df90db97a7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "31182994-01f7-4d43-9cbf-1f0cb64c47b1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9f21fd65-4442-4c50-94bd-bd21828cadf2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64382235-78a2-4d17-a5fc-b81834498bc0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "af028d35-2c73-4568-b435-a52dfedad1a3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8625d7ee-272e-4a35-b6cf-556bf0e2210f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7bd7b157-6dac-4ef8-b646-51f89f393e9c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "126ef3fa-a35a-43b4-9914-c02045f7205c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "294dece4-f9ec-4415-96e7-f65978a677e0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cd0854dd-9296-4c8f-be8a-6796be3e3554",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6d1cc418-fd2f-4638-9c85-fe0219acf632",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "68fea6fe-2068-4b3b-a525-477cc9394ed6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f2b856bb-a2a5-45fd-b62f-b6b829a9a113",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00050dae-92ff-4210-a4e3-91d2550eaf2f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce965621-7410-4715-bcc3-a3786e22c5f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5fad163-cea2-46f8-a3d2-85a7f82c044f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0378d24d-c83c-4904-98ba-4c72e5ce9a6a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "05e1f170-6ab0-4b20-a6d4-ed24bc76f628",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c46820-f437-41b3-bf48-b4ee1890b4f3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6eb20c38-537d-4c47-b89a-f386e1bc9f28",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6241c4f7-7a56-4b7c-868b-a7d3b4433983",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3ff764ec-fe90-48ef-80c1-08185ac02e97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a9b32b98-c455-426e-8e9e-4e40925f5f21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29499d9b-9a84-4b8e-aeb3-831564454373",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b95418c5-ee71-451f-8bcd-fb5146f17ffb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "697463c3-5e46-4dd2-84cc-fedfc160334a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4ae7496e-1e8e-4004-9548-6e6e97700cc0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f1a319c5-1269-46ae-86a3-5dcd34bd8b95",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0068d007-c757-47cd-b2d0-be5d4acf982a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4e03ba9d-c8ba-4f25-b444-57e6eee569b1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "022148e8-8919-489f-8c2d-681d28b34a45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b269113e-5401-4814-84bd-5dc7ff0e67bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5159d42-ca9f-4807-aa6a-2062dc6bd6fc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29d84c1f-47f8-420a-8494-3c18aecc9118",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "baf8df64-1949-454a-809d-77a4924d3812",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "522a935e-c8b6-4eb6-a200-4e9ed7d733fd",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "407d61b7-b493-4c02-8866-c196f24581b6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0bb497b1-d835-4774-b66a-31ad1ab16f1f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d81de7d1-c73a-4ef3-b020-feafd93e0e1a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "349604e6-cb77-4b79-a5e4-bbac04fa7154",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4accaa7d-18b3-4045-9741-267e4ff5a7d8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f2bd59b0-8410-4781-a95b-f3e468feabed",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f38717e8-7f31-48f1-9464-ac54af1d43e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "18ae720b-3e3c-4e22-9c91-520d3e3eb546",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "50ecf235-c889-42ff-b7d3-e17d3f5aa822",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b6a69548-b2c4-498c-b4ba-4e8655d5828b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6a55c514-49d7-4eed-bf77-3c443069f9ad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "33c00c19-e6ac-4ba1-8a55-637f04f7a8df",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c579b8c0-0285-4d73-b836-b173541d0c77",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "46165478-2378-4006-a8e9-a7ae1f24e22f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f088b405-501b-4ac5-9a01-813ad4e7cd5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a7c0311f-87a2-4711-9e3c-21e4e9bf15f9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "686b615d-6c43-4607-9bfb-f2fc50bbffd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0d9e1f8b-5f9e-4737-9cc4-4369d854007a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "777e8fd1-3a39-4696-bfa7-1344e72c0899",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "677a10b5-bf61-4ae0-86d7-d2f71f103969",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0da606dc-4e96-4bdc-905b-c08e66927a24",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "35e25986-347e-4058-b815-310bb84fcf7c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "13e412fe-3407-48fa-9f15-a31ddf29ea06",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "63a8cd54-13e7-4235-ac65-7a88442c9b52",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0cc67100-555c-4860-94af-f0a2b69626f1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "81b4c596-65c4-433c-95a2-f0853d04b47f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "33342f6a-a5c4-47e6-890c-7c1164ebb491",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00e89587-e92e-44cb-b64a-a470100ffeb4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Microsoft Teams is the hub for team collaboration in Office 365.",
+        "id": "4712b8fe-b87e-49a4-8a3a-1f9bff06accd",
+        "name": "Microsoft Teams",
+        "url": "https://teams.microsoft.com",
+        "is_free": true,
+        "tool_categories": [],
+        "office_tools": [],
+        "__typename": "tool"
+      },
+      {
+        "description": "Skype is a telecommunications application that specializes in providing video chat and voice calls between computers, tablets, mobile devices, the Xbox One console, and smartwatches via the Internet.",
+        "id": "8debb4d9-6955-4db4-b2c3-43b64ba46dae",
+        "name": "Skype",
+        "url": "https://skype.com",
+        "is_free": true,
+        "tool_categories": [
+          { "category_name": "chat", "__typename": "tool_category" },
+          { "category_name": "meetings", "__typename": "tool_category" }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "503e7c47-38ac-4d86-b3bd-c3b1f4f6abd5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a0da8a07-5751-4a6f-98c7-4cf89ee64701",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "40cf6c3e-47fb-4734-8876-a151c0bad3cb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1c3a715a-511f-4b89-95af-d181e43e955a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "32b14488-d1e4-4ae3-9db1-829d7aa6c451",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "174cb30e-a6db-492a-b0f6-8732abe67265",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5e6b5a38-594f-4f6f-a704-cff03a2b4b4f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5cba9739-ac5c-41b5-88a5-32ba0dd20ddf",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8db6cb83-4af5-42ed-b5c4-1b99e3d0fafc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7198eab0-7e35-495a-8dbc-b6b8407d7129",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "def3db92-ecea-4b63-be11-1e175deff334",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "11a537e5-7b38-4bd3-b8d0-56416199771a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "684bb552-1925-4125-a814-e370bdd2bd47",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3c20664-40f1-4246-8ca8-147d0bd30a88",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0f8f25ce-0bff-4b44-8fce-ce5e1d511b18",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "705dfa61-2c3e-40c8-a072-6a55428fb062",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f4ece6f4-d6b2-4d97-9cf3-eb552138e0c2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f3af8e01-e1e9-4340-8e12-eb7575126be2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "349604e6-cb77-4b79-a5e4-bbac04fa7154",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a1e3c8ca-744d-4860-be3a-8e55b5a15bef",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e27f8e70-3480-476f-934e-1d77bc3649d2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "adc29005-6b24-4e86-b356-4f9d9a86a65b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00c27812-fe9b-40a2-b2b3-ec6cac8f7635",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "964f6b2f-1836-43e0-b12b-1b141abab427",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b4acf4d8-f273-40d6-b54b-3149ab9facd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "777e8fd1-3a39-4696-bfa7-1344e72c0899",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c6b8cd9c-f366-45e4-a684-970d0ec81573",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2c1e7a63-0c95-4897-b797-6035ad3a9d4e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3d95742-d214-4228-a27d-9bbc5088ce2d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b27a6770-246d-4965-9a45-4216b1496916",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fff2a2b0-38a5-473a-900d-a6616b77ea45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b269113e-5401-4814-84bd-5dc7ff0e67bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b24e1746-ece4-4776-abf6-7680c8c664a9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a9b32b98-c455-426e-8e9e-4e40925f5f21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f38717e8-7f31-48f1-9464-ac54af1d43e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a8f2fe63-7a7b-4bb0-9980-755d09dd6f4e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5e68db42-22e4-4a89-9038-a073864cfb6e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5ca984bc-e3f0-438e-bf27-d7912083516f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6241c4f7-7a56-4b7c-868b-a7d3b4433983",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f8ca31b-6ab1-4e19-a96a-08eb261592df",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "54dff2f6-141a-40b4-9bb0-e3acf486bb08",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e886efbf-3a3a-4216-ab8a-df4a4da2fa6f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f088b405-501b-4ac5-9a01-813ad4e7cd5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dfe5f077-40a8-4078-9d98-e611c7706b37",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00050dae-92ff-4210-a4e3-91d2550eaf2f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5d082958-b001-4b73-a7d6-00798b71f064",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a6dcb7ad-16bf-4ea2-b2ec-7769c6f8061a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0aac2586-881e-4028-bcf8-f13c0e08a026",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1318a5d8-b8d4-4a62-82c9-a107ccf258d1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9e770b2d-ad23-419b-b6ac-2644281e2d6f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1313c949-1ee5-476c-8e4c-7c14090e03ec",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0d9e1f8b-5f9e-4737-9cc4-4369d854007a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cb02eebf-221e-4610-a999-be3f001f0d24",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "08f2a985-19fe-47c8-8547-b819b747eafc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a2a7b91d-30f1-4d1b-ac88-915c72bcb37e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6f050d1c-17c4-4b81-ae4d-901606e38fa8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "984a70cb-d517-4693-89e4-64c4ec92115f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6bfd100b-8683-4446-ba03-a5fbd30b9929",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6eb20c38-537d-4c47-b89a-f386e1bc9f28",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f1a319c5-1269-46ae-86a3-5dcd34bd8b95",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3bc592b8-ca91-4896-8e7b-d29922effcf2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "845910a1-18bc-4366-8c1f-54d50665ee36",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "159ea23f-3524-49b9-a110-3fe6e0d24fa5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f27269ba-1c95-45bb-b36d-41714f989d1b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce965621-7410-4715-bcc3-a3786e22c5f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "120d66b3-f10b-4efb-9a9f-d97e3aa923a8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7e51d351-cb68-4055-8303-0f0b8b79d387",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b15ced36-9323-43c5-a151-ee13dd80fcad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c57c62-10fe-46e0-ab0b-3543fff407e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4ae7496e-1e8e-4004-9548-6e6e97700cc0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f6387410-2737-47b8-add4-bb7fc62e0763",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "85a3dbff-51d2-461c-acf0-4ee69eb88963",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9f21fd65-4442-4c50-94bd-bd21828cadf2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ce7160da-eea0-4538-a5ff-c031420925a2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a011a239-4dfe-467f-b244-33c33c385231",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2c53730b-09eb-42c0-babd-ad6b065484d1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fc7194ad-4a46-412d-8898-9751df46e216",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0bb497b1-d835-4774-b66a-31ad1ab16f1f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5334ca86-1917-4aa2-9ee3-5688eb0091bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29ed7b65-5c4b-41f3-9f1d-473a1fde5511",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4561ee6b-f21a-4339-b76e-896afc838e4d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4c55f97b-7671-4a4e-b087-a16c91bd7187",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "63a8cd54-13e7-4235-ac65-7a88442c9b52",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aa33b2a7-0e52-4104-9686-e75ee654e062",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "77d0c5ad-9d79-4f42-a7ca-5a0e22a1393d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5661573f-6867-46a9-9317-39a5b9900d2d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "000febf8-1181-4e51-9d26-70328dbc5930",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d57f8777-a788-45aa-8c68-bb17d4234f4d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4fb45270-c040-4746-ad4d-8fc741328ff4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e424ccfc-c14d-42a1-bc72-5f0796278175",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ca5116b8-91b3-4672-9834-fca0a34ebe05",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b65da500-d7c2-4378-b114-c69236569e7e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3e6611d8-6ebe-4a1a-8684-5de6cbbbe89b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Slack is a chat room for your whole company, designed to replace email as your primary method of communication and sharing. Its workspaces allow you to organize communications by channels for group discussions and allows for private messages to share information, files, and more all in one place.",
+        "id": "4363b970-40d6-4ce7-b9a2-522b45a924e1",
+        "name": "Slack",
+        "url": "https://slack.com/",
+        "is_free": true,
+        "tool_categories": [
+          { "category_name": "chat", "__typename": "tool_category" }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "05e1f170-6ab0-4b20-a6d4-ed24bc76f628",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "53f5589d-8882-4b5b-b1e6-f1a7257de75a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2b51f22f-c341-4622-a2aa-f5a661b3d7de",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e6e27121-1f8c-4a44-8830-ef30f70d064a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4fb45270-c040-4746-ad4d-8fc741328ff4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "294dece4-f9ec-4415-96e7-f65978a677e0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f5d8b2d5-5c35-408e-963b-8d01d4ec737d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29e17a14-6415-4ee4-8ff2-4aa09631280c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "40cf6c3e-47fb-4734-8876-a151c0bad3cb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b0653425-2834-447d-ba8c-de799995bde8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a68afbba-89ae-4833-8eb3-3d427ce7849b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e9603aaf-6ea1-4d3b-91b1-c6d97cfc3565",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f37f87e4-83e3-4b02-a652-77a6f4fef019",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3639f48-89df-4136-894f-8c7419bee663",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "739e6ddd-82cc-4d11-8981-f9b180e10535",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e1b32e28-8b5c-4de9-97eb-c841a3164b40",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5d082958-b001-4b73-a7d6-00798b71f064",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f088b405-501b-4ac5-9a01-813ad4e7cd5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d26367e1-b05e-4d50-88cc-3260aacc5021",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4e9929c2-e486-4e0b-9200-f9949f0a5ae8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e0946e21-322c-458b-ae33-e4e80f93ccc3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "31cf5855-b467-4e92-ae21-242be61d1973",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "538b94b6-4a01-4ebb-8e3b-12c2d03456d4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "66eb06c2-a75c-4558-a02b-d01574075ea9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fe11bad9-6fc5-4c4a-b7a5-bea10176179b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6b0178f5-ffd1-4403-84f2-36d73a503271",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5487e8ed-7105-4028-b2ce-e8be78d7183a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f5f27c5d-d6fa-4523-adc6-7a8a8049d025",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f1a319c5-1269-46ae-86a3-5dcd34bd8b95",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5b35ffa8-842a-47ab-843b-bd75224a8928",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e424ccfc-c14d-42a1-bc72-5f0796278175",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4a98c819-d802-4901-ab8a-fd7384c848e7",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "498a5de2-3fd9-4058-88bb-40560bb18703",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5e68db42-22e4-4a89-9038-a073864cfb6e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c7655c29-369b-48b2-b82e-9202363a080f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dc2a6543-b5a2-479d-a299-74b12fdcae05",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "177922ca-2e80-4c89-906f-c60a069df36c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "949980f0-90c6-4e72-950b-3dc740f98f05",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bb377e1c-dd51-4694-a697-28342e461a90",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4d5058d2-e9d3-4591-9722-7c0012474f2b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "33c00c19-e6ac-4ba1-8a55-637f04f7a8df",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "96ac13f2-9cef-42a3-9e0a-d1d96881b300",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7500a239-8ff4-4224-8043-c9e7745378e3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fe971445-4989-4244-9b7f-34b5f468a70d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f0d8bb95-ae13-47da-af01-f6d81c55082e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bfeb8c0c-6bcb-454f-9e88-9a798f4b9848",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "427ea4ba-8d20-4c5f-97fc-9c4294c4229f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ec3361f8-eea1-429e-89d0-7d3bdace2573",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e8e4e5b7-2e89-417b-9384-c833eb54a792",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2954e33e-2fb2-43fb-89b7-ce9db68421ab",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b6f404a8-9efa-4de0-afbd-70658c20c7d6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4e96831e-5ee0-4c5e-973d-bad68c4df0ee",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "54dff2f6-141a-40b4-9bb0-e3acf486bb08",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "caf9ecae-e20d-44fc-8c04-e45d87f70593",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "924b86e6-455c-4f39-8a9c-e6e8d37f2e76",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0c49faef-5a8d-4d89-8753-6b0b873f9532",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a6dcb7ad-16bf-4ea2-b2ec-7769c6f8061a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1ad0d55c-07ee-4a97-aa0a-b36efe1a467c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aea8e669-7b4d-4b5c-93e3-c212246474f3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5125a425-bd5f-4cb0-8bd3-324511275603",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dd39577e-08d9-496e-96f0-63722fbec955",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7e8e1cb3-8826-4ce5-8489-a397118305bb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cd657979-729f-4bb4-9323-e9a19358f94b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "174cb30e-a6db-492a-b0f6-8732abe67265",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a5564f9d-78c5-4a20-a288-b3eb7d52fc1f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f6387410-2737-47b8-add4-bb7fc62e0763",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "da6a911d-2d12-40f2-8d78-e0ca18dab0e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "705dfa61-2c3e-40c8-a072-6a55428fb062",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7128fd42-f8d8-47b0-9546-a26cdc098363",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "61cc31bd-fedc-4965-a75d-4631ea70aa61",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "123548dc-1f48-4db4-a392-72b374b6767d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dfe5f077-40a8-4078-9d98-e611c7706b37",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "677a10b5-bf61-4ae0-86d7-d2f71f103969",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "06175f4d-8900-4ca5-8674-03014a725af5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "283edaba-0570-4c80-90cf-4f889cd765fa",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "63ee0c2e-4a01-4731-8655-8957b29dbe3d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b4acf4d8-f273-40d6-b54b-3149ab9facd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e8f986a7-654d-40e9-a077-3e15ac8c775d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "14de4a08-d0c7-454c-83f6-c4d2b026d9f2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d57f8777-a788-45aa-8c68-bb17d4234f4d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "fff2a2b0-38a5-473a-900d-a6616b77ea45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b70e92d4-4405-48f2-8cb3-d3d6d078d5bd",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "148f77d6-42f9-4858-ae13-d5e9ce0e9d44",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "04284027-ed6b-4ec6-9414-b39ce07558f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b0ffd3ca-d70a-4853-9c39-bb5232582157",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "395a8505-6649-4fcc-acb6-1c666f93d96c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "25e87b71-6cf0-4dec-8b0b-990860c32575",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00e89587-e92e-44cb-b64a-a470100ffeb4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a process. Imagine a white board, filled with lists of sticky notes, with each note as a task for you and your team.",
+        "id": "b90ae060-eb38-4c78-907c-2b58acff9b39",
+        "name": "Trello",
+        "url": "https://trello.com/",
+        "is_free": true,
+        "tool_categories": [
+          {
+            "category_name": "project management",
+            "__typename": "tool_category"
+          }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "d335276a-4098-4450-974f-c574d9298971",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8a2e4e88-1360-4fa7-8d25-67b6deb91aeb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "739e6ddd-82cc-4d11-8981-f9b180e10535",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "940a2dd4-c6e1-493f-b459-26db00ce08f5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b18c2cae-fc87-47be-a059-59d0e598c03d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dc2a6543-b5a2-479d-a299-74b12fdcae05",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "538b94b6-4a01-4ebb-8e3b-12c2d03456d4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7821be6e-17a3-401e-8de7-103bba216e97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b2ea8d2e-f306-478a-abd3-8fca1081d0cc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00c27812-fe9b-40a2-b2b3-ec6cac8f7635",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b49a4b57-d12f-4ac9-9121-70fd146ce248",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ec3361f8-eea1-429e-89d0-7d3bdace2573",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "61cc31bd-fedc-4965-a75d-4631ea70aa61",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f1a319c5-1269-46ae-86a3-5dcd34bd8b95",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "eeebbb0b-b379-471c-b7cc-1e581c8c5ac5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "686b615d-6c43-4607-9bfb-f2fc50bbffd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "192eff6b-f73a-407a-8563-7d25e6e80783",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5a785795-61d0-4440-bfc9-052ff2fca081",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c57c62-10fe-46e0-ab0b-3543fff407e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6b23128e-6b3c-41e5-bafb-49f142f9d72e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aa33b2a7-0e52-4104-9686-e75ee654e062",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2ad32d8b-7e7e-4a1c-a51e-67cc925991e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "003ccb09-c66b-4ea7-9622-f3b82a1f5b8b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8c9bb838-4515-43fc-a0d4-243605dcf9c1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2fc7d589-4cf1-4b23-aae4-fb3fcdb43a60",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "00050dae-92ff-4210-a4e3-91d2550eaf2f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a68afbba-89ae-4833-8eb3-3d427ce7849b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b269113e-5401-4814-84bd-5dc7ff0e67bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f2a0bf95-fbcd-4d40-ac1a-1c225692f2ae",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "69c45e5f-96da-404d-881c-8c4572fcec30",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d81de7d1-c73a-4ef3-b020-feafd93e0e1a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f6387410-2737-47b8-add4-bb7fc62e0763",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c17dfc23-33ad-4a6d-a7f6-cdaac47ffb1b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7e4e09d9-b30f-4f19-8798-45fb27709596",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "96e3cc4b-2e86-4e4a-9228-6ac0b2bc9e84",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cb02eebf-221e-4610-a999-be3f001f0d24",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c2e5d8af-ed38-4763-942d-4759ca554e59",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "74fda830-b795-4f82-8ce7-ee39122e221d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4c55f97b-7671-4a4e-b087-a16c91bd7187",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e424ccfc-c14d-42a1-bc72-5f0796278175",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "caf9ecae-e20d-44fc-8c04-e45d87f70593",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "668e698f-511b-483a-8f3b-3d140489725e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64dfd220-4dbd-413a-babb-fd5885ddf933",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a1e3c8ca-744d-4860-be3a-8e55b5a15bef",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f3af8e01-e1e9-4340-8e12-eb7575126be2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c3213787-043a-4e81-80eb-16ea6f09d338",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0f8f25ce-0bff-4b44-8fce-ce5e1d511b18",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a5564f9d-78c5-4a20-a288-b3eb7d52fc1f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a6dcb7ad-16bf-4ea2-b2ec-7769c6f8061a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6868cd7f-21cd-4e1a-ba71-9e7c524fef21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4e96831e-5ee0-4c5e-973d-bad68c4df0ee",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9cef38b3-7a2d-4a69-ae97-dd012b2a473b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3883ab0d-93f6-43af-a107-bc0105a14f84",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7500a239-8ff4-4224-8043-c9e7745378e3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "35e25986-347e-4058-b815-310bb84fcf7c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f234f3cb-e13b-4d6c-957e-16f5c8c4fda0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5487e8ed-7105-4028-b2ce-e8be78d7183a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f0f2dbaa-7b13-41f7-96ab-0821a50acb46",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "eee1f1c3-bb42-44a3-8fe3-2772a716c5a4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f17d78fb-8cd3-43e4-990f-a93eadd08d09",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b55abc21-fd74-4c35-8727-49f999de6381",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "984a70cb-d517-4693-89e4-64c4ec92115f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "85a3dbff-51d2-461c-acf0-4ee69eb88963",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29ed7b65-5c4b-41f3-9f1d-473a1fde5511",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a387af77-6aa4-4541-9318-39537cb8b97b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b0ffd3ca-d70a-4853-9c39-bb5232582157",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3d95742-d214-4228-a27d-9bbc5088ce2d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b27a6770-246d-4965-9a45-4216b1496916",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b15ced36-9323-43c5-a151-ee13dd80fcad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3c20664-40f1-4246-8ca8-147d0bd30a88",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cd0854dd-9296-4c8f-be8a-6796be3e3554",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b4acf4d8-f273-40d6-b54b-3149ab9facd1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "A virtual private network extends a private network across a public network, and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network.",
+        "id": "6dc44497-6ba0-4258-b7d3-0c8d3d0e51a8",
+        "name": "VPN",
+        "url": "https://en.wikipedia.org/wiki/Virtual_private_network",
+        "is_free": true,
+        "tool_categories": [
+          { "category_name": "vpn", "__typename": "tool_category" }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "283edaba-0570-4c80-90cf-4f889cd765fa",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "42b3378e-cd4e-4df7-8fc3-f6dc9cfce2e9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c99d7a72-101b-4316-86ab-cdffc327ebe5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1dfaa7d6-fa10-440c-a1b7-5e4dbe9d07e9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8ec91fc7-d7de-43dc-ad8d-de31c291b1c6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f6fcde4-2d68-4665-b086-b86b9dd262f1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29499d9b-9a84-4b8e-aeb3-831564454373",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3bc592b8-ca91-4896-8e7b-d29922effcf2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8c9bb838-4515-43fc-a0d4-243605dcf9c1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "949980f0-90c6-4e72-950b-3dc740f98f05",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "41bf29c9-3c27-408c-8318-253e435777a4",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0f8f25ce-0bff-4b44-8fce-ce5e1d511b18",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c57c62-10fe-46e0-ab0b-3543fff407e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e021f07b-e90b-496d-92a4-d9415a8baadb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "151eae1a-929a-4bc8-904f-5b8f38b17777",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f1a319c5-1269-46ae-86a3-5dcd34bd8b95",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f259d8e3-f914-42dd-999c-0d2519f49c4a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b24e1746-ece4-4776-abf6-7680c8c664a9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4790d11a-af35-460f-966b-6ce261099187",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1313c949-1ee5-476c-8e4c-7c14090e03ec",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bc425cd4-6b5c-4249-b226-85cf0ae6568c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "94398566-9f76-402b-8b39-ca487eb6fc97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6983c088-ea45-4dc1-91dc-345921c04e65",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8a2e4e88-1360-4fa7-8d25-67b6deb91aeb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f38717e8-7f31-48f1-9464-ac54af1d43e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3e8c7ceb-cdab-47b7-a7cc-883ba1d33ee2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a011a239-4dfe-467f-b244-33c33c385231",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7cabc924-70d3-4ae6-9c13-be118eb9f8b6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "bedc4a57-faa4-4c32-b111-407b171a0645",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e93b8edf-1052-434a-af0b-38075d17c228",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0d1e5105-3166-4b2a-8157-606f6dc9eb8e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4720292c-2377-40d7-bbd1-866dd5fdd19b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1c3a715a-511f-4b89-95af-d181e43e955a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b5c6ee4f-d8f8-416a-a568-31ffc91e4bad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a68afbba-89ae-4833-8eb3-3d427ce7849b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "84d1c731-43bb-407e-8d15-ff25d88e5d21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "64df700d-0c35-4639-b5b3-30e02ea21c32",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b95418c5-ee71-451f-8bcd-fb5146f17ffb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5d082958-b001-4b73-a7d6-00798b71f064",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e18235fa-b770-465c-b733-38eb39cb7246",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1742655d-034d-4143-9806-e89a68ac0a5b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8db6cb83-4af5-42ed-b5c4-1b99e3d0fafc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f0f2dbaa-7b13-41f7-96ab-0821a50acb46",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a9b32b98-c455-426e-8e9e-4e40925f5f21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5a785795-61d0-4440-bfc9-052ff2fca081",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "751b9084-65bb-482b-96de-261ae220ffce",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "35e25986-347e-4058-b815-310bb84fcf7c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "963ee625-0dda-46a8-bcc2-2b93060aa838",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d3639f48-89df-4136-894f-8c7419bee663",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "148f77d6-42f9-4858-ae13-d5e9ce0e9d44",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3883ab0d-93f6-43af-a107-bc0105a14f84",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "668e698f-511b-483a-8f3b-3d140489725e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ea7947f9-5536-4ceb-8e39-22859ef3bdba",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c6b8cd9c-f366-45e4-a684-970d0ec81573",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5383e50b-4466-4b4c-9321-bbf37d97b6de",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2fc7d589-4cf1-4b23-aae4-fb3fcdb43a60",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "000febf8-1181-4e51-9d26-70328dbc5930",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "556fd2d3-4658-4631-88b5-b184c0eebdc3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2123e6e5-3730-44f5-999c-92c16da60ae6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7821be6e-17a3-401e-8de7-103bba216e97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "35c618c2-b695-4c5e-bca5-6aab2b7a400b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b269113e-5401-4814-84bd-5dc7ff0e67bc",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9c006332-fe51-4695-a5d3-5bbd5e8223b3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7bda529e-267c-4807-ba5d-5b5e27cf87c9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9cef38b3-7a2d-4a69-ae97-dd012b2a473b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8f052868-6351-4e6a-aec4-0daa86e77066",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "261530d0-e480-4ea0-858a-2f48d653d822",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7ffb11f8-2200-4fce-bb77-2aea0887e40d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5cba9739-ac5c-41b5-88a5-32ba0dd20ddf",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5f9d871b-3f56-457c-9245-8f00f3070785",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "68fea6fe-2068-4b3b-a525-477cc9394ed6",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7bba3c1c-0372-44c5-9e90-7d6552f419af",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6b23128e-6b3c-41e5-bafb-49f142f9d72e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e7248f63-a809-49c3-a049-63283429c037",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "22ed5566-9885-40e6-a5ee-6037c8e17ad8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "77d0c5ad-9d79-4f42-a7ca-5a0e22a1393d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "22bb4b4c-d1d3-4f43-8c6f-4f572103bc5a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5dbd292b-dbd6-4f0c-8888-ce21f3a0c435",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1ad0d55c-07ee-4a97-aa0a-b36efe1a467c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a6dcb7ad-16bf-4ea2-b2ec-7769c6f8061a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c357a53e-3302-4f5a-9f53-800d1328fd9e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "40cf6c3e-47fb-4734-8876-a151c0bad3cb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0bb497b1-d835-4774-b66a-31ad1ab16f1f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3d95742-d214-4228-a27d-9bbc5088ce2d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aa33b2a7-0e52-4104-9686-e75ee654e062",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d86b3cfb-815c-48e4-ae8a-d86a807fedb1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ec3361f8-eea1-429e-89d0-7d3bdace2573",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7673c16b-8b44-4e1f-9665-005c513eef46",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "5355b8d7-6a49-4415-ba77-33e764dbb101",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      },
+      {
+        "description": "Zoom is a cloud based service which offers Meetings and Webinars and provides content sharing and video conferencing capability.",
+        "id": "e0715449-ebb1-40db-84dc-e9488c6dfb09",
+        "name": "Zoom",
+        "url": "https://zoom.us/",
+        "is_free": false,
+        "tool_categories": [
+          { "category_name": "meetings", "__typename": "tool_category" }
+        ],
+        "office_tools": [
+          {
+            "office": {
+              "id": "5d082958-b001-4b73-a7d6-00798b71f064",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "651e22b5-8f5b-47ed-bff4-efc7257f2c6f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f04739b2-71e9-42ac-aa8a-9ed251013535",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ca2fe1de-48ed-4a31-a391-e3bad82ee640",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "84d1c731-43bb-407e-8d15-ff25d88e5d21",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7c906663-000b-4ac9-adf9-54a3d0a34d5e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1c3a715a-511f-4b89-95af-d181e43e955a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "427ea4ba-8d20-4c5f-97fc-9c4294c4229f",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "ddbcca68-fe99-43fc-b14d-64970bfa4cf0",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "35e25986-347e-4058-b815-310bb84fcf7c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "94398566-9f76-402b-8b39-ca487eb6fc97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "29514616-6e3a-43ce-9684-c74497dedf0d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6920dea4-c59e-4d41-8b04-ae7ef512b348",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "06175f4d-8900-4ca5-8674-03014a725af5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2ad32d8b-7e7e-4a1c-a51e-67cc925991e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "964ba007-542a-443f-ba64-fab7ceec61da",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1ad0d55c-07ee-4a97-aa0a-b36efe1a467c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "022148e8-8919-489f-8c2d-681d28b34a45",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b4540ac4-ad73-41b7-8733-22652309b4b5",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6ab393bd-d43c-40ca-91fc-22d70951a57c",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "9f21fd65-4442-4c50-94bd-bd21828cadf2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e27f8e70-3480-476f-934e-1d77bc3649d2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "14de4a08-d0c7-454c-83f6-c4d2b026d9f2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7e8e1cb3-8826-4ce5-8489-a397118305bb",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "c357a53e-3302-4f5a-9f53-800d1328fd9e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2c53730b-09eb-42c0-babd-ad6b065484d1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3f4d818e-9bf3-46ae-82da-983df3084fc8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "697463c3-5e46-4dd2-84cc-fedfc160334a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4bc29ff1-c935-413f-9a31-be4639d613ce",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b3d95742-d214-4228-a27d-9bbc5088ce2d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "123548dc-1f48-4db4-a392-72b374b6767d",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "349604e6-cb77-4b79-a5e4-bbac04fa7154",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f8ca31b-6ab1-4e19-a96a-08eb261592df",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "34c57c62-10fe-46e0-ab0b-3543fff407e8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3ba34ce6-b472-45e6-a665-5375951a6f20",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "81d4d9f0-ee04-499e-907a-6fe0ef597c16",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "96e3cc4b-2e86-4e4a-9228-6ac0b2bc9e84",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b65da500-d7c2-4378-b114-c69236569e7e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a2a7b91d-30f1-4d1b-ac88-915c72bcb37e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7f6fcde4-2d68-4665-b086-b86b9dd262f1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0d9e1f8b-5f9e-4737-9cc4-4369d854007a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "58f3250e-18f9-415b-a39a-07d6bf596f77",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6a55c514-49d7-4eed-bf77-3c443069f9ad",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0068d007-c757-47cd-b2d0-be5d4acf982a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3d8e423b-db5c-4564-bd8f-c441248c29b9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "cb02eebf-221e-4610-a999-be3f001f0d24",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "39a7ce06-97ae-47b6-90e6-0df996b1dad2",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "33342f6a-a5c4-47e6-890c-7c1164ebb491",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6b0178f5-ffd1-4403-84f2-36d73a503271",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "13e412fe-3407-48fa-9f15-a31ddf29ea06",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "963ee625-0dda-46a8-bcc2-2b93060aa838",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "49aaf50e-a5e4-4275-a0c9-21ff0f2ea626",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d1eb9183-b623-42c1-87d0-17073626e568",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4c55f97b-7671-4a4e-b087-a16c91bd7187",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "25bd778b-b92e-4981-ab5d-6f4cac246f42",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e207838b-a0b9-43ba-8393-50b48ff57f5a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "74978c0b-a292-4fd5-bf9b-75999f9edfbd",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "dd39577e-08d9-496e-96f0-63722fbec955",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7701ac99-79f8-4eec-8c0d-e93d9fa8b286",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "8fd68b90-0a93-434f-a34f-8ec78ff7955b",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "3ff764ec-fe90-48ef-80c1-08185ac02e97",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7da07802-5cb5-42c0-9aa2-881a45f2a303",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4894d72e-a80d-43d4-a7cc-47c9e3b48381",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "e9603aaf-6ea1-4d3b-91b1-c6d97cfc3565",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1c6bbfe3-b2c8-4fd7-bbb3-805395ff5871",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0c49faef-5a8d-4d89-8753-6b0b873f9532",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "61248b57-22a8-4247-b53c-c38561c27420",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7bda529e-267c-4807-ba5d-5b5e27cf87c9",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d9badea9-f5e9-4e4e-85ad-7a97e5daf115",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "a8f2fe63-7a7b-4bb0-9980-755d09dd6f4e",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "b655ef2a-0cb8-4503-8dc3-1420bb57a6db",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "d0224220-ba6c-4a28-8dd3-c37abeb1ae67",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "0378d24d-c83c-4904-98ba-4c72e5ce9a6a",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "2954e33e-2fb2-43fb-89b7-ce9db68421ab",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "7673c16b-8b44-4e1f-9665-005c513eef46",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "151eae1a-929a-4bc8-904f-5b8f38b17777",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "498a5de2-3fd9-4058-88bb-40560bb18703",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "22ed5566-9885-40e6-a5ee-6037c8e17ad8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "6983c088-ea45-4dc1-91dc-345921c04e65",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "4accaa7d-18b3-4045-9741-267e4ff5a7d8",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "af028d35-2c73-4568-b435-a52dfedad1a3",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "aa33b2a7-0e52-4104-9686-e75ee654e062",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "1318a5d8-b8d4-4a62-82c9-a107ccf258d1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          },
+          {
+            "office": {
+              "id": "f38717e8-7f31-48f1-9464-ac54af1d43e1",
+              "__typename": "office"
+            },
+            "__typename": "office_tool"
+          }
+        ],
+        "__typename": "tool"
+      }
+    ],
+    "category_tool": [
+      { "name": "cad", "__typename": "category_tool" },
+      { "name": "chat", "__typename": "category_tool" },
+      { "name": "email", "__typename": "category_tool" },
+      { "name": "file sharing", "__typename": "category_tool" },
+      { "name": "graphics", "__typename": "category_tool" },
+      { "name": "meetings", "__typename": "category_tool" },
+      { "name": "other", "__typename": "category_tool" },
+      { "name": "project management", "__typename": "category_tool" },
+      { "name": "rendering", "__typename": "category_tool" },
+      { "name": "screen sharing", "__typename": "category_tool" },
+      { "name": "team management", "__typename": "category_tool" },
+      { "name": "vc", "__typename": "category_tool" },
+      { "name": "vpn", "__typename": "category_tool" }
+    ]
+  }
+}

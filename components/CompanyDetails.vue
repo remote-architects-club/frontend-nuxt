@@ -35,15 +35,11 @@
         <p class="flex items-center mb-1 font-semibold">
           tools
         </p>
-        <ul v-if="company.office_tools.length" class="flex flex-wrap mt-1">
-          <li
-            v-for="{ tool } in company.office_tools"
-            :key="tool.id"
-            class="px-4 py-1 mb-2 mr-2 border border-black rounded-full"
-          >
-            {{ tool.name }}
-          </li>
-        </ul>
+        <tool-chip-list
+          v-if="company.office_tools.length"
+          :tools="company.office_tools.map(({ tool }) => tool)"
+          class="mt-1"
+        />
         <p v-else>n/a</p>
       </section>
     </div>
@@ -53,15 +49,11 @@
 <script>
 import CompanyLocation from '@/components/CompanyLocation'
 import CompanyUrl from '@/components/CompanyUrl'
-// import CompanyRemotePolicy from '@/components/CompanyRemotePolicy'
-// import CompanyRemoteSince from '@/components/CompanyRemoteSince'
-// import CompanyTools from '@/components/CompanyTools'
+import ToolChipList from '@/components/ToolChipList'
 
 export default {
   components: {
-    // CompanyTools,
-    // CompanyRemotePolicy,
-    // CompanyRemoteSince,
+    ToolChipList,
     CompanyUrl,
     CompanyLocation
   },

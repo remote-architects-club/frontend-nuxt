@@ -1,4 +1,7 @@
 {
   "baseUrl": "http://localhost:3000",
-  "projectId": "qhzk48"
+  "projectId": "qhzk48",
+  "env": {
+    "API_BASE_URL": "https://remotearchitectsclub-stg.herokuapp.com/v1/graphql"
+  }
 }

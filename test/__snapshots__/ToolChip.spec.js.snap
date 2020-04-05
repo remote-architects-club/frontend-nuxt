@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolChip renders properly when url is not present 1`] = `"<div><span data-cy=\\"tool-name\\" class=\\"px-4 py-1 border border-black rounded-full\\">tool name</span></div>"`;
+
+exports[`ToolChip renders properly when url is present 1`] = `"<div><a data-cy=\\"tool-name\\" class=\\"px-4 py-1 border border-black rounded-full hover:bg-yellow-500 hover:cursor-pointer\\">tool name</a></div>"`;

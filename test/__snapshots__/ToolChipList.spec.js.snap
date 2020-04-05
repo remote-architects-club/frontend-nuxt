@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolChipList renders properly when 1 items is present 1`] = `
+"<div>
+  <ul class=\\"flex flex-wrap\\">
+    <li class=\\"mb-2 mr-1\\">
+      <div><a data-cy=\\"tool-name\\" class=\\"px-4 py-1 border border-black rounded-full hover:bg-yellow-500 hover:cursor-pointer\\">name1</a></div>
+    </li>
+  </ul>
+</div>"
+`;
+
+exports[`ToolChipList renders properly when 3 items are present 1`] = `
+"<div>
+  <ul class=\\"flex flex-wrap\\">
+    <li class=\\"mb-2 mr-1\\">
+      <div><a data-cy=\\"tool-name\\" class=\\"px-4 py-1 border border-black rounded-full hover:bg-yellow-500 hover:cursor-pointer\\">name1</a></div>
+    </li>
+    <li class=\\"mb-2 mr-1\\">
+      <div><a data-cy=\\"tool-name\\" class=\\"px-4 py-1 border border-black rounded-full hover:bg-yellow-500 hover:cursor-pointer\\">name2</a></div>
+    </li>
+    <li class=\\"mb-2 mr-1\\">
+      <div><a data-cy=\\"tool-name\\" class=\\"px-4 py-1 border border-black rounded-full hover:bg-yellow-500 hover:cursor-pointer\\">name3</a></div>
+    </li>
+  </ul>
+</div>"
+`;
+
+exports[`ToolChipList renders properly when an empty list is passed as prop 1`] = `
+"<div>
+  <!---->
+</div>"
+`;
+
+exports[`ToolChipList renders properly when prop is not present 1`] = `
+"<div>
+  <!---->
+</div>"
+`;
