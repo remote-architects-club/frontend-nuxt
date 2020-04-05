@@ -51,7 +51,7 @@ export default {
       '@nuxtjs/date-fns',
       {
         /* module options */
-        methods: ['format']
+        methods: ['format', 'formatDistanceToNow']
       }
     ]
   ],

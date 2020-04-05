@@ -1,7 +1,11 @@
 <template>
-  <article class="flex p-4 mb-8 border border-black ">
+  <article
+    class="flex p-4 mb-8 border border-black hover:border-yellow-500 hover:cursor-pointer"
+    data-cy="tool-item"
+    @click.stop="$router.push(`/tools/tool?id=${tool.id}`)"
+  >
     <figure class="flex-none mr-4 ">
-      <tool-logo :url="tool.url" :name="tool.name" />
+      <tool-logo :url="tool.url" :name="tool.name" class="border" />
     </figure>
     <div class="w-full ">
       <div class="sm:flex sm:justify-between">

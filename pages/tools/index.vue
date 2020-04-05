@@ -57,11 +57,11 @@
             </select>
           </p>
         </nav>
-        <template v-if="toolsSorted.length > 0">
+        <div v-if="toolsSorted.length > 0" data-cy="tools-list">
           <template v-for="tool in toolsSorted">
             <tool v-if="tool.url" :key="tool.id" :tool="tool" />
           </template>
-        </template>
+        </div>
         <template v-else>
           <p class="flex p-4 mb-8 bg-white shadow-lg sm:p-8">
             No tools were found.
