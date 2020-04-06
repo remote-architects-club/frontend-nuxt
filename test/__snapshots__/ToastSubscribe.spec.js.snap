@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToastSubscribe disappears when close button is clicked 1`] = `
-"<div class=\\"sticky inset-x-0 top-0 flex flex-wrap items-center justify-center py-1 text-white bg-black shadow\\">
+"<div data-cy=\\"toast-subscribe\\" class=\\"sticky inset-x-0 top-0 flex flex-wrap items-center justify-center py-1 text-white bg-black shadow\\">
   <p class=\\"mb-2 font-bold text-center sm:mb-0 sm:pr-2\\">
     Stay in the loop for future updates
     <span class=\\"hidden sm:inline-block\\">→</span><span class=\\"sm:hidden\\">↓</span></p>
@@ -16,7 +16,7 @@ exports[`ToastSubscribe disappears when close button is clicked 1`] = `
 `;
 
 exports[`ToastSubscribe renders properly  1`] = `
-"<div class=\\"sticky inset-x-0 top-0 flex flex-wrap items-center justify-center py-1 text-white bg-black shadow\\">
+"<div data-cy=\\"toast-subscribe\\" class=\\"sticky inset-x-0 top-0 flex flex-wrap items-center justify-center py-1 text-white bg-black shadow\\">
   <p class=\\"mb-2 font-bold text-center sm:mb-0 sm:pr-2\\">
     Stay in the loop for future updates
     <span class=\\"hidden sm:inline-block\\">→</span><span class=\\"sm:hidden\\">↓</span></p>
