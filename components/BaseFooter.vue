@@ -1,5 +1,6 @@
 <template>
   <footer
+    data-cy="footer"
     class="flex flex-col items-center justify-between px-4 pt-4 pb-8 mt-auto text-sm border-t-2 border-black sm:flex-row sm:items-start"
   >
     <section class="mb-4">
@@ -13,7 +14,7 @@
           <nuxt-link to="/tools" class="link">tools</nuxt-link>
         </li>
         <li class="font-semibold">
-          <nuxt-link to="/articles" class="link">articles</nuxt-link>
+          <nuxt-link to="/blog" class="link">blog</nuxt-link>
         </li>
         <li class="font-semibold">
           <nuxt-link to="/about" class="link">about</nuxt-link>
