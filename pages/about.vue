@@ -31,12 +31,14 @@ export default {
 </script>
 
 <style lang="scss">
+/* TODO: move to global css file  */
+/* CONTENT  */
 .content {
   p {
     @apply mb-4;
   }
   h3 {
-    @apply font-bold mt-8 mb-4 text-lg;
+    @apply mt-8 mb-4 text-lg font-bold;
   }
   a {
     @apply underline;
@@ -44,6 +46,9 @@ export default {
   a:hover,
   a:focus {
     @apply font-bold;
+  }
+  blockquote {
+    @apply ml-8 pl-4 border-l-2 border-black italic font-serif my-8 text-gray-600;
   }
 }
 </style>
