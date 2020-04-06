@@ -30,6 +30,7 @@
         loop:
       </p>
       <mc-api-form sign-up-location="footer" />
+      <p class="h-2" />
       <p>Done with 💛 in Berlin.</p>
     </section>
   </footer>

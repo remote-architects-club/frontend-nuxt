@@ -6,14 +6,14 @@
       </div>
     </template>
     <template v-else-if="status === 'success'">
-      <p class="mb-4 font-bold" data-cy="subscribe-success">
+      <p class="font-bold" data-cy="subscribe-success">
         👏 Great, we'll get in touch shortly!
       </p>
     </template>
     <template v-else-if="status === 'failure'">
       <div data-cy="subscribe-failure">
         <p class="font-bold">Oops 🙀!</p>
-        <p class="mb-4">
+        <p>
           I'm so sorry, something went wrong on my side!
           <button class="link" @click="status = 'idle'">
             Wanna try again?
@@ -22,14 +22,15 @@
       </div>
     </template>
     <template v-else>
-      <form class="flex mb-4" data-cy="subscribe" @submit.prevent="submit">
+      <form class="flex" data-cy="subscribe" @submit.prevent="submit">
         <input
           id="email"
           v-model="email"
           type="email"
           placeholder="Email"
           data-cy="email-input"
-          class="w-full p-1 mr-1 transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
+          v-bind="$attrs"
+          class="p-1 mr-1 text-black transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
         /><button
           type="submit"
           class="flex-none btn btn-regular"
@@ -50,6 +51,14 @@ export default {
     signUpLocation: {
       type: String,
       default: 'General'
+    },
+    isDark: {
+      type: Boolean,
+      default: false
+    },
+    isSmall: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
