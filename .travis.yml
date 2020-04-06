@@ -6,5 +6,5 @@ node_js:
 script:
   - npm run cy:verify
   - npm run start:ci &
-  - npm run cy:run --record
+  - npm run cy:run:record
   - kill $(jobs -p) || true
