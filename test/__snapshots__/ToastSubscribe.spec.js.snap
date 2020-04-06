@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastSubscribe disappears when close button is clicked 1`] = `
+"<div class=\\"sticky inset-x-0 top-0 flex flex-wrap items-center justify-center py-1 text-white bg-black shadow\\">
+  <p class=\\"mb-2 font-bold text-center sm:mb-0 sm:pr-2\\">
+    Stay in the loop for future updates
+    <span class=\\"hidden sm:inline-block\\">→</span><span class=\\"sm:hidden\\">↓</span></p>
+  <div>
+    <form data-cy=\\"subscribe\\" class=\\"flex\\"><input id=\\"email\\" type=\\"email\\" placeholder=\\"Email\\" data-cy=\\"email-input\\" class=\\"p-1 mr-1 text-black transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus\\"><button type=\\"submit\\" class=\\"flex-none btn btn-regular\\">
+        subscribe
+      </button></form>
+  </div> <button data-cy=\\"close-btn\\" class=\\"absolute top-0 right-0 p-2 text-lg font-bold text-white\\">
+    ×
+  </button>
+</div>"
+`;
+
+exports[`ToastSubscribe renders properly  1`] = `
+"<div class=\\"sticky inset-x-0 top-0 flex flex-wrap items-center justify-center py-1 text-white bg-black shadow\\">
+  <p class=\\"mb-2 font-bold text-center sm:mb-0 sm:pr-2\\">
+    Stay in the loop for future updates
+    <span class=\\"hidden sm:inline-block\\">→</span><span class=\\"sm:hidden\\">↓</span></p>
+  <div>
+    <form data-cy=\\"subscribe\\" class=\\"flex\\"><input id=\\"email\\" type=\\"email\\" placeholder=\\"Email\\" data-cy=\\"email-input\\" class=\\"p-1 mr-1 text-black transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus\\"><button type=\\"submit\\" class=\\"flex-none btn btn-regular\\">
+        subscribe
+      </button></form>
+  </div> <button data-cy=\\"close-btn\\" class=\\"absolute top-0 right-0 p-2 text-lg font-bold text-white\\">
+    ×
+  </button>
+</div>"
+`;

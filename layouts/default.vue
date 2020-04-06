@@ -1,13 +1,16 @@
 <template>
-  <div class="flex flex-col w-full h-full px-4 mx-auto lg:max-w-4xl lg:px-0">
-    <header class="mb-12">
-      <base-navbar class="sm:mb-0 md:-mb-12 lg:-mb-16" />
-      <logo></logo>
-    </header>
-    <main class="flex-1 mb-12">
-      <nuxt />
-    </main>
-    <base-footer />
+  <div>
+    <toast-subscribe />
+    <div class="flex flex-col w-full h-full px-4 mx-auto lg:max-w-4xl lg:px-0 ">
+      <header class="mb-12">
+        <base-navbar class="sm:mb-0 md:-mb-12 lg:-mb-16" />
+        <logo></logo>
+      </header>
+      <main class="flex-1 mb-12">
+        <nuxt />
+      </main>
+      <base-footer />
+    </div>
   </div>
 </template>
 
@@ -15,13 +18,13 @@
 import Logo from '@/components/Logo'
 import BaseFooter from '@/components/BaseFooter'
 import BaseNavbar from '@/components/BaseNavbar'
-// import TextInput from '@/components/TextInput'
+import ToastSubscribe from '@/components/ToastSubscribe'
 export default {
   components: {
     BaseNavbar,
     BaseFooter,
-    Logo
-    // TextInput
+    Logo,
+    ToastSubscribe
   }
 }
 </script>
