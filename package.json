@@ -12,7 +12,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test:watch": "jest --watchAll --coverage=false",
     "cy:open": "cypress open",
     "cy:verify": "cypress verify",
     "cy:run:record": "cypress run --record --key db4d8f45-2fd4-4e78-9c39-2f54f5aaec8b"
