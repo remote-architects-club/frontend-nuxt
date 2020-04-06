@@ -267,7 +267,7 @@ describe('Contribute', function() {
       .type('trying to type')
     // cy.get('@next').click()
   })
-  it.only('Goes through personal flow wfh02', function() {
+  it('Goes through personal flow wfh02', function() {
     cy.visit('/add')
     cy.url().should('include', '/add')
     cy.fixture('search_offices').then((results) => {
