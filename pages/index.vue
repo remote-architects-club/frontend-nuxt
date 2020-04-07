@@ -17,17 +17,39 @@
         <p class="text-sm">It's easy and anonymous.</p>
       </div>
     </header>
+    <section data-cy="map">
+      <client-only>
+        <contribution-stats :companies-machine="companiesMachine" />
+        <div class="h-4" />
+        <company-map :companies-machine="companiesMachine" />
+      </client-only>
+    </section>
+    <div class="h-8" />
     <section class="w-full mx-auto">
-      <company-list />
+      <company-list :companies-machine="companiesMachine" />
     </section>
   </div>
 </template>
 
 <script>
+import { companiesMachine } from '@/fsm/companiesMachine'
+
 import CompanyList from '@/components/CompanyList'
+import CompanyMap from '@/components/CompanyMap'
+import ContributionStats from '@/components/ContributionStats'
 export default {
   components: {
+    ContributionStats,
+    CompanyMap,
     CompanyList
+  },
+  data() {
+    return {
+      companiesMachine
+    }
+  },
+  mounted() {
+    this.companiesMachine.send({ type: 'LOAD' })
   }
 }
 </script>

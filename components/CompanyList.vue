@@ -63,28 +63,12 @@
 </template>
 
 <script>
-import { companiesMachine } from '@/fsm/companiesMachine'
+import { extractHostname } from '@/plugins/url-utils'
 import Experience from '@/components/Experience'
 import BtnAddExperience from '@/components/BtnAddExperience'
 import BtnEditCompany from '@/components/BtnEditCompany'
 import CompanyDetails from '@/components/CompanyDetails'
 import CompanyListControls from '@/components/CompanyListControls'
-
-const psl = require('psl')
-function extractHostname(url) {
-  let hostname
-  // find & remove protocol (http, ftp, etc.) and get hostname
-  if (url.includes('//')) {
-    hostname = url.split('/')[2]
-  } else {
-    hostname = url.split('/')[0]
-  }
-  // find & remove port number
-  hostname = hostname.split(':')[0]
-  // find & remove "?"
-  hostname = hostname.split('?')[0]
-  return hostname
-}
 
 export default {
   name: 'CompanyList',
@@ -95,33 +79,35 @@ export default {
     BtnEditCompany,
     BtnAddExperience
   },
+  props: {
+    companiesMachine: {
+      type: Object,
+      required: true
+    }
+  },
   computed: {
     state() {
-      return companiesMachine.current
+      return this.companiesMachine.current
     },
     context() {
-      return companiesMachine.context
+      return this.companiesMachine.context
     }
   },
-  mounted() {
-    if (!this.board) {
-      companiesMachine.send({ type: 'LOAD' })
-    }
-  },
+
   methods: {
     nextPage() {
-      companiesMachine.send({ type: 'NEXT_PAGE' })
+      this.companiesMachine.send({ type: 'NEXT_PAGE' })
       this.scrollToTop()
     },
     prevPage() {
-      companiesMachine.send({ type: 'PREV_PAGE' })
+      this.companiesMachine.send({ type: 'PREV_PAGE' })
       this.scrollToTop()
     },
     scrollToTop() {
       window.scrollTo(0, 0)
     },
     companyDomain(url) {
-      return psl.get(extractHostname(url))
+      return extractHostname(url)
     }
   }
 }

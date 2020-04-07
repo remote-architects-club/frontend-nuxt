@@ -3,8 +3,11 @@ language: node_js
 node_js:
   - 12
 
+cache:
+  directories:
+    - ~/.npm
+    - node_modules
+
 script:
-  - npm run cy:verify
-  - npm run start:ci &
-  - npm run cy:run:record
+  - npm run cy:ci
   - kill $(jobs -p) || true
