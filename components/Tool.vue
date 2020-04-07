@@ -1,9 +1,5 @@
 <template>
-  <article
-    class="flex p-4 mb-8 border border-black hover:border-yellow-500 hover:cursor-pointer"
-    data-cy="tool-item"
-    @click.stop="$router.push(`/tools/tool?id=${tool.id}`)"
-  >
+  <article class="flex p-4 mb-8 border border-black" data-cy="tool-item">
     <figure class="flex-none mr-4 ">
       <tool-logo :url="tool.url" :name="tool.name" class="border" />
     </figure>
@@ -12,7 +8,9 @@
         <div class="mb-1 sm:mb-2">
           <p class="font-semibold">
             <!-- <a :href="tool.url" class="link">{{ tool.name }}</a> -->
-            {{ tool.name }}
+            <nuxt-link :to="`/tools/tool?id=${tool.id}`">{{
+              tool.name
+            }}</nuxt-link>
           </p>
           <p v-if="tool.url"><company-url :url="tool.url" /></p>
         </div>
