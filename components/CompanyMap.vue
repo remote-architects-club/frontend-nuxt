@@ -181,7 +181,7 @@ export default {
                 for (const feat of aFeatures) {
                   console.log(feat)
                   const { name, id } = feat.properties
-                  html += `<p><a href="/company/${id}" class="link">${name}</a> <span class="text-sm font-bold">&rarr;</span></p>`
+                  html += `<p><a href="/company?id=${id}" class="link">${name}</a> <span class="text-sm font-bold">&rarr;</span></p>`
                 }
                 new mapboxgl.Popup({
                   closeButton: false,
