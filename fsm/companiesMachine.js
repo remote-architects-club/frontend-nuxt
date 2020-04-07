@@ -12,7 +12,10 @@ const machine = Machine(
       error: null,
       offset: 0,
       totalCompanies: 0,
-      resultsPerPage: 10
+      resultsPerPage: 10,
+      allOfficesCities: [],
+      numExperiences: 0,
+      numCities: 0
     },
     states: {
       idle: {
@@ -31,7 +34,10 @@ const machine = Machine(
             target: 'done',
             actions: assign({
               companies: (_, event) => event.data.companies,
-              totalCompanies: (_, event) => event.data.totalCompanies
+              totalCompanies: (_, event) => event.data.totalCompanies,
+              numExperiences: (_, event) => event.data.numExperiences,
+              allOfficesCities: (_, event) => event.data.allOfficesCities,
+              numCities: (_, event) => event.data.numCities
             })
           },
           onError: {
@@ -110,7 +116,7 @@ async function invokeFetchCompanies(context) {
             count
           }
         }
-        office(
+        companies:office(
           where: {
             _or: [
               { remote_policy: { _is_null: false } }
@@ -132,6 +138,13 @@ async function invokeFetchCompanies(context) {
           url
           num_experiences
           latest_experience
+          cityByCityId {
+            id
+            name
+            lng
+            lat
+            country_iso
+          }
           office_tools(order_by: { tool: { name: asc } }) {
             tool {
               id
@@ -157,13 +170,49 @@ async function invokeFetchCompanies(context) {
             wfh
           }
         }
+        allOfficesCities:office(
+          where: {
+            _or: [
+              { remote_policy: { _is_null: false } }
+              { latest_experience: { _is_null: false } }
+            ],
+            city_id: {_is_null: false},
+            publish: {_eq: true}
+          }
+          order_by: { updated_at: desc }
+        ) {
+
+          id
+          name
+
+          cityByCityId {
+            id
+            name
+            lng
+            lat
+            country_iso
+          }
+        }
+        experience_aggregate {
+          aggregate {
+            count
+          }
+        }
+        city_aggregate {
+          aggregate {
+            count
+          }
+        }
       }
     `
   })
 
   return {
-    companies: data.office,
-    totalCompanies: data.office_aggregate.aggregate.count
+    companies: data.companies,
+    totalCompanies: data.office_aggregate.aggregate.count,
+    allOfficesCities: data.allOfficesCities,
+    numExperiences: data.experience_aggregate.aggregate.count,
+    numCities: data.city_aggregate.aggregate.count
   }
 }
 

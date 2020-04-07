@@ -13,8 +13,14 @@ export default {
         name: 'description',
         content: 'Stories, tools, and links for architects working remotely.'
       }
-    ]
+    ],
     // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'stylesheet',
+        href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
