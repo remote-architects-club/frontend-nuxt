@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex justify-end my-2 text-sm md:my-4">
+  <nav class="flex justify-end text-sm md:my-4">
     <!-- <p class="mr-2">{{ total }} entries</p> -->
     <p class="mr-2">
       showing entries {{ 1 + context.offset }}-{{
