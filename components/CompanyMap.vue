@@ -210,7 +210,7 @@ export default {
 
       this.map.on('click', 'unclustered-point', (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice()
-        const { name, city, country_iso } = e.features[0].properties
+        const { id, name, city, country_iso } = e.features[0].properties
 
         // Ensure that if the this.map is zoomed out such that
         // multiple copies of the feature are visible, the
@@ -221,7 +221,7 @@ export default {
         // TODO: add remote or not
         const html = `
           <p class="font-bold">${city}, ${country_iso}</p>
-          <p>${name}</p>
+          <p><a href="/company?id=${id}" class="link">${name}</a> <span class="text-sm font-bold">&rarr;</span></p>
         `
         new mapboxgl.Popup()
           .setLngLat(coordinates)
