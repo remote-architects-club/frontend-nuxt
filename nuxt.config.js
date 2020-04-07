@@ -1,5 +1,9 @@
 export default {
   mode: 'universal',
+  env: {
+    MAPBOX_API_ACCESS_TOKEN: process.env.MAPBOX_API_ACCESS_TOKEN,
+    GRAPHQL_URI: process.env.GRAPHQL_URI
+  },
   /*
    ** Headers of the page
    */
@@ -126,6 +130,8 @@ export default {
     //     }
     //   }
     // },
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.noParse = /(mapbox-gl)\.js$/
+    }
   }
 }
