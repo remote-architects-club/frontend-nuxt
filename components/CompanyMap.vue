@@ -241,8 +241,7 @@ export default {
       const mapboxgl = require('mapbox-gl/dist/mapbox-gl.js')
       // const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder')
       //TODO: move to env
-      mapboxgl.accessToken =
-        'pk.eyJ1IjoiZGFucm9jIiwiYSI6ImNqcmRwYWtqdjBkcHAzeXJrNHVkZDA1MjYifQ.CZo5a_sjRCEbm3eJDekPXg'
+      mapboxgl.accessToken = process.env.MAPBOX_API_ACCESS_TOKEN
       // init the map
       this.map = new mapboxgl.Map({
         container: 'map',
