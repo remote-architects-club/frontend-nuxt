@@ -15,7 +15,8 @@ const machine = Machine(
       resultsPerPage: 10,
       allOfficesCities: [],
       numExperiences: 0,
-      numCities: 0
+      numCities: 0,
+      snippets: {}
     },
     states: {
       idle: {
@@ -37,7 +38,13 @@ const machine = Machine(
               totalCompanies: (_, event) => event.data.totalCompanies,
               numExperiences: (_, event) => event.data.numExperiences,
               allOfficesCities: (_, event) => event.data.allOfficesCities,
-              numCities: (_, event) => event.data.numCities
+              numCities: (_, event) => event.data.numCities,
+              snippets: (context, event) => {
+                context.snippets['ownExperience'] = event.data.randomExperience
+                context.snippets['tools'] = event.data.randomTool
+                context.snippets['toolsTop10'] = event.data.toolsTop10
+                return context.snippets
+              }
             })
           },
           onError: {
@@ -203,6 +210,37 @@ async function invokeFetchCompanies(context) {
             count
           }
         }
+        random_experience(order_by: {created_at: asc}) {
+          id
+          name
+          office_id
+          office_name
+          own_experience
+          own_experience_text
+          created_at
+          country_iso
+          city
+        }
+        random_tool(order_by: {created_at: asc}, limit:4) {
+          tools_text
+          tools_array
+          tools
+          ordering
+          office_name
+          office_id
+          name
+          id
+          created_at
+          country_iso
+          city
+        }
+        tool_top_10 {
+          id
+          name
+          description
+          url
+          num_offices
+        }
       }
     `
   })
@@ -212,7 +250,10 @@ async function invokeFetchCompanies(context) {
     totalCompanies: data.office_aggregate.aggregate.count,
     allOfficesCities: data.allOfficesCities,
     numExperiences: data.experience_aggregate.aggregate.count,
-    numCities: data.city_aggregate.aggregate.count
+    numCities: data.city_aggregate.aggregate.count,
+    randomExperience: data.random_experience,
+    randomTool: data.random_tool,
+    toolsTop10: data.tool_top_10
   }
 }
 
