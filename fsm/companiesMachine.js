@@ -205,11 +205,12 @@ async function invokeFetchCompanies(context) {
             count
           }
         }
-        city_aggregate {
-          aggregate {
-            count
-          }
-        }
+        num_cities: office_aggregate(where: {_or: [{remote_policy: {_is_null: false}}, {latest_experience: {_is_null: false}}], city_id: {_is_null: false}, publish: {_eq: true}}, order_by: {city_id: asc}, distinct_on: city_id) {
+    aggregate {
+      count
+    }
+
+  }
         random_experience(order_by: {created_at: asc}) {
           id
           name
@@ -250,7 +251,7 @@ async function invokeFetchCompanies(context) {
     totalCompanies: data.office_aggregate.aggregate.count,
     allOfficesCities: data.allOfficesCities,
     numExperiences: data.experience_aggregate.aggregate.count,
-    numCities: data.city_aggregate.aggregate.count,
+    numCities: data.num_cities.aggregate.count,
     randomExperience: data.random_experience,
     randomTool: data.random_tool,
     toolsTop10: data.tool_top_10
