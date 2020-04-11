@@ -213,7 +213,7 @@ export const companyMachine = Machine(
       RESTART: '#noCompany',
       FETCH_COMPANY: {
         target: '#hasCompany',
-        actions: ['setCompanyId']
+        actions: ['setCompanyId', 'clearCompany']
       }
     }
   },
@@ -269,6 +269,14 @@ export const companyMachine = Machine(
         searchTerm: null,
         foundCompanies: [],
         error: null
+      }),
+      clearCompany: assign({
+        company: (context) => {
+          if (context.company && context.companyId === context.company.id) {
+            return context.company
+          }
+          return null
+        }
       }),
       resetAll: assign({
         company: null,

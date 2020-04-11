@@ -102,7 +102,7 @@ export default {
     }
   },
   mounted() {
-    if (!this.company) {
+    if (!this.company || this.company.id !== this.$route.query.id) {
       companyMachineVue.send({
         type: 'FETCH_COMPANY',
         params: { id: this.$route.query.id }
