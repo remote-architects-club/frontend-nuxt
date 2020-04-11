@@ -12,45 +12,49 @@
         @next-page="nextPage"
       />
       <!-- <p class="mb-8">Filter</p> -->
-      <div
-        v-for="company in context.companies"
-        :key="company.id"
-        class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
-      >
-        <company-details :company="company" />
-        <section class="col-2">
-          <div></div>
-          <p class="pt-8 mb-12 text-center md:text-left">
-            <btn-edit-company :company-id="company.id" />
-          </p>
-        </section>
-        <div>
-          <section class="col-2">
-            <p class="mb-4 font-semibold">stories</p>
-
-            <div>
-              <template v-if="company.experiences.length > 0">
-                <experience
-                  v-for="experience in company.experiences"
-                  :key="experience.id"
-                  :experience="experience"
-                  class="mb-8 "
-                />
-              </template>
-              <template v-else>
-                <p>No stories added yet.<br />👇Be the first and contribute!</p>
-              </template>
-            </div>
-          </section>
-
+      <ul data-cy="contribution-list">
+        <li
+          v-for="company in context.companies"
+          :key="company.id"
+          class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
+        >
+          <company-details :company="company" />
           <section class="col-2">
             <div></div>
-            <p class="py-6 text-center md:text-left">
-              <btn-add-experience :company-id="company.id" />
+            <p class="pt-8 mb-12 text-center md:text-left">
+              <btn-edit-company :company-id="company.id" />
             </p>
           </section>
-        </div>
-      </div>
+          <div>
+            <section class="col-2">
+              <p class="mb-4 font-semibold">stories</p>
+
+              <div>
+                <template v-if="company.experiences.length > 0">
+                  <experience
+                    v-for="experience in company.experiences"
+                    :key="experience.id"
+                    :experience="experience"
+                    class="mb-8 "
+                  />
+                </template>
+                <template v-else>
+                  <p>
+                    No stories added yet.<br />👇Be the first and contribute!
+                  </p>
+                </template>
+              </div>
+            </section>
+
+            <section class="col-2">
+              <div></div>
+              <p class="py-6 text-center md:text-left">
+                <btn-add-experience :company-id="company.id" />
+              </p>
+            </section>
+          </div>
+        </li>
+      </ul>
       <!-- <company-list-controls :context="context" /> -->
     </template>
     <template v-else-if="state.matches('notFound')">

@@ -1,6 +1,8 @@
 <template>
-  <img v-if="admin" class="logo" src="~assets/logo-admin.svg" />
-  <img v-else class="logo" src="~assets/logo-main.svg" />
+  <div data-cy="logo">
+    <img v-if="admin" class="logo" src="~assets/logo-admin.svg" />
+    <img v-else class="logo" src="~assets/logo-main.svg" />
+  </div>
 </template>
 <script>
 export default {

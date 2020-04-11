@@ -25,7 +25,17 @@
       </client-only>
     </section>
     <div class="h-8" />
-    <section class="w-full mx-auto">
+    <section data-cy="snippets">
+      <home-snippets :companies-machine="companiesMachine" />
+    </section>
+    <div class="h-16" />
+    <!-- <div class="flex justify-center">
+      <div class="w-1/3 border-t-2 border-black" />
+    </div>
+    <div class="h-8" /> -->
+    <section class="w-full mx-auto" data-cy="contribution-list">
+      <h2 class="mb-4 font-bold">Read all entries</h2>
+
       <company-list :companies-machine="companiesMachine" />
     </section>
   </div>
@@ -37,11 +47,13 @@ import { companiesMachine } from '@/fsm/companiesMachine'
 import CompanyList from '@/components/CompanyList'
 import CompanyMap from '@/components/CompanyMap'
 import ContributionStats from '@/components/ContributionStats'
+import HomeSnippets from '@/components/HomeSnippets'
 export default {
   components: {
     ContributionStats,
     CompanyMap,
-    CompanyList
+    CompanyList,
+    HomeSnippets
   },
   data() {
     return {
