@@ -151,8 +151,10 @@ export default {
       let newStr = toolsArray.replace(/("")/g, '"')
       newStr = newStr.replace(/(\("\[)/g, '')
       newStr = newStr.replace(/(\]"\))/g, '')
-      newStr = newStr.replace(/("\},)/g, '"},,')
+      newStr = newStr.replace(/(\}, )/g, '},,')
       // console.log(newStr)
+      // console.log(newStr)
+
       const newArr = newStr.split(',,').map((obj) => JSON.parse(obj))
       // console.log(newArr)
       return newArr
