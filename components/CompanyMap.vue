@@ -31,14 +31,6 @@ export default {
       return this.context.allOfficesCities
     }
   },
-  // watch: {
-  //   allOfficesCities(newVal) {
-  //     if (newVal && newVal.length > 0) {
-  //       //load map markers!
-  //       this.loadMarkers(newVal)
-  //     }
-  //   }
-  // },
   mounted() {
     this.createMap()
   },
