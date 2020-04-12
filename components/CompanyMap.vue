@@ -227,6 +227,23 @@ export default {
       this.map.on('mouseleave', 'clusters', () => {
         this.map.getCanvas().style.cursor = ''
       })
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)
+      ) {
+        this.map.dragPan.disable()
+        this.map.scrollZoom.disable()
+      }
+
+      this.map.on('touchstart', (event) => {
+        const e = event.originalEvent
+        if (e && 'touches' in e) {
+          if (e.touches.length > 1) {
+            this.map.dragPan.enable()
+          } else {
+            this.map.dragPan.disable()
+          }
+        }
+      })
     },
 
     createMap() {
