@@ -1,3 +1,4 @@
+const PRIMARY_HOSTS = `remotearchitects.club`
 export default {
   mode: 'universal',
   env: {
@@ -95,6 +96,47 @@ export default {
       logout: '/',
       callback: '/admin/login',
       home: '/admin'
+    }
+  },
+  csp: {
+    reportOnly: true,
+    hashAlgorithm: 'sha256',
+    policies: {
+      'default-src': ["'self'"],
+      'img-src': ['https:', '*.usefathom.com', 'data:', 'blob:'],
+      'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+      'child-src': ['blob:'],
+      'style-src': [
+        "'self'",
+        "'unsafe-inline'",
+        'fonts.googleapis.com',
+        PRIMARY_HOSTS
+      ],
+      'script-src': [
+        "'self'",
+        "'unsafe-inline'",
+        PRIMARY_HOSTS,
+        'sentry.io',
+        '*.sentry-cdn.com',
+        '*.usefathom.com',
+        '*.logrocket.io'
+      ],
+      'connect-src': [
+        PRIMARY_HOSTS,
+        'sentry.io',
+        '*.usefathom.com',
+        'https://*.tiles.mapbox.com',
+        'https://api.mapbox.com',
+        'https://events.mapbox.com'
+      ],
+      'form-action': ["'self'"],
+      'font-src': ['fonts.gstatic.com'],
+      'frame-ancestors': ["'none'"],
+      'object-src': ["'none'"],
+      'base-uri': [PRIMARY_HOSTS],
+      'report-uri': [
+        `https://o304029.ingest.sentry.io/api/5174207/security/?sentry_key=ef5a8da5a37d48d0a0ad8b746bb26990`
+      ]
     }
   },
   /*
