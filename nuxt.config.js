@@ -72,11 +72,16 @@ export default {
     '@nuxtjs/svg',
     'nuxt-rfg-icon',
     '@nuxtjs/sentry',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'nuxt-logrocket'
   ],
   sentry: {
     dsn: 'https://ef5a8da5a37d48d0a0ad8b746bb26990@sentry.io/5174207', // Enter your project's DSN here
     config: {} // Additional config
+  },
+  logRocket: {
+    logRocketId: 'vyyku1/remote-architects-club',
+    devModeAllowed: false
   },
   auth: {
     strategies: {
