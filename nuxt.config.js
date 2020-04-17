@@ -1,4 +1,20 @@
+import { client } from './plugins/apollo'
+import gql from 'graphql-tag'
 const PRIMARY_HOSTS = `remotearchitects.club`
+
+let dynamicRoutes = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query allPosts {
+        allPosts {
+          slug
+        }
+      }
+    `
+  })
+  return data.allPosts.map((post) => `/blog/${post.slug}`)
+}
+
 export default {
   mode: 'universal',
   env: {
@@ -138,6 +154,10 @@ export default {
         `https://o304029.ingest.sentry.io/api/5174207/security/?sentry_key=ef5a8da5a37d48d0a0ad8b746bb26990`
       ]
     }
+  },
+
+  generate: {
+    routes: dynamicRoutes
   },
   /*
    ** Build configuration
