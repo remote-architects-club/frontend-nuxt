@@ -1,3 +1,20 @@
+import { client } from './plugins/apollo'
+import gql from 'graphql-tag'
+const PRIMARY_HOSTS = `remotearchitects.club`
+
+let dynamicRoutes = async () => {
+  const { data } = await client.query({
+    query: gql`
+      query allPosts {
+        allPosts {
+          slug
+        }
+      }
+    `
+  })
+  return data.allPosts.map((post) => `/blog/${post.slug}`)
+}
+
 export default {
   mode: 'universal',
   env: {
@@ -18,7 +35,6 @@ export default {
         content: 'Stories, tools, and links for architects working remotely.'
       }
     ],
-    // link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     link: [
       {
         rel: 'stylesheet',
@@ -60,7 +76,6 @@ export default {
     [
       '@nuxtjs/date-fns',
       {
-        /* module options */
         methods: ['format', 'formatDistanceToNow']
       }
     ]
@@ -69,25 +84,27 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     '@nuxtjs/svg',
     'nuxt-rfg-icon',
     '@nuxtjs/sentry',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'nuxt-logrocket'
   ],
   sentry: {
     dsn: 'https://ef5a8da5a37d48d0a0ad8b746bb26990@sentry.io/5174207', // Enter your project's DSN here
     config: {} // Additional config
+  },
+  logRocket: {
+    logRocketId: 'vyyku1/remote-architects-club',
+    devModeAllowed: false
   },
   auth: {
     strategies: {
       auth0: {
         domain: 'remotearchitectsclub.eu.auth0.com',
         client_id: 'd0g9ZVJB0iSJc38EKqyngz1gMH6ed37q'
-        // audience: 'remotearchitects.club'
       }
     },
     redirect: {
@@ -97,11 +114,51 @@ export default {
       home: '/admin'
     }
   },
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  // axios: {},
+  csp: {
+    reportOnly: true,
+    hashAlgorithm: 'sha256',
+    policies: {
+      'default-src': ["'self'"],
+      'img-src': ['https:', '*.usefathom.com', 'data:', 'blob:'],
+      'worker-src': ["'self'", `blob:`, PRIMARY_HOSTS, '*.logrocket.io'],
+      'child-src': ['blob:'],
+      'style-src': [
+        "'self'",
+        "'unsafe-inline'",
+        'fonts.googleapis.com',
+        PRIMARY_HOSTS
+      ],
+      'script-src': [
+        "'self'",
+        "'unsafe-inline'",
+        PRIMARY_HOSTS,
+        'sentry.io',
+        '*.sentry-cdn.com',
+        '*.usefathom.com',
+        '*.logrocket.io'
+      ],
+      'connect-src': [
+        PRIMARY_HOSTS,
+        'sentry.io',
+        '*.usefathom.com',
+        'https://*.tiles.mapbox.com',
+        'https://api.mapbox.com',
+        'https://events.mapbox.com'
+      ],
+      'form-action': ["'self'"],
+      'font-src': ['fonts.gstatic.com'],
+      'frame-ancestors': ["'none'"],
+      'object-src': ["'none'"],
+      'base-uri': [PRIMARY_HOSTS],
+      'report-uri': [
+        `https://o304029.ingest.sentry.io/api/5174207/security/?sentry_key=ef5a8da5a37d48d0a0ad8b746bb26990`
+      ]
+    }
+  },
+
+  generate: {
+    routes: dynamicRoutes
+  },
   /*
    ** Build configuration
    */
@@ -110,26 +167,6 @@ export default {
      ** You can extend webpack config here
      */
     transpile: ['vee-validate/dist/rules'],
-    // postcss: {
-    //   // Add plugin names as key and arguments as value
-    //   // Install them before as dependencies with npm or yarn
-    //   plugins: {
-    //     // Disable a plugin by passing false as value
-    //     'postcss-url': false,
-    //     'postcss-nested': {},
-    //     'postcss-responsive-type': {},
-    //     'postcss-hexrgba': {}
-    //   },
-    //   preset: {
-    //     // Change the postcss-preset-env settings
-    //     autoprefixer: {
-    //       grid: true
-    //     },
-    //     features: {
-    //       customProperties: false
-    //     }
-    //   }
-    // },
     extend(config, ctx) {
       config.module.noParse = /(mapbox-gl)\.js$/
     }
