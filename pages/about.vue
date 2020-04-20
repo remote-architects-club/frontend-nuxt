@@ -50,5 +50,11 @@ export default {
   blockquote {
     @apply ml-8 pl-4 border-l-2 border-black italic font-serif my-8 text-gray-600;
   }
+  img {
+    @apply mt-8;
+  }
+  img + em {
+    @apply text-sm mb-8;
+  }
 }
 </style>

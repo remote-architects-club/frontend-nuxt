@@ -66,7 +66,19 @@ async function invokeFetchAll() {
           id
           title
           content(markdown: true)
-          author
+          author {
+            name
+            id
+            bio
+            photo {
+              url
+            }
+          }
+          slug
+          excerpt
+          image {
+            url
+          }
           _publishedAt
         }
         _allPostsMeta {
