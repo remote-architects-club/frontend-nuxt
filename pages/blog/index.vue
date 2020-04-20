@@ -8,15 +8,34 @@
         </div>
       </template>
       <template v-else-if="state.matches('idle') && posts.length > 0">
-        <article v-for="post in posts" :key="post.id" class="content">
-          <time class="text-gray-600" :datetime="post._publishedAt">{{
-            $dateFns.format(new Date(post._publishedAt), 'MMMM do')
-          }}</time>
-          <h2 class="pt-2 mt-2 mb-8 text-lg font-bold border-t-2 border-black">
-            {{ post.title }}
-          </h2>
-          <div v-html="post.content" />
-        </article>
+        <ul class="blog-list">
+          <li v-for="post in posts" :key="post.id" class="blog-list-item">
+            <div v-if="post.image">
+              <img
+                :src="post.image.url"
+                class="object-cover w-full h-24 overflow-hidden shadow-sm sm:h-48"
+              />
+            </div>
+            <div v-else></div>
+            <div class="flex flex-col justify-between">
+              <div>
+                <h3 class="mb-1 font-bold sm:mb-2">
+                  <nuxt-link :to="`/blog/${post.slug}`" class="link">{{
+                    post.title
+                  }}</nuxt-link>
+                </h3>
+                <p>{{ post.excerpt }}</p>
+                <div class="h-4"></div>
+              </div>
+              <p class="text-sm">
+                by {{ post.author.name }} on
+                <time :datetime="post._publishedAt">{{
+                  $dateFns.format(new Date(post._publishedAt), 'MMMM do')
+                }}</time>
+              </p>
+            </div>
+          </li>
+        </ul>
       </template>
       <template v-else-if="state.matches('failed')">
         <p>
@@ -51,4 +70,18 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+ul.blog-list {
+  display: grid;
+  grid-gap: 2rem;
+}
+li.blog-list-item {
+  display: grid;
+  grid-gap: 1rem;
+}
+@screen sm {
+  li.blog-list-item {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+</style>
