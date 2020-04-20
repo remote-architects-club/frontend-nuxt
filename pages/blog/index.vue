@@ -29,8 +29,8 @@
               </div>
               <p class="text-sm">
                 by {{ post.author.name }} on
-                <time :datetime="post._publishedAt">{{
-                  $dateFns.format(new Date(post._publishedAt), 'MMMM do')
+                <time :datetime="post._firstPublishedAt">{{
+                  $dateFns.format(new Date(post._firstPublishedAt), 'MMMM do')
                 }}</time>
               </p>
             </div>

@@ -61,7 +61,7 @@ async function invokeFetchAll() {
       query allPosts {
         allPosts(
           filter: { _status: { eq: published } }
-          orderBy: _publishedAt_ASC
+          orderBy: _firstPublishedAt_DESC
         ) {
           id
           title
@@ -79,7 +79,7 @@ async function invokeFetchAll() {
           image {
             url
           }
-          _publishedAt
+          _firstPublishedAt
         }
         _allPostsMeta {
           count
