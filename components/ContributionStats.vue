@@ -3,7 +3,7 @@
     <span class="font-bold">{{ context.numExperiences }}</span> people from
     <span class="font-bold">{{ context.totalCompanies }}</span> companies in
     <span class="font-bold">{{ context.numCities }}</span> cities around the
-    world already shared their experience
+    world shared their experience
   </p>
 </template>
 

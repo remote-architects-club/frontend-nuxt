@@ -37,8 +37,11 @@ export default {
   p {
     @apply mb-4;
   }
+  h2 {
+    @apply mt-10 mb-4 text-xl font-bold;
+  }
   h3 {
-    @apply mt-8 mb-4 text-lg font-bold;
+    @apply mt-8 mb-2 text-lg font-bold;
   }
   a {
     @apply underline;
