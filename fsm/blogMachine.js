@@ -9,6 +9,7 @@ const machine = new Machine(
     id: 'blogMachine',
     context: {
       posts: [],
+      latestPosts: [],
       post: null,
       error: null
     },
@@ -17,7 +18,8 @@ const machine = new Machine(
       idle: {
         on: {
           FETCH_ALL: 'fetchingAll',
-          FETCH_POST: 'fetchingPost'
+          FETCH_POST: 'fetchingPost',
+          FETCH_LATEST: 'fetchingLatest'
         }
       },
       fetchingAll: {
@@ -34,10 +36,25 @@ const machine = new Machine(
           }
         }
       },
+      fetchingLatest: {
+        invoke: {
+          id: 'invoke-fetch-latest',
+          src: invokeFetchLatest,
+          onDone: {
+            actions: ['setLatestPosts'],
+            target: 'idle'
+          },
+          onError: {
+            actions: ['setError'],
+            target: 'failed'
+          }
+        }
+      },
       fetchingPost: {},
       failed: {
         on: {
           FETCH_ALL: 'fetchingAll',
+          FETCH_LATEST: 'fetchingLatest',
           FETCH_POST: 'fetchingPost'
         }
       }
@@ -48,6 +65,9 @@ const machine = new Machine(
       setPosts: assign({
         posts: (_, event) => event.data
       }),
+      setLatestPosts: assign({
+        latestPosts: (_, event) => event.data
+      }),
       setError: assign({
         error: (_, event) => event.data
       })
@@ -56,12 +76,53 @@ const machine = new Machine(
 )
 
 async function invokeFetchAll() {
+  let filter = ''
+  if (process.env.NODE_ENV !== 'development')
+    filter = 'filter: {_status: { eq: published }}'
   const { data } = await client.query({
     query: gql`
       query allPosts {
         allPosts(
-          filter: { _status: { eq: published } }
+          ${filter}
           orderBy: _firstPublishedAt_DESC
+        ) {
+          id
+          title
+          content(markdown: true)
+          author {
+            name
+            id
+            bio
+            photo {
+              url
+            }
+          }
+          slug
+          excerpt
+          image {
+            url
+          }
+          _firstPublishedAt
+        }
+        _allPostsMeta {
+          count
+        }
+      }
+    `
+  })
+  return data.allPosts
+}
+async function invokeFetchLatest() {
+  let filter = ''
+  if (process.env.NODE_ENV !== 'development')
+    filter = 'filter: {_status: { eq: published }}'
+  const { data } = await client.query({
+    query: gql`
+      query allPosts {
+        allPosts(
+          ${filter}
+          orderBy: _firstPublishedAt_DESC
+          first: 3
         ) {
           id
           title
