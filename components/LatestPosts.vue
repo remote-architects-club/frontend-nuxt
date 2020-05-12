@@ -86,7 +86,7 @@ li.blog-list-item {
     grid-template-columns: 1fr 2fr;
   }
 }
-@screen lg {
+@screen md {
   ul.blog-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
