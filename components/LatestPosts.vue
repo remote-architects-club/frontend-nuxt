@@ -16,11 +16,11 @@
           <div v-if="post.image">
             <img
               :src="post.image.url"
-              class="object-cover w-full h-24 overflow-hidden shadow-sm sm:h-48"
+              class="object-cover w-full h-48 overflow-hidden shadow-sm sm:h-48"
             />
           </div>
           <div v-else></div>
-          <div class="flex flex-col justify-between p-4">
+          <div class="flex flex-col justify-between px-4 pb-4">
             <div>
               <h3 class="mb-1 font-bold sm:mb-2">
                 <nuxt-link :to="`/blog/${post.slug}`" class="link">{{
@@ -76,20 +76,14 @@ export default {
 ul.blog-list {
   display: grid;
   grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 }
 li.blog-list-item {
   display: grid;
   grid-gap: 1rem;
 }
-@screen sm {
-  li.blog-list-item {
-    grid-template-columns: 1fr 2fr;
-  }
-}
+
 @screen md {
-  ul.blog-list {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
   li.blog-list-item {
     grid-template-columns: 1fr;
   }
