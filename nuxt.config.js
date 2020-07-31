@@ -10,7 +10,7 @@ let dynamicRoutes = async () => {
           slug
         }
       }
-    `
+    `,
   })
   return data.allPosts.map((post) => `/blog/${post.slug}`)
 }
@@ -19,7 +19,7 @@ export default {
   mode: 'universal',
   env: {
     MAPBOX_API_ACCESS_TOKEN: process.env.MAPBOX_API_ACCESS_TOKEN,
-    GRAPHQL_URI: process.env.GRAPHQL_URI
+    GRAPHQL_URI: process.env.GRAPHQL_URI,
   },
   /*
    ** Headers of the page
@@ -32,15 +32,15 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Stories, tools, and links for architects working remotely.'
-      }
+        content: 'Stories, tools, and links for architects working remotely.',
+      },
     ],
     link: [
       {
         rel: 'stylesheet',
-        href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css'
-      }
-    ]
+        href: 'https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css',
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
@@ -51,7 +51,7 @@ export default {
    */
   // css: ['@/assets/css/animate.min.css'],
   purgeCSS: {
-    whitelist: ['']
+    whitelist: [''],
   },
   /*
    ** Plugins to load before mounting the App
@@ -59,9 +59,9 @@ export default {
   plugins: [
     '@/plugins/vue-debounce.js',
     { src: '@/plugins/datepicker.js', ssr: false },
-    '@/plugins/global-components.js',
+    // '@/plugins/global-components.js',
     '@/plugins/fsm-machines.js',
-    '@plugins/spinner.js'
+    '@plugins/spinner.js',
     // '@/plugins/portal-vue.js'
   ],
   /*
@@ -72,14 +72,11 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-
-    [
-      '@nuxtjs/date-fns',
-      {
-        methods: ['format', 'formatDistanceToNow']
-      }
-    ]
+    '@nuxtjs/date-fns',
   ],
+  dateFns: {
+    methods: ['format', 'formatDistanceToNow'],
+  },
   /*
    ** Nuxt.js modules
    */
@@ -90,29 +87,30 @@ export default {
     'nuxt-rfg-icon',
     '@nuxtjs/sentry',
     '@nuxtjs/auth',
-    'nuxt-logrocket'
+    'nuxt-logrocket',
   ],
+  components: true,
   sentry: {
     dsn: 'https://ef5a8da5a37d48d0a0ad8b746bb26990@sentry.io/5174207', // Enter your project's DSN here
-    config: {} // Additional config
+    config: {}, // Additional config
   },
   logRocket: {
     logRocketId: 'vyyku1/remote-architects-club',
-    devModeAllowed: false
+    devModeAllowed: false,
   },
   auth: {
     strategies: {
       auth0: {
         domain: 'remotearchitectsclub.eu.auth0.com',
-        client_id: 'd0g9ZVJB0iSJc38EKqyngz1gMH6ed37q'
-      }
+        client_id: 'd0g9ZVJB0iSJc38EKqyngz1gMH6ed37q',
+      },
     },
     redirect: {
       login: '/admin/login',
       logout: '/',
       callback: '/admin/login',
-      home: '/admin'
-    }
+      home: '/admin',
+    },
   },
   csp: {
     reportOnly: true,
@@ -126,7 +124,7 @@ export default {
         "'self'",
         "'unsafe-inline'",
         'fonts.googleapis.com',
-        PRIMARY_HOSTS
+        PRIMARY_HOSTS,
       ],
       'script-src': [
         "'self'",
@@ -135,7 +133,7 @@ export default {
         'sentry.io',
         '*.sentry-cdn.com',
         '*.usefathom.com',
-        '*.logrocket.io'
+        '*.logrocket.io',
       ],
       'connect-src': [
         PRIMARY_HOSTS,
@@ -143,7 +141,7 @@ export default {
         '*.usefathom.com',
         'https://*.tiles.mapbox.com',
         'https://api.mapbox.com',
-        'https://events.mapbox.com'
+        'https://events.mapbox.com',
       ],
       'form-action': ["'self'"],
       'font-src': ['fonts.gstatic.com'],
@@ -151,13 +149,13 @@ export default {
       'object-src': ["'none'"],
       'base-uri': [PRIMARY_HOSTS],
       'report-uri': [
-        `https://o304029.ingest.sentry.io/api/5174207/security/?sentry_key=ef5a8da5a37d48d0a0ad8b746bb26990`
-      ]
-    }
+        `https://o304029.ingest.sentry.io/api/5174207/security/?sentry_key=ef5a8da5a37d48d0a0ad8b746bb26990`,
+      ],
+    },
   },
 
   generate: {
-    routes: dynamicRoutes
+    routes: dynamicRoutes,
   },
   /*
    ** Build configuration
@@ -169,6 +167,6 @@ export default {
     transpile: ['vee-validate/dist/rules'],
     extend(config, ctx) {
       config.module.noParse = /(mapbox-gl)\.js$/
-    }
-  }
+    },
+  },
 }
