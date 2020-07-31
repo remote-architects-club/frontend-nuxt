@@ -16,11 +16,11 @@ export default {
   layout: 'pages',
   middleware: 'companyId',
   components: {
-    PersonalForm
+    PersonalForm,
   },
   data() {
     return {
-      companyId: this.$route.query.id
+      companyId: this.$route.query.id,
     }
   },
   computed: {
@@ -38,17 +38,17 @@ export default {
     },
     company() {
       return this.companyContext.company
-    }
+    },
   },
   mounted() {
     this.$contributeMachine.send({ type: 'PERSONAL' })
     if (!this.company) {
       return this.companyService.send({
         type: 'FETCH_COMPANY',
-        params: { id: this.companyId }
+        params: { id: this.companyId },
       })
     }
-  }
+  },
 }
 </script>
 

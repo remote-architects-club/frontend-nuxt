@@ -36,21 +36,21 @@ exports.handler = async (event) => {
         {
           From: {
             Email: 'daniel@remotearchitects.club',
-            Name: 'Daniel from Remote Architects Club'
+            Name: 'Daniel from Remote Architects Club',
           },
           To: [
             {
               Email: 'danrocha@gmail.com',
-              Name: 'Daniel'
-            }
+              Name: 'Daniel',
+            },
           ],
           Subject: `New ${name} added`,
           TextPart: `Someone added a new [${name.toUpperCase()}] entry to Remote Architects Club. Here is the info: id[${id}]`,
           HTMLPart: `<p>Someone added a new <strong>[${name.toUpperCase()}]</strong> entry. Here is the info:</p>
           ${request}
-          `
-        }
-      ]
+          `,
+        },
+      ],
     })
     return { statusCode: 200, body: 'success' }
   } catch (err) {

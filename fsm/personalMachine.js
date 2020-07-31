@@ -21,8 +21,8 @@ export const createPersonalMachine = (companyId) => {
           isNext: true,
           formLength: questionGroups.length,
           isComplete: false,
-          isValid: false
-        }
+          isValid: false,
+        },
       },
       initial: 'editing',
       states: {
@@ -46,17 +46,17 @@ export const createPersonalMachine = (companyId) => {
                       group.map(({ name }) => {
                         return {
                           name,
-                          answer: ''
+                          answer: '',
                         }
                       })
                     )
                   }
                   return context.formData
-                }
+                },
               }),
               on: {
-                NEXT: { target: 'wfh', actions: ['setAnswer'] }
-              }
+                NEXT: { target: 'wfh', actions: ['setAnswer'] },
+              },
             },
             wfh: {
               id: 'wfh',
@@ -68,7 +68,7 @@ export const createPersonalMachine = (companyId) => {
                   context.formState.activeQuestionGroup = index
                   context.formState.currentGroup = questionGroups[index]
                   return context.formState
-                }
+                },
               }),
               on: {
                 NEXT: [
@@ -76,21 +76,21 @@ export const createPersonalMachine = (companyId) => {
                     target: '#editing.isWFH',
                     cond: (context, event) =>
                       Number(event.params.input[0].answer) === 0,
-                    actions: ['setAnswer']
+                    actions: ['setAnswer'],
                   },
                   {
                     target: '#editing.notWFH',
                     cond: (context, event) =>
                       Number(event.params.input[0].answer) === 1,
-                    actions: ['setAnswer']
+                    actions: ['setAnswer'],
                   },
                   {
                     target: '#editing.vacation',
-                    actions: ['setAnswer']
-                  }
+                    actions: ['setAnswer'],
+                  },
                 ],
-                PREVIOUS: '#editing.name'
-              }
+                PREVIOUS: '#editing.name',
+              },
             },
             isWFH: {
               id: 'isWFH',
@@ -105,16 +105,16 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
 
                   on: {
                     NEXT: {
                       target: 'hardware',
-                      actions: ['setAnswer']
+                      actions: ['setAnswer'],
                     },
-                    PREVIOUS: '#wfh'
-                  }
+                    PREVIOUS: '#wfh',
+                  },
                 },
                 hardware: {
                   entry: assign({
@@ -125,15 +125,15 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
                   on: {
                     NEXT: {
                       target: 'colleagues',
-                      actions: ['setAnswer']
+                      actions: ['setAnswer'],
                     },
-                    PREVIOUS: 'ownExperience'
-                  }
+                    PREVIOUS: 'ownExperience',
+                  },
                 },
                 colleagues: {
                   entry: assign({
@@ -144,15 +144,15 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
                   on: {
                     NEXT: {
                       target: 'tools',
-                      actions: ['setAnswer']
+                      actions: ['setAnswer'],
                     },
-                    PREVIOUS: 'hardware'
-                  }
+                    PREVIOUS: 'hardware',
+                  },
                 },
                 tools: {
                   entry: assign({
@@ -163,24 +163,24 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
                   on: {
                     NEXT: {
                       target: 'company',
-                      actions: ['setAnswer']
+                      actions: ['setAnswer'],
                     },
                     PREVIOUS: [
                       {
                         target: 'colleagues',
-                        cond: (context) => context.formData.wfh === 0
+                        cond: (context) => context.formData.wfh === 0,
                       },
                       {
                         target: '#editing.notWFH.colleagues',
-                        cond: (context) => context.formData.wfh === 1
-                      }
-                    ]
-                  }
+                        cond: (context) => context.formData.wfh === 1,
+                      },
+                    ],
+                  },
                 },
                 company: {
                   entry: assign({
@@ -191,17 +191,17 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
                   on: {
                     NEXT: {
                       target: '#editing.finalTips',
-                      actions: ['setAnswer']
+                      actions: ['setAnswer'],
                     },
-                    PREVIOUS: 'tools'
-                  }
-                }
-              }
+                    PREVIOUS: 'tools',
+                  },
+                },
+              },
             },
             notWFH: {
               id: 'notWFH',
@@ -216,15 +216,15 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
                   on: {
                     NEXT: {
                       target: 'colleagues',
-                      actions: ['setAnswer']
+                      actions: ['setAnswer'],
                     },
-                    PREVIOUS: '#editing.wfh'
-                  }
+                    PREVIOUS: '#editing.wfh',
+                  },
                 },
 
                 colleagues: {
@@ -236,7 +236,7 @@ export const createPersonalMachine = (companyId) => {
                       context.formState.activeQuestionGroup = index
                       context.formState.currentGroup = questionGroups[index]
                       return context.formState
-                    }
+                    },
                   }),
                   on: {
                     NEXT: [
@@ -244,17 +244,17 @@ export const createPersonalMachine = (companyId) => {
                         target: '#editing.finalTips',
                         cond: (context, event) =>
                           Number(event.params.input[0].answer) === 0,
-                        actions: ['setAnswer']
+                        actions: ['setAnswer'],
                       },
                       {
                         target: '#editing.isWFH.tools',
-                        actions: ['setAnswer']
-                      }
+                        actions: ['setAnswer'],
+                      },
                     ],
-                    PREVIOUS: 'reason'
-                  }
-                }
-              }
+                    PREVIOUS: 'reason',
+                  },
+                },
+              },
             },
             vacation: {
               entry: assign({
@@ -265,15 +265,15 @@ export const createPersonalMachine = (companyId) => {
                   context.formState.activeQuestionGroup = index
                   context.formState.currentGroup = questionGroups[index]
                   return context.formState
-                }
+                },
               }),
               on: {
                 NEXT: {
                   target: '#saving',
-                  actions: ['setAnswer']
+                  actions: ['setAnswer'],
                 },
-                PREVIOUS: '#editing.wfh'
-              }
+                PREVIOUS: '#editing.wfh',
+              },
             },
             finalTips: {
               id: 'finalTips',
@@ -285,17 +285,17 @@ export const createPersonalMachine = (companyId) => {
                   context.formState.activeQuestionGroup = index
                   context.formState.currentGroup = questionGroups[index]
                   return context.formState
-                }
+                },
               }),
               on: {
                 NEXT: {
                   target: '#saving',
-                  actions: ['setAnswer']
+                  actions: ['setAnswer'],
                 },
-                PREVIOUS: '#editing.isWFH.company'
-              }
-            }
-          }
+                PREVIOUS: '#editing.isWFH.company',
+              },
+            },
+          },
         },
         saving: {
           id: 'saving',
@@ -304,24 +304,24 @@ export const createPersonalMachine = (companyId) => {
             src: invokeSave,
             onDone: {
               target: 'done',
-              actions: ['setSavedData']
+              actions: ['setSavedData'],
             },
-            onError: 'failed'
-          }
+            onError: 'failed',
+          },
         },
         failed: {
           on: {
             SAVE: {
-              target: 'saving'
+              target: 'saving',
             },
-            CANCEL: {}
-          }
+            CANCEL: {},
+          },
         },
         done: {
           type: 'final',
-          actions: sendParent({ type: 'FINISH' })
-        }
-      }
+          actions: sendParent({ type: 'FINISH' }),
+        },
+      },
     },
     {
       actions: {
@@ -335,12 +335,12 @@ export const createPersonalMachine = (companyId) => {
           },
           userIp: (context, event) => {
             return event.params.userIp
-          }
+          },
         }),
         setSavedData: assign({
-          formData: (_, event) => event.data
-        })
-      }
+          formData: (_, event) => event.data,
+        }),
+      },
     }
   )
 }
@@ -354,7 +354,7 @@ async function invokeSave(context) {
             ? null
             : context.formData[i][j].answer
         return {
-          [q.name]: answer
+          [q.name]: answer,
         }
       })
       return group
@@ -382,7 +382,7 @@ async function invokeSave(context) {
     not_wfh_reason_text,
     not_wfh_colleagues,
     final_tips,
-    name
+    name,
   } = inputObject
 
   const colleagues = is_wfh_colleagues || not_wfh_colleagues
@@ -464,8 +464,8 @@ async function invokeSave(context) {
       tools,
       tools_text,
       wfh,
-      user_ip
-    }
+      user_ip,
+    },
   })
   return data.insert_experience.returning[0].experience
 }

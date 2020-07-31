@@ -50,22 +50,22 @@ export default {
   props: {
     signUpLocation: {
       type: String,
-      default: 'General'
+      default: 'General',
     },
     isDark: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isSmall: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       email: '',
       isLoading: false,
-      status: 'idle'
+      status: 'idle',
     }
   },
   methods: {
@@ -89,7 +89,7 @@ export default {
         console.error(e)
         this.status = 'failure'
       }
-    }
-  }
+    },
+  },
 }
 </script>

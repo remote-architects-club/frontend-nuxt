@@ -17,17 +17,17 @@ export default {
   props: {
     fieldId: {
       type: Number,
-      required: true
+      required: true,
     },
     active: {
       type: Boolean,
-      default: true
+      default: true,
     },
     isNext: {
       type: Boolean,
-      default: true
-    }
-  }
+      default: true,
+    },
+  },
   // computed: {
   //   active() {
   //     return this.formState.activeField === this.fieldId

@@ -14,16 +14,16 @@ import { companiesMachine } from '@/fsm/companiesMachine'
 export default {
   layout: 'pages',
   components: {
-    CompanyList
+    CompanyList,
   },
   data() {
     return {
-      companiesMachine
+      companiesMachine,
     }
   },
   mounted() {
     this.companiesMachine.send({ type: 'LOAD' })
-  }
+  },
 }
 </script>
 

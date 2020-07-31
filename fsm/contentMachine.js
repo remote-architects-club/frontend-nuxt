@@ -8,13 +8,13 @@ const machine = Machine({
   initial: 'idle',
   context: {
     content: null,
-    page: null
+    page: null,
   },
   states: {
     idle: {
       on: {
-        FETCH_PAGE: 'fetchingPage'
-      }
+        FETCH_PAGE: 'fetchingPage',
+      },
     },
     fetchingPage: {
       invoke: {
@@ -22,23 +22,23 @@ const machine = Machine({
         src: invokeFetchPage,
         onDone: {
           actions: assign({
-            content: (context, event) => event.data
+            content: (context, event) => event.data,
           }),
-          target: 'idle'
+          target: 'idle',
         },
-        onError: 'idle'
-      }
+        onError: 'idle',
+      },
     },
     done: {
-      type: 'final'
-    }
-  }
+      type: 'final',
+    },
+  },
 })
 
 async function invokeFetchPage(context, event) {
   // console.log(context, event)
   const {
-    params: { page }
+    params: { page },
   } = event
   const { data } = await client.query({
     query: gql`
@@ -47,7 +47,7 @@ async function invokeFetchPage(context, event) {
           content(markdown: true)
         }
       }
-    `
+    `,
   })
   return data[page].content
 }

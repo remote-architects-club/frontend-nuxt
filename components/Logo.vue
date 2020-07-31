@@ -9,9 +9,9 @@ export default {
   props: {
     admin: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 <style>

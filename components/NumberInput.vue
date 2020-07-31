@@ -14,15 +14,15 @@ export default {
   props: {
     value: {
       default: '',
-      type: String
-    }
+      type: String,
+    },
   },
 
   methods: {
     input(evt) {
       this.$emit('input', evt.target.value)
-    }
-  }
+    },
+  },
 }
 </script>
 

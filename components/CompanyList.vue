@@ -35,7 +35,7 @@
                     v-for="experience in company.experiences"
                     :key="experience.id"
                     :experience="experience"
-                    class="mb-8 "
+                    class="mb-8"
                   />
                 </template>
                 <template v-else>
@@ -81,13 +81,13 @@ export default {
     CompanyListControls,
     CompanyDetails,
     BtnEditCompany,
-    BtnAddExperience
+    BtnAddExperience,
   },
   props: {
     companiesMachine: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     state() {
@@ -95,7 +95,7 @@ export default {
     },
     context() {
       return this.companiesMachine.context
-    }
+    },
   },
 
   methods: {
@@ -112,8 +112,8 @@ export default {
     },
     companyDomain(url) {
       return extractHostname(url)
-    }
-  }
+    },
+  },
 }
 </script>
 

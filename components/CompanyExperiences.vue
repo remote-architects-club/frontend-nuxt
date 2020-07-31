@@ -15,15 +15,15 @@
 import Experience from '@/components/Experience'
 export default {
   components: {
-    Experience
+    Experience,
   },
   props: {
     experiences: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
-  methods: {}
+  methods: {},
 }
 </script>
 

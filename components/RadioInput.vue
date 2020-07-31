@@ -22,17 +22,17 @@ export default {
   props: {
     options: {
       type: Array,
-      required: true
+      required: true,
     },
     value: {
       type: [String, Number],
-      default: ''
+      default: '',
     },
     id: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 

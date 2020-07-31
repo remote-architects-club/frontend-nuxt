@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mb-4 text-3xl font-bold">Tools</h1>
-    <div class="p-4 mb-8 bg-white shadow-lg ">
+    <div class="p-4 mb-8 bg-white shadow-lg">
       <template v-if="state.matches('fetching')">
         <div class="flex items-center justify-center p-12">
           <spinner color="#000" />
@@ -95,14 +95,14 @@ export default {
   name: 'PageTools',
   layout: 'pages',
   components: {
-    Tool
+    Tool,
   },
   data() {
     return {
       sortBy: 'popularity',
       showFree: true,
       showPaid: true,
-      filterCategory: null
+      filterCategory: null,
     }
   },
   computed: {
@@ -142,7 +142,7 @@ export default {
         return [...this.toolsFiltered].sort((a, b) => a.name[0] - b.name[0])
       }
       return []
-    }
+    },
   },
   mounted() {
     toolsMachineVue.send({ type: 'FETCH' })
@@ -157,7 +157,7 @@ export default {
       this.showFree = true
       this.showPaid = true
       this.filterCategory = null
-    }
-  }
+    },
+  },
 }
 </script>

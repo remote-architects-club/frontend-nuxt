@@ -112,7 +112,7 @@ import TextareaInput from '@/components/TextareaInput'
 
 extend('required_if', {
   ...required_if,
-  message: 'You need to add a {_field_}...'
+  message: 'You need to add a {_field_}...',
 })
 extend('max', max)
 
@@ -120,7 +120,7 @@ export default {
   components: {
     TextareaInput,
     ValidationObserver,
-    ValidationProvider
+    ValidationProvider,
   },
   data() {
     return {
@@ -128,7 +128,7 @@ export default {
       editedRemotePolicy: '',
       labelRemotePolicy: 'work-from-home policy',
       labelRemoteSince: 'policy started on',
-      user_id: ''
+      user_id: '',
     }
   },
   computed: {
@@ -145,7 +145,7 @@ export default {
       if (this.remoteSince)
         return this.$dateFns.format(new Date(this.remoteSince), 'MMMM do')
       return ''
-    }
+    },
   },
   mounted() {
     this.editedRemotePolicy = this.remotePolicy || ''
@@ -171,8 +171,8 @@ export default {
         params: {
           remote_policy: this.editedRemotePolicy,
           remote_since: this.editedRemoteSince,
-          user_id: this.user_id
-        }
+          user_id: this.user_id,
+        },
       })
     },
     matches(value) {
@@ -180,8 +180,8 @@ export default {
     },
     send(event) {
       this.companyService.send(event)
-    }
-  }
+    },
+  },
 }
 </script>
 

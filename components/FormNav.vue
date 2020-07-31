@@ -31,12 +31,12 @@ export default {
   props: {
     formState: {
       type: Object,
-      required: true
+      required: true,
     },
     formData: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     isNextDisabled() {
@@ -64,12 +64,12 @@ export default {
         return 'next'
       }
       return 'skip'
-    }
+    },
   },
   methods: {
     isRequired(question) {
       return question.validation.includes('required')
-    }
-  }
+    },
+  },
 }
 </script>

@@ -19,12 +19,12 @@ import FormStep0 from '@/components/FormStep0'
 export default {
   layout: 'pages',
   components: {
-    FormStep0
+    FormStep0,
   },
   computed: {
     context() {
       return this.$contributeMachine.context
-    }
+    },
   },
 
   methods: {
@@ -32,8 +32,8 @@ export default {
       return this.$router.push(`/add/company?id=${event}`)
 
       // return this.$router.push(`/add/${event}`)
-    }
-  }
+    },
+  },
 }
 </script>
 

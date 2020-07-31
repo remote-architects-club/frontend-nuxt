@@ -13,16 +13,16 @@ export default {
   props: {
     url: {
       type: String,
-      default: ''
+      default: '',
     },
     name: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      imgError: false
+      imgError: false,
     }
   },
   computed: {
@@ -34,13 +34,13 @@ export default {
       return this.imgError
         ? `https://avatars.dicebear.com/v2/initials/${this.name}.svg?options[bold]=1`
         : `https://logo.clearbit.com/${this.domain}`
-    }
+    },
   },
   methods: {
     onImgError() {
       this.imgError = true
-    }
-  }
+    },
+  },
 }
 </script>
 

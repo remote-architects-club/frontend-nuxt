@@ -9,16 +9,13 @@ exports.handler = async (event) => {
     if (!email) {
       return {
         statusCode: 500,
-        body: 'email query paramter required'
+        body: 'email query paramter required',
       }
     }
     const tag = event.queryStringParameters.tag
 
     // https://gist.github.com/kitek/1579117
-    let emailhash = crypto
-      .createHash('md5')
-      .update(email)
-      .digest('hex')
+    let emailhash = crypto.createHash('md5').update(email).digest('hex')
 
     return axios({
       method: 'put',
@@ -26,17 +23,17 @@ exports.handler = async (event) => {
       data: {
         email_address: email,
         tags: [tag],
-        status: 'subscribed'
+        status: 'subscribed',
       },
       auth: {
         username: 'danrocha',
-        password: process.env.MAILCHIMP_API_KEY
-      }
+        password: process.env.MAILCHIMP_API_KEY,
+      },
     })
       .then((res) => {
         return {
           statusCode: 200,
-          body: JSON.stringify(res.data)
+          body: JSON.stringify(res.data),
         }
       })
       .catch((err) => {

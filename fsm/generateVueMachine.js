@@ -7,7 +7,7 @@ export const generateVueMachine = (machine) => {
       return {
         current: machine.initialState,
         context: machine.context,
-        service: interpret(machine)
+        service: interpret(machine),
       }
     },
     created() {
@@ -37,7 +37,7 @@ export const generateVueMachine = (machine) => {
     methods: {
       send(event) {
         this.service.send(event)
-      }
-    }
+      },
+    },
   })
 }

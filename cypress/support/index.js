@@ -46,7 +46,7 @@ Cypress.Commands.overwrite('visit', async (originalFn, url, options) => {
       if (options && options.onBeforeLoad) {
         return options.onBeforeLoad(window, ...args)
       }
-    }
+    },
   })
 
   return originalFn(url, opts)

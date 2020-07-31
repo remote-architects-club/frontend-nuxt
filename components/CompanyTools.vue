@@ -52,11 +52,11 @@
 import EditTools from '@/components/EditTools'
 export default {
   components: {
-    EditTools
+    EditTools,
   },
   data() {
     return {
-      label: 'tools'
+      label: 'tools',
     }
   },
   computed: {
@@ -65,7 +65,7 @@ export default {
     },
     tools() {
       return this.companyService.state.context.company.office_tools
-    }
+    },
   },
   methods: {
     edit() {
@@ -77,8 +77,8 @@ export default {
     },
     send(event) {
       this.companyService.send(event)
-    }
-  }
+    },
+  },
 }
 </script>
 

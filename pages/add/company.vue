@@ -59,12 +59,12 @@ export default {
   middleware: 'companyId',
   name: 'ContributeCompany',
   components: {
-    CompanyDetailsEditing
+    CompanyDetailsEditing,
   },
   data() {
     return {
       companyId: this.$route.query.id,
-      isEditing: this.$route.query.editing || false
+      isEditing: this.$route.query.editing || false,
     }
   },
   computed: {
@@ -79,7 +79,7 @@ export default {
     },
     company() {
       return this.companyContext.company
-    }
+    },
   },
   mounted() {
     if (this.companyState.matches('addCompany.done')) {
@@ -88,7 +88,7 @@ export default {
     if (!this.company) {
       return this.companyService.send({
         type: 'FETCH_COMPANY',
-        params: { id: this.companyId }
+        params: { id: this.companyId },
       })
     }
   },
@@ -96,8 +96,8 @@ export default {
     openPersonal() {
       this.$contributeMachine.send({ type: 'PERSONAL' })
       this.$router.push(`/add/personal?id=${this.companyId}`)
-    }
-  }
+    },
+  },
 }
 </script>
 

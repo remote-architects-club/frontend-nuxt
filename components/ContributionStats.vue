@@ -13,13 +13,13 @@ export default {
   props: {
     companiesMachine: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       map: null,
-      maxZoom: 5.5
+      maxZoom: 5.5,
     }
   },
   computed: {
@@ -28,8 +28,8 @@ export default {
     },
     context() {
       return this.companiesMachine.context
-    }
-  }
+    },
+  },
 }
 </script>
 

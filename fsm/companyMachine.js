@@ -15,7 +15,7 @@ export const companyMachine = Machine(
       error: null,
       searchTerm: '',
       isFirstSearch: true,
-      editingKey: null
+      editingKey: null,
     },
     initial: 'noCompany',
     states: {
@@ -27,9 +27,9 @@ export const companyMachine = Machine(
             entry: ['resetAll'],
             on: {
               SEARCH: {
-                target: 'searching'
-              }
-            }
+                target: 'searching',
+              },
+            },
           },
           searching: {
             id: 'searching',
@@ -39,48 +39,48 @@ export const companyMachine = Machine(
               src: invokeSearchCompanies,
               onDone: {
                 target: 'done',
-                actions: ['setFoundCompanies']
+                actions: ['setFoundCompanies'],
               },
               onError: {
                 target: 'idle',
-                actions: ['setError']
-              }
-            }
+                actions: ['setError'],
+              },
+            },
           },
           done: {
             on: {
               '': [
                 { target: 'found', cond: 'hasResults' },
-                { target: 'notFound' }
-              ]
-            }
+                { target: 'notFound' },
+              ],
+            },
           },
           found: {
             on: {
               SEARCH: 'searching',
               SELECT: {
                 target: '#hasCompany',
-                actions: ['setCompanyId', 'resetSearch']
+                actions: ['setCompanyId', 'resetSearch'],
               },
 
               RESET: {
                 target: 'idle',
-                actions: ['resetSearch']
-              }
-            }
+                actions: ['resetSearch'],
+              },
+            },
           },
           notFound: {
             on: {
-              SEARCH: 'searching'
-            }
-          }
+              SEARCH: 'searching',
+            },
+          },
         },
         on: {
           ADD: {
             target: '#addCompany',
-            actions: ['setName', 'resetSearch']
-          }
-        }
+            actions: ['setName', 'resetSearch'],
+          },
+        },
       },
       addCompany: {
         id: 'addCompany',
@@ -88,8 +88,8 @@ export const companyMachine = Machine(
         states: {
           editing: {
             on: {
-              SAVE_NEW: { target: 'saving' }
-            }
+              SAVE_NEW: { target: 'saving' },
+            },
           },
           saving: {
             invoke: {
@@ -97,17 +97,17 @@ export const companyMachine = Machine(
               src: invokeSaveCompany,
               onDone: {
                 target: 'done',
-                actions: ['setCompany']
+                actions: ['setCompany'],
               },
-              onError: 'editing'
-            }
+              onError: 'editing',
+            },
           },
           done: {
             on: {
-              HAS_COMPANY: '#hasCompany'
-            }
-          }
-        }
+              HAS_COMPANY: '#hasCompany',
+            },
+          },
+        },
       },
       hasCompany: {
         id: 'hasCompany',
@@ -118,18 +118,18 @@ export const companyMachine = Machine(
               '': [
                 { target: 'idle', cond: 'hasCompany' },
                 { target: 'fetching', cond: 'hasCompanyId' },
-                { target: '#noCompany' }
-              ]
-            }
+                { target: '#noCompany' },
+              ],
+            },
           },
           idle: {
             on: {
               EDIT: {
                 target: 'editing',
-                actions: ['setEditingKey']
+                actions: ['setEditingKey'],
               },
-              FINISH: '#done'
-            }
+              FINISH: '#done',
+            },
           },
           fetching: {
             id: 'fetching',
@@ -138,13 +138,13 @@ export const companyMachine = Machine(
               src: invokeFetchCompany,
               onDone: {
                 target: 'idle',
-                actions: ['setCompany']
+                actions: ['setCompany'],
               },
               onError: {
                 target: '#noCompany',
-                actions: ['setError']
-              }
-            }
+                actions: ['setError'],
+              },
+            },
           },
           editing: {
             initial: 'starting',
@@ -154,15 +154,15 @@ export const companyMachine = Machine(
                   '': [
                     {
                       target: 'editingRemotePolicy',
-                      cond: 'isEditingKeyRemotePolicy'
+                      cond: 'isEditingKeyRemotePolicy',
                     },
                     {
                       target: 'editingTools',
-                      cond: 'isEditingKeyTools'
+                      cond: 'isEditingKeyTools',
                     },
-                    { target: '#hasCompany.idle' }
-                  ]
-                }
+                    { target: '#hasCompany.idle' },
+                  ],
+                },
               },
               editingRemotePolicy: {},
               editingTools: {
@@ -172,19 +172,19 @@ export const companyMachine = Machine(
                   data: (context) => ({
                     ...toolsMachine.context,
                     tools: context.company.office_tools,
-                    companyId: context.companyId // the value you want to pass to child machine
+                    companyId: context.companyId, // the value you want to pass to child machine
                   }),
                   onDone: {
                     target: '#hasCompany.idle',
-                    actions: ['updateToolsList']
-                  }
-                }
-              }
+                    actions: ['updateToolsList'],
+                  },
+                },
+              },
             },
             on: {
               SAVE: '#hasCompany.saving',
-              CANCEL_EDIT: '#hasCompany.idle'
-            }
+              CANCEL_EDIT: '#hasCompany.idle',
+            },
           },
           saving: {
             id: 'saving_edit',
@@ -193,54 +193,54 @@ export const companyMachine = Machine(
               src: invokeSaveEdit,
               onDone: {
                 target: 'idle',
-                actions: ['updateCompany']
+                actions: ['updateCompany'],
               },
               onError: {
                 target: 'idle',
-                actions: ['setError']
-              }
-            }
-          }
-        }
+                actions: ['setError'],
+              },
+            },
+          },
+        },
       },
       done: {
         id: 'done',
-        type: 'final'
-      }
+        type: 'final',
+      },
     },
     on: {
       CANCEL: '#noCompany',
       RESTART: '#noCompany',
       FETCH_COMPANY: {
         target: '#hasCompany',
-        actions: ['setCompanyId', 'clearCompany']
-      }
-    }
+        actions: ['setCompanyId', 'clearCompany'],
+      },
+    },
   },
   {
     actions: {
       setSearchTerm: assign({
-        searchTerm: (_, event) => event.params.searchTerm
+        searchTerm: (_, event) => event.params.searchTerm,
       }),
       setName: assign({
         company: (_, event) => {
           return {
-            name: event.params.name
+            name: event.params.name,
           }
-        }
+        },
       }),
       setFoundCompanies: assign({
-        foundCompanies: (context, event) => event.data
+        foundCompanies: (context, event) => event.data,
       }),
       setCompanyId: assign({
-        companyId: (_, event) => event.params.id
+        companyId: (_, event) => event.params.id,
       }),
       setCompany: assign({
         company: (_, event) => event.data,
-        companyId: (_, event) => event.data.id
+        companyId: (_, event) => event.data.id,
       }),
       setEditingKey: assign({
-        editingKey: (_, event) => event.params.key
+        editingKey: (_, event) => event.params.key,
       }),
       updateCompany: assign({
         company: (context, event) => {
@@ -251,24 +251,24 @@ export const companyMachine = Machine(
           context.company.remote_since = remote_since
           context.company.remote_policy = remote_policy
           return context.company
-        }
+        },
       }),
       updateToolsList: assign({
         company: (context, event) => {
           context.company.office_tools = [...event.data.tools]
           return context.company
-        }
+        },
       }),
       setError: assign({
-        error: (_, event) => event.data
+        error: (_, event) => event.data,
       }),
       toggleIsFirstSearch: assign({
-        isFirstSearch: false
+        isFirstSearch: false,
       }),
       resetSearch: assign({
         searchTerm: null,
         foundCompanies: [],
-        error: null
+        error: null,
       }),
       clearCompany: assign({
         company: (context) => {
@@ -276,7 +276,7 @@ export const companyMachine = Machine(
             return context.company
           }
           return null
-        }
+        },
       }),
       resetAll: assign({
         company: null,
@@ -285,8 +285,8 @@ export const companyMachine = Machine(
         error: null,
         searchTerm: '',
         isFirstSearch: true,
-        editingKey: null
-      })
+        editingKey: null,
+      }),
     },
     guards: {
       hasResults: (context) => context.foundCompanies.length > 0,
@@ -294,8 +294,8 @@ export const companyMachine = Machine(
       hasCompanyId: (context) => context.companyId,
       isEditingKeyRemotePolicy: (context) =>
         context.editingKey === 'remote_policy',
-      isEditingKeyTools: (context) => context.editingKey === 'office_tools'
-    }
+      isEditingKeyTools: (context) => context.editingKey === 'office_tools',
+    },
   }
 )
 // ------------------------------------
@@ -312,7 +312,7 @@ function invokeSearchCompanies(context) {
             country_iso
           }
         }
-      `
+      `,
     })
     .then(({ data }) => data.search_offices)
 }
@@ -359,7 +359,7 @@ function invokeFetchCompany(context) {
             }
           }
         }
-      `
+      `,
     })
     .then(({ data }) => data.office_by_pk)
 }
@@ -412,8 +412,8 @@ async function invokeSaveCompany(event) {
       city,
       country_iso,
       url,
-      num_people
-    }
+      num_people,
+    },
   })
   return data.insert_office.returning[0]
 }
@@ -450,8 +450,8 @@ async function invokeSaveEdit(context, event) {
       id,
       remote_since,
       remote_policy,
-      user_id
-    }
+      user_id,
+    },
   })
   return data.update_office
 }

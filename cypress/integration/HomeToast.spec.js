@@ -1,5 +1,5 @@
-describe('Toast on Home Page', function() {
-  it('When loading home, toast is present', function() {
+describe('Toast on Home Page', function () {
+  it('When loading home, toast is present', function () {
     cy.visit('/')
     cy.get('[data-cy=toast-subscribe]')
   })

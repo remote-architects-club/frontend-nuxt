@@ -11,26 +11,26 @@ export default {
   props: {
     loading: {
       type: Boolean,
-      default: true
+      default: true,
     },
     color: {
       type: String,
-      default: '#000'
+      default: '#000',
     },
     size: {
       type: String,
-      default: '50px'
-    }
+      default: '50px',
+    },
   },
   data() {
     return {
       spinnerStyle: {
         backgroundColor: this.color,
         height: this.size,
-        width: this.size
-      }
+        width: this.size,
+      },
     }
-  }
+  },
 }
 </script>
 

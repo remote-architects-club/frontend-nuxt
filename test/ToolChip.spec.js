@@ -3,12 +3,8 @@ import ToolChip from '@/components/ToolChip.vue'
 
 const name = 'tool name'
 const id =
-  Math.random()
-    .toString(36)
-    .substring(2, 15) +
-  Math.random()
-    .toString(36)
-    .substring(2, 15)
+  Math.random().toString(36).substring(2, 15) +
+  Math.random().toString(36).substring(2, 15)
 const url = 'http://example.com'
 
 const factory = () =>
@@ -16,11 +12,11 @@ const factory = () =>
     propsData: {
       name,
       id,
-      url
+      url,
     },
     stubs: {
-      NuxtLink: RouterLinkStub
-    }
+      NuxtLink: RouterLinkStub,
+    },
   })
 
 describe('ToolChip', () => {
@@ -74,11 +70,11 @@ describe('ToolChip', () => {
     const wrapper = shallowMount(ToolChip, {
       propsData: {
         name,
-        id
+        id,
       },
       stubs: {
-        NuxtLink: RouterLinkStub
-      }
+        NuxtLink: RouterLinkStub,
+      },
     })
     expect(wrapper.html()).toMatchSnapshot()
   })

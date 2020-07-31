@@ -1,7 +1,7 @@
 <template>
   <div>
     <toast-subscribe />
-    <div class="flex flex-col w-full h-full px-4 mx-auto lg:max-w-4xl lg:px-0 ">
+    <div class="flex flex-col w-full h-full px-4 mx-auto lg:max-w-4xl lg:px-0">
       <header class="mb-12">
         <base-navbar class="sm:mb-0 md:-mb-12 lg:-mb-16" />
         <logo></logo>
@@ -24,8 +24,8 @@ export default {
     BaseNavbar,
     BaseFooter,
     Logo,
-    ToastSubscribe
-  }
+    ToastSubscribe,
+  },
 }
 </script>
 

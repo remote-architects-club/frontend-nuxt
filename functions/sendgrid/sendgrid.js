@@ -23,7 +23,7 @@ exports.handler = async (event) => {
     <pre>
     ${request.event.data.new}
     </pre>
-    `
+    `,
   }
   sgMail.send(msg)
   return { statusCode: 200, body: 'email sent' }

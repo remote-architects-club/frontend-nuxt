@@ -6,7 +6,7 @@
         <spinner color="#000" />
       </div>
     </template>
-    <div v-else-if="tool" class="p-4 mb-8 bg-white shadow-lg sm:p-8 ">
+    <div v-else-if="tool" class="p-4 mb-8 bg-white shadow-lg sm:p-8">
       <div class="w-full">
         <header
           data-cy="header"
@@ -140,7 +140,7 @@
                   -
                   {{
                     $dateFns.formatDistanceToNow(new Date(comment.created_at), {
-                      addSuffix: true
+                      addSuffix: true,
                     })
                   }}</span
                 >
@@ -168,13 +168,13 @@ export default {
     TextInput,
     TextareaInput,
     CompanyUrl,
-    ToolLogo
+    ToolLogo,
   },
   data() {
     return {
       showCompanies: false,
       comment: '',
-      commenterName: ''
+      commenterName: '',
     }
   },
   computed: {
@@ -186,12 +186,12 @@ export default {
     },
     tool() {
       return this.context.tool
-    }
+    },
   },
   mounted() {
     toolsMachineVue.send({
       type: 'FETCH_TOOL',
-      params: { id: this.$route.query.id }
+      params: { id: this.$route.query.id },
     })
   },
   methods: {
@@ -205,11 +205,11 @@ export default {
     saveComment() {
       const params = {
         name: this.commenterName,
-        comment: this.comment
+        comment: this.comment,
       }
       toolsMachineVue.send({ type: 'SAVE', params })
-    }
-  }
+    },
+  },
 }
 </script>
 

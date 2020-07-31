@@ -11,13 +11,13 @@ export default {
   props: {
     url: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     domain() {
       return extractDomain(this.url)
-    }
-  }
+    },
+  },
 }
 </script>

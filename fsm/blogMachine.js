@@ -11,7 +11,7 @@ const machine = new Machine(
       posts: [],
       latestPosts: [],
       post: null,
-      error: null
+      error: null,
     },
     initial: 'idle',
     states: {
@@ -19,8 +19,8 @@ const machine = new Machine(
         on: {
           FETCH_ALL: 'fetchingAll',
           FETCH_POST: 'fetchingPost',
-          FETCH_LATEST: 'fetchingLatest'
-        }
+          FETCH_LATEST: 'fetchingLatest',
+        },
       },
       fetchingAll: {
         invoke: {
@@ -28,13 +28,13 @@ const machine = new Machine(
           src: invokeFetchAll,
           onDone: {
             actions: ['setPosts'],
-            target: 'idle'
+            target: 'idle',
           },
           onError: {
             actions: ['setError'],
-            target: 'failed'
-          }
-        }
+            target: 'failed',
+          },
+        },
       },
       fetchingLatest: {
         invoke: {
@@ -42,36 +42,36 @@ const machine = new Machine(
           src: invokeFetchLatest,
           onDone: {
             actions: ['setLatestPosts'],
-            target: 'idle'
+            target: 'idle',
           },
           onError: {
             actions: ['setError'],
-            target: 'failed'
-          }
-        }
+            target: 'failed',
+          },
+        },
       },
       fetchingPost: {},
       failed: {
         on: {
           FETCH_ALL: 'fetchingAll',
           FETCH_LATEST: 'fetchingLatest',
-          FETCH_POST: 'fetchingPost'
-        }
-      }
-    }
+          FETCH_POST: 'fetchingPost',
+        },
+      },
+    },
   },
   {
     actions: {
       setPosts: assign({
-        posts: (_, event) => event.data
+        posts: (_, event) => event.data,
       }),
       setLatestPosts: assign({
-        latestPosts: (_, event) => event.data
+        latestPosts: (_, event) => event.data,
       }),
       setError: assign({
-        error: (_, event) => event.data
-      })
-    }
+        error: (_, event) => event.data,
+      }),
+    },
   }
 )
 
@@ -108,7 +108,7 @@ async function invokeFetchAll() {
           count
         }
       }
-    `
+    `,
   })
   return data.allPosts
 }
@@ -146,7 +146,7 @@ async function invokeFetchLatest() {
           count
         }
       }
-    `
+    `,
   })
   return data.allPosts
 }

@@ -27,7 +27,7 @@ export default {
   layout: 'admin',
   middleware: 'auth',
   components: {
-    ToolAdmin
+    ToolAdmin,
   },
   computed: {
     state() {
@@ -41,7 +41,7 @@ export default {
     },
     categories() {
       return this.context.categories
-    }
+    },
   },
   mounted() {
     toolsMachineVue.send({ type: 'FETCH' })
@@ -49,8 +49,8 @@ export default {
   methods: {
     saveCategories(params) {
       toolsMachineVue.send({ type: 'SAVE_CATEGORIES', params: { ...params } })
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -31,14 +31,14 @@ export default {
     CompanyTools,
     CompanyRemotePolicy,
     CompanyUrl,
-    CompanyLocation
+    CompanyLocation,
   },
   props: {
     company: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

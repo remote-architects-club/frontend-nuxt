@@ -65,8 +65,8 @@ export default {
   props: {
     experience: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
@@ -76,17 +76,17 @@ export default {
         { question: 'own_experience', label: "how's it been like?" },
         {
           question: 'hardware',
-          label: 'company provided you hardware?'
+          label: 'company provided you hardware?',
         },
         { question: 'colleagues', label: 'how about your colleagues?' },
         {
           question: 'tools',
-          label: 'tools working?'
+          label: 'tools working?',
         },
         {
           question: 'company',
-          label: "company's response to COVID-19?"
-        }
+          label: "company's response to COVID-19?",
+        },
       ],
       textLabels: [
         { question: 'name', label: 'name' },
@@ -94,8 +94,8 @@ export default {
         { question: 'not_wfh_reason_text', label: 'reason' },
         { question: 'tools_text', label: 'tools' },
         { question: 'company_text', label: 'company' },
-        { question: 'final_tips', label: 'tips/advice' }
-      ]
+        { question: 'final_tips', label: 'tips/advice' },
+      ],
     }
   },
   computed: {
@@ -110,34 +110,34 @@ export default {
       return [
         '🙂loves the experience',
         '😐kinda likes the experience',
-        '🙁hates the experience.'
+        '🙁hates the experience.',
       ][this.exp.own_experience]
     },
     reasonNotWfh() {
       return [
         ' (not allowed to 😠)',
         ' (situation over there improved and things are back to normal)',
-        ' (prefers/needs to come to the office everyday 😶) '
+        ' (prefers/needs to come to the office everyday 😶) ',
       ][this.exp.not_wfh_reason]
     },
     tools() {
       return [
         '🙁the tools we use are not helping as they should',
         '😐the tools we use are ok, have room for improvement',
-        '🙂the tools we use are working great!'
+        '🙂the tools we use are working great!',
       ][this.exp.tools]
     },
     hardware() {
       return [
         '🙂company provides hardware',
-        "🙁company doesn't provide hardware"
+        "🙁company doesn't provide hardware",
       ][this.exp.hardware ? 0 : 1]
     },
     company() {
       return [
         "🙁company's reaction to COVID-19 was bad, either slow or inefficient",
         "😐company's reaction to COVID-19 was ok, but could've been better ",
-        "🙂company's reaction to COVID-19 was perfect. "
+        "🙂company's reaction to COVID-19 was perfect. ",
       ][this.exp.company]
     },
     showTools() {
@@ -164,7 +164,7 @@ export default {
       return this.multipleChoiceLabels.filter((label) =>
         this.questions.includes(label.question)
       )
-    }
+    },
     // isWFH() {
     //   return this.exp.wfh === 0
     // },
@@ -253,7 +253,7 @@ export default {
     removeEmpty(obj) {
       Object.keys(obj).forEach((key) => obj[key] == null && delete obj[key])
       return obj
-    }
+    },
     // findAnswer(answer, questionName) {
     //   // console.log(answer, questionName)
     //   if (questionName === 'colleagues') {
@@ -270,7 +270,7 @@ export default {
     //   }
     //   return answer
     // }
-  }
+  },
 }
 </script>
 

@@ -54,13 +54,13 @@ import McApiForm from '@/components/McApiForm'
 export default {
   components: {
     FormTemplate,
-    McApiForm
+    McApiForm,
   },
   props: {
     companyId: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {}
@@ -78,10 +78,10 @@ export default {
 
     formState() {
       return this.context.formState
-    }
+    },
   },
 
-  methods: {}
+  methods: {},
 }
 </script>
 

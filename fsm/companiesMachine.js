@@ -16,15 +16,15 @@ const machine = Machine(
       allOfficesCities: [],
       numExperiences: 0,
       numCities: 0,
-      snippets: {}
+      snippets: {},
     },
     states: {
       idle: {
         on: {
           LOAD: {
-            target: 'fetching'
-          }
-        }
+            target: 'fetching',
+          },
+        },
       },
       fetching: {
         id: 'fetching',
@@ -44,65 +44,65 @@ const machine = Machine(
                 context.snippets['tools'] = event.data.randomTool
                 context.snippets['toolsTop10'] = event.data.toolsTop10
                 return context.snippets
-              }
-            })
+              },
+            }),
           },
           onError: {
             target: 'failed',
             actions: assign({
-              error: (context, event) => event.data
-            })
-          }
-        }
+              error: (context, event) => event.data,
+            }),
+          },
+        },
       },
       done: {
         on: {
           '': [
             {
               target: 'found',
-              cond: (context) => context.companies.length > 0
+              cond: (context) => context.companies.length > 0,
             },
-            { target: 'notFound' }
-          ]
-        }
+            { target: 'notFound' },
+          ],
+        },
       },
       found: {
         on: {
           NEXT_PAGE: {
             target: 'fetching',
-            actions: ['incrementOffset']
+            actions: ['incrementOffset'],
           },
           PREV_PAGE: {
             target: 'fetching',
-            actions: ['decrementOffset']
-          }
-        }
+            actions: ['decrementOffset'],
+          },
+        },
       },
       notFound: {
         on: {
           RELOAD: {
-            target: 'fetching'
-          }
-        }
+            target: 'fetching',
+          },
+        },
       },
       failed: {
         on: {
           RELOAD: {
-            target: 'fetching'
-          }
-        }
-      }
-    }
+            target: 'fetching',
+          },
+        },
+      },
+    },
   },
   {
     actions: {
       incrementOffset: assign({
-        offset: (context) => context.offset + context.resultsPerPage
+        offset: (context) => context.offset + context.resultsPerPage,
       }),
       decrementOffset: assign({
-        offset: (context) => context.offset - context.resultsPerPage
-      })
-    }
+        offset: (context) => context.offset - context.resultsPerPage,
+      }),
+    },
   }
 )
 
@@ -243,7 +243,7 @@ async function invokeFetchCompanies(context) {
           num_offices
         }
       }
-    `
+    `,
   })
 
   return {
@@ -254,7 +254,7 @@ async function invokeFetchCompanies(context) {
     numCities: data.num_cities.aggregate.count,
     randomExperience: data.random_experience,
     randomTool: data.random_tool,
-    toolsTop10: data.tool_top_10
+    toolsTop10: data.tool_top_10,
   }
 }
 

@@ -64,11 +64,11 @@ export default {
     },
     posts() {
       return this.context.latestPosts
-    }
+    },
   },
   mounted() {
     blogMachine.send({ type: 'FETCH_LATEST' })
-  }
+  },
 }
 </script>
 

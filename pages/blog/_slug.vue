@@ -3,7 +3,7 @@
     <p class="mb-2 font-bold sm:-ml-4">
       &larr;&nbsp;<nuxt-link to="/blog" class="link">Blog</nuxt-link>
     </p>
-    <div class="p-4 mb-8 bg-white shadow-lg sm:p-8 ">
+    <div class="p-4 mb-8 bg-white shadow-lg sm:p-8">
       <article>
         <header>
           <div class="image">
@@ -19,7 +19,7 @@
             </h1>
             <p>{{ post.excerpt }}</p>
             <div class="h-4" />
-            <p class="text-sm ">
+            <p class="text-sm">
               by {{ post.author.name }} on
               <time :datetime="post._firstPublishedAt">{{
                 $dateFns.format(new Date(post._firstPublishedAt), 'MMMM do')
@@ -70,16 +70,16 @@ export default {
               _firstPublishedAt
             }
           }
-        `
+        `,
       })
       return {
-        post: data.post
+        post: data.post,
       }
     } catch (err) {
       console.debug(err)
       return false
     }
-  }
+  },
 }
 </script>
 <style scoped>

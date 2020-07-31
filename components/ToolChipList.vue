@@ -13,14 +13,14 @@ import ToolChip from '@/components/ToolChip'
 export default {
   name: 'ToolChipList',
   components: {
-    ToolChip
+    ToolChip,
   },
   props: {
     tools: {
       type: Array,
-      default: () => []
-    }
-  }
+      default: () => [],
+    },
+  },
 }
 </script>
 

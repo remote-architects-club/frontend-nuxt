@@ -24,13 +24,13 @@
 import McApiForm from '@/components/McApiForm.vue'
 export default {
   components: {
-    McApiForm
+    McApiForm,
   },
   data() {
     return {
-      open: true
+      open: true,
     }
-  }
+  },
 }
 </script>
 

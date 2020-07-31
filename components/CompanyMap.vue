@@ -8,13 +8,13 @@ export default {
   props: {
     companiesMachine: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       map: null,
-      maxZoom: 5.5
+      maxZoom: 5.5,
     }
   },
   computed: {
@@ -29,7 +29,7 @@ export default {
     },
     allOfficesCities() {
       return this.context.allOfficesCities
-    }
+    },
   },
   mounted() {
     this.createMap()
@@ -57,24 +57,24 @@ export default {
             name: c.name,
             id: c.id,
             city: c.cityByCityId.name,
-            country_iso: c.cityByCityId.country_iso
+            country_iso: c.cityByCityId.country_iso,
           },
           geometry: {
             type: 'Point',
-            coordinates: [c.cityByCityId.lng, c.cityByCityId.lat]
-          }
+            coordinates: [c.cityByCityId.lng, c.cityByCityId.lat],
+          },
         }
       })
       const data = {
         type: 'FeatureCollection',
-        features
+        features,
       }
       this.map.addSource('contributions', {
         type: 'geojson',
         data,
         cluster: true,
         clusterMaxZoom: 5, // Max zoom to cluster points on
-        clusterRadius: 50
+        clusterRadius: 50,
       })
       this.map.addLayer({
         id: 'clusters',
@@ -94,7 +94,7 @@ export default {
             100,
             '#ECC94B',
             750,
-            '#ECC94B'
+            '#ECC94B',
           ],
           'circle-radius': [
             'step',
@@ -103,11 +103,11 @@ export default {
             100,
             30,
             750,
-            40
+            40,
           ],
           'circle-stroke-width': 1,
-          'circle-stroke-color': '#000'
-        }
+          'circle-stroke-color': '#000',
+        },
       })
       this.map.addLayer({
         id: 'cluster-count',
@@ -117,11 +117,11 @@ export default {
         layout: {
           'text-field': '{point_count_abbreviated}',
           'text-font': ['Inter Bold'],
-          'text-size': 12
+          'text-size': 12,
         },
         paint: {
-          'text-color': '#000'
-        }
+          'text-color': '#000',
+        },
       })
 
       this.map.addLayer({
@@ -133,15 +133,15 @@ export default {
           'circle-color': '#ECC94B',
           'circle-radius': 4,
           'circle-stroke-width': 1,
-          'circle-stroke-color': '#000'
-        }
+          'circle-stroke-color': '#000',
+        },
       })
       // inspect a cluster on click
       // zoom in if max zoom still not accessed,
       // or show office list otherwise
       this.map.on('click', 'clusters', (e) => {
         let features = this.map.queryRenderedFeatures(e.point, {
-          layers: ['clusters']
+          layers: ['clusters'],
         })
         let zoom = this.map.getZoom()
 
@@ -177,7 +177,7 @@ export default {
                 }
                 new mapboxgl.Popup({
                   closeButton: false,
-                  offset: 10
+                  offset: 10,
                 })
                   .setLngLat(features[0].geometry.coordinates)
                   .setHTML(html)
@@ -195,7 +195,7 @@ export default {
 
             this.map.easeTo({
               center: features[0].geometry.coordinates,
-              zoom: zoom
+              zoom: zoom,
             })
           })
       })
@@ -260,7 +260,7 @@ export default {
         pitch: 0,
         minZoom: 1,
         maxZoom: 5.5,
-        attributionControl: false
+        attributionControl: false,
       })
       this.map.on('load', () => {
         if (this.allOfficesCities && this.allOfficesCities.length > 0) {
@@ -268,8 +268,8 @@ export default {
           this.loadSource(this.allOfficesCities)
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

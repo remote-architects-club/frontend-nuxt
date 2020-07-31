@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="mb-4 text-3xl font-bold">Blog</h1>
-    <div class="p-4 mb-8 bg-white shadow-lg sm:p-8 ">
+    <div class="p-4 mb-8 bg-white shadow-lg sm:p-8">
       <template v-if="state.matches('fetchingAll')">
         <div class="flex items-center justify-center p-12">
           <spinner color="#000" />
@@ -62,11 +62,11 @@ export default {
     },
     posts() {
       return this.context.posts
-    }
+    },
   },
   mounted() {
     blogMachine.send({ type: 'FETCH_ALL' })
-  }
+  },
 }
 </script>
 

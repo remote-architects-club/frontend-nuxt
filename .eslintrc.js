@@ -2,26 +2,26 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    browser: true
+    browser: true,
   },
   extends: [
     'plugin:cypress/recommended',
     'plugin:vue/recommended',
     'eslint:recommended',
     'prettier/vue',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
   },
   globals: {
-    $nuxt: true
+    $nuxt: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
-  }
+    parser: 'babel-eslint',
+  },
 }
 // module.exports = {
 //   root: true,

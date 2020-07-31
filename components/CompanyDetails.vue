@@ -55,14 +55,14 @@ export default {
   components: {
     ToolChipList,
     CompanyUrl,
-    CompanyLocation
+    CompanyLocation,
   },
   props: {
     company: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

@@ -21,23 +21,23 @@ export default {
   props: {
     value: {
       default: '',
-      type: String
+      type: String,
     },
     showCount: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data() {
     return {
-      charCount: this.value.length
+      charCount: this.value.length,
     }
   },
   methods: {
     input(evt) {
       this.charCount = evt.target.value.length
       this.$emit('input', evt.target.value)
-    }
-  }
+    },
+  },
 }
 </script>

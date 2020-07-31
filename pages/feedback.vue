@@ -89,8 +89,8 @@ export default {
       thankYou: false,
       form: {
         email: '',
-        feedback: ''
-      }
+        feedback: '',
+      },
     }
   },
   methods: {
@@ -103,14 +103,14 @@ export default {
     },
     handleSubmit() {
       const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       }
       this.$axios
         .$post(
           'https://remotearchitects.club/',
           this.encode({
             'form-name': 'feedback',
-            ...this.form
+            ...this.form,
           }),
           axiosConfig
         )
@@ -123,8 +123,8 @@ export default {
           )
           this.error = true
         })
-    }
-  }
+    },
+  },
 }
 </script>
 

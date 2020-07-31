@@ -17,7 +17,7 @@ export const toolsMachine = Machine(
       error: null,
       searchTerm: '',
       isFirstSearch: true,
-      companyId: null
+      companyId: null,
     },
     states: {
       idle: {
@@ -25,13 +25,13 @@ export const toolsMachine = Machine(
           FETCH: 'fetching',
           FETCH_TOOL: 'fetchingTool',
           SEARCH: {
-            target: 'searching'
+            target: 'searching',
           },
           SAVE_CATEGORIES: {
-            target: 'savingCategories'
+            target: 'savingCategories',
           },
-          ADD_COMMENT: 'addingComment'
-        }
+          ADD_COMMENT: 'addingComment',
+        },
       },
       searching: {
         id: 'searching',
@@ -41,13 +41,13 @@ export const toolsMachine = Machine(
           src: invokeSearch,
           onDone: {
             target: 'done',
-            actions: ['setFoundItems']
+            actions: ['setFoundItems'],
           },
           onError: {
             target: 'idle',
-            actions: ['setError']
-          }
-        }
+            actions: ['setError'],
+          },
+        },
       },
       fetching: {
         invoke: {
@@ -55,10 +55,10 @@ export const toolsMachine = Machine(
           src: invokeFetch,
           onDone: {
             target: 'idle',
-            actions: ['setTools', 'setCategories']
+            actions: ['setTools', 'setCategories'],
           },
-          onError: 'failedFetch'
-        }
+          onError: 'failedFetch',
+        },
       },
       fetchingTool: {
         invoke: {
@@ -66,50 +66,50 @@ export const toolsMachine = Machine(
           src: invokeFetchTool,
           onDone: {
             target: 'idle',
-            actions: ['setFetchedTool']
+            actions: ['setFetchedTool'],
           },
-          onError: 'idle'
-        }
+          onError: 'idle',
+        },
       },
       failedFetch: {
         on: {
-          FETCH: 'fetching'
-        }
+          FETCH: 'fetching',
+        },
       },
       done: {
         on: {
-          '': [{ target: 'found', cond: 'hasResults' }, { target: 'notFound' }]
-        }
+          '': [{ target: 'found', cond: 'hasResults' }, { target: 'notFound' }],
+        },
       },
       found: {
         on: {
           SEARCH: 'searching',
           SELECT: {
             target: 'addingExisting',
-            actions: ['setTool', 'resetSearch']
+            actions: ['setTool', 'resetSearch'],
           },
           ADD_NEW: {
             target: 'addingNew',
-            actions: ['resetSearch']
+            actions: ['resetSearch'],
           },
           RESET: {
             target: 'idle',
-            actions: ['resetSearch']
-          }
-        }
+            actions: ['resetSearch'],
+          },
+        },
       },
       notFound: {
         on: {
           SEARCH: 'searching',
           ADD_NEW: {
             target: 'addingNew',
-            actions: ['resetSearch']
+            actions: ['resetSearch'],
           },
           RESET: {
             target: 'idle',
-            actions: ['resetSearch']
-          }
-        }
+            actions: ['resetSearch'],
+          },
+        },
       },
       removing: {
         id: 'removing',
@@ -118,10 +118,10 @@ export const toolsMachine = Machine(
           src: invokeRemoveTool,
           onDone: {
             target: 'idle',
-            actions: ['updateToolsList']
+            actions: ['updateToolsList'],
           },
-          onError: 'idle'
-        }
+          onError: 'idle',
+        },
       },
       addingExisting: {
         invoke: {
@@ -129,9 +129,9 @@ export const toolsMachine = Machine(
           src: invokeAddExisting,
           onDone: {
             target: 'idle',
-            actions: ['updateToolsList']
-          }
-        }
+            actions: ['updateToolsList'],
+          },
+        },
       },
       addingNew: {
         invoke: {
@@ -139,9 +139,9 @@ export const toolsMachine = Machine(
           src: invokeAddNew,
           onDone: {
             target: 'idle',
-            actions: ['setNewTool', 'updateToolsList']
-          }
-        }
+            actions: ['setNewTool', 'updateToolsList'],
+          },
+        },
       },
       savingCategories: {
         invoke: {
@@ -149,16 +149,16 @@ export const toolsMachine = Machine(
           src: invokeSaveCategories,
           onDone: {
             target: 'idle',
-            actions: ['setToolCategories']
+            actions: ['setToolCategories'],
           },
-          onError: 'idle'
-        }
+          onError: 'idle',
+        },
       },
       addingComment: {
         on: {
           CANCEL: 'idle',
-          SAVE: 'savingComment'
-        }
+          SAVE: 'savingComment',
+        },
       },
       savingComment: {
         invoke: {
@@ -166,49 +166,49 @@ export const toolsMachine = Machine(
           src: invokeSaveComment,
           onDone: {
             actions: ['updateToolComments'],
-            target: 'idle'
+            target: 'idle',
           },
           // TODO: add error handling logic
-          onError: 'addingComment'
-        }
+          onError: 'addingComment',
+        },
       },
       end: {
         type: 'final',
         data: {
-          tools: (context) => context.tools
-        }
-      }
+          tools: (context) => context.tools,
+        },
+      },
     },
     on: {
       REMOVE: {
         target: 'removing',
-        actions: ['setTool']
+        actions: ['setTool'],
       },
-      FINISH: 'end'
-    }
+      FINISH: 'end',
+    },
   },
   {
     actions: {
       setSearchTerm: assign({
-        searchTerm: (_, event) => event.params.searchTerm
+        searchTerm: (_, event) => event.params.searchTerm,
       }),
       setFoundItems: assign({
-        foundItems: (context, event) => event.data
+        foundItems: (context, event) => event.data,
       }),
       setTool: assign({
-        tool: (_, event) => event.params.tool
+        tool: (_, event) => event.params.tool,
       }),
       setFetchedTool: assign({
-        tool: (_, event) => event.data
+        tool: (_, event) => event.data,
       }),
       setNewTool: assign({
-        tool: (_, event) => event.data
+        tool: (_, event) => event.data,
       }),
       setTools: assign({
-        tools: (_, event) => event.data.tools
+        tools: (_, event) => event.data.tools,
       }),
       setCategories: assign({
-        categories: (_, event) => event.data.categories
+        categories: (_, event) => event.data.categories,
       }),
       setToolCategories: assign({
         tools: (context, event) => {
@@ -219,7 +219,7 @@ export const toolsMachine = Machine(
             return { category_name }
           })
           return context.tools
-        }
+        },
       }),
       updateToolsList: assign({
         tools: (context, event) => {
@@ -231,29 +231,29 @@ export const toolsMachine = Machine(
               (item) => item.tool.id !== context.tool.id
             )
           }
-        }
+        },
       }),
       setError: assign({
-        error: (_, event) => event.data
+        error: (_, event) => event.data,
       }),
       toggleIsFirstSearch: assign({
-        isFirstSearch: false
+        isFirstSearch: false,
       }),
       resetSearch: assign({
         searchTerm: null,
         foundItems: [],
-        error: null
+        error: null,
       }),
       updateToolComments: assign({
         tool: (context, event) => {
           context.tool.tool_comments.unshift(event.data)
           return context.tool
-        }
-      })
+        },
+      }),
     },
     guards: {
-      hasResults: (context) => context.foundItems.length > 0
-    }
+      hasResults: (context) => context.foundItems.length > 0,
+    },
   }
 )
 
@@ -282,7 +282,7 @@ async function invokeFetch() {
           name
         }
       }
-    `
+    `,
   })
   return { tools: data.tool, categories: data.category_tool }
 }
@@ -319,8 +319,8 @@ async function invokeFetchTool(context, event) {
       }
     `,
     variables: {
-      id
-    }
+      id,
+    },
   })
   return data.tool_by_pk
 }
@@ -336,7 +336,7 @@ function invokeSearch(context) {
             description
           }
         }
-      `
+      `,
     })
     .then(({ data }) => data.search_tools)
 }
@@ -367,8 +367,8 @@ function invokeRemoveTool(context, event) {
       `,
       variables: {
         office_id,
-        tool_id
-      }
+        tool_id,
+      },
     })
     .then(({ data }) => data.delete_office_tool)
 }
@@ -398,8 +398,8 @@ function insertTool(name) {
         }
       `,
       variables: {
-        name
-      }
+        name,
+      },
     })
     .then(({ data }) => data.insert_tool.returning[0])
 }
@@ -418,8 +418,8 @@ function insertOfficeTool(office_id, tool_id) {
       `,
       variables: {
         office_id,
-        tool_id
-      }
+        tool_id,
+      },
     })
     .then(({ data }) => data.insert_office_tool.affected_rows)
 }
@@ -456,7 +456,7 @@ async function invokeSaveCategories(context, event) {
         mutation add_tool_categories {
           ${mutation}
         }
-      `
+      `,
     })
     console.log(data)
   }
@@ -475,7 +475,7 @@ async function invokeSaveCategories(context, event) {
         mutation remove_tool_categories {
           ${mutation}
         }
-      `
+      `,
     })
     console.log(data)
   }
@@ -499,7 +499,7 @@ function getCategoriesToDelete(existingCategories, newCategories) {
 async function invokeSaveComment(context, event) {
   console.log('invokeSaveComment', context, event)
   const {
-    tool: { id: tool_id }
+    tool: { id: tool_id },
   } = context
   const { name, comment } = event.params
 
@@ -522,8 +522,8 @@ async function invokeSaveComment(context, event) {
     variables: {
       tool_id,
       name,
-      comment
-    }
+      comment,
+    },
   })
   return data.insert_tool_comment.returning[0]
 }

@@ -6,16 +6,16 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
         serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
-        logo: ['Permanent Marker']
+        logo: ['Permanent Marker'],
       },
       boxShadow: {
-        focus: '0 0 0 3px rgba(236,201,75,1)'
-      }
-    }
+        focus: '0 0 0 3px rgba(236,201,75,1)',
+      },
+    },
   },
   variants: {
     opacity: ['responsive', 'hover', 'focus', 'disabled'],
-    cursor: ['responsive', 'disabled']
+    cursor: ['responsive', 'disabled'],
   },
-  plugins: []
+  plugins: [],
 }

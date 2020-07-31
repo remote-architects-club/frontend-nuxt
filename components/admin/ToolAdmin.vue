@@ -39,25 +39,25 @@ import Tool from '@/components/Tool'
 
 export default {
   components: {
-    Tool
+    Tool,
     // Multiselect
   },
   props: {
     tool: {
       type: Object,
-      required: true
+      required: true,
     },
     categories: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   data() {
     return {
       edit: false,
       checkedCategories: this.tool.tool_categories.map(
         (cat) => cat.category_name
-      )
+      ),
     }
   },
   methods: {
@@ -75,10 +75,10 @@ export default {
     saveCategories() {
       this.$emit('save-categories', {
         tool_id: this.tool.id,
-        categories: this.checkedCategories
+        categories: this.checkedCategories,
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

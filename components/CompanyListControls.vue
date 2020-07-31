@@ -25,13 +25,13 @@ export default {
   props: {
     context: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     total() {
       return this.context.totalCompanies
-    }
+    },
   },
   methods: {
     nextPage() {
@@ -39,8 +39,8 @@ export default {
     },
     prevPage() {
       this.$emit('prev-page')
-    }
-  }
+    },
+  },
 }
 </script>
 

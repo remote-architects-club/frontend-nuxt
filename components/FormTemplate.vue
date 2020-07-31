@@ -13,7 +13,7 @@
               <div>
                 <label
                   :for="`${_uid}-${question.name}`"
-                  class="flex flex-wrap items-center justify-between "
+                  class="flex flex-wrap items-center justify-between"
                 >
                   {{ question.label }}
                   <span
@@ -74,12 +74,12 @@ export default {
     TextInput,
     TextareaInput,
     RadioInput,
-    FormNav
+    FormNav,
   },
   data() {
     return {
       error: 'error',
-      userIp: null
+      userIp: null,
     }
   },
   computed: {
@@ -100,14 +100,14 @@ export default {
     },
     formData() {
       return this.context.formData
-    }
+    },
   },
   async mounted() {
     this.userIp = await this.getUserIp()
   },
   provide() {
     return {
-      formState: this.formState
+      formState: this.formState,
     }
   },
   methods: {
@@ -121,8 +121,8 @@ export default {
         type: 'NEXT',
         params: {
           userIp: this.userIp,
-          input: this.formData[this.formState.activeQuestionGroup]
-        }
+          input: this.formData[this.formState.activeQuestionGroup],
+        },
       })
     },
     back() {
@@ -134,8 +134,8 @@ export default {
     },
     send(value) {
       this.personalMachine.send(value)
-    }
-  }
+    },
+  },
 }
 </script>
 

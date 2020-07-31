@@ -25,7 +25,7 @@
                   v-for="experience in company.experiences"
                   :key="experience.id"
                   :experience="experience"
-                  class="mb-8 "
+                  class="mb-8"
                 />
               </template>
               <template v-else>
@@ -87,7 +87,7 @@ export default {
     BtnAddExperience,
     BtnEditCompany,
     Experience,
-    CompanyDetails
+    CompanyDetails,
   },
   middleware: 'companyId',
   computed: {
@@ -99,16 +99,16 @@ export default {
     },
     company() {
       return this.context.company
-    }
+    },
   },
   mounted() {
     if (!this.company || this.company.id !== this.$route.query.id) {
       companyMachineVue.send({
         type: 'FETCH_COMPANY',
-        params: { id: this.$route.query.id }
+        params: { id: this.$route.query.id },
       })
     }
-  }
+  },
 }
 </script>
 

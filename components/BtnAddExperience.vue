@@ -13,8 +13,8 @@ export default {
   props: {
     companyId: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

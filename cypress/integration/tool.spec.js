@@ -1,22 +1,22 @@
 // const url = 'https://remotearchitectsclub-api.herokuapp.com/v1/graphql'
 import faker from 'faker'
-describe('Tool Page', function() {
+describe('Tool Page', function () {
   const url = '/v1/graphql'
   beforeEach(() => {
     cy.server({
       method: 'POST',
       delay: 800,
       headers: {
-        'content-type': 'application/json; charset=utf-8'
-      }
+        'content-type': 'application/json; charset=utf-8',
+      },
     })
   })
-  it('From home, click on an tool chip and go to tool page', function() {
+  it('From home, click on an tool chip and go to tool page', function () {
     cy.fixture('companies').then((results) => {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.visit('/')
@@ -24,14 +24,14 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.fixture('tool_by_pk').then((results) => {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.contains('Microsoft Teams').click()
@@ -50,7 +50,7 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     const name = faker.name.firstName()
@@ -58,9 +58,7 @@ describe('Tool Page', function() {
     const date = new Date()
     const id = faker.random.uuid()
     cy.visit('/tools/tool?id=4712b8fe-b87e-49a4-8a3a-1f9bff06accd')
-    cy.get('[data-cy=comments]')
-      .as('commentsSection')
-      .contains('comments')
+    cy.get('[data-cy=comments]').as('commentsSection').contains('comments')
 
     cy.get('@commentsSection')
       .contains('add comment')
@@ -68,9 +66,7 @@ describe('Tool Page', function() {
       .click()
     cy.get('@addCommentBtn').should('not.exist')
     cy.get('[data-cy=formAddComment]').as('formAddComment')
-    cy.get('@formAddComment')
-      .contains('cancel')
-      .click()
+    cy.get('@formAddComment').contains('cancel').click()
     cy.get('@formAddComment').should('not.exist')
 
     cy.get('@addCommentBtn').click()
@@ -97,13 +93,11 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.get('@saveBtn').click()
-    cy.get('[data-cy=comment-list]')
-      .as('commentList')
-      .contains(name)
+    cy.get('[data-cy=comment-list]').as('commentList').contains(name)
     cy.get('@commentList').contains(comment)
   })
   it('Displays all comments', () => {
@@ -120,7 +114,7 @@ describe('Tool Page', function() {
           name: faker.name.firstName(),
           comment: faker.lorem.sentences().slice(0, 279),
           created_at: faker.date.recent(),
-          __typename: 'tool_comment'
+          __typename: 'tool_comment',
         })
       }
       results.data.tool_by_pk.tool_comments = comments
@@ -128,7 +122,7 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
       cy.visit(`/tools/tool?id=${tool_id}`)
     })
@@ -152,9 +146,9 @@ describe('Tool Page', function() {
             name: faker.company.companyName(),
             city: faker.address.city(),
             country_iso: faker.address.countryCode(),
-            __typename: 'office'
+            __typename: 'office',
           },
-          __typename: 'office_tool'
+          __typename: 'office_tool',
         })
       }
       results.data.tool_by_pk.office_tools = companies
@@ -162,7 +156,7 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
       cy.visit(`/tools/tool?id=${tool_id}`)
     })

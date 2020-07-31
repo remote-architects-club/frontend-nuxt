@@ -1,23 +1,23 @@
 // import faker from 'faker'
 
-describe('Tool Page', function() {
+describe('Tool Page', function () {
   const url = '/v1/graphql'
   beforeEach(() => {
     cy.server({
       method: 'POST',
       delay: 800,
       headers: {
-        'content-type': 'application/json; charset=utf-8'
-      }
+        'content-type': 'application/json; charset=utf-8',
+      },
     })
   })
 
-  it('From home, click on tools in the menu and go to tools page', function() {
+  it('From home, click on tools in the menu and go to tools page', function () {
     cy.fixture('companies').then((results) => {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.visit('/')
@@ -25,7 +25,7 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.contains('tools').click()
@@ -34,7 +34,7 @@ describe('Tool Page', function() {
       cy.route({
         url,
         status: 200,
-        response: results
+        response: results,
       })
     })
     cy.get('[data-cy="tools-list"]')

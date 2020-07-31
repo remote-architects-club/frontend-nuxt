@@ -13,13 +13,13 @@ import TypeBasedTransition from '@/components/Transitions/TypeBasedTransition.vu
 export default {
   name: 'FieldError',
   components: {
-    TypeBasedTransition
+    TypeBasedTransition,
   },
   props: {
     isValid: {
       type: Boolean,
-      default: true
-    }
-  }
+      default: true,
+    },
+  },
 }
 </script>

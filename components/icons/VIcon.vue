@@ -18,14 +18,14 @@ export default {
     icon: {
       type: String,
       required: false,
-      default: 'x'
-    }
+      default: 'x',
+    },
   },
   computed: {
     dynamicIcon() {
       return `v-${this.icon}` // default icon: x
-    }
-  }
+    },
+  },
 }
 </script>
 

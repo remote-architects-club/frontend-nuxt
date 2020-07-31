@@ -9,14 +9,14 @@ export const machine = Machine({
     companyMachine: null,
     personalMachine: null,
     company: null,
-    personal: null
+    personal: null,
   },
   initial: 'company',
   states: {
     company: {
       entry: assign({
-        companyMachine: () => spawn(companyMachine, { sync: true })
-      })
+        companyMachine: () => spawn(companyMachine, { sync: true }),
+      }),
     },
     personal: {
       entry: assign({
@@ -26,26 +26,26 @@ export const machine = Machine({
               context.companyMachine.state.context.companyId
             ),
             { sync: true }
-          )
+          ),
       }),
       on: {
         FINISH: 'done',
         action: assign({
           company: (context) => context.companyMachine.state.context.company,
-          personal: (context) => context.personalMachine.state.context.formData
-        })
-      }
+          personal: (context) => context.personalMachine.state.context.formData,
+        }),
+      },
     },
     done: {
-      type: 'final'
+      type: 'final',
     },
     cancelled: {
-      type: 'final'
-    }
+      type: 'final',
+    },
   },
   on: {
-    PERSONAL: 'personal'
-  }
+    PERSONAL: 'personal',
+  },
 })
 
 export const contributeMachine = generateVueMachine(machine)

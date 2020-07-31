@@ -86,7 +86,7 @@
 export default {
   data() {
     return {
-      toolName: ''
+      toolName: '',
     }
   },
   computed: {
@@ -104,21 +104,21 @@ export default {
     },
     searched() {
       return this.toolName && !this.context.isFirstSearch
-    }
+    },
   },
   watch: {
     toolName(val) {
       if (val.trim().length === 0) {
         this.reset()
       }
-    }
+    },
   },
   methods: {
     search() {
       if (this.toolName) {
         return this.toolsService.send({
           type: 'SEARCH',
-          params: { searchTerm: this.toolName }
+          params: { searchTerm: this.toolName },
         })
       }
     },
@@ -148,8 +148,8 @@ export default {
     },
     send(event) {
       this.toolsService.send(event)
-    }
-  }
+    },
+  },
 }
 </script>
 

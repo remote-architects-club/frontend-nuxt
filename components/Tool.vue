@@ -1,9 +1,9 @@
 <template>
   <article class="flex p-4 mb-8 border border-black" data-cy="tool-item">
-    <figure class="flex-none mr-4 ">
+    <figure class="flex-none mr-4">
       <tool-logo :url="tool.url" :name="tool.name" class="border" />
     </figure>
-    <div class="w-full ">
+    <div class="w-full">
       <div class="sm:flex sm:justify-between">
         <div class="mb-1 sm:mb-2">
           <p class="font-semibold">
@@ -16,7 +16,7 @@
         </div>
         <div>
           <div class="text-xs sm:flex sm:justify-end">
-            <p class="inline-block px-2 mb-1 mr-1 text-xs border rounded-full ">
+            <p class="inline-block px-2 mb-1 mr-1 text-xs border rounded-full">
               <span v-if="tool.is_free">free</span><span v-else>paid</span>
             </p>
 
@@ -52,14 +52,14 @@ import ToolLogo from '@/components/ToolLogo'
 export default {
   components: {
     ToolLogo,
-    CompanyUrl
+    CompanyUrl,
   },
   props: {
     tool: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

@@ -23,8 +23,8 @@ export default {
   components: {
     AdminNavbar,
     BaseFooter,
-    Logo
-  }
+    Logo,
+  },
 }
 </script>
 

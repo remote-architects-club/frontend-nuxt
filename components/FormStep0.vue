@@ -94,14 +94,14 @@
 import CompanyAddForm from '@/components/CompanyAddForm'
 export default {
   components: {
-    CompanyAddForm
+    CompanyAddForm,
   },
   data() {
     return {
       company: '',
       isLoading: false,
       searchInput: '',
-      companyName: ''
+      companyName: '',
     }
   },
 
@@ -117,7 +117,7 @@ export default {
     },
     searched() {
       return this.companyName && !this.context.isFirstSearch
-    }
+    },
   },
   watch: {
     companyName(val) {
@@ -129,7 +129,7 @@ export default {
       if (this.matches('addCompany.done')) {
         this.$emit('select', this.context.companyId)
       }
-    }
+    },
   },
   mounted() {
     if (!this.matches('noCompany.idle')) {
@@ -148,7 +148,7 @@ export default {
       if (this.companyName) {
         return this.send({
           type: 'SEARCH',
-          params: { searchTerm: this.companyName }
+          params: { searchTerm: this.companyName },
         })
       }
     },
@@ -158,8 +158,8 @@ export default {
         this.send({
           type: 'SELECT',
           params: {
-            id
-          }
+            id,
+          },
         })
         return this.$emit('select', id)
       }
@@ -168,14 +168,14 @@ export default {
       this.send({
         type: 'ADD',
         params: {
-          name
-        }
+          name,
+        },
       })
-    }
+    },
     // goToStep2() {
     //   this.$router.push(`/add/${this.context.company.id}`)
     // }
-  }
+  },
 }
 </script>
 

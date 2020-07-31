@@ -10,12 +10,12 @@ export default {
   props: {
     city: {
       type: String,
-      required: true
+      required: true,
     },
     countryIso: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

@@ -18,15 +18,15 @@ export default {
             content(markdown: true)
           }
         }
-      `
+      `,
     })
     return { content: data.about.content }
   },
   data() {
     return {
-      content: ''
+      content: '',
     }
-  }
+  },
 }
 </script>
 

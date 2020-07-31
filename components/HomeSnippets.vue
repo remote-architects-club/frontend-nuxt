@@ -129,13 +129,13 @@ import ToolChip from '@/components/ToolChip'
 export default {
   name: 'HomeSnippets',
   components: {
-    ToolChip
+    ToolChip,
   },
   props: {
     companiesMachine: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     state() {
@@ -143,7 +143,7 @@ export default {
     },
     context() {
       return this.companiesMachine.context
-    }
+    },
   },
   methods: {
     cleanToolsArray(toolsArray) {
@@ -158,8 +158,8 @@ export default {
       const newArr = newStr.split(',,').map((obj) => JSON.parse(obj))
       // console.log(newArr)
       return newArr
-    }
-  }
+    },
+  },
 }
 </script>
 

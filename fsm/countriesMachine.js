@@ -7,7 +7,7 @@ const machine = Machine({
   id: 'countriesMachine',
   initial: 'fetching',
   context: {
-    countries: null
+    countries: null,
   },
   states: {
     fetching: {
@@ -16,22 +16,22 @@ const machine = Machine({
         src: invokeFetchCountries,
         onDone: {
           actions: assign({
-            countries: (context, event) => event.data
+            countries: (context, event) => event.data,
           }),
-          target: 'done'
+          target: 'done',
         },
-        onError: 'failed'
-      }
+        onError: 'failed',
+      },
     },
     failed: {
       on: {
-        FETCH: 'fetching'
-      }
+        FETCH: 'fetching',
+      },
     },
     done: {
-      type: 'final'
-    }
-  }
+      type: 'final',
+    },
+  },
 })
 
 async function invokeFetchCountries() {
@@ -43,7 +43,7 @@ async function invokeFetchCountries() {
           name
         }
       }
-    `
+    `,
   })
   return data.country
 }

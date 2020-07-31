@@ -1,7 +1,7 @@
 <template>
   <footer
     data-cy="footer"
-    class="px-4 pt-4 pb-8 mt-auto text-sm border-t-2 border-black "
+    class="px-4 pt-4 pb-8 mt-auto text-sm border-t-2 border-black"
   >
     <div
       class="flex flex-col items-center justify-between sm:flex-row sm:items-start"
@@ -61,8 +61,8 @@
 import McApiForm from '@/components/McApiForm'
 export default {
   components: {
-    McApiForm
-  }
+    McApiForm,
+  },
 }
 </script>
 

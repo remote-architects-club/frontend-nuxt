@@ -24,13 +24,13 @@ export default {
   computed: {
     countries() {
       return countriesMachine.context.countries
-    }
+    },
   },
   methods: {
     matches(value) {
       return countriesMachine.current.matches(value)
-    }
-  }
+    },
+  },
 }
 </script>
 

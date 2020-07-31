@@ -110,16 +110,16 @@ export default {
     ContributionStats,
     CompanyMap,
     LatestPosts,
-    HomeSnippets
+    HomeSnippets,
   },
   data() {
     return {
-      companiesMachine
+      companiesMachine,
     }
   },
   mounted() {
     this.companiesMachine.send({ type: 'LOAD' })
-  }
+  },
 }
 </script>
 

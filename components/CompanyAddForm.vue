@@ -97,7 +97,7 @@ const validate = require('validate.js')
 
 extend('required', {
   ...required,
-  message: 'You need to type a {_field_}...'
+  message: 'You need to type a {_field_}...',
 })
 extend('url', (value) => {
   const val = validate({ website: value }, { website: { url: true } })
@@ -111,7 +111,7 @@ export default {
     ValidationObserver,
     CountrySelect,
     RadioInput,
-    TextInput
+    TextInput,
   },
   data() {
     return {
@@ -120,13 +120,13 @@ export default {
         city: null,
         country_iso: null,
         url: '',
-        num_people: 1
+        num_people: 1,
       },
       sizeOptions: [
         { label: 'Small (1-9 people)', value: 0 },
         { label: 'Medium (10-49 people)', value: 1 },
-        { label: 'Large (50+ people)', value: 2 }
-      ]
+        { label: 'Large (50+ people)', value: 2 },
+      ],
     }
   },
   computed: {
@@ -138,14 +138,14 @@ export default {
     },
     stateValue() {
       return this.service.state.value
-    }
+    },
   },
   watch: {
     stateValue() {
       if (this.matches('hasCompany')) {
         setTimeout(() => this.goToStep2(), 3000)
       }
-    }
+    },
   },
   mounted() {
     this.company = this.context.company
@@ -163,8 +163,8 @@ export default {
     goToStep2() {
       // this.$router.push(`/add/${this.context.company.id}`)
       this.$router.push(`/add/company?id=${this.context.company.id}`)
-    }
-  }
+    },
+  },
 }
 </script>
 
