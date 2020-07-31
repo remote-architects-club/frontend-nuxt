@@ -6,16 +6,6 @@
         that remote work in architecture is possible. Let's help make it a
         long-lasting reality.
       </h2>
-
-      <!-- <div class="mt-5">
-        <p>
-          <nuxt-link to="/add" class="btn btn-large">
-            contribute
-          </nuxt-link>
-        </p>
-
-        <p class="text-sm">It's easy and anonymous.</p>
-      </div> -->
     </header>
     <section data-cy="phase-ii">
       <section data-cy="phase-ii-intro">
@@ -101,17 +91,7 @@
 <script>
 import { companiesMachine } from '@/fsm/companiesMachine'
 
-import CompanyMap from '@/components/CompanyMap'
-import ContributionStats from '@/components/ContributionStats'
-import HomeSnippets from '@/components/HomeSnippets'
-import LatestPosts from '@/components/LatestPosts'
 export default {
-  components: {
-    ContributionStats,
-    CompanyMap,
-    LatestPosts,
-    HomeSnippets,
-  },
   data() {
     return {
       companiesMachine,
