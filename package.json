@@ -26,6 +26,7 @@
     "@nuxtjs/sentry": "^4.0.0",
     "@nuxtjs/svg": "^0.1.6",
     "@sendgrid/mail": "^7.2.2",
+    "@tailwindcss/typography": "^0.2.0",
     "animate.css": "^4.1.0",
     "apollo-boost": "^0.4.7",
     "cy-mock-graphql": "^1.2.1",

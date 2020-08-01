@@ -2,6 +2,13 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   theme: {
+    typography: {
+      default: {
+        css: {
+          color: '#1A202C',
+        },
+      },
+    },
     extend: {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -17,5 +24,5 @@ module.exports = {
     opacity: ['responsive', 'hover', 'focus', 'disabled'],
     cursor: ['responsive', 'disabled'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
