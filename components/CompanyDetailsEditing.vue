@@ -21,18 +21,7 @@
 </template>
 
 <script>
-import CompanyLocation from '@/components/CompanyLocation'
-import CompanyUrl from '@/components/CompanyUrl'
-import CompanyRemotePolicy from '@/components/CompanyRemotePolicy'
-import CompanyTools from '@/components/CompanyTools'
-
 export default {
-  components: {
-    CompanyTools,
-    CompanyRemotePolicy,
-    CompanyUrl,
-    CompanyLocation,
-  },
   props: {
     company: {
       type: Object,
@@ -41,5 +30,3 @@ export default {
   },
 }
 </script>
-
-<style type="scss"></style>

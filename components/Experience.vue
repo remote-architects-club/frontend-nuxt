@@ -44,23 +44,12 @@
           <p>💬&ldquo;{{ exp.final_tips }}&rdquo;</p>
         </div>
       </div>
-      <!-- <div v-html="introText" class="p-2 mb-4 border border-black" /> -->
-      <!-- <div v-if="hasThoughts">
-        <p class="mb-4 font-semibold">here is what else they said</p>
-        <div v-for="(item, index) in cleanTextLabels" :key="index" class="mb-1">
-          <template v-if="item.label !== 'name'">
-            <span class="font-semibold">{{ item.label }} </span>
-            <span>{{ exp[item.question] }}</span>
-          </template>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 /* eslint-disable camelcase */
-// import questions from '../config/formConfig.json'
 export default {
   props: {
     experience: {

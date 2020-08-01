@@ -11,12 +11,7 @@
 </template>
 
 <script>
-// import questions from '../config/formConfig.json'
-import Experience from '@/components/Experience'
 export default {
-  components: {
-    Experience,
-  },
   props: {
     experiences: {
       type: Array,
@@ -26,5 +21,3 @@ export default {
   methods: {},
 }
 </script>
-
-<style lang="scss" scoped></style>
