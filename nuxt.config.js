@@ -153,7 +153,12 @@ export default {
       ],
     },
   },
-
+  storybook: {
+    stories: [],
+    webpackFinal(config) {
+      return config
+    },
+  },
   generate: {
     routes: dynamicRoutes,
   },
