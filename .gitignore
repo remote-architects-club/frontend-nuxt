@@ -93,3 +93,6 @@ sendgrid.env
 # Storybook
 .nuxt-storybook
 storybook-static
+
+# Local Netlify folder
+.netlify
