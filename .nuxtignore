@@ -1,2 +1,5 @@
 # ignore page
 pages/add/*.vue
+
+# Storybook
+**/*.stories.js
