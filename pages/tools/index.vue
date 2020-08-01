@@ -130,7 +130,7 @@ export default {
       }
     },
     toolsSorted() {
-      if (!this.toolsFiltered && !this.toolsFiltered.length > 0) return []
+      if (!this.toolsFiltered && !(this.toolsFiltered.length > 0)) return []
       if (this.sortBy === 'popularity') {
         console.log('pop')
 
