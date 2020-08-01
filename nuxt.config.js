@@ -60,7 +60,7 @@ export default {
     '@/plugins/vue-debounce.js',
     { src: '@/plugins/datepicker.js', ssr: false },
     // '@/plugins/global-components.js',
-    '@/plugins/fsm-machines.js',
+    // '@/plugins/fsm-machines.js',
     '@plugins/spinner.js',
     // '@/plugins/portal-vue.js'
   ],
@@ -153,7 +153,12 @@ export default {
       ],
     },
   },
-
+  storybook: {
+    stories: [],
+    webpackFinal(config) {
+      return config
+    },
+  },
   generate: {
     routes: dynamicRoutes,
   },
@@ -165,7 +170,7 @@ export default {
      ** You can extend webpack config here
      */
     transpile: ['vee-validate/dist/rules'],
-    extend(config, ctx) {
+    extend(config) {
       config.module.noParse = /(mapbox-gl)\.js$/
     },
   },

@@ -91,11 +91,7 @@
 </template>
 
 <script>
-import CompanyAddForm from '@/components/CompanyAddForm'
 export default {
-  components: {
-    CompanyAddForm,
-  },
   data() {
     return {
       company: '',
@@ -172,9 +168,6 @@ export default {
         },
       })
     },
-    // goToStep2() {
-    //   this.$router.push(`/add/${this.context.company.id}`)
-    // }
   },
 }
 </script>

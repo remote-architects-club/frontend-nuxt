@@ -43,7 +43,7 @@ export default {
   mounted() {
     this.$contributeMachine.send({ type: 'PERSONAL' })
     if (!this.company) {
-      return this.companyService.send({
+      this.companyService.send({
         type: 'FETCH_COMPANY',
         params: { id: this.companyId },
       })

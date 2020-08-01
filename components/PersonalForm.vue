@@ -48,14 +48,7 @@
 </template>
 
 <script>
-import FormTemplate from '@/components/FormTemplate'
-import McApiForm from '@/components/McApiForm'
-
 export default {
-  components: {
-    FormTemplate,
-    McApiForm,
-  },
   props: {
     companyId: {
       type: String,

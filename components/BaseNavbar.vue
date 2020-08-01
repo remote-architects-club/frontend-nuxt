@@ -5,11 +5,6 @@
         <nuxt-link to="/" class="link">home</nuxt-link>
       </li>
       <li class="font-semibold">
-        <nuxt-link to="/jobs" class="p-1 font-bold text-white bg-black"
-          >remote jobs</nuxt-link
-        >
-      </li>
-      <li class="font-semibold">
         <nuxt-link to="/tools" class="link">tools</nuxt-link>
       </li>
       <li class="font-semibold">
@@ -17,6 +12,13 @@
       </li>
       <li class="font-semibold">
         <nuxt-link to="/about" class="link">about</nuxt-link>
+      </li>
+      <li class="mt-2 font-semibold">
+        <nuxt-link
+          to="/jobs"
+          class="p-1 font-bold text-white bg-black hover:underline"
+          >remote jobs</nuxt-link
+        >
       </li>
       <!-- <li class="font-semibold">
         <nuxt-link to="/feedback" class="link">what else?</nuxt-link>

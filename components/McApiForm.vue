@@ -22,21 +22,29 @@
       </div>
     </template>
     <template v-else>
-      <form class="flex" data-cy="subscribe" @submit.prevent="submit">
+      <form
+        class="flex"
+        :class="{
+          'flex-col space-y-2 justify-center w-full': isVertical,
+        }"
+        data-cy="subscribe"
+        @submit.prevent="submit"
+      >
         <input
           id="email"
           v-model="email"
           type="email"
-          placeholder="Email"
+          :placeholder="placeholder"
           data-cy="email-input"
           v-bind="$attrs"
-          class="p-1 mr-1 text-black transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
+          class="p-2 text-base text-black transition duration-150 ease-in-out border-2 border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus"
+          :class="{ 'mr-1': !isVertical }"
         /><button
           type="submit"
-          class="flex-none btn btn-regular"
+          class="flex-none text-white bg-black btn btn-regular hover:text-black"
           :disabled="isLoading"
         >
-          subscribe
+          {{ buttonText }}
         </button>
       </form>
     </template>
@@ -59,6 +67,18 @@ export default {
     isSmall: {
       type: Boolean,
       default: false,
+    },
+    buttonText: {
+      type: String,
+      default: 'subscribe',
+    },
+    isVertical: {
+      type: Boolean,
+      default: false,
+    },
+    placeholder: {
+      type: String,
+      default: 'Email',
     },
   },
   data() {

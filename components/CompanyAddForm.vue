@@ -90,9 +90,6 @@
 <script>
 import { ValidationProvider, ValidationObserver, extend } from 'vee-validate'
 import { required } from 'vee-validate/dist/rules'
-import TextInput from '@/components/TextInput'
-import RadioInput from '@/components/RadioInput'
-import CountrySelect from '@/components/CountrySelect'
 const validate = require('validate.js')
 
 extend('required', {
@@ -109,9 +106,6 @@ export default {
   components: {
     ValidationProvider,
     ValidationObserver,
-    CountrySelect,
-    RadioInput,
-    TextInput,
   },
   data() {
     return {

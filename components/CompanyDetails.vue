@@ -47,16 +47,7 @@
 </template>
 
 <script>
-import CompanyLocation from '@/components/CompanyLocation'
-import CompanyUrl from '@/components/CompanyUrl'
-import ToolChipList from '@/components/ToolChipList'
-
 export default {
-  components: {
-    ToolChipList,
-    CompanyUrl,
-    CompanyLocation,
-  },
   props: {
     company: {
       type: Object,
