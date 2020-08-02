@@ -6,7 +6,7 @@ exports[`ToastSubscribe disappears when close button is clicked 1`] = `
     Stay in the loop for future updates
     <span class=\\"hidden sm:inline-block\\">→</span><span class=\\"sm:hidden\\">↓</span></p>
   <div>
-    <form data-cy=\\"subscribe\\" class=\\"flex\\"><input id=\\"email\\" type=\\"email\\" placeholder=\\"Email\\" data-cy=\\"email-input\\" class=\\"p-1 mr-1 text-black transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus\\"><button type=\\"submit\\" class=\\"flex-none btn btn-regular\\">
+    <form data-cy=\\"subscribe\\" class=\\"flex\\"><input id=\\"email\\" type=\\"email\\" placeholder=\\"Email\\" data-cy=\\"email-input\\" class=\\"p-2 text-base text-black transition duration-150 ease-in-out border-2 border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus mr-1\\"><button type=\\"submit\\" class=\\"flex-none text-white bg-black btn btn-regular hover:text-black\\">
         subscribe
       </button></form>
   </div> <button data-cy=\\"close-btn\\" class=\\"absolute top-0 right-0 p-2 text-lg font-bold text-white\\">
@@ -21,7 +21,7 @@ exports[`ToastSubscribe renders properly  1`] = `
     Stay in the loop for future updates
     <span class=\\"hidden sm:inline-block\\">→</span><span class=\\"sm:hidden\\">↓</span></p>
   <div>
-    <form data-cy=\\"subscribe\\" class=\\"flex\\"><input id=\\"email\\" type=\\"email\\" placeholder=\\"Email\\" data-cy=\\"email-input\\" class=\\"p-1 mr-1 text-black transition duration-150 ease-in-out border border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus\\"><button type=\\"submit\\" class=\\"flex-none btn btn-regular\\">
+    <form data-cy=\\"subscribe\\" class=\\"flex\\"><input id=\\"email\\" type=\\"email\\" placeholder=\\"Email\\" data-cy=\\"email-input\\" class=\\"p-2 text-base text-black transition duration-150 ease-in-out border-2 border-black rounded-none shadow-inner focus:outline-none focus:shadow-focus mr-1\\"><button type=\\"submit\\" class=\\"flex-none text-white bg-black btn btn-regular hover:text-black\\">
         subscribe
       </button></form>
   </div> <button data-cy=\\"close-btn\\" class=\\"absolute top-0 right-0 p-2 text-lg font-bold text-white\\">
