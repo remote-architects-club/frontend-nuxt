@@ -1,7 +1,7 @@
-<template functional>
+<template>
   <p class="flex items-center">
-    <v-icon icon="location" class="w-4 h-4" />{{ props.city }},
-    {{ props.countryIso }}
+    <v-icon icon="location" class="w-4 h-4" />{{ city }},
+    {{ countryIso }}
   </p>
 </template>
 

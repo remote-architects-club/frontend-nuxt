@@ -9,11 +9,11 @@
       <p class="mb-2"><nuxt-link to="/" class="link">&larr; back</nuxt-link></p>
       <div class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8">
         <company-details :company="company" />
-        <section class="col-2">
+        <section class="h-4 col-2">
           <div></div>
-          <p class="pt-8 mb-12 text-center md:text-left">
+          <!-- <p class="pt-8 mb-12 text-center md:text-left">
             <btn-edit-company :company-id="company.id" />
-          </p>
+          </p> -->
         </section>
         <div>
           <section class="col-2">
@@ -36,59 +36,20 @@
 
           <section class="col-2">
             <div></div>
-            <p class="py-6 text-center md:text-left">
+            <!-- <p class="py-6 text-center md:text-left">
               <btn-add-experience :company-id="company.id" />
-            </p>
+            </p> -->
           </section>
         </div>
       </div>
     </template>
-    <!-- <div
-      v-else-if="company"
-      class="p-4 mb-12 bg-white border-t-2 border-black shadow-lg sm:p-8"
-    >
-      <company-details :company="company" class="mb-8" />
-      <p class="my-8 text-center">
-        <btn-edit-company :company-id="company.id" />
-      </p>
-      <div
-        v-if="company.experiences && company.experiences.length > 0"
-        class="mb-8"
-      >
-        <h2 class="mb-8 text-xl font-bold">
-          What are people saying about {{ company.name }}?
-        </h2>
-
-        <div
-          v-for="experience in company.experiences"
-          :key="experience.id"
-          class="p-8 mb-8 bg-white shadow-lg"
-        >
-          <experience :experience="experience" />
-        </div>
-      </div>
-
-      <p class="my-8 text-center md:text-left">
-        <btn-add-experience :company-id="company.id" />
-      </p>
-    </div> -->
   </div>
 </template>
 
 <script>
-import CompanyDetails from '@/components/CompanyDetails'
 import { companyMachineVue } from '@/fsm/companyMachine'
-import Experience from '@/components/Experience'
-import BtnEditCompany from '@/components/BtnEditCompany'
-import BtnAddExperience from '@/components/BtnAddExperience'
 export default {
   layout: 'pages',
-  components: {
-    BtnAddExperience,
-    BtnEditCompany,
-    Experience,
-    CompanyDetails,
-  },
   middleware: 'companyId',
   computed: {
     context() {

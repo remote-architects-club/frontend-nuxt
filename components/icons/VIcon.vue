@@ -13,7 +13,17 @@
 </template>
 
 <script>
+import VEdit from './svg/VEdit'
+import VLink from './svg/VLink'
+import VLocation from './svg/VLocation'
+import VRightArrow from './svg/VRightArrow'
 export default {
+  components: {
+    VEdit,
+    VLink,
+    VLocation,
+    VRightArrow,
+  },
   props: {
     icon: {
       type: String,
