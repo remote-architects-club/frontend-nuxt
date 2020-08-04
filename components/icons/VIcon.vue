@@ -16,13 +16,13 @@
 import VEdit from './svg/VEdit'
 import VLink from './svg/VLink'
 import VLocation from './svg/VLocation'
-import VRightArrow from './svg/VRightArrow'
+import VRightarrow from './svg/VRightarrow'
 export default {
   components: {
     VEdit,
     VLink,
     VLocation,
-    VRightArrow,
+    VRightarrow,
   },
   props: {
     icon: {
