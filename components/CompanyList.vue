@@ -21,9 +21,10 @@
           <company-details :company="company" />
           <section class="col-2">
             <div></div>
-            <p class="pt-8 mb-12 text-center md:text-left">
+            <div></div>
+            <!-- <p class="pt-8 mb-12 text-center md:text-left">
               <btn-edit-company :company-id="company.id" />
-            </p>
+            </p> -->
           </section>
           <div>
             <section class="col-2">
@@ -48,9 +49,10 @@
 
             <section class="col-2">
               <div></div>
-              <p class="py-6 text-center md:text-left">
+              <div></div>
+              <!-- <p class="py-6 text-center md:text-left">
                 <btn-add-experience :company-id="company.id" />
-              </p>
+              </p> -->
             </section>
           </div>
         </li>
@@ -68,21 +70,9 @@
 
 <script>
 import { extractHostname } from '@/plugins/url-utils'
-import Experience from '@/components/Experience'
-import BtnAddExperience from '@/components/BtnAddExperience'
-import BtnEditCompany from '@/components/BtnEditCompany'
-import CompanyDetails from '@/components/CompanyDetails'
-import CompanyListControls from '@/components/CompanyListControls'
 
 export default {
   name: 'CompanyList',
-  components: {
-    Experience,
-    CompanyListControls,
-    CompanyDetails,
-    BtnEditCompany,
-    BtnAddExperience,
-  },
   props: {
     companiesMachine: {
       type: Object,
