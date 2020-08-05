@@ -58,11 +58,8 @@ export default {
    */
   plugins: [
     '@/plugins/vue-debounce.js',
-    { src: '@/plugins/datepicker.js', ssr: false },
-    // '@/plugins/global-components.js',
-    // '@/plugins/fsm-machines.js',
     '@plugins/spinner.js',
-    // '@/plugins/portal-vue.js'
+    { src: '@/plugins/datepicker.js', mode: 'client' },
   ],
   /*
    ** Nuxt.js dev-modules
