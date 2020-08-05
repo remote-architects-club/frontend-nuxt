@@ -1,37 +1,29 @@
 <template>
   <div>
-    <header class="mb-12 text-center">
+    <header class="max-w-2xl mx-auto mb-12 text-center">
       <h2 class="mb-8 text-xl">
-        More and more companies around the world are realizing, rather forcibly,
+        <!-- More and more companies around the world are realizing, rather forcibly,
         that remote work in architecture is possible. Let's help make it a
-        long-lasting reality.
+        long-lasting reality. -->
+        Help us to keep the discussion going and to understand how
+        "architecture" and "remote work" are getting along.
       </h2>
+      <p class="mb-2 text-center">
+        <a
+          href="https://remotearchitectsclub.typeform.com/to/hOBrKpIj"
+          class="inline-block px-8 py-4 text-base font-bold leading-6 text-black transition duration-150 ease-in-out bg-yellow-500 border-2 border-black shadow btn hover:bg-black hover:text-white hover:shadow-lg"
+        >
+          Participate in
+          <strong>The State of Remote Work in Architecture</strong> survey
+          &rarr;
+        </a>
+      </p>
+      <p class="mb-16">
+        It will only take five minutes of your time. It is easy and anonymous.
+      </p>
     </header>
-    <section data-cy="phase-ii">
-      <section data-cy="phase-ii-intro">
-        <h2 class="section-title">
-          Phase II
-        </h2>
-        <div class="h-8" />
-        <p class="mb-4">
-          With the current easing of lockdown restrictions, architects all over
-          the world are slowly starting to go back to their offices.
-        </p>
-        <p class="mb-4 font-bold">
-          Now we want to understand how this is gonna go.
-        </p>
-        <p class="mb-4">
-          Our open-floor offices suddenly seem immensely inadequate to our new
-          paranoid reality. Will companies still maintain working-from-home as a
-          viable alternative to their employees? What will change in our
-          professional relationships and processes?
-        </p>
-        <p class="mb-4">
-          We'll soon publish a new, small survey to gauge the situation.
-        </p>
-      </section>
-    </section>
-    <div class="mt-10 mb-16 border-t-2 border-black"></div>
+
+    <div class="mb-4 border-t-2 border-black"></div>
     <section data-cy="latest-posts">
       <latest-posts />
     </section>
@@ -127,5 +119,9 @@ h2.section-title:before {
 h2.section-title:after {
   left: 0.5em;
   margin-right: -50%;
+}
+
+div.typeform {
+  height: 500px;
 }
 </style>
