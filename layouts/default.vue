@@ -2,8 +2,8 @@
   <div>
     <toast-subscribe />
     <div class="flex flex-col w-full h-full px-4 mx-auto lg:max-w-4xl lg:px-0">
-      <header class="mb-12">
-        <base-navbar class="sm:mb-0 md:-mb-12 lg:-mb-16" />
+      <header class="mb-16 sm:mb-24">
+        <base-navbar class="pt-4 mb-16 sm:-mb-8 md:-mb-12 lg:-mb-16" />
         <logo></logo>
       </header>
       <main class="flex-1 mb-12">
