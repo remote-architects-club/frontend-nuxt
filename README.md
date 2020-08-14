@@ -1,6 +1,6 @@
-<p align="center"><img src="https://remotearchitects.club/_nuxt/d2004f6d12c9c8aa37d0247cd452318c.svg"/></p>
+<p align="center"><a href="https://remotearchitects.club/"><img src="https://remotearchitects.club/_nuxt/d2004f6d12c9c8aa37d0247cd452318c.svg"/></a></p>
 <br/><br/>
-<p align="center">Codebase of the website [remotearchitects.club](https://remotearchitects.club), a platform for architecture professionals to share their experiences working remotely.</p>
+<p align="center">Codebase of the website <a href="https://remotearchitects.club/"><strong>remotearchitects.club</strong></a>, a platform for architecture professionals to share their experiences working remotely.</p>
 <br/><br/>
 <p align="center">
   <img src="https://img.shields.io/website?url=https%3A%2F%2Fremotearchitects.club"/> 
