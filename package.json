@@ -1,7 +1,7 @@
 {
   "name": "remotearchitectsclub",
   "version": "1.0.0",
-  "description": "My delightful Nuxt.js project",
+  "description": "Frontend for the website remotearchitects.club",
   "author": "Daniel da Rocha",
   "private": true,
   "scripts": {
