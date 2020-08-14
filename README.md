@@ -68,9 +68,6 @@ I follow the "[3-flow](https://www.nomachetejuggling.com/2017/04/09/a-different-
 * When a candidate is released to production, it’s `push --force`d to the tip of `release`
 * Any production hotfixes happen in `release` and are then merged into `candidate` which is then merged into `master`.
 
-## Versioning
-
-I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Author
 
