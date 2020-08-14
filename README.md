@@ -1,8 +1,14 @@
-# remotearchitects.club
-
-Code for the website [remotearchitects.club](https://remotearchitects.club), a platform for architecture professionals to share their experiences working remotely.
-
-![](https://img.shields.io/website?url=https%3A%2F%2Fremotearchitects.club) ![Netlify Status](https://img.shields.io/netlify/f68af0c0-ac42-4fd6-baa9-35cf187b02e8) ![](https://img.shields.io/github/last-commit/danrocha/remote-architects-club) ![](https://img.shields.io/github/languages/count/danrocha/remote-architects-club) ![](https://img.shields.io/github/languages/top/danrocha/remote-architects-club)
+<p align="center"><img src="https://remotearchitects.club/_nuxt/d2004f6d12c9c8aa37d0247cd452318c.svg"/></p>
+<br/><br/>
+<p align="center">Codebase of the website [remotearchitects.club](https://remotearchitects.club), a platform for architecture professionals to share their experiences working remotely.</p>
+<br/><br/>
+<p align="center">
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fremotearchitects.club"/> 
+  <img src="https://img.shields.io/netlify/f68af0c0-ac42-4fd6-baa9-35cf187b02e8"/> 
+  <img src="https://img.shields.io/github/last-commit/danrocha/remote-architects-club"/> 
+  <img src="https://img.shields.io/github/languages/count/danrocha/remote-architects-club"/> 
+  <img src="https://img.shields.io/github/languages/top/danrocha/remote-architects-club"/> 
+</p>
 
 ## Built With
 
@@ -68,11 +74,11 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 
 ## Author
 
-* **Daniel da Rocha** - *Full-stack Development* - [danrocha](https://github.com/danrocha)
+* **Daniel da Rocha** - *Creator and Full-stack Developer* - [danrocha](https://github.com/danrocha)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 
 
 
